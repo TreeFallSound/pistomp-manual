@@ -9,27 +9,48 @@ eleventyNavigation:
 
 # Recovery
 
-pi-Stomp includes a recovery system that activates automatically when critical services crash. You can also launch it manually from the System Menu.
+The recovery system is how your pi-Stomp stays up to date. It checks for and installs new versions of the pi-Stomp software, plugins, and system packages. It also activates automatically if something crashes, giving you diagnostic tools and a way back to a working state.
 
-## What triggers recovery
+You can launch recovery at any time from the **System Menu** → **Recovery mode**.
 
-The recovery system monitors four services via systemd `OnFailure`:
+## Updates
 
-- **jack** — the JACK audio backend
-- **mod-host** — the LV2 plugin host
-- **mod-ui** — the web interface
-- **mod-ala-pi-stomp** — the pi-Stomp controller software
+This is what you'll use recovery for most. pi-Stomp ships updates over the air from the Tree Fall Sound repository. When you open the Updates menu, it checks what's available and lets you choose what to install.
 
-When `mod-ala-pi-stomp` or `mod-ui` crashes 3 times within 60 seconds, systemd gives up and fires `pistomp-recovery.service`. The recovery screen takes over the LCD.
+<img src="{{ '/assets/images/recovery-main-menu.png' | url }}" alt="Recovery main menu" style="display:block;width:70%;margin:2rem auto">
 
-You can also launch recovery manually: **System Menu** → **Recovery mode**.
+### What gets updated
+
+| What | What changes |
+|------|-------------|
+| **pi-Stomp software** | New features, bug fixes, LCD improvements, new plugin panels. This is the main controller — the thing that reads your footswitches and drives the screen. |
+| **mod-host** | The engine that runs your plugins. Updates improve stability and compatibility. |
+| **mod-ui** | The web interface at pistomp.local. Updates add new plugin browser features and fix bugs. |
+| **JACK audio** | The audio server. Updates only when there's a stability fix. |
+| **System packages** | Supporting libraries and tools. These update quietly in the background. |
+
+Updates are cumulative — you don't need to install them in order. Just run Updates whenever you feel like it, or when you're troubleshooting something.
+
+### How updates work
+
+When you select Updates, recovery shows you what's available and lets you pick individual packages or install everything at once. During installation, a progress bar shows what's happening:
+
+<img src="{{ '/assets/images/recovery-progress.png' | url }}" alt="Update progress" style="display:block;width:70%;margin:2rem auto">
+
+After updates finish, recovery runs a health check — it restarts services in order (JACK → mod-host → mod-ui → pi-stomp) and confirms everything came back clean. If something fails, it rolls back automatically.
+
+<img src="{{ '/assets/images/recovery-done.png' | url }}" alt="Update complete" style="display:block;width:70%;margin:2rem auto">
 
 ## Crash screen
 
-When recovery activates, the LCD shows the crash screen with:
+If a critical service crashes, recovery takes over the LCD automatically. This happens when `mod-ala-pi-stomp` or `mod-ui` fails 3 times within 60 seconds.
 
-- **Service states** — each service in the chain (`jack`, `mod-host`, `mod-ui`, `mod-ala-pi-stomp`) with its current status. The failed service is marked with a `<--` indicator
-- **Log textarea** — the last 6 lines of the crash log, shown below the service list
+<img src="{{ '/assets/images/recovery-crash-screen.png' | url }}" alt="Crash screen" style="display:block;width:70%;margin:2rem auto">
+
+The crash screen shows:
+
+- **Service states** — each service in the chain with its current status. The failed service is marked with a `<--` indicator
+- **Log textarea** — the last 6 lines of the crash log
 - **RESUME** — returns to normal operation
 - **RECOVERY** — opens the recovery menu
 
@@ -45,17 +66,42 @@ When recovery activates, the LCD shows the crash screen with:
 
 The log viewer shows the complete journalctl output for the crashed service. Use the Navigation encoder to scroll through lines vertically. Use Tweak 1 to scroll long lines horizontally. Long-press or click the back icon to return to the crash screen.
 
-## Recovery menu
+<img src="{{ '/assets/images/recovery-log-view.png' | url }}" alt="Log viewer" style="display:block;width:70%;margin:2rem auto">
 
-| Action | What it does |
-|--------|-------------|
-| **Restart Jack** | Restarts the JACK audio server |
-| **Restart MOD** | Restarts mod-host and mod-ui |
-| **Updates** | Check for and install system updates |
-| **Reset to Checkpoint** | Reverts pedalboards and config to last known-good state |
-| **Factory Reset** | Wipes user data and restores factory defaults |
-| **Reboot** | Reboots the system |
-| **Power Off** | Shuts down cleanly |
+## Restarting services
+
+- **Restart Jack** — restarts the JACK audio server. Use this if audio stops working but the LCD is still responsive.
+- **Restart MOD** — restarts mod-host and mod-ui. Use this if plugins stop loading or the web interface is unresponsive.
+
+## Rolling back to a known-good state
+
+pi-Stomp tracks changes to five areas, called **domains**:
+
+| Domain | What it covers |
+|--------|---------------|
+| Config | `default_config.yml`, `settings.yml` |
+| Pedalboards | All your pedalboard bundles |
+| Plugins | User-installed LV2 plugins |
+| Packages | System packages (pi-stomp, mod-host, jack, etc.) |
+| Boot | `/boot/config.txt`, `/etc/jackdrc`, ALSA state |
+
+For each domain, the system keeps two reference points:
+
+- **Checkpoint** — a snapshot of the current state that you can return to. The system creates a checkpoint automatically after successful updates. You can also create one manually.
+- **Factory** — the original state as shipped with the OS image. The fallback if everything goes wrong.
+
+**Reset to Checkpoint** reverts one or more domains to their last known-good state. Your pedalboards, config, and plugins go back to how they were at the last checkpoint. Useful if an experiment went wrong.
+
+**Factory Reset** reverts one or more domains to their factory state. This wipes user data in the selected domains and restores the originals from the OS image. For plugins, this re-downloads the factory plugin archive.
+
+Both operations let you pick which domains to reset. You can reset just your pedalboards while keeping your config, or reset everything at once.
+
+<img src="{{ '/assets/images/recovery-confirm.png' | url }}" alt="Confirm dialog" style="display:block;width:70%;margin:2rem auto">
+
+## System actions
+
+- **Reboot** — reboots the pi-Stomp
+- **Power Off** — shuts down cleanly
 
 ## Getting help
 
