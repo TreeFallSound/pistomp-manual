@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: quick-start
   title: Quick Start
-  order: 2
+  order: 1
 ---
 
 # Quick Start
