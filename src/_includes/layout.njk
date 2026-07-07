@@ -29,7 +29,7 @@
       {%- endfor %}
       </ul>
     </nav>
-    <main class="content">
+    <main class="content" data-source-path="{{ page.inputPath }}" data-line-offset="{{ page.inputPath | frontMatterLineCount }}">
       {{ content | safe }}
     </main>
   </div>
@@ -47,5 +47,6 @@
       }, true);
     })();
   </script>
+  <script src="{{ '/assets/js/suggest-edit.js' | url }}" defer></script>
 </body>
 </html>

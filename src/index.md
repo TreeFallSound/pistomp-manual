@@ -21,6 +21,8 @@ The complete guide to the pi-Stomp ecosystem — from building your first kit to
 - **[Developers]({{ '/developers/' | url }})** — Architecture, code structure, and contributing
 - **[Plugins]({{ '/plugins/' | url }})** — Editorial reviews of the best open-source effects
 
+> **Spot a mistake?** Select any text on a page and click **Suggest edit** to fix it straight on GitHub. See [Editing this manual]({{ '/developers/contributing/#editing-this-manual' | url }}) for details.
+
 ## What is pi-Stomp?
 
 pi-Stomp is a DIY high-definition multi-effects platform for guitar, bass, and keyboards.

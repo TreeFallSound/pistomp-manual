@@ -24,6 +24,14 @@ If you can write a Python script that reads a button and prints to a terminal, y
 - **Documentation** — this manual, the wiki, the READMEs. If something was confusing, fix it so the next person isn't confused.
 - **Feature requests** — post in the [forum](https://treefallsound.com/forum/) or open an issue. Better yet, build it and open a PR.
 
+## Editing this manual
+
+This manual is its own repo: [pistomp-manual](https://github.com/sastraxi/pistomp-manual), built with Eleventy and deployed to GitHub Pages. Pages are plain Markdown under `src/`.
+
+The fastest way to fix something: select any text on a page and click the **Suggest edit** button that appears in the right margin. It opens GitHub's editor scrolled to that exact line — edit, commit, and open a PR straight from the browser, no local setup needed.
+
+For bigger changes (new pages, restructuring), clone the repo and follow the same fork/branch/PR workflow described above.
+
 ## Workflow
 
 ### 1. Fork the repo
