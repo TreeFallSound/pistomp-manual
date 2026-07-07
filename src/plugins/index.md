@@ -17,3 +17,4 @@ How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp.
 - [Digital Delay]({{ '/plugins/digital-delay/' | url }}) — Clean, transparent digital delay
 - [Pitch Shifter]({{ '/plugins/pitch-shifter/' | url }}) — Treadle-controlled pitch shifting
 - [Wah]({{ '/plugins/wah/' | url }}) — Treadle and auto-wah filter sweeps
+- [Dimension C]({{ '/plugins/dimension-c/' | url }}) — Wide, lush stereo without the warble
