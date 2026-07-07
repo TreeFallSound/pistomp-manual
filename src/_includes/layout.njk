@@ -3,9 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
+  <title>{{ title }} — pi-Stomp Manual</title>
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  {{ content | safe }}
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <a href="/" class="sidebar-title">pi-Stomp Manual</a>
+      </div>
+      <ul class="nav-list">
+      {%- for entry in collections.all | eleventyNavigation %}
+        <li class="nav-section">
+          <span class="nav-section-title">{{ entry.title }}</span>
+          {%- if entry.children.length %}
+          <ul class="nav-pages">
+            {%- for child in entry.children %}
+            <li><a href="{{ child.url }}" class="nav-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a></li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+      {%- endfor %}
+      </ul>
+    </nav>
+    <main class="content">
+      {{ content | safe }}
+    </main>
+  </div>
 </body>
 </html>
