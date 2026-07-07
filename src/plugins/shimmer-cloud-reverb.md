@@ -44,10 +44,19 @@ Chain it after Shimmizita for the full shimmer+cloud wall-of-sound. High grain c
 
 **Dragonfly Plate Reverb** uses the Stanford NRev plate algorithm (comb-bank → multi-stage allpass cascade) — a genuine plate simulation, not a cheap Schroeder. Best plate reverb replacement.
 
-## What to avoid
+## Also considered
 
 **gx_zita_rev1** is the same clean FDN that Shimmizita builds on, but without the pitch shifter. Beautiful transparent hall reverb — useless for shimmer.
 
 **Airwindows-PocketVerbs** are long allpass-chain Schroeder reverbs. Metallic and lo-fi next to Dragonfly or zita. Useful only as a special-effect color.
 
 **Airwindows-Galactic** has modulated delay lines and a nice atmospheric wash, but no pitch shifter or granular engine. Closer to a chorale reverb than shimmer or cloud.
+
+## Credits
+
+| Plugin | Author | License | Homepage |
+|--------|--------|---------|----------|
+| Shimmizita | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
+| TheCloud | sensorium | GPL-3.0 | [github.com/sensorium/sensorium-plugins](https://github.com/sensorium/sensorium-plugins) |
+| Dragonfly Hall Reverb | Michael Willis, Rob vd Berg | GPL-3.0 | [michaelwillis.github.io/dragonfly-reverb](https://michaelwillis.github.io/dragonfly-reverb) |
+| Dragonfly Plate Reverb | Michael Willis | GPL-3.0 | [michaelwillis.github.io/dragonfly-reverb](https://michaelwillis.github.io/dragonfly-reverb) |

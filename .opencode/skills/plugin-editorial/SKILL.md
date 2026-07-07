@@ -17,15 +17,20 @@ Read the file at `../pi-gen-pistomp/research/<NN-name>.md`. Extract:
 - The winner, runner-up, and what to avoid
 - The recommended settings
 
-### 2. Get MOD-UI display names
+### 2. Get MOD-UI display names and metadata
 
-SSH into the pi-Stomp to find the human-readable names:
+SSH into the pi-Stomp to find the human-readable names and attribution info:
 
 ```sh
-ssh pistomp@pistomp.local "grep 'doap:name' ~/.lv2/<plugin>.lv2/*.ttl"
-```
+# Display name (use modgui:label, not doap:name — doap:name is often the directory-style name)
+ssh pistomp@pistomp.local "grep 'modgui:label' ~/.lv2/<plugin>.lv2/modgui.ttl"
 
-The `doap:name` value is what appears in MOD-UI. Use that throughout the article, not the directory name.
+# Fallback: doap:name
+ssh pistomp@pistomp.local "grep 'doap:name' ~/.lv2/<plugin>.lv2/*.ttl"
+
+# Author, license, homepage (from the plugin's main .ttl file)
+ssh pistomp@pistomp.local "grep -E 'doap:|foaf:|spdx:|license' ~/.lv2/<plugin>.lv2/<plugin>.ttl"
+```
 
 Also get the LV2 URI from `manifest.ttl`:
 
@@ -49,7 +54,7 @@ Create `src/plugins/<slug>.md` with frontmatter:
 
 ```yaml
 ---
-title: <Commercial Pedal Name>
+title: <Descriptive Name — avoid copyrighted product names>
 eleventyNavigation:
   parent: plugins
   key: <slug>
@@ -63,7 +68,8 @@ Follow this structure:
 - **Opening paragraph** — who this is for, what problem it solves, the winner
 - **## Our pick: <MOD-UI name>** — screenshot (class="plugin-screenshot"), why it's the best, recommended settings table, chain placement
 - **## Runner-up: <MOD-UI name>** — screenshot, when you'd pick this instead, what you give up
-- **## What to avoid** — brief explanation of each rejected plugin and why it doesn't work for this use case
+- **## Also considered** (or **Notable mentions**) — brief explanation of each rejected plugin and why it doesn't work for this use case
+- **## Credits** — table with Plugin, Author, License, Homepage columns for every plugin mentioned
 
 ### 5. Update the index
 
@@ -76,3 +82,10 @@ npm run build
 ```
 
 Check that the page renders, images load, and navigation works.
+
+## Conventions
+
+- **No copyrighted product names** in titles, navigation, or H1s. Use descriptive names like "Atmospheric Delay" or "Shimmer & Cloud Reverb" instead of "Strymon TimeLine" or "Strymon BigSky".
+- **Credits table** at the bottom of every article. Fetch `doap:maintainer` (author), `doap:license` (license), and `foaf:homepage` (homepage) from the plugin's `.ttl` file.
+- **Screenshot sizing** is handled by the `plugin-screenshot` CSS class (`max-width: 200px; max-height: 280px`). Use inline `style="position:relative;right:-35px"` for nudging if a screenshot needs visual adjustment.
+- **Display names**: prefer `modgui:label` from `modgui.ttl` over `doap:name` from the plugin `.ttl` — the latter is often the directory/bundle name, not what appears in MOD-UI.

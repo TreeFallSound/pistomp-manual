@@ -56,8 +56,19 @@ No single plugin does pitch-shifted delay taps. Chain **AM pitchshifter** (set t
 
 A rhythmic multi-tap pattern delay has no direct equivalent on the device. The closest approach is to use Bollie Delay XT with its tempo-synced ping-pong mode and short delay times to create rhythmic repeats, or chain multiple delays at different subdivisions.
 
-## What to avoid
+## Also considered
 
 **bentdelay** is a deliberate one-trick lo-fi delay (bitcrush via ring-buffer mask). It covers the Lofi type with genuine character, but cannot serve as a general delay — no clean mode, no modulation, no stereo.
 
 **Modulay** is a mono modulation delay (chorus/vibrato/flanger morph) with no tempo sync, no multi-tap, no ping-pong. Narrow focus — pair it with Tal-Dub-3 if you want the modulated texture, but don't use it as your only delay.
+
+## Credits
+
+| Plugin | Author | License | Homepage |
+|--------|--------|---------|----------|
+| Tal-Dub-3 | TAL-Togu Audio Line | GPL | [tal-software.com](https://tal-software.com) |
+| Bollie Delay XT | Bollie | GPL | [ca9.eu/lv2](https://ca9.eu/lv2) |
+| Reverse Delay | Steve Harris | GPL | [plugin.org.uk](http://plugin.org.uk) |
+| Duck Delay Stereo | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
+| AM pitchshifter | Steve Harris | GPL | [plugin.org.uk](http://plugin.org.uk) |
+| GxEcho-Stereo | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
