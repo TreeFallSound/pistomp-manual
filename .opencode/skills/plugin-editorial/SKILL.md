@@ -65,10 +65,10 @@ eleventyNavigation:
 
 Follow this structure:
 
-- **Opening paragraph** — who this is for, what problem it solves, the winner
-- **## Our pick: <MOD-UI name>** — screenshot (class="plugin-screenshot"), why it's the best, recommended settings table, chain placement
-- **## Runner-up: <MOD-UI name>** — screenshot, when you'd pick this instead, what you give up
-- **## Also considered** (or **Notable mentions**) — brief explanation of each rejected plugin and why it doesn't work for this use case
+- **Opening paragraph** — who this is for, what problem it solves, the winner. End with a colon leading into the pick.
+- **## Our pick: <MOD-UI name>** — screenshot (class="plugin-screenshot"), why it's the best, recommended settings table (rotated — control names as column headers, values in a single row), chain placement
+- **## Also great: <MOD-UI name>** — screenshot, when you'd pick this instead, what you give up
+- **## Also considered** — brief explanation of each rejected plugin and why it doesn't work for this use case
 - **## Credits** — table with Plugin, Author, License, Homepage columns for every plugin mentioned
 
 ### 5. Update the index
@@ -93,3 +93,5 @@ Check that the page renders, images load, and navigation works.
 - **Subjective claims** should be softened with qualifiers ("to our ears", "great if that's what you want") rather than stated as fact.
 - **Practical caveats** (CPU usage, XRUN monitoring, chain complexity) should be included where relevant.
 - **Link to upstream projects** where possible (e.g. Fons Adriaensen's zita-rev1, the original plugin homepage).
+- **Editorial voice:** Lead with musical feel words (fat, warm, vocal, open, tight, squishy, blooming, expensive, breathes). Keep the technical anchors for the nerds (sample rates, LFO phases, filter topologies) but lead with the sound. Tighter and more confident — a colon after the opening paragraph leads into the pick. Do not strip out SPICE, IIR, circuit topology, or any other technical detail — this is a DIY pedal community and that depth is the point. Feel words are the hook; circuit nerdery is the substance. The goal is to push people into action — to make them want to load the plugin and try it.
+- **Settings tables:** Rotated (horizontal) — control names as column headers, values in a single row. No "Control | Setting" header.

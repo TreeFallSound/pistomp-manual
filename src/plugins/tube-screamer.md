@@ -37,7 +37,7 @@ Place it before your fuzz or amp in the MOD-UI chain. The 720 Hz mid-hump tighte
 
 ## Also considered
 
-**GxOverDriver** is a generic two-band waveshaper with no mid-hump, no feedback-loop clipper, and no drive control. It won't tighten a fuzz the way a TS does.
+**GxOverDriver** is a generic two-band waveshaper — it lacks the mid-hump, feedback-loop clipper, and drive control that make a TS work. It won't tighten a fuzz the way a TS does.
 
 **GxClubDrive** is an EF86 pentode preamp model — a tube preamp, not a diode overdrive. It has no mid-hump and no tone control and it won't get you the sound you're looking for.
 

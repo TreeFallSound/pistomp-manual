@@ -58,9 +58,9 @@ A rhythmic multi-tap pattern delay has no direct equivalent on the device. The c
 
 ## Also considered
 
-**bentdelay** is a deliberate one-trick lo-fi delay (bitcrush via ring-buffer mask). It covers the Lofi type with genuine character, but cannot serve as a general delay — no clean mode, no modulation, no stereo.
+**bentdelay** is a deliberate one-trick lo-fi delay (bitcrush via ring-buffer mask). It covers the Lofi type with genuine character, but it's a one-trick pony — clean, modulated, or stereo delays it is not.
 
-**Modulay** is a mono modulation delay (chorus/vibrato/flanger morph) with no tempo sync, no multi-tap, no ping-pong. Narrow focus — pair it with Tal-Dub-3 if you want the modulated texture, but don't use it as your only delay.
+**Modulay** is a mono modulation delay (chorus/vibrato/flanger morph) with a narrow focus — pair it with Tal-Dub-3 if you want the modulated texture, but don't use it as your only delay.
 
 ## Credits
 

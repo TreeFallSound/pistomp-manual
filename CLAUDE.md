@@ -13,6 +13,9 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 - Version callouts inline (v3 vs v2) rather than separate pages.
 - Use "USD" instead of "$" for currency.
 - **pi-Stomp builds on the shoulders of giants.** The plugins are open-source software built by talented musicians and developers. Never let pi-Stomp take credit for their work. Attribute every plugin by author, license, and homepage. Use "these plugins" or "these pedals" rather than "pi-Stomp" when describing what the software does.
+- **Plugin editorial voice:** Lead with musical feel words (fat, warm, vocal, open, tight, squishy, blooming, expensive, breathes). Keep the technical anchors for the nerds (sample rates, LFO phases, filter topologies) but lead with the sound. Tighter and more confident — a colon after the opening paragraph leads into the pick. Do not strip out SPICE, IIR, circuit topology, or any other technical detail — this is a DIY pedal community and that depth is the point. Feel words are the hook; circuit nerdery is the substance. The goal is to push people into action — to make them want to load the plugin and try it.
+- **Settings tables:** Rotated (horizontal) — control names as column headers, values in a single row. No "Control | Setting" header.
+- **Editorial structure:** Our pick → Also great (instead of "Runner-up") → Also considered (instead of "What to avoid").
 
 # Site conventions
 

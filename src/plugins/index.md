@@ -18,3 +18,4 @@ How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp.
 - [Pitch Shifter]({{ '/plugins/pitch-shifter/' | url }}) — Treadle-controlled pitch shifting
 - [Wah]({{ '/plugins/wah/' | url }}) — Treadle and auto-wah filter sweeps
 - [Dimension C]({{ '/plugins/dimension-c/' | url }}) — Wide, lush stereo without the warble
+- [Glitch Granular Delay]({{ '/plugins/glitch-granular-delay/' | url }}) — Scattered grains, freeze, and bitcrush
