@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} — pi-Stomp Manual</title>
-  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | url }}" sizes="any">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body>
   <div class="layout">
     <nav class="sidebar">
       <div class="sidebar-header">
-        <a href="/" class="sidebar-title">pi-Stomp Manual</a>
+        <a href="{{ '/' | url }}" class="sidebar-title">pi-Stomp Manual</a>
       </div>
       <ul class="nav-list">
       {%- for entry in collections.all | eleventyNavigation %}

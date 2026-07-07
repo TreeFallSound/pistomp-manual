@@ -25,7 +25,7 @@ pi-Stomp runs on a pre-built OS image — no manual setup required. You flash th
 3. Click **Choose Storage** → select your microSD card.
 4. Click **Write**.
 
-![Raspberry Pi Imager](/assets/images/rpi-imager.png)
+![Raspberry Pi Imager]({{ '/assets/images/rpi-imager.png' | url }})
 
 ## Step 2 — Configure pistomp.conf
 

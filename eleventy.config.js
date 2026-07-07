@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
 
   return {
+    pathPrefix: "/pistomp-manual/",
     dir: {
       input: "src",
       output: "_site",
