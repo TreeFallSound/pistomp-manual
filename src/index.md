@@ -11,13 +11,13 @@ eleventyNavigation:
 
 The complete guide to the pi-Stomp ecosystem — from building your first kit to developing custom plugins and contributing to the open-source project.
 
-<img src="/assets/images/pi-stomp-v3-hero.png" alt="pi-Stomp v3">
+<img src="{{ '/assets/images/pi-stomp-v3-hero.png' | url }}" alt="pi-Stomp v3">
 
 ## Parts
 
-- **[Building](/building/)** — Obtaining hardware, assembly, and software installation
-- **[Using](/using/)** — Navigation, pedalboards, plugins, and advanced features
-- **[Developers](/developers/)** — Architecture, code structure, and contributing
+- **[Building]({{ '/building/' | url }})** — Obtaining hardware, assembly, and software installation
+- **[Using]({{ '/using/' | url }})** — Navigation, pedalboards, plugins, and advanced features
+- **[Developers]({{ '/developers/' | url }})** — Architecture, code structure, and contributing
 
 ## What is pi-Stomp?
 

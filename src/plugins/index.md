@@ -8,12 +8,12 @@ eleventyNavigation:
 
 # Plugin Reference
 
-How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp. Each page picks a clear winner, explains why, and tells you what you give up.
+How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp. _These are just like, our opinions, man_.
 
-- [Tube Screamer](/plugins/tube-screamer/) — TS-9 / TS-10 stacked boost
-- [Atmospheric Delay](/plugins/atmospheric-delay/) — Multi-machine delay replacement
-- [Shimmer and Cloud Reverb](/plugins/shimmer-cloud-reverb/) — Shimmer and granular reverb replacement
-- [Vintage Fuzz](/plugins/vintage-fuzz/) — Fat, articulate fuzz for solo work
-- [Digital Delay](/plugins/digital-delay/) — Clean, transparent digital delay
-- [Pitch Shifter](/plugins/pitch-shifter/) — Treadle-controlled pitch shifting
-- [Wah](/plugins/wah/) — Treadle and auto-wah filter sweeps
+- [Tube Screamer]({{ '/plugins/tube-screamer/' | url }}) — TS-9 / TS-10 stacked boost
+- [Atmospheric Delay]({{ '/plugins/atmospheric-delay/' | url }}) — Multi-machine delay replacement
+- [Shimmer and Cloud Reverb]({{ '/plugins/shimmer-cloud-reverb/' | url }}) — Shimmer and granular reverb replacement
+- [Vintage Fuzz]({{ '/plugins/vintage-fuzz/' | url }}) — Fat, articulate fuzz for solo work
+- [Digital Delay]({{ '/plugins/digital-delay/' | url }}) — Clean, transparent digital delay
+- [Pitch Shifter]({{ '/plugins/pitch-shifter/' | url }}) — Treadle-controlled pitch shifting
+- [Wah]({{ '/plugins/wah/' | url }}) — Treadle and auto-wah filter sweeps

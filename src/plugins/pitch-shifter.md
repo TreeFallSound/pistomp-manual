@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: plugins
   key: pitch-shifter
   title: Pitch Shifter
-  order: 5
+  order: 6
 ---
 
 # Pitch Shifter

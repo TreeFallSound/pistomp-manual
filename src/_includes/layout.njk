@@ -16,7 +16,7 @@
       <ul class="nav-list">
       {%- for entry in collections.all | eleventyNavigation %}
         <li class="nav-section">
-          <span class="nav-section-title">{{ entry.title }}</span>
+          <a href="{{ entry.url | url }}" class="nav-section-title{% if page.url == entry.url %} active{% endif %}">{{ entry.title }}</a>
           {%- if entry.children.length %}
           <ul class="nav-pages">
             {%- for child in entry.children %}

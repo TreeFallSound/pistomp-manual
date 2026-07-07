@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: plugins
   key: wah
   title: Wah
-  order: 6
+  order: 7
 ---
 
 # Wah

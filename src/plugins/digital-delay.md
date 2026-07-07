@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: plugins
   key: digital-delay
   title: Digital Delay
-  order: 7
+  order: 5
 ---
 
 # Digital Delay
@@ -29,7 +29,7 @@ It also has BPM sync and an invert toggle — extras the DD-3 lacks, but useful 
 
 Place it in the MOD-UI chain after your drive pedals and before reverb.
 
-## Also great for stereo: TAP Stereo Echo
+## Also great: TAP Stereo Echo
 
 <img src="{{ '/assets/images/plugin-dd3-tap-echo.png' | url }}" alt="TAP Stereo Echo" class="plugin-screenshot">
 

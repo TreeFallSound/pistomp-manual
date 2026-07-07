@@ -63,4 +63,4 @@ The kit uses labeled hardware. Keep the bag organized — these IDs are referenc
 
 ## Next step
 
-Once the hardware is assembled, [install the software](/building/software-install/).
+Once the hardware is assembled, [install the software]({{ '/building/software-install/' | url }}).
