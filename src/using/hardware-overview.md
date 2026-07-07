@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: hardware-overview
   title: Hardware Overview
-  order: 2
+  order: 1
 ---
 
 # Hardware Overview

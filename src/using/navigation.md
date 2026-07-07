@@ -9,16 +9,16 @@ eleventyNavigation:
 
 # Navigation & Controls
 
-The pi-Stomp v3 is controlled entirely from the front panel — no computer needed once your pedalboards are loaded. Everything flows through the Navigation encoder, the LCD, the footswitches, and the tweak encoders.
+The pi-Stomp v3 can be controlled entirely from the device: no computer needed once your pedalboards are set up. Simply use the Navigation encoder, the footswitches, and the tweak encoders.
 
 ## The LCD screen
 
 The home screen shows the current pedalboard, active snapshot, and all plugins in the chain. The Navigation encoder moves a yellow highlight between elements; clicking takes action on whatever is highlighted.
 
-<img src="{{ '/assets/images/lcd-homescreen-beths.png' | url }}" alt="Home screen with pedalboard loaded" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-homescreen-beths.png' | url }}" alt="Home screen with pedalboard loaded" style="display:block;width:70%;margin:2rem auto">
 
-- **Pedalboard name** (top) — click to enter pedalboard selection mode
-- **Snapshot name** (below pedalboard) — click to enter snapshot selection mode
+- **Pedalboard name** (top) — click to open the pedalboard menu
+- **Snapshot name** (below pedalboard) — click to open the snapshot menu
 - **Plugin tiles** — each block represents a plugin in the chain. Filled = enabled, unfilled = bypassed
 - **Toolbar icons** (top right) — Wi-Fi status, audio settings, bypass, system menu
 
@@ -34,20 +34,20 @@ The leftmost encoder is the primary interface to the LCD.
 
 ## Selecting a pedalboard
 
-<img src="{{ '/assets/images/lcd-pedalboard-select.png' | url }}" alt="Pedalboard selection" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-pedalboard-select.png' | url }}" alt="Pedalboard selection" style="display:block;width:70%;margin:2rem auto">
 
 1. Rotate the Navigation encoder until the pedalboard name is highlighted (yellow)
-2. Click to enter pedalboard selection mode
+2. Click to open the pedalboard menu
 3. Rotate to scroll through available pedalboards
-4. Click to load the selected pedalboard
+4. Click a pedalboard to load it
 
-Loading a new pedalboard takes a few seconds.
+Loading a new pedalboard takes a few seconds, during which time audio can drop momentarily.
 
 ## Selecting a snapshot
 
-Snapshots store the state of all plugin parameters on a pedalboard — verse, chorus, bridge, all from the same pedalboard.
+Snapshots store the state of all plugin parameters on a pedalboard, allowing different gain staging and effect blending/bypass. Verse, chorus, bridge, even different songs: all from the same pedalboard.
 
-<img src="{{ '/assets/images/lcd-preset-select.png' | url }}" alt="Snapshot selection" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-preset-select.png' | url }}" alt="Snapshot selection" style="display:block;width:70%;margin:2rem auto">
 
 1. Rotate the Navigation encoder until the snapshot name is highlighted
 2. Click to enter snapshot selection mode
@@ -58,28 +58,36 @@ You can also switch snapshots by long-pressing footswitches A and B (previous an
 
 ## Bypassing and enabling plugins
 
-1. Rotate the Navigation encoder until a plugin tile is highlighted
-2. Click to toggle between enabled (filled) and bypassed (unfilled)
+1. Rotate the Navigation encoder until a plugin tile is highlighted (yellow border)
+2. Click to toggle between enabled and bypassed
 
-Plugins assigned to footswitches can also be toggled from the floor.
+An enabled plugin shows as a filled block:
+
+<img src="{{ '/assets/images/lcd-plugin-active.png' | url }}" alt="Plugin enabled — filled block" style="display:block;width:70%;margin:2rem auto">
+
+A bypassed plugin shows as an unfilled (outline) block:
+
+<img src="{{ '/assets/images/lcd-plugin-bypassed.png' | url }}" alt="Plugin bypassed — outline block" style="display:block;width:70%;margin:2rem auto">
+
+Plugins assigned to footswitches can also be toggled from the floor — the footswitch label on the LCD updates to reflect the current state. When it's bound to a plugn, pressing the footswitch will toggle it on and off (bypass/enable).
 
 ## Editing plugin parameters
 
 1. Highlight a plugin tile and long-press the Navigation encoder
 
-<img src="{{ '/assets/images/lcd-param-menu.png' | url }}" alt="Parameter menu" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-param-menu.png' | url }}" alt="Parameter menu" style="display:block;width:70%;margin:2rem auto">
 
 2. Rotate to select a parameter, then click
 
-<img src="{{ '/assets/images/lcd-param-dialog.png' | url }}" alt="Parameter edit dialog" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-param-dialog.png' | url }}" alt="Parameter edit dialog" style="display:block;width:70%;margin:2rem auto">
 
 3. Rotate to adjust the value — changes take effect immediately
 
-<img src="{{ '/assets/images/lcd-param-tweaked.png' | url }}" alt="Parameter adjusted" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-param-tweaked.png' | url }}" alt="Parameter adjusted" style="display:block;width:70%;margin:2rem auto">
 
 4. Click to close the dialog
 
-<img src="{{ '/assets/images/lcd-param-closed.png' | url }}" alt="Back to home screen" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-param-closed.png' | url }}" alt="Back to home screen" style="display:block;width:70%;margin:2rem auto">
 
 ## Footswitches
 
@@ -92,7 +100,15 @@ The four footswitches (A–D, left to right) are user-configurable via MIDI CC. 
 | C | Toggle MIDI CC 62 (plugin bypass) | Open tuner |
 | D | Toggle MIDI CC 63 (plugin bypass) or tap tempo | Toggle tap tempo mode |
 
-In tap tempo mode, footswitch D shows the current BPM. Tap at least four times to set the tempo, then long-press to return to normal mode.
+When a footswitch is assigned to a plugin, its label and color appear on the LCD:
+
+<img src="{{ '/assets/images/lcd-footswitches.png' | url }}" alt="Footswitch labels on LCD" style="display:block;width:70%;margin:2rem auto">
+
+In tap tempo mode, footswitch D shows the current BPM:
+
+<img src="{{ '/assets/images/lcd-tap-tempo.png' | url }}" alt="Tap tempo mode on footswitch D" style="display:block;width:70%;margin:2rem auto">
+
+Tap at least four times to set the tempo, then long-press to return to normal mode.
 
 ## Tweak encoders
 
@@ -102,7 +118,7 @@ Tweak 1 and Tweak 2 send MIDI CC messages (default 70 and 71) and can be assigne
 
 Navigate to the wrench icon in the toolbar and click to open the system menu.
 
-<img src="{{ '/assets/images/lcd-system-menu.png' | url }}" alt="System menu" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-system-menu.png' | url }}" alt="System menu" style="display:block;width:70%;margin:2rem auto">
 
 From here you can manage pedalboards, configure Wi-Fi, adjust audio settings, and access system utilities.
 
@@ -110,10 +126,10 @@ From here you can manage pedalboards, configure Wi-Fi, adjust audio settings, an
 
 From the system menu, select **Tuner**. You can also open and close the tuner by long-pressing footswitch C.
 
-<img src="{{ '/assets/images/lcd-tuner.png' | url }}" alt="Tuner — no signal" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-tuner.png' | url }}" alt="Tuner — no signal" style="display:block;width:70%;margin:2rem auto">
 
 Play a string and the tuner shows the note and a visual indicator.
 
-<img src="{{ '/assets/images/lcd-tuner-signal.png' | url }}" alt="Tuner — with signal" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/lcd-tuner-signal.png' | url }}" alt="Tuner — with signal" style="display:block;width:70%;margin:2rem auto">
 
 Use the navigation encoder to toggle mute while tuning, if desired.
