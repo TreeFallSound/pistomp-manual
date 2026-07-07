@@ -12,4 +12,4 @@ How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp.
 
 - [Tube Screamer](/plugins/tube-screamer/) — TS-9 / TS-10 stacked boost
 - [Atmospheric Delay](/plugins/atmospheric-delay/) — Multi-machine delay replacement
-- [Shimmer & Cloud Reverb](/plugins/shimmer-cloud-reverb/) — Shimmer and granular reverb replacement
+- [Shimmer and Cloud Reverb](/plugins/shimmer-cloud-reverb/) — Shimmer and granular reverb replacement

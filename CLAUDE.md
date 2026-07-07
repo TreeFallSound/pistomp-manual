@@ -12,6 +12,7 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 - One sentence per idea unless grouping is clearer.
 - Version callouts inline (v3 vs v2) rather than separate pages.
 - Use "USD" instead of "$" for currency.
+- **pi-Stomp builds on the shoulders of giants.** The plugins are open-source software built by talented musicians and developers. Never let pi-Stomp take credit for their work. Attribute every plugin by author, license, and homepage. Use "these plugins" or "these pedals" rather than "pi-Stomp" when describing what the software does.
 
 # Site conventions
 

@@ -9,13 +9,13 @@ eleventyNavigation:
 
 # Atmospheric Delay
 
-If you need a multi-machine delay for shoegaze or ambient, pi-Stomp can get you most of the way there. No single plugin covers all 12 delay types, but **Tal-Dub-3** handles the core territory, and dedicated plugins cover Reverse, Duck, and Ice.
+If you need a multi-machine delay for shoegaze or ambient, these pedals can get you most of the way there. No single plugin covers all 12 delay types, but **Tal-Dub-3** handles the core territory, while dedicated plugins are credible replacements for Reverse, Duck, and Ice modes.
 
 ## Our pick: Tal-Dub-3
 
 <img src="/assets/images/plugin-strymon-taldub3.png" alt="Tal-Dub-3" class="plugin-screenshot">
 
-**Tal-Dub-3** is the only professionally-engineered delay plugin on the device — TAL Software's original, ported via DISTRHO/JUCE. It runs at 2× oversampling with allpass-style fractional interpolation, a DC-blocked feedback path with Moog-ladder lowpass and tanh saturation, and a tape-style time-slew modulation layer. This gives it the warm, evolving character that covers Digital, Tape, Analog, Modern, and Tube delay types in a single plugin.
+**Tal-Dub-3** is the most polished delay plugin on the device — TAL Software's original, ported via DISTRHO/JUCE. It runs at 2× oversampling with allpass-style fractional interpolation, a DC-blocked feedback path with Moog-ladder lowpass and tanh saturation, and a tape-style time-slew modulation layer. This gives it the warm, evolving character that covers Digital, Tape, Analog, Modern, and Tube delay types in a single plugin.
 
 | Control | Setting |
 |---------|---------|
@@ -32,7 +32,7 @@ Place it as your main delay send. The tape-style time modulation produces the sa
 
 **Bollie Delay XT** is the most feature-complete delay on paper: true stereo with ping-pong and crossfeed, separate HPF+LPF biquads in both the pre-delay and feedback paths, a sine LFO for modulation, and per-channel tempo sync with dotted/triplet divisions. It covers Sweep and Modern delay types better than Tal-Dub-3 thanks to its dedicated filter section.
 
-**What you give up:** The sonic character is a notch below Tal-Dub-3 — plain linear interpolation (no oversampling), no tape wow, no tube saturation. Use it when you need ping-pong stereo width or aggressive filter sweeps.
+**What you give up:** The sonic character is a notch below Tal-Dub-3 — plain linear interpolation (no oversampling) with no analog-style saturation. Use it when you need ping-pong stereo width or aggressive filter sweeps.
 
 ## Per-machine guide
 
@@ -40,7 +40,7 @@ Place it as your main delay send. The tape-style time modulation produces the sa
 
 <img src="/assets/images/plugin-strymon-revdelay.png" alt="Reverse Delay" class="plugin-screenshot" style="position:relative;right:-35px">
 
-**Reverse Delay** is a purpose-built reverse delay: a circular buffer where the read head moves backward as the write head advances, with feedback and a configurable crossfade window to avoid clicks. Max delay is 5 seconds. It is continuous (no attack-triggered capture) — add a noise gate before it if you need threshold-gated reverse.
+**Reverse Delay** is a purpose-built reverse delay: a circular buffer where the read head moves backward as the write head advances, with feedback and a configurable crossfade window to avoid clicks. Max delay is 5 seconds. It is continuous (no attack-triggered capture), so add a noise gate before it if you need threshold-gated reverse.
 
 ### Duck: Duck Delay Stereo
 
@@ -54,7 +54,7 @@ No single plugin does pitch-shifted delay taps. Chain **AM pitchshifter** (set t
 
 ### Pattern: no single-plugin match
 
-A rhythmic multi-tap pattern delay has no direct equivalent on the device. The closest approach is to use Bollie Delay XT with its tempo-synced ping-pong mode and short delay times to create rhythmic repeats, or chain multiple delays at different subdivisions.
+A rhythmic multi-tap pattern delay has no direct equivalent on the device. The closest approach is to use **Bollie Delay XT** with its tempo-synced ping-pong mode and short delay times to create rhythmic repeats, or chain multiple delays at different subdivisions.
 
 ## Also considered
 
@@ -72,3 +72,5 @@ A rhythmic multi-tap pattern delay has no direct equivalent on the device. The c
 | Duck Delay Stereo | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
 | AM pitchshifter | Steve Harris | GPL | [plugin.org.uk](http://plugin.org.uk) |
 | GxEcho-Stereo | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
+| the infamous bent delay | Spencer Jackson | GPL-2.0 | [ssj71.github.io/infamousPlugins](http://ssj71.github.io/infamousPlugins) |
+| Modulay | SHIRO (Nino de Wit) | ISC | [github.com/ninodewit/SHIRO-Plugins](https://github.com/ninodewit/SHIRO-Plugins) |

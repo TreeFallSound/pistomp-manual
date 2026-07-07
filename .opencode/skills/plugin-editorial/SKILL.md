@@ -85,7 +85,11 @@ Check that the page renders, images load, and navigation works.
 
 ## Conventions
 
-- **No copyrighted product names** in titles, navigation, or H1s. Use descriptive names like "Atmospheric Delay" or "Shimmer & Cloud Reverb" instead of "Strymon TimeLine" or "Strymon BigSky".
-- **Credits table** at the bottom of every article. Fetch `doap:maintainer` (author), `doap:license` (license), and `foaf:homepage` (homepage) from the plugin's `.ttl` file.
+- **No copyrighted product names** in titles, navigation, or H1s. Use descriptive names like "Atmospheric Delay" or "Shimmer and Cloud Reverb" instead of "Strymon TimeLine" or "Strymon BigSky".
+- **Credits table** at the bottom of every article. Fetch `doap:maintainer` (author), `doap:license` (license), and `foaf:homepage` (homepage) from the plugin's `.ttl` file. Every plugin mentioned on the page — including "Also considered" entries — must have a row in the credits table.
 - **Screenshot sizing** is handled by the `plugin-screenshot` CSS class (`max-width: 200px; max-height: 280px`). Use inline `style="position:relative;right:-35px"` for nudging if a screenshot needs visual adjustment.
 - **Display names**: prefer `modgui:label` from `modgui.ttl` over `doap:name` from the plugin `.ttl` — the latter is often the directory/bundle name, not what appears in MOD-UI.
+- **Voice**: use "these plugins" or "these pedals" rather than "pi-Stomp" when describing what the software does. The plugins are the work of their authors, not of pi-Stomp.
+- **Subjective claims** should be softened with qualifiers ("to our ears", "great if that's what you want") rather than stated as fact.
+- **Practical caveats** (CPU usage, XRUN monitoring, chain complexity) should be included where relevant.
+- **Link to upstream projects** where possible (e.g. Fons Adriaensen's zita-rev1, the original plugin homepage).
