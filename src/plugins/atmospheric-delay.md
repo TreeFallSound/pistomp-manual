@@ -15,7 +15,7 @@ If you need a multi-machine delay for shoegaze or ambient, these pedals can get 
 
 <img src="{{ '/assets/images/plugin-strymon-taldub3.png' | url }}" alt="Tal-Dub-3" class="plugin-screenshot">
 
-**Tal-Dub-3** is the most polished delay plugin on the device — TAL Software's original, ported via DISTRHO/JUCE. It runs at 2× oversampling with allpass-style fractional interpolation, a DC-blocked feedback path with Moog-ladder lowpass and tanh saturation, and a tape-style time-slew modulation layer. This gives it the warm, evolving character that covers Digital, Tape, Analog, Modern, and Tube delay types in a single plugin.
+**Tal-Dub-3** is the most polished delay plugin on the device — TAL Software's original, ported via DISTRHO/JUCE. It runs at 2× oversampling with allpass-style fractional interpolation, a DC-blocked feedback path with Moog-ladder lowpass and tanh saturation, and a tape-style time-slew modulation layer. This gives it a warm, evolving character, covering Digital, Tape, Analog, Modern, and Tube delay types in a single plugin.
 
 | Control | Setting |
 |---------|---------|
