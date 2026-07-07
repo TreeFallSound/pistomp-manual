@@ -14,3 +14,4 @@ How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp.
 - [Atmospheric Delay](/plugins/atmospheric-delay/) — Multi-machine delay replacement
 - [Shimmer and Cloud Reverb](/plugins/shimmer-cloud-reverb/) — Shimmer and granular reverb replacement
 - [Vintage Fuzz](/plugins/vintage-fuzz/) — Fat, articulate fuzz for solo work
+- [Pitch Shifter](/plugins/pitch-shifter/) — Treadle-controlled pitch shifting
