@@ -13,11 +13,13 @@ The complete guide to the pi-Stomp ecosystem — from building your first kit to
 
 <img src="{{ '/assets/images/pi-stomp-v3-hero.png' | url }}" alt="pi-Stomp v3">
 
-## Parts
+## In this manual
 
+- **[About]({{ '/about/' | url }})** — The people and mission behind pi-Stomp
 - **[Building]({{ '/building/' | url }})** — Obtaining hardware, assembly, and software installation
-- **[Using]({{ '/using/' | url }})** — Navigation, pedalboards, plugins, and advanced features
+- **[Using]({{ '/using/' | url }})** — Navigation, pedalboards, plugins, MIDI, and configuration
 - **[Developers]({{ '/developers/' | url }})** — Architecture, code structure, and contributing
+- **[Plugins]({{ '/plugins/' | url }})** — Editorial reviews of the best open-source effects
 
 ## What is pi-Stomp?
 
@@ -39,4 +41,4 @@ All pi-Stomp software is free open source (AGPL-3.0). Join us on [GitHub](https:
 
 Founded by Randall Reichenbach, the pi-Stomp project is our passion: a high-quality, open, affordable multi-effects platform for the music community. Every kit is assembled, tested, and shipped by hand. Over 300 kits have been built in 25+ countries.
 
-Learn more about Tree Fall Sound on the [Resources]({{ '/using/resources/' | url }}) page.
+Learn more about the people behind pi-Stomp on the [About]({{ '/about/' | url }}) page.

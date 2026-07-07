@@ -3,7 +3,7 @@ title: Plugin Reference
 eleventyNavigation:
   key: plugins
   title: Plugins
-  order: 4
+  order: 5
 ---
 
 # Plugin Reference

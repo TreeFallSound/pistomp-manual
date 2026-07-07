@@ -3,7 +3,7 @@ title: Building
 eleventyNavigation:
   key: building
   title: Building
-  order: 1
+  order: 2
 ---
 
 # Building

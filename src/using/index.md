@@ -3,7 +3,7 @@ title: Using pi-Stomp
 eleventyNavigation:
   key: using
   title: Using
-  order: 2
+  order: 3
 ---
 
 # Using pi-Stomp
