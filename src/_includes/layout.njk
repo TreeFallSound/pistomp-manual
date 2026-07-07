@@ -20,7 +20,7 @@
           {%- if entry.children.length %}
           <ul class="nav-pages">
             {%- for child in entry.children %}
-            <li><a href="{{ child.url }}" class="nav-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a></li>
+            <li><a href="{{ child.url | url }}" class="nav-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a></li>
             {%- endfor %}
           </ul>
           {%- endif %}
