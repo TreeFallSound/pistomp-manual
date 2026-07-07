@@ -24,7 +24,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npx @11ty/eleventy
+      - run: ELEVENTY_ENV=production npx @11ty/eleventy
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
