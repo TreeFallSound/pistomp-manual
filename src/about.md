@@ -13,6 +13,8 @@ Tree Fall Sound exists to bring multi-effects projects to DIY musicians.
 
 ## Randall Reichenbach
 
+<img src="{{ '/assets/images/randall-reichenbach.jpg' | url }}" alt="Randall Reichenbach" class="plugin-screenshot">
+
 My day jobs have been in electrical and software engineering, but my main passion has always been music. I've been building effects pedals and other musical gadgets since the 1980s. I've always been obsessed with tone, usability, and clever features.
 
 How cool would it be to create a do-everything open expandable effects platform, easily modifiable by anyone not too afraid of Linux and Python? That's the idea that got me rolling on this project. Raspberry Pi and high-def sound cards along with open-source software like LV2 and MOD have finally made such an endeavor possible.
@@ -24,6 +26,8 @@ Stream some of my original music: [artists.landr.com/055120649103](https://artis
 An extensive interview and more pi-Stomp background: [Blokas Reads](https://blokas.io/reads/interview-pi-stomp/)
 
 ## Cam Gorrie
+
+<img src="{{ '/assets/images/cam-gorrie.png' | url }}" alt="Cam Gorrie" class="plugin-screenshot">
 
 I'm a software developer based out of Canada and play a lot of bass guitar. Open-source pedals like the pi-Stomp have a special place in my heart; they make it possible to dial in incredible, reproducible sounds without paying a heavy cost (in time) whenever you want to change something structural.
 
