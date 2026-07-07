@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Build Guide
 
-The pi-Stomp v3 kit requires no soldering. Assembly takes about 1-2 hours with just a small Phillips screwdriver. If you can build Lego, you can build this.
+The pi-Stomp v3 kit requires no soldering. Assembly takes about 90 minutes with just a small Phillips head screwdriver (and a little patience).
 
 Watch a builder walk through the full process:
 
@@ -17,7 +17,7 @@ Watch a builder walk through the full process:
 
 ## Overview
 
-The build breaks down into 10 steps. The [full wiki instructions](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_v3_build_instructions) have detailed photos for each one.
+The linked wiki pages have detailed instructions and photos for each step.
 
 | Step | What you do | Time |
 |------|-------------|------|

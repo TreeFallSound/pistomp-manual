@@ -58,7 +58,7 @@ If `pistomp.local` doesn't resolve, find the pi-Stomp's IP address from the Syst
 
 ## What's next
 
-Your pi-Stomp is ready to use. Head to the [Quick Start]({{ '/using/quick-start/' | url }}) guide to load your first pedalboard and start playing.
+Your pi-Stomp is ready to use and has its first pedalboard loaded! You're ready to plug in and start playing music. Head to the [Quick Start]({{ '/using/quick-start/' | url }}) guide to continue exploring.
 
 ## Troubleshooting
 
