@@ -13,7 +13,7 @@ If you need shimmer and/or cloud reverbs for shoegaze or ambient genres, these p
 
 ## Our pick: Shimmizita
 
-<img src="/assets/images/plugin-strymon-shimmizita.png" alt="Shimmizita" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-shimmizita.png' | url }}" alt="Shimmizita" class="plugin-screenshot">
 
 **Shimmizita** is the only plugin on the device with a pitch shifter embedded *inside* an FDN reverb feedback loop — the same architecture as Valhalla Shimmer. Each of the 8 delay lines has its own pitch shifter, so the tail climbs exponentially into an ethereal ascending shimmer cloud. Controls for shift (±6 semitones), speed, depth, decay (1–8 s), and HF damping.
 
@@ -28,7 +28,7 @@ This is the single most capable shimmer reverb on the device, hands-down.
 
 ## Runner-up: TheCloud
 
-<img src="/assets/images/plugin-strymon-thecloud.png" alt="TheCloud" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-thecloud.png' | url }}" alt="TheCloud" class="plugin-screenshot">
 
 **TheCloud** is a granular delay engine — 20 grain voices reading from a 2-second delay line with randomized position, duration, detune, and panning. It is not a reverb in the strict sense, but the dense cloud of recirculating grains produces the same atmospheric bloom as a cloud reverb algorithm.
 
@@ -36,11 +36,11 @@ Chain it after Shimmizita for the full shimmer+cloud wall-of-sound. Note that th
 
 ## Plain reverb: Dragonfly Hall Reverb / Dragonfly Plate Reverb
 
-<img src="/assets/images/plugin-strymon-dragonflyhall.png" alt="Dragonfly Hall Reverb" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-dragonflyhall.png' | url }}" alt="Dragonfly Hall Reverb" class="plugin-screenshot">
 
 **Dragonfly Hall Reverb** uses the fv3 zrev2 FDN, a proper 8-delay-line reverb with modulated delay lines and band-split decay, based on [Fons Adriaensen's zita-rev1](https://github.com/PelleJuul/zita-rev1) design. Decay up to ~10 s, dense and smooth. This is the best hall/chorale equivalent when you don't need shimmer.
 
-<img src="/assets/images/plugin-strymon-dragonflyplate.png" alt="Dragonfly Plate Reverb" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-dragonflyplate.png' | url }}" alt="Dragonfly Plate Reverb" class="plugin-screenshot">
 
 **Dragonfly Plate Reverb** uses the Stanford NRev plate algorithm (comb-bank → multi-stage allpass cascade). It's a very capable plate reverb.
 

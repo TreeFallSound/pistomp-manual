@@ -52,7 +52,7 @@ Once booted, the LCD shows the home screen. Your pi-Stomp is connected to your W
 
 Open a browser on any device on the same network and go to `http://pistomp.local/`. You should see the MOD-UI web interface — this is where you build pedalboards.
 
-<a href="http://pistomp.local"><img src="/assets/images/mod-ui.png" alt="MOD-UI web interface"></a>
+<a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface"></a>
 
 If `pistomp.local` doesn't resolve, find the pi-Stomp's IP address from the System Menu on the LCD and use that instead.
 

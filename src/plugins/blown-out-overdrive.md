@@ -37,7 +37,7 @@ Pair it with a gentle high-pass ahead of it in the chain (the original circuit r
 
 **GxFenderizer** is a Fender solid-state amp sim — clean-to-crunch, polite, tube-style symmetric soft clip. It's what you'd put *after* this overdrive, not in its place.
 
-**Freakclip** is a hard clipper with a one-pole high-pass difference and brickwall threshold. No analog modelling, no op-amp, no transistor — just buzzy, static intermodulation that destroys chord clarity. Avoid.
+**Freakclip** is a hard clipper with a one-pole high-pass difference and brickwall threshold. It lacks analog modelling, op-amp topology, or transistor character — just buzzy, static intermodulation that destroys chord clarity. Avoid.
 
 ## Credits
 

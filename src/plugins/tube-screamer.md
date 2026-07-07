@@ -13,7 +13,7 @@ If you need a midrange boost to push a fuzz or tighten up a high-gain amp, a Tub
 
 ## Our pick: GxTubeScreamer
 
-<img src="/assets/images/plugin-ts-gxts9.png" alt="GxTubeScreamer" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-ts-gxts9.png' | url }}" alt="GxTubeScreamer" class="plugin-screenshot">
 
 **GxTubeScreamer** is a faithful SPICE-derived model of the Ibanez TS-9. It reproduces the exact circuit topology: a 720 Hz pre-clip high-pass filter (the mid-hump), an op-amp feedback-loop soft clipper with the correct diode equation, and a post-clip tone control. This is not a generic waveshaper: it solves the actual diode pair equation _using the same math as the real pedal_.
 
@@ -29,7 +29,7 @@ Place it before your fuzz or amp in the MOD-UI chain. The 720 Hz mid-hump tighte
 
 ## Runner-up: GxSD1
 
-<img src="/assets/images/plugin-ts-sd1sim.png" alt="GxSD1" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-ts-sd1sim.png' | url }}" alt="GxSD1" class="plugin-screenshot">
 
 **GxSD1** shares the same DSP architecture as GxTubeScreamer (same 720 Hz HPF, same diode equation solver). Two differences: the drive taper is exponential (faster sweep) and there's an extra input coupling filter. It's effectively a TS-9 with a more aggressive gain sweep.
 

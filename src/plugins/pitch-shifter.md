@@ -13,7 +13,7 @@ If you need a treadle-controlled pitch shifter for dive bombs, octave-up leads, 
 
 ## Our pick: Super Whammy
 
-<img src="/assets/images/plugin-pitch-superwhammy.png" alt="Super Whammy" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-pitch-superwhammy.png' | url }}" alt="Super Whammy" class="plugin-screenshot">
 
 **Super Whammy** is a phase vocoder pitch shifter with continuous expression control. Set `First` and `Last` to your endpoints (e.g. 0 to +12 for an octave up), map your expression pedal to `Step`, and sweep between them. A `Clean` blend lets you mix dry signal with the shifted signal. `Fidelity` trades latency for quality — lower values give more glitchy character, higher values are smoother.
 
@@ -25,7 +25,7 @@ On single-note lines the glissando is clean and smooth. On chords the phase voco
 
 ## Runner-up: Drop
 
-<img src="/assets/images/plugin-pitch-drop.png" alt="Drop" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-pitch-drop.png' | url }}" alt="Drop" class="plugin-screenshot">
 
 **Drop** uses the same phase vocoder engine as Super Whammy, but voiced as a drop-tuner: `Step` goes from 0 to -12 semitones. No dry blend, no octave-up range. Use it if you only need a fixed downward shift and don't need the clean mix.
 

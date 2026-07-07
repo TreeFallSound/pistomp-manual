@@ -13,13 +13,13 @@ If you need a wah pedal for classic vocal-style filter sweeps, **GxCrybaby** is 
 
 ## Our pick: GxCrybaby
 
-<img src="/assets/images/plugin-wah-crybaby.png" alt="GxCrybaby" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-wah-crybaby.png' | url }}" alt="GxCrybaby" class="plugin-screenshot">
 
 **GxCrybaby** is a circuit-accurate model of the Dunlop GCB-95 Cry Baby. The developers ran a SPICE simulation of the real pedal's inductor-capacitor network at multiple pedal positions, then fit a 4th-order filter to each one — the same approach used in high-end amp modelling. The result is a sweep that goes from a deep, resonant low-end at heel to a bright, cutting peak at toe, with the correct inverted-log taper that makes it feel just right.
 
 ## Runner-up: Wah
 
-<img src="/assets/images/plugin-wah-wah.png" alt="Wah" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-wah-wah.png' | url }}" alt="Wah" class="plugin-screenshot">
 
 **Wah** uses the same Cry Baby circuit model — a different curve fit from the same SPICE data, but audibly near-identical. It's the manual pedal sibling of the autowah bundle.
 
@@ -37,7 +37,7 @@ To use an expression pedal with a wah, first enable it by running the appropriat
 
 MOD-UI will now map the incoming MIDI CC to that port automatically. Remember to save your pedalboard at the top of the screen after you're done so the binding survives pedalboard changes and reboots.
 
-<img src="/assets/images/plugin-wah-expr-pedal.png" alt="Expression pedal setup" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/plugin-wah-expr-pedal.png' | url }}" alt="Expression pedal setup" style="display:block;width:80%;margin:0 auto 1rem auto">
 
 ## Credits
 

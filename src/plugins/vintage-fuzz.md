@@ -13,7 +13,7 @@ If you need a fat, thick, controlled fuzz for solo work — the kind that stays 
 
 ## Our pick: Fuzz Face FM
 
-<img src="/assets/images/plugin-fuzz-fuzzfacefm.png" alt="Fuzz Face FM" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-fuzz-fuzzfacefm.png' | url }}" alt="Fuzz Face FM" class="plugin-screenshot">
 
 **Fuzz Face FM** is a transistor-pair Fuzz Face simulation with the Fuller Mods — extra INPUT and DRIVE controls that let you clean up the distortion and dial in subtle shades of softer drive. Crank the FUZZ for a full-on roar, or back it off for a gritty overdrive that cleans up when you roll back your guitar volume. A mid-present sound means it's ready to cut through the mix.
 
@@ -27,7 +27,7 @@ This is the rare kind of plugin where chords remain articulate, even at high gai
 
 ## Runner-up: Fuzz Face JH-2
 
-<img src="/assets/images/plugin-fuzz-fuzzfacejh2.png" alt="Fuzz Face JH-2" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-fuzz-fuzzfacejh2.png' | url }}" alt="Fuzz Face JH-2" class="plugin-screenshot">
 
 **Fuzz Face JH-2** uses the same transistor-pair engine as FM, but trades the input gain stage and controls for extra saturation.
 

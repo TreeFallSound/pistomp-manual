@@ -13,7 +13,7 @@ If you need a multi-machine delay for shoegaze or ambient, these pedals can get 
 
 ## Our pick: Tal-Dub-3
 
-<img src="/assets/images/plugin-strymon-taldub3.png" alt="Tal-Dub-3" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-taldub3.png' | url }}" alt="Tal-Dub-3" class="plugin-screenshot">
 
 **Tal-Dub-3** is the most polished delay plugin on the device — TAL Software's original, ported via DISTRHO/JUCE. It runs at 2× oversampling with allpass-style fractional interpolation, a DC-blocked feedback path with Moog-ladder lowpass and tanh saturation, and a tape-style time-slew modulation layer. This gives it the warm, evolving character that covers Digital, Tape, Analog, Modern, and Tube delay types in a single plugin.
 
@@ -28,7 +28,7 @@ Place it as your main delay send. The tape-style time modulation produces the sa
 
 ## Runner-up: Bollie Delay XT
 
-<img src="/assets/images/plugin-strymon-bolliedelayxt.png" alt="Bollie Delay XT" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-bolliedelayxt.png' | url }}" alt="Bollie Delay XT" class="plugin-screenshot">
 
 **Bollie Delay XT** is the most feature-complete delay on paper: true stereo with ping-pong and crossfeed, separate HPF+LPF biquads in both the pre-delay and feedback paths, a sine LFO for modulation, and per-channel tempo sync with dotted/triplet divisions. It covers Sweep and Modern delay types better than Tal-Dub-3 thanks to its dedicated filter section.
 
@@ -38,13 +38,13 @@ Place it as your main delay send. The tape-style time modulation produces the sa
 
 ### Reverse: Reverse Delay
 
-<img src="/assets/images/plugin-strymon-revdelay.png" alt="Reverse Delay" class="plugin-screenshot" style="position:relative;right:-35px">
+<img src="{{ '/assets/images/plugin-strymon-revdelay.png' | url }}" alt="Reverse Delay" class="plugin-screenshot" style="position:relative;right:-35px">
 
 **Reverse Delay** is a purpose-built reverse delay: a circular buffer where the read head moves backward as the write head advances, with feedback and a configurable crossfade window to avoid clicks. Max delay is 5 seconds. It is continuous (no attack-triggered capture), so add a noise gate before it if you need threshold-gated reverse.
 
 ### Duck: Duck Delay Stereo
 
-<img src="/assets/images/plugin-strymon-duckdelay.png" alt="Duck Delay Stereo" class="plugin-screenshot">
+<img src="{{ '/assets/images/plugin-strymon-duckdelay.png' | url }}" alt="Duck Delay Stereo" class="plugin-screenshot">
 
 **Duck Delay Stereo** has a built-in envelope-follower ducker: the delayed signal is attenuated while you play and swells back when you stop. Controls for attack, release, and duck amount make this a direct single-plugin equivalent of a duck delay. Stereo, with ping-pong and coloration controls.
 
