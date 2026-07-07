@@ -19,3 +19,4 @@ How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp.
 - [Wah]({{ '/plugins/wah/' | url }}) — Treadle and auto-wah filter sweeps
 - [Dimension C]({{ '/plugins/dimension-c/' | url }}) — Wide, lush stereo without the warble
 - [Glitch Granular Delay]({{ '/plugins/glitch-granular-delay/' | url }}) — Scattered grains, freeze, and bitcrush
+- [Blown-Out Overdrive]({{ '/plugins/blown-out-overdrive/' | url }}) — Asymmetric op-amp saturation that stays clear under gain

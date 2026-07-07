@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="layout">
-    <nav class="sidebar">
+    <nav class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <a href="{{ '/' | url }}" class="sidebar-title">pi-Stomp Manual</a>
       </div>
@@ -32,5 +32,19 @@
       {{ content | safe }}
     </main>
   </div>
+  <script>
+    (function() {
+      var sidebar = document.getElementById('sidebar');
+      if (!sidebar) return;
+      var saved = sessionStorage.getItem('sidebarScroll');
+      if (saved) sidebar.scrollTop = parseInt(saved, 10);
+      sidebar.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (link && link.getAttribute('href') && !link.getAttribute('href').startsWith('#')) {
+          sessionStorage.setItem('sidebarScroll', sidebar.scrollTop);
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>
