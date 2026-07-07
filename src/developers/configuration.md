@@ -124,7 +124,7 @@ blend_snapshots:
       "1.0": "Fuzz"
 ```
 
-See [Advanced Features]({{ '/using/advanced' | url }}) for details on blend mode.
+See [Configuration]({{ '/using/configuration/#blend-mode' | url }}) for details on blend mode.
 
 ## Settings store
 

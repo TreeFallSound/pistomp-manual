@@ -64,8 +64,7 @@ Footswitch D sends tap tempo BPM via WebSocket (`transport-bpm`), not MIDI. The 
 
 ## Services
 
-- `amidiauto.service` — automatic MIDI interconnection
-- `mod-ttymidi.service` — serial MIDI bridge
+- `ttymidi.service` — serial MIDI bridge
 - `mod-midi-merger.service` — MIDI merging
-- `mod-amidithru.service` — ALSA MIDI Through port
+- `mod-amidithru.service` — creates the `touchosc` ALSA thru port
 - `mod-touchosc2midi.service` — TouchOSC bridge

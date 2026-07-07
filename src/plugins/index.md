@@ -8,7 +8,9 @@ eleventyNavigation:
 
 # Plugin Reference
 
-How to replace specific commercial pedals with the LV2 plugins on your pi-Stomp. _These are just like, our opinions, man_.
+Chasing a particular sound? Each page here picks the LV2 plugins that get you there, with settings to dial in and chain-position advice. Think of it as buying guides for the effects already on your pi-Stomp — _these are just like, our opinions, man_.
+
+The plugins themselves are open-source work by talented developers and musicians: load them up and try them out as you read through these editorials!
 
 - [Tube Screamer]({{ '/plugins/tube-screamer/' | url }}) — TS-9 / TS-10 stacked boost
 - [Atmospheric Delay]({{ '/plugins/atmospheric-delay/' | url }}) — Multi-machine delay replacement

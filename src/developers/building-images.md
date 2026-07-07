@@ -25,7 +25,7 @@ The image includes:
 
 The `pi-gen-pistomp` repo uses GitHub Actions to build the OS image. The workflow:
 
-1. `build-deb.yml` builds the pi-stomp `.deb` package
+1. A push under `debpkgs/pi-stomp/**` triggers `build-pi-stomp.yml`, which calls the reusable `build-deb.yml` workflow with `pkg: pi-stomp` to build the `.deb`
 2. Publishes a GitHub Release tagged `debpkg/pi-stomp/<ver>`
 3. `publish-apt-repo.yml` updates the `gh-pages` apt index
 4. Devices pick up the update on their next `apt upgrade`

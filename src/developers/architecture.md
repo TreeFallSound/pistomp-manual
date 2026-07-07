@@ -68,13 +68,12 @@ The WebSocket bridge runs in a background thread with automatic reconnection.
 
 ## Configuration
 
-Three layers of YAML config, each merging into the one above:
+At runtime, two files are involved:
 
-1. **Default config** — shipped with the OS, defines the hardware layout
-2. **User config** — `/home/pistomp/data/config/default_config.yml`, written at first boot
-3. **Per-pedalboard config** — `{bundle}/config.yml`, overrides controls and MIDI bindings for a specific pedalboard
+1. **User config** — `/home/pistomp/data/config/default_config.yml`. At first boot, `firstboot.sh` *copies* the OS template for the detected hardware into this file; from then on it's the single global config.
+2. **Per-pedalboard config** — `{bundle}/config.yml`, merged field-by-field over the user config on load. Overrides controls and MIDI bindings for a specific pedalboard.
 
-Per-pedalboard configs let you have different footswitch assignments for different pedalboards without touching the global config.
+Only the per-pedalboard layer is a runtime merge. This lets you have different footswitch assignments for different pedalboards without touching the global config.
 
 ## Design principles
 

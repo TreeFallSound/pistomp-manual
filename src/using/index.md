@@ -8,7 +8,9 @@ eleventyNavigation:
 
 # Using pi-Stomp
 
-Everything you need to know to play, tweak, and get the most out of your pi-Stomp — from first power-on to advanced features, recovery, and troubleshooting.
+Your pi-Stomp is built and booted — now let's make it your best friend on stage (other than the drummer). Once your pedalboards are set up, you run the whole thing from the device itself: no computer on stage, just you, your pedalboards, snapshots, and footswitches.
+
+This section covers everything from first power-on to the deeper features: MIDI mapping, blend mode, NAM capture, recovery, and backups.
 
 - **[Quick Start]({{ '/using/quick-start/' | url }})** — Get plugged in and making music in minutes
 - **[Hardware Overview]({{ '/using/hardware-overview/' | url }})** — Front panel, rear panel, and what's inside
@@ -23,5 +25,3 @@ Everything you need to know to play, tweak, and get the most out of your pi-Stom
 - **[Recovery]({{ '/using/recovery/' | url }})** — Crash recovery, log viewer, factory reset
 - **[Backup & Restore]({{ '/using/backup-restore/' | url }})** — Saving and transferring your pedalboards
 - **[Troubleshooting]({{ '/using/troubleshooting/' | url }})** — No audio, WiFi issues, glitching, and more
-- **[MIDI Implementation]({{ '/using/midi-implementation/' | url }})** — CC map, routing, and external MIDI
-- **[Configuration]({{ '/using/configuration/' | url }})** — Footswitches, encoders, expression pedal, and per-pedalboard overrides

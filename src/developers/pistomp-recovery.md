@@ -17,7 +17,7 @@ The code lives at [github.com/TreeFallSound/pistomp-recovery](https://github.com
 
 ## Activation
 
-- **Automatic**: systemd `OnFailure` — 3 crashes in 180 seconds triggers the recovery screen
+- **Automatic**: systemd `OnFailure` — the recovery screen triggers when `mod-ala-pi-stomp` or `mod-ui` fails 3 times within 60 seconds (`StartLimitBurst=3`, `StartLimitIntervalSec=60` in the service units)
 - **Manual**: System Menu → Recovery mode
 
 ## Features
@@ -27,12 +27,16 @@ The code lives at [github.com/TreeFallSound/pistomp-recovery](https://github.com
 - **Per-pedalboard operations** — reset individual pedalboards to checkpoint
 - **Per-package operations** — update individual system packages
 - **Factory reset** — wipes user data and restores factory defaults
-- **Health check pipeline** — JACK → mod-host → mod-ui → pi-stomp
+- **Install-failure rollback** — if a package fails to install, the cached previous version is restored automatically; after a successful install, only the services tied to the updated packages are restarted
 - **Navigation stack** — back/forward through screens
+
+## Developer note: git-expanded source blocks updates
+
+If you've run `util/expand-git.sh` to turn the installed `/opt/pistomp/pi-stomp` tree into a full git checkout (marker file `.git/EXPANDED`), recovery **skips pi-stomp in "Update All"**, shows a red badge, and displays *"Cannot update pi-stomp: using git. Run util/contract-git.sh to re-enable updates."* This prevents an apt update from clobbering your working tree. Run `util/contract-git.sh` to restore normal OTA updates.
 
 ## Architecture
 
-The application uses a **Facet** pattern — each subsystem (config, pedalboards, plugins, packages) is a self-contained facet with git-backed versioning.
+The application uses a **Facet** pattern — each subsystem is a self-contained facet with git-backed versioning. The five facets (config, pedalboards, plugins, packages, boot) are grouped into the four user-facing **domains** the recovery UI exposes: Pedalboards, Plugins, Config (config + boot facets), and System (packages facet).
 
 ### Facets
 
@@ -42,8 +46,9 @@ The application uses a **Facet** pattern — each subsystem (config, pedalboards
 | Pedalboards | `pedalboards.py` | Git-backed pedalboard versioning |
 | Plugins | `plugins.py` | LV2 plugin management, factory reset |
 | Packages | `packages/packages.py` | System package management |
-| Boot | `boot.py` | `config.txt` and `jackdrc` management |
-| Service | `service.py` | Systemd service management, crash diagnosis |
+| Boot | `boot.py` | `/boot/config.txt`, `/boot/cmdline.txt`, `/boot/pistomp.conf`, `jackdrc`, ALSA state |
+
+Service and crash management (`service.py`) sits alongside the facets but is not itself a facet.
 
 ### Backends
 
@@ -84,8 +89,8 @@ uv run pistomp-recovery-emulator --force-crash
 |-----|--------|
 | Arrow keys | Navigate |
 | Enter / Space | Select |
-| L | Long press |
-| Esc | Back |
+| L | Long press (back / cancel) |
+| Esc | Quit the emulator |
 
 ## CLI
 

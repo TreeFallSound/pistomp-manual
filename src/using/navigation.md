@@ -106,7 +106,7 @@ When a footswitch is assigned to a plugin, its label and color appear on the LCD
 
 ## Tweak encoders
 
-Tweak 1 and Tweak 2 send MIDI CC messages (default 70 and 71) and can be assigned to any plugin parameter via MOD-UI. The Volume encoder (Tweak 3) adjusts the master output level.
+Tweak 1 and Tweak 2 send MIDI CC messages (default 70 and 71) and can be assigned to any plugin parameter via MOD-UI. Long-pressing them also changes snapshots by default — Tweak 1 previous, Tweak 2 next. The Volume encoder (Tweak 3) adjusts the master output level.
 
 ## Global bypass
 
@@ -116,7 +116,7 @@ Click the button to toggle. Long-press to change which channels are bypassed —
 
 ## Tap tempo
 
-Long-press footswitch D to enter tap tempo mode. The footswitch label changes to show the current BPM. Tap at least four times to set the tempo. Long-press again to return to normal mode.
+Long-press footswitch D to enter tap tempo mode. The footswitch label changes to show the current BPM. The tempo is set from the second tap onward; keep tapping (it averages the last four intervals) to home in on a steady value. Tempos below 40 BPM are ignored. Long-press again to return to normal mode.
 
 To save the tempo for a pedalboard: System Menu → **Pedalboard Management** → **Save current pedalboard**.
 

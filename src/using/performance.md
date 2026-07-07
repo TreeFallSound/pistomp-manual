@@ -11,9 +11,9 @@ eleventyNavigation:
 
 ## Buffer size and sample rate
 
-The JACK audio server runs at 48 kHz with 128 frames per period by default, giving approximately 2.67 ms of latency. The period size controls the trade-off between latency and CPU load:
+The JACK audio server runs at 48 kHz with 128 frames per period by default. JACK uses two periods (`-n 2`), so the figures below are per-period (frames ÷ 48000); the actual round-trip I/O latency is roughly double. The period size controls the trade-off between latency and CPU load:
 
-| Frames | Latency at 48 kHz | CPU load |
+| Frames | Per-period latency at 48 kHz | CPU load |
 |--------|-------------------|----------|
 | 128 | 2.67 ms | Higher |
 | 256 | 5.33 ms | Lower |
@@ -85,7 +85,7 @@ If you see throttling, improve ventilation or reduce CPU load. Typical operating
 
 ## Power supply
 
-The pi-Stomp v3 requires a 27W USB-C power supply (5V / 5A). Insufficient power can cause throttling and audio glitches. Check for undervoltage warnings:
+The pi-Stomp v3 needs at least 15W (5V / 3A); the factory 27W (5V / 5A) adapter is recommended and required for full-power USB peripherals. Insufficient power can cause throttling and sudden shutdowns. Check for undervoltage warnings:
 
 ```bash
 dmesg | grep -i voltage

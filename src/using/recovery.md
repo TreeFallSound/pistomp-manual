@@ -33,13 +33,19 @@ Updates are cumulative — you don't need to install them in order. Just run Upd
 
 ### How updates work
 
+Updates need an internet connection. Recovery checks connectivity first; if the pi-Stomp is offline, the Updates menu shows **No internet** instead of a package list. While it refreshes the package database, the live `apt` output scrolls on screen and you can cancel at any time.
+
 When you select Updates, recovery shows you what's available and lets you pick individual packages or install everything at once. During installation, a progress bar shows what's happening:
 
 <img src="{{ '/assets/images/recovery-progress.png' | url }}" alt="Update progress" style="display:block;width:70%;margin:2rem auto">
 
-After updates finish, recovery runs a health check — it restarts services in order (JACK → mod-host → mod-ui → pi-stomp) and confirms everything came back clean. If something fails, it rolls back automatically.
+If a package fails to install, recovery automatically restores the previous version from its cached copy before anything is restarted. After a successful install, it restarts only the services affected by the packages you updated.
 
 <img src="{{ '/assets/images/recovery-done.png' | url }}" alt="Update complete" style="display:block;width:70%;margin:2rem auto">
+
+### Unverified packages
+
+If installed package files no longer match what the system recorded (a `dpkg --verify` mismatch — e.g. a file was edited or corrupted), the recovery main menu shows an **N package(s) unverified** entry. Open it to see which packages are affected; reinstalling or updating them restores the recorded files.
 
 ## Crash screen
 
@@ -71,23 +77,22 @@ The log viewer shows the complete journalctl output for the crashed service. Use
 ## Restarting services
 
 - **Restart Jack** — restarts the JACK audio server. Use this if audio stops working but the LCD is still responsive.
-- **Restart MOD** — restarts mod-host and mod-ui. Use this if plugins stop loading or the web interface is unresponsive.
+- **Restart MOD** — restarts mod-host. Use this if plugins stop loading.
 
 ## Rolling back to a known-good state
 
-pi-Stomp tracks changes to five areas, called **domains**:
+pi-Stomp tracks changes in four **domains**:
 
 | Domain | What it covers |
 |--------|---------------|
-| Config | `default_config.yml`, `settings.yml` |
 | Pedalboards | All your pedalboard bundles |
 | Plugins | User-installed LV2 plugins |
-| Packages | System packages (pi-stomp, mod-host, jack, etc.) |
-| Boot | `/boot/config.txt`, `/etc/jackdrc`, ALSA state |
+| Config | `default_config.yml`, `settings.yml`, and boot files (`/boot/config.txt`, `/boot/cmdline.txt`, `/etc/jackdrc`, ALSA state) |
+| System | System packages (pi-stomp, mod-host, jack, etc.) |
 
 For each domain, the system keeps two reference points:
 
-- **Checkpoint** — a snapshot of the current state that you can return to. The system creates a checkpoint automatically after successful updates. You can also create one manually.
+- **Checkpoint** — a snapshot of the current state that you can return to. Create one manually before an experiment you might want to undo.
 - **Factory** — the original state as shipped with the OS image. The fallback if everything goes wrong.
 
 **Reset to Checkpoint** reverts one or more domains to their last known-good state. Your pedalboards, config, and plugins go back to how they were at the last checkpoint. Useful if an experiment went wrong.

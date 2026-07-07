@@ -46,51 +46,58 @@ Set automatically by `firstboot.sh` based on Pi model. Don't change this unless 
 footswitches:
   - id: 0
     adc_input: 0
+    ledstrip_position: 0
     midi_CC: 60
-    longpress: next_snapshot
+    longpress: previous_snapshot
   - id: 1
     adc_input: 1
+    ledstrip_position: 1
     midi_CC: 61
-    longpress: previous_snapshot
+    longpress: next_snapshot
   - id: 2
     adc_input: 2
+    ledstrip_position: 2
     midi_CC: 62
     longpress: toggle_tuner_enable
   - id: 3
     adc_input: 3
+    ledstrip_position: 3
     midi_CC: 63
-    tap_tempo: toggle_tap_tempo
+    longpress: toggle_tap_tempo_enable
+    tap_tempo: set_mod_tap_tempo
 ```
 
 | Field | What it does |
 |-------|-------------|
 | `id` | Physical position (0 = leftmost) |
 | `adc_input` | Analog input pin on the MCP3008 ADC |
+| `ledstrip_position` | v3 LED strip pixel index for this switch |
 | `midi_CC` | MIDI CC number sent on press |
-| `longpress` | Action on long-press (`next_snapshot`, `previous_snapshot`, `toggle_tuner_enable`) |
-| `tap_tempo` | Action for tap tempo mode (`toggle_tap_tempo`) |
+| `longpress` | Long-press action: `next_snapshot`, `previous_snapshot`, `toggle_bypass`, `toggle_tuner_enable`, `toggle_tap_tempo_enable` |
+| `tap_tempo` | Action for tap tempo mode (`set_mod_tap_tempo`) |
 
 ## Encoders
 
 ```yaml
 encoders:
-  - id: 0
-    type: navigation
   - id: 1
-    type: tweak
     midi_CC: 70
+    longpress: previous_snapshot
   - id: 2
-    type: tweak
     midi_CC: 71
+    longpress: next_snapshot
   - id: 3
-    type: volume
+    type: VOLUME
 ```
+
+The navigation encoder (id 0) is wired in hardware, not defined here — don't add it to the config. Only the tweak and volume encoders are configurable.
 
 | Field | What it does |
 |-------|-------------|
-| `id` | Physical position (0 = leftmost) |
-| `type` | `navigation`, `tweak`, or `volume` |
-| `midi_CC` | MIDI CC sent on rotation (not used with `volume`) |
+| `id` | Physical position (1, 2, 3 — id 0 is the fixed navigation encoder) |
+| `type` | `KNOB` (default, sends MIDI CC) or `VOLUME` (controls output level) |
+| `midi_CC` | MIDI CC sent on rotation (cannot be used with `type: VOLUME`) |
+| `longpress` | Long-press action, e.g. `previous_snapshot` / `next_snapshot` |
 
 ## Analog controls (knobs and expression pedal)
 
@@ -140,15 +147,24 @@ Only the fields you specify are overridden. The rest keep their global defaults.
 
 ## External MIDI routing
 
-Route a control to an external MIDI device instead of the internal virtual port:
+Two mechanisms:
+
+**Per-control routing** — add `midi_port:` (and optionally `midi_channel:`) to a footswitch, encoder, or analog control entry. The value is the exact ALSA client name from `aconnect -l`. That control's MIDI then goes to the external device instead of the internal virtual port, falling back to the virtual port only if the device is unavailable.
+
+**On-load messages** — send fixed MIDI messages to external devices whenever a pedalboard loads (e.g. to recall a preset on an external pedal):
 
 ```yaml
-hardware:
-  external_midi:
-    enabled: true
+external_midi:
+  enabled: true
+  send_delay_ms: 10          # delay between consecutive messages
+  messages:
+    Source Audio C4 Synth:   # exact ALSA client name from `aconnect -l`
+      - [0xB0, 0x66, 0x00]   # CC 102 = 0
+    HX Stomp:
+      - [0xC0, 0x00]         # Program Change 0
 ```
 
-Or per-control by adding `midi_port:` to a footswitch, encoder, or analog control entry. The value is the ALSA client name from `aconnect -l`.
+Both can be overridden per-pedalboard in the pedalboard's `config.yml`.
 
 ## Blend mode
 
@@ -174,6 +190,14 @@ blend_snapshots:
       "0.5": "Crunch"     # snapshot name at halfway
       "1.0": "Fuzz"       # snapshot name at toe position
 ```
+
+`stops` accepts two forms. The dict form above maps a position (0.0–1.0) to a snapshot, referenced either **by name** (case-insensitive prefix match) or **by 0-based index**. The list form spaces snapshots evenly for you:
+
+```yaml
+    stops: ["Quiet", "Loud"]   # auto-placed at 0.0 and 1.0
+```
+
+Up to four stops are allowed.
 
 ### Interpolation curves
 

@@ -9,25 +9,32 @@ eleventyNavigation:
 
 # Backup & Restore
 
-Back up your pedalboards and user data for safekeeping or to transfer to a different pi-Stomp. Restoring adds pedalboards that don't already exist on the target system — it won't clobber existing data.
+Back up your pedalboards and user data for safekeeping or to transfer to a different pi-Stomp. Restore merges the backup into the target system: it adds missing files and overwrites existing ones with the archived copy when the archived copy is newer (`unzip -o -u`).
 
 ## Backup via USB drive
 
 1. Insert a USB drive (500 MB or more) into the pi-Stomp
-2. SSH into the pi-Stomp:
+2. On the LCD, navigate to **System Menu** → **Pedalboard Management** → **Backup data**
+3. Wait for the backup to complete (a minute or two)
+
+The backup is written to `backups/pistomp_backup.zip` on the USB drive. Once it finishes, you can remove the drive.
+
+The `.lv2/` directory holds **user-installed** plugins downloaded through MOD-UI (PatchStorage). It's excluded to keep the backup small; re-download those plugins from PatchStorage on the target system. Factory plugins live in `/usr/lib/lv2` and come from the OS image, not this directory.
+
+### Backup over SSH
+
+You can also run the same backup manually over SSH — useful for scripting:
 
 ```bash
 ssh pistomp@pistomp.local
 sudo mount /dev/sda1 /media/usb0
 [ ! "$(mount | grep /media/usb0)" ] && echo "Mount failed!" && exit
 sudo mkdir -p /media/usb0/backups
-sudo zip -rq /media/usb0/backups/pistomp_backup.zip /home/pistomp/data -x "/home/pistomp/data/.lv2/*"
+cd /home/pistomp/data && sudo zip -rq /media/usb0/backups/pistomp_backup.zip . -x ".lv2/*"
 sudo umount /media/usb0
 ```
 
-This takes a minute or two. Once the USB drive is unmounted, you can remove it.
-
-The `.lv2/` directory is excluded because those are system-installed plugins — they're restored by reinstalling the OS image or running system updates.
+This mirrors the device's own backup script (`util/data-backup.sh`): it `cd`s into `/home/pistomp/data` and zips `.` with a relative exclude, so the restore extracts to the right place. Zipping the absolute path or using a leading-slash exclude will not restore or exclude correctly.
 
 ## Restore from USB drive
 

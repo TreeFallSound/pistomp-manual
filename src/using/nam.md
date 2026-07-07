@@ -29,24 +29,27 @@ pi-Stomp v3.2.0 adds a NAM Capture panel accessible from the System Menu. This l
 
 ### What you need
 
-- A guitar or bass
 - An amplifier or pedal you want to profile
-- A reamp box (to connect your pi-Stomp output to the amp input)
-- The standardized reamp signal file (`T3K-sweep-v3.wav`) — download from [tone3000.com/capture](https://tone3000.com/capture)
+- A cable from a pi-Stomp output to the amp or pedal input
+
+You don't need to plug an instrument in — the capture drives the standardized reamp signal itself. That file (`T3K-sweep-v3.wav`) ships with the OS image, so there's nothing to download.
+
+The pi-Stomp's output is capable enough to drive an amp or pedal front-end directly; use the **Input Gain** control to match the send level to what a guitar would deliver. A reamp box (which attenuates line level to instrument level and raises the source impedance) gives a cleaner, more standardized match, but it isn't required — full-rig and pedal captures work fine without one. You would only need to add preamp gain instead if you were capturing a bare power-amp / FX-return input, which expects line level.
 
 ### Capture workflow
 
-1. Connect your instrument to pi-Stomp **In 1**
-2. Connect pi-Stomp **Out 1** to your amp input (via reamp box)
-3. Connect a microphone or load box from your amp back to pi-Stomp **In 2**
-4. Open the System Menu and select **NAM Capture**
+1. Connect pi-Stomp **Out 2** to your amp or pedal input (directly, or through a reamp box)
+2. Connect a microphone or load box from your amp back to pi-Stomp **In 2**
+3. Open the System Menu and select **NAM Capture**
+
+**Out 1** plays back the wet signal coming from the captured pedal or amp, so you can monitor the capture. If you don't want to hear it, leave Out 1 disconnected during the capture.
 
 The capture panel shows the setup view:
 
 <img src="{{ '/assets/images/nam-idle.png' | url }}" alt="NAM Capture — idle/setup view" class="plugin-screenshot">
 
 - **Name** — name your capture (appears as the filename)
-- **Input Gain** — adjust the level of your instrument signal (Tweak 1)
+- **Input Gain** — adjust the level of the returning signal at In 2 (Tweak 1)
 - **Headphone Vol** — adjust monitoring volume (Tweak 2)
 - **Start** — begins the capture
 
@@ -79,7 +82,7 @@ The panel shows the error message and freezes the meters for diagnosis. Common c
 
 - Input signal too hot (clipping)
 - No signal from the amp (check connections)
-- Sweep file not found
+- Sweep file not found (old image?)
 
 **Aborted:**
 
@@ -91,6 +94,15 @@ You can abort at any time during capture.
 
 - **[Tone3000](https://www.tone3000.com/)** — thousands of free NAM models of amps, cabs, and pedals. Also provides the capture page for training your own models.
 - **[Tone3000 Capture](https://tone3000.com/capture)** — upload your sweep WAV and train a NAM model in your browser (uses Google Colab).
-- **[Neural Amp Modeler](https://github.com/mikeoliphant/neural-amp-modeler)** — the original NAM project by Mike Oliphant. Open-source model training and playback.
+- **[Neural Amp Modeler](https://github.com/sdatkinson/neural-amp-modeler)** — the original NAM project by Steven Atkinson. Open-source model training. The LV2 plugin and much of the surrounding tooling are maintained by Mike Oliphant.
 - **[Tone Junkie](https://tonejunkie.com/)** — commercial and free NAM model packs.
 - **[NAM Discord](https://discord.gg/neuralampmodeler)** — community for sharing models and troubleshooting captures.
+
+## Reamping references
+
+Background on levels and impedance when driving an amp or pedal from a line output:
+
+- **[Sound On Sound — Can I 're-amp' a line-level signal?](https://www.soundonsound.com/sound-advice/q-can-re-amp-line-level-signal)**
+- **[DIY Recording Equipment — How the LINE2AMP reamping box works (and why)](https://www.diyrecordingequipment.com/blogs/news/15851828-exactly-how-the-line2amp-reamping-box-works-and-why)**
+- **[admiralbumblebee — Do you need a reamp box, or is a passive DI enough?](https://www.admiralbumblebee.com/music/2018/11/24/Do-you-need-a-Reamp-or-is-a-Passive-DI-enough.html)**
+- **[Radial Engineering — How to Reamp for a perfect tone](https://www.radialeng.com/blog/how-to-reamp-for-a-perfect-tone)**

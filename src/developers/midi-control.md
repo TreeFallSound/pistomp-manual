@@ -17,12 +17,12 @@ There is no router class. The "router" is the sink field plus the code each sink
 
 ## MIDI routing
 
-Emitted CCs go to a single ALSA virtual port. On the deployed system, rtmidi port 0 resolves to the "Midi Through Port-0" created by `amidithru` (ALSA client 14:0). JACK bridges this via `-X seq`:
+Emitted CCs go to a single ALSA virtual port. On the deployed system, rtmidi port 0 resolves to the kernel "Midi Through Port-0" (ALSA client 14:0, created by `snd-seq-dummy`). Note this is a separate port from the `touchosc` thru port that `mod-amidithru.service` creates. JACK bridges the Midi Through port via `-X seq`:
 
 ```
 Handler _emit_midi()  ← chosen by input dispatch
     ↓ MIDI CC via rtmidi
-ALSA Midi Through (amidithru, client 14:0)
+ALSA Midi Through Port-0 (client 14:0)
     ↓ JACK (-X seq)
     ├→ mod-host:midi_in (MIDI Learn for parameter control)
     └→ Available in MOD-UI for wiring to LV2 MIDI plugins
@@ -62,7 +62,7 @@ Config overlay per pedalboard can change MIDI CC, relay binding, preset, color, 
 
 `AnalogMidiControl` (`pistomp/analogmidicontrol.py`) reads the 10-bit ADC (0–1023) via MCP3008 SPI, converts to MIDI CC (0–127) using `as_midi_value()`. Threshold-based change detection prevents jitter. `_clamp_endpoints()` forces values near 0 or 1023 to exact endpoints.
 
-Types: `KNOB` and `EXPRESSION` (config-driven). When `autosync: true`, `initialize()` reads the ADC and sends current position on pedalboard load, preventing stale state after switching.
+Types: `KNOB` and `EXPRESSION` (config-driven). When `autosync: true`, `Hardware.sync_analog_controls()` (`pistomp/hardware.py`, called from `Modhandler.set_current_pedalboard()`) reads the ADC and sends the current position on pedalboard load, preventing stale state after switching.
 
 ## Optimistic MIDI
 
