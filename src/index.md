@@ -39,4 +39,4 @@ All pi-Stomp software is free open source (AGPL-3.0). Join us on [GitHub](https:
 
 Founded by Randall Reichenbach, the pi-Stomp project is our passion: a high-quality, open, affordable multi-effects platform for the music community. Every kit is assembled, tested, and shipped by hand. Over 300 kits have been built in 25+ countries.
 
-Learn more about Tree Fall Sound [on the wiki](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_user-guide#about_tree_fall_sound).
+Learn more about Tree Fall Sound on the [Resources]({{ '/using/resources/' | url }}) page.

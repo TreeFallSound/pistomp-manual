@@ -28,7 +28,7 @@ The pi-Stomp v3 is a self-contained multi-effects pedal built around a Raspberry
 - **USB-C power** — at least 15W (3A @ 5V) is required; the factory adapter is 27W
 - **4x USB-A ports** — USB-MIDI controllers, flash drives, wireless adapters
 - **1/8" (3.5mm) TRS MIDI in/out** — with the MIDI + Expression Add-On Kit
-- **1/4" expression pedal input** — with the MIDI + Expression Add-On Kit
+- **1/4" expression pedal input** — with the MIDI + Expression Add-On Kit. Connect a standard expression pedal. The input is disabled by default — enable it with `~/extras/expression-pedal.sh on` via SSH (see [Configuration]({{ '/using/configuration' | url }})).
 
 ## Inside
 

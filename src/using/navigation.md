@@ -69,7 +69,7 @@ A bypassed plugin shows as an unfilled (outline) block:
 
 <img src="{{ '/assets/images/lcd-plugin-bypassed.png' | url }}" alt="Plugin bypassed — outline block" style="display:block;width:70%;margin:2rem auto">
 
-Plugins assigned to footswitches can also be toggled from the floor — the footswitch label on the LCD updates to reflect the current state. When it's bound to a plugn, pressing the footswitch will toggle it on and off (bypass/enable).
+Plugins assigned to footswitches can also be toggled from the floor — the footswitch label on the LCD updates to reflect the current state. When it's bound to a plugin, pressing the footswitch will toggle it on and off (bypass/enable).
 
 ## Editing plugin parameters
 
@@ -104,15 +104,27 @@ When a footswitch is assigned to a plugin, its label and color appear on the LCD
 
 <img src="{{ '/assets/images/lcd-footswitches.png' | url }}" alt="Footswitch labels on LCD" style="display:block;width:70%;margin:2rem auto">
 
-In tap tempo mode, footswitch D shows the current BPM:
-
-<img src="{{ '/assets/images/lcd-tap-tempo.png' | url }}" alt="Tap tempo mode on footswitch D" style="display:block;width:70%;margin:2rem auto">
-
-Tap at least four times to set the tempo, then long-press to return to normal mode.
-
 ## Tweak encoders
 
 Tweak 1 and Tweak 2 send MIDI CC messages (default 70 and 71) and can be assigned to any plugin parameter via MOD-UI. The Volume encoder (Tweak 3) adjusts the master output level.
+
+## Global bypass
+
+The bypass toolbar button (power icon) toggles audio processing on and off. When the icon is green, processing is active. When grey, the signal passes through unprocessed.
+
+Click the button to toggle. Long-press to change which channels are bypassed — most users will prefer **Left & Right** bypass.
+
+## Tap tempo
+
+Long-press footswitch D to enter tap tempo mode. The footswitch label changes to show the current BPM. Tap at least four times to set the tempo. Long-press again to return to normal mode.
+
+To save the tempo for a pedalboard: System Menu → **Pedalboard Management** → **Save current pedalboard**.
+
+Not all plugins use the host tap tempo. Bollie Delay is one that does — set its Tempo Mode to **MOD/Host**.
+
+## Notes panel
+
+v3.2.0 adds a notes panel for pedalboard and plugin annotations. Notes appear with a `✎` prefix on the pedalboard grid. Access them from the system menu or plugin long-press menu.
 
 ## System menu
 
