@@ -1,4 +1,6 @@
 const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
 const markdownItAnchor = require("markdown-it-anchor");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
@@ -39,6 +41,15 @@ module.exports = function (eleventyConfig) {
   // Frontmatter isn't seen by markdown-it, so its line numbers start
   // at 1 within the content only. This filter returns how many lines
   // of frontmatter precede the content, so callers can offset by it.
+  // Cache-busts static assets (CSS, JS) so browsers pick up new content on
+  // deploy without needing a hard refresh: the query string changes only
+  // when the file's contents actually change.
+  eleventyConfig.addFilter("fileHash", (relPath) => {
+    const filePath = path.join(__dirname, "src", relPath);
+    const content = fs.readFileSync(filePath);
+    return crypto.createHash("md5").update(content).digest("hex").slice(0, 8);
+  });
+
   eleventyConfig.addFilter("frontMatterLineCount", (inputPath) => {
     const raw = fs.readFileSync(inputPath, "utf8");
     const lines = raw.split("\n");

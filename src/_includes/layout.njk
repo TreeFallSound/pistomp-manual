@@ -9,10 +9,10 @@
   <link rel="canonical" href="{{ redirect | url }}">
   {%- endif %}
   <link rel="icon" href="{{ '/assets/images/favicon.ico' | url }}" sizes="any">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}?v={{ 'assets/css/style.css' | fileHash }}">
   {%- if extraCss %}
   {%- for sheet in (extraCss if extraCss is iterable and extraCss is not string else [extraCss]) %}
-  <link rel="stylesheet" href="{{ ('/assets/css/' + sheet) | url }}">
+  <link rel="stylesheet" href="{{ ('/assets/css/' + sheet) | url }}?v={{ ('assets/css/' + sheet) | fileHash }}">
   {%- endfor %}
   {%- endif %}
 </head>
@@ -55,6 +55,6 @@
       }, true);
     })();
   </script>
-  <script src="{{ '/assets/js/suggest-edit.js' | url }}" defer></script>
+  <script src="{{ '/assets/js/suggest-edit.js' | url }}?v={{ 'assets/js/suggest-edit.js' | fileHash }}" defer></script>
 </body>
 </html>
