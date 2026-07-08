@@ -4,10 +4,12 @@ eleventyNavigation:
   parent: using
   key: quick-start
   title: Quick Start
-  order: 1
+  order: 0
 ---
 
 # Quick Start
+
+Your pi-Stomp is built and booted — now let's make it your best friend on stage (other than the drummer). Once your pedalboards are set up, you run the whole thing from the device itself: no computer on stage, just you, your pedalboards, snapshots, and footswitches.
 
 ## Connect
 

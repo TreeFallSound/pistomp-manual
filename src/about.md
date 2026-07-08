@@ -2,6 +2,7 @@
 title: About Tree Fall Sound
 eleventyNavigation:
   key: about
+  parent: home
   title: About
   url: /about/
   order: 1

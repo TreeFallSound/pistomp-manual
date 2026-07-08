@@ -1,7 +1,7 @@
 ---
 title: Digital Delay
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: digital-delay
   title: Digital Delay
   order: 5

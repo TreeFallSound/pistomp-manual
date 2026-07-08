@@ -4,12 +4,14 @@ eleventyNavigation:
   parent: developers
   key: contributing
   title: Contributing
-  order: 9
+  order: 0
 ---
 
 # Contributing
 
-pi-Stomp is an open-source project built by and for musicians who like to tinker. Whether you're fixing a bug, adding a plugin panel, or improving the docs — you're welcome here.
+pi-Stomp is open source, top to bottom: a Python controller that drives MOD-UI, the OS image that ships it, and a recovery / OTA updates ecosystem. Whether you're fixing a bug, adding a plugin panel, or improving the docs — you're welcome here.
+
+Start with [Architecture]({{ '/developers/architecture/' | url }}) for the mental model, then [Getting Started]({{ '/developers/getting-started/' | url }}) to set up a dev loop.
 
 ## This isn't scary
 

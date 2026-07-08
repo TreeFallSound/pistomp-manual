@@ -1,7 +1,7 @@
 ---
 title: Atmospheric Delay
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: atmospheric-delay
   title: Atmospheric Delay
   order: 2

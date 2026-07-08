@@ -1,7 +1,7 @@
 ---
 title: Wah
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: wah
   title: Wah
   order: 7

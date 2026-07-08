@@ -1,7 +1,7 @@
 ---
 title: Dimension C
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: dimension-c
   title: Dimension C
   order: 8

@@ -1,7 +1,7 @@
 ---
 title: Shimmer and Cloud Reverb
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: shimmer-cloud-reverb
   title: Shimmer and Cloud Reverb
   order: 3

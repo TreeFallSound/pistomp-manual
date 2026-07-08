@@ -1,7 +1,7 @@
 ---
 title: Vintage Fuzz
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: vintage-fuzz
   title: Vintage Fuzz
   order: 4

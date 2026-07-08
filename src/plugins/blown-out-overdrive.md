@@ -1,7 +1,7 @@
 ---
 title: Blown-Out Overdrive
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: blown-out-overdrive
   title: Blown-Out Overdrive
   order: 10

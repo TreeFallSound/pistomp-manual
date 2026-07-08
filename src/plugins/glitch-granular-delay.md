@@ -1,7 +1,7 @@
 ---
 title: Glitch Granular Delay
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: glitch-granular-delay
   title: Glitch Granular Delay
   order: 9

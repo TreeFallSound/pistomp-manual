@@ -1,7 +1,7 @@
 ---
 title: Pitch Shifter
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: pitch-shifter
   title: Pitch Shifter
   order: 6

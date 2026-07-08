@@ -1,7 +1,7 @@
 ---
 title: Tube Screamer
 eleventyNavigation:
-  parent: plugins
+  parent: editorials
   key: tube-screamer
   title: Tube Screamer
   order: 1
