@@ -47,7 +47,7 @@ None of these has been read except rkr Vibe and rkr Analog Phaser.
 | The Pilgrim | `ThePilgrim.lv2` | Unknown. Categorized Phaser; find out what it models |
 | MDA ThruZero | `mod-mda-ThruZero.lv2` | A through-zero flanger, not a phaser. Mention only to explain why it isn't here |
 
-**Bundle caveat:** `fomp-labs.lv2` and `invada-labs.lv2` are second builds of `fomp.lv2` and `invada.lv2`. The device's plugin host resolves the duplicate URIs by version and loads exactly one; verify which build the screenshots and control ranges come from before publishing.
+**Bundle note:** `fomp.lv2`/`fomp-labs.lv2` and `invada.lv2`/`invada-labs.lv2` ship the same plugin URIs from two different builds. The device loads the `-labs` build in each case — read those sources, and pull screenshots and control ranges from them.
 
 ## Questions the real article must answer
 

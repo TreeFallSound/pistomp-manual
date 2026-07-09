@@ -159,9 +159,9 @@ def main():
     # Several bundles ship the same plugin URI from different builds (rkr.lv2 vs
     # rkr-labs.lv2, and gxwah.lv2 vs gxautowah.lv2). Resolve them the way lilv
     # does in lilv_world_compare_versions: the highest lv2:minorVersion.microVersion
-    # wins, and on a tie the first bundle scanned wins. lilv's scan order is
-    # readdir order; ours is lexicographic, so a tie can resolve to a different
-    # build than the device loads. Ties are reported below for that reason.
+    # wins, and on a tie the first bundle scanned wins. The device loads the
+    # -labs build of each pair, and "-" (0x2D) sorts before "." (0x2E), so our
+    # lexicographic scan picks the same one. Ties are still reported below.
     by_uri: dict[str, dict] = {}
     collisions: list[str] = []
     for dirname in sorted(os.listdir(lv2_dir)):

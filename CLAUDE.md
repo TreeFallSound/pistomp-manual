@@ -50,6 +50,7 @@ These files are **LARGE**, so never read them directly: it will interfere with y
 - `src/_data/plugins-source.json` caches upstream source repos, keyed by the same `uri` as `plugins.json`. Add an entry whenever research turns one up and you have verified it resolves (`git ls-remote`).A plugin's homepage (e.g. guitarix.sourceforge.net) is not its source repo.
   - Copy `uri`, `bundle`, and `name` verbatim out of `plugins.json`; never retype or reconstruct them. URIs differ from what you would guess (`gx_compressor#_compressor`, not `#compressor`; `System-NoiseGate`, not `NoiseGate`; `http://` where you would expect `https://`). A mistyped `uri` silently fails to join and is worse than a missing entry.
   - After writing, assert every `uri` exists in `plugins.json` and that no `uri` repeats.
+- Three bundle pairs ship the same plugin URIs from two different builds: `rkr.lv2`/`rkr-labs.lv2`, `invada.lv2`/`invada-labs.lv2`, `fomp.lv2`/`fomp-labs.lv2`. **The device loads the `-labs` build.** Research those sources; pull screenshots and control ranges from them. lilv resolves duplicate URIs by highest `lv2:minorVersion.microVersion`, these pairs tie, so it falls through to scan order; the index script mirrors that and agrees, since `-` sorts before `.`.
 - Research docs live in `research/` and are the basis for our editorials (we edit them down)
 - Plugin screenshots are fetched from `http://pistomp.local/effect/image/screenshot.png?uri=<encoded-URI>`.
 

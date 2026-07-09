@@ -20,7 +20,7 @@ The plugins themselves are open-source work by talented developers and musicians
 - [Digital Delay]({{ '/plugins/digital-delay/' | url }}) — Clean, transparent digital delay
 - [Pitch Shifter]({{ '/plugins/pitch-shifter/' | url }}) — Treadle-controlled pitch shifting
 - [Wah]({{ '/plugins/wah/' | url }}) — Treadle and auto-wah filter sweeps
-- [Dimension C]({{ '/plugins/dimension-c/' | url }}) — Wide, lush stereo without the warble
+- [Chorus]({{ '/plugins/chorus/' | url }}) — One delay line or six: wobble versus width
 - [Glitch Granular Delay]({{ '/plugins/glitch-granular-delay/' | url }}) — Scattered grains, freeze, and bitcrush
 - [Blown-Out Overdrive]({{ '/plugins/blown-out-overdrive/' | url }}) — Asymmetric op-amp saturation that stays clear under gain
 - [Compressors]({{ '/plugins/compressors/' | url }}) — Every compressor on the device, by the job you want it to do
