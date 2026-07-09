@@ -482,7 +482,7 @@
   {
     "uri": "http://moddevices.com/plugins/caps/Noisegate",
     "bundle": "mod-caps-Noisegate.lv2",
-    "name": "C* Noisegate",
+    "name": "C* Noisegate - Attenuate noise resident in silence",
     "source_url": "https://github.com/moddevices/caps-lv2"
   },
   {
@@ -982,5 +982,89 @@
     "bundle": "ZaMultiCompX2.lv2",
     "name": "ZaMultiCompX2",
     "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/PhaserII",
+    "bundle": "mod-caps-PhaserII.lv2",
+    "name": "C* PhaserII - Mono phaser modulated by a Lorenz fractal",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/cs_phaser1",
+    "bundle": "fomp-labs.lv2",
+    "name": "CS Phaser 1",
+    "source_url": "https://gitlab.com/drobilla/fomp"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/cs_phaser1_lfo",
+    "bundle": "fomp-labs.lv2",
+    "name": "CS Phaser 1 with LFO",
+    "source_url": "https://gitlab.com/drobilla/fomp"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_phaser#_phaser",
+    "bundle": "gx_phaser.lv2",
+    "name": "GxPhaser",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Phaser",
+    "bundle": "calf.lv2",
+    "name": "Calf Phaser",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://zynaddsubfx.sourceforge.net/fx#Phaser",
+    "bundle": "ZynPhaser.lv2",
+    "name": "ZynPhaser",
+    "source_url": "https://github.com/zynaddsubfx/zynaddsubfx"
+  },
+  {
+    "uri": "http://zynaddsubfx.sourceforge.net/fx#AlienWah",
+    "bundle": "ZynAlienWah.lv2",
+    "name": "ZynAlienWah",
+    "source_url": "https://github.com/zynaddsubfx/zynaddsubfx"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_tremolo#_tremolo",
+    "bundle": "gx_tremolo.lv2",
+    "name": "GxTremolo",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gxtubetremelo#tubetremelo",
+    "bundle": "gxtubetremelo.lv2",
+    "name": "GxTubeTremelo",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_switched_tremolo_#_switched_tremolo_",
+    "bundle": "gx_switched_tremolo.lv2",
+    "name": "Gxswitched_tremolo",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_redeye#vibrochump",
+    "bundle": "gx_redeye.lv2",
+    "name": "GxRedeye Vibro Chump",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/tremolo",
+    "bundle": "tap-tremolo.lv2",
+    "name": "TAP Tremolo",
+    "source_url": "https://git.hq.sig7.se/tap-plugins.git"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Pulsator",
+    "bundle": "calf.lv2",
+    "name": "Calf Pulsator",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://ssj71.github.io/infamousPlugins/plugs.html#powercut",
+    "bundle": "powercut.lv2",
+    "name": "the infamous power cut",
+    "source_url": "https://github.com/ssj71/infamousPlugins"
   }
 ]
