@@ -93,15 +93,7 @@ def first(g, s, pred):
     return None
 
 
-def extract(bundle_dir: str, dirname: str):
-    g = load_graph(bundle_dir)
-    subjects = plugin_subjects(g)
-    if not subjects:
-        return None
-    # A bundle occasionally declares more than one plugin variant; take the
-    # first alphabetically by URI for a stable, deterministic pick.
-    subject = sorted(subjects, key=str)[0]
-
+def extract_one(g, subject, dirname):
     name = first(g, subject, DOAP + "name")
     comment = first(g, subject, RDFS_COMMENT)
 
@@ -126,6 +118,9 @@ def extract(bundle_dir: str, dirname: str):
     micro = first(g, subject, LV2 + "microVersion")
     version = f"{minor}.{micro}" if minor is not None and micro is not None else None
 
+    # lilv treats an undeclared version as 0.0 when resolving duplicate URIs.
+    version_key = (int(minor) if minor is not None else 0, int(micro) if micro is not None else 0)
+
     comment_text = str(comment).strip() if comment else None
     comment_truncated = (
         estimate_wrapped_lines(comment_text) > COMMENT_CLAMP_LINES
@@ -143,7 +138,16 @@ def extract(bundle_dir: str, dirname: str):
         "license": license_label,
         "maintainer": maintainer_label,
         "version": version,
+        "_version_key": version_key,
     }
+
+
+def extract(bundle_dir: str, dirname: str):
+    g = load_graph(bundle_dir)
+    subjects = plugin_subjects(g)
+    if not subjects:
+        return None
+    return [extract_one(g, s, dirname) for s in sorted(subjects, key=str)]
 
 
 def main():
@@ -152,16 +156,44 @@ def main():
         print(f"error: {lv2_dir} is not a directory", file=sys.stderr)
         sys.exit(1)
 
-    plugins = []
+    # Several bundles ship the same plugin URI from different builds (rkr.lv2 vs
+    # rkr-labs.lv2, and gxwah.lv2 vs gxautowah.lv2). Resolve them the way lilv
+    # does in lilv_world_compare_versions: the highest lv2:minorVersion.microVersion
+    # wins, and on a tie the first bundle scanned wins. lilv's scan order is
+    # readdir order; ours is lexicographic, so a tie can resolve to a different
+    # build than the device loads. Ties are reported below for that reason.
+    by_uri: dict[str, dict] = {}
+    collisions: list[str] = []
     for dirname in sorted(os.listdir(lv2_dir)):
         bundle_dir = os.path.join(lv2_dir, dirname)
         if not os.path.isdir(bundle_dir):
             continue
-        entry = extract(bundle_dir, dirname)
-        if entry:
-            plugins.append(entry)
+        for entry in extract(bundle_dir, dirname) or []:
+            kept = by_uri.get(entry["uri"])
+            if kept is None:
+                by_uri[entry["uri"]] = entry
+                continue
+            if entry["_version_key"] > kept["_version_key"]:
+                by_uri[entry["uri"]] = entry
+                winner, loser = entry, kept
+            else:
+                winner, loser = kept, entry
+            tie = " (tie, kept first scanned)" if entry["_version_key"] == kept["_version_key"] else ""
+            collisions.append(
+                f"  {entry['uri']}\n"
+                f"    kept    {winner['bundle']} v{winner['version']}\n"
+                f"    dropped {loser['bundle']} v{loser['version']}{tie}"
+            )
 
-    plugins.sort(key=lambda p: p["name"].lower())
+    plugins = sorted(by_uri.values(), key=lambda p: p["name"].lower())
+    for p in plugins:
+        del p["_version_key"]
+
+    if collisions:
+        print(
+            f"{len(collisions)} duplicate plugin URIs across bundles:", file=sys.stderr
+        )
+        print("\n".join(collisions), file=sys.stderr)
 
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     out_path = os.path.join(repo_root, "src", "_data", "plugins.json")

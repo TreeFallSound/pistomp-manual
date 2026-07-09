@@ -42,10 +42,26 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 
 # Data (plugins)
 
+These files are **LARGE**, so never read them directly: it will interfere with your ability to process the information. Instead, form questions and ask them using jq or python. The data we have:
+
 - a list of all plugins that ship with the pi-Stomp enosystem is in `src/_data/plugins.json`
   - `scripts/build_plugin_index.py` re-builds `src/_data/plugins.json`
-- Research docs live in `../pi-gen-pistomp/research/`
+- `src/_data/plugins-seen.json` maps plugin URI to pedalboard occurrence count (from TreeFallSound/pi-stomp-pedalboards and sastraxi/dot-pedalboards)
+- `src/_data/plugins-source.json` caches upstream source repos, keyed by the same `uri` as `plugins.json`. Add an entry whenever research turns one up and you have verified it resolves (`git ls-remote`).A plugin's homepage (e.g. guitarix.sourceforge.net) is not its source repo.
+  - Copy `uri`, `bundle`, and `name` verbatim out of `plugins.json`; never retype or reconstruct them. URIs differ from what you would guess (`gx_compressor#_compressor`, not `#compressor`; `System-NoiseGate`, not `NoiseGate`; `http://` where you would expect `https://`). A mistyped `uri` silently fails to join and is worse than a missing entry.
+  - After writing, assert every `uri` exists in `plugins.json` and that no `uri` repeats.
+- Research docs live in `research/` and are the basis for our editorials (we edit them down)
 - Plugin screenshots are fetched from `http://pistomp.local/effect/image/screenshot.png?uri=<encoded-URI>`.
+
+# Researching pedals
+
+Pedal research should go in a numbered research markdown in `research/`. Remember to update `plugins-source.json` if necessary.
+
+- **Enumerate candidates from `plugins.json` before ranking any.** Research docs have missed plugins that were named after the very pedal under study. Filter by category, then diff the candidate list against what the doc actually introspected.
+- **Read the source; don't trust the name.** `GxSD1` does not model the SD-1's asymmetric clipping. Bundle names, `doap:name`, and the pedal being modeled are three different things, and guitarix's internal module names (`gx_mxrdist`) differ from its shipped bundle names (`gx_DistortionPlus.lv2`).
+- **Establish which circuit is modeled, and how.** The useful distinctions: diode-equation/SPICE-derived vs. hand-drawn static waveshaper vs. neural capture; feedback-loop soft clip vs. feed-forward shunt; symmetric vs. genuinely asymmetric (check for one table or two). Compute filter corners from the component values declared in the DSP rather than repeating what the README claims.
+- **CPU cost is part of the verdict, not a footnote.** Plugins run on a Pi core alongside a full chain. Derive the per-sample cost from real dimensions.
+- **Say what you verified and what you inferred.** "The model JSON has no training metadata, so the capture source is unverifiable" beats a confident guess.
 
 # Sister repositories
 

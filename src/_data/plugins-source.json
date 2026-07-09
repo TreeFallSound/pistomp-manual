@@ -1,0 +1,986 @@
+[
+  {
+    "uri": "http://hippie.lt/lv2/gate",
+    "bundle": "abGate.lv2",
+    "name": "abGate",
+    "source_url": "https://github.com/antanasbruzas/abGate"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/Advanced-Compressor",
+    "bundle": "advanced-compressor.lv2",
+    "name": "Compressor Advanced",
+    "source_url": "https://github.com/moddevices/mod-host"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/Advanced-NoiseGate",
+    "bundle": "advanced-noisegate.lv2",
+    "name": "Noise Gate Advanced",
+    "source_url": "https://github.com/moddevices/mod-host"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/cliponly",
+    "bundle": "Airwindows-ClipOnly.lv2",
+    "name": "ClipOnly",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/cliponly2",
+    "bundle": "Airwindows-ClipOnly2.lv2",
+    "name": "ClipOnly2",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/dyno",
+    "bundle": "Airwindows-Dyno.lv2",
+    "name": "Dyno",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/mojo",
+    "bundle": "Airwindows-Mojo.lv2",
+    "name": "Mojo",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/pressure5",
+    "bundle": "Airwindows-Pressure5.lv2",
+    "name": "Pressure5",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/spiral",
+    "bundle": "Airwindows-Spiral.lv2",
+    "name": "Spiral",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "http://www.openavproductions.com/artyfx#bitta",
+    "bundle": "artyfx-bitta.lv2",
+    "name": "Bitta",
+    "source_url": "https://github.com/openAVproductions/openAV-ArtyFX"
+  },
+  {
+    "uri": "http://www.openavproductions.com/artyfx#driva",
+    "bundle": "artyfx.lv2",
+    "name": "Driva",
+    "source_url": "https://github.com/openAVproductions/openAV-ArtyFX"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Compressor",
+    "bundle": "calf.lv2",
+    "name": "Calf Compressor",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Gate",
+    "bundle": "calf.lv2",
+    "name": "Calf Gate",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/MonoCompressor",
+    "bundle": "calf.lv2",
+    "name": "Calf Mono Compressor",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "https://github.com/jatinchowdhury18/KlonCentaur",
+    "bundle": "ChowCentaur.lv2",
+    "name": "ChowCentaur",
+    "source_url": "https://github.com/jatinchowdhury18/KlonCentaur"
+  },
+  {
+    "uri": "https://github.com/brummer10/CollisionDrive",
+    "bundle": "CollisionDrive.lv2",
+    "name": "CollisionDrive",
+    "source_url": "https://github.com/brummer10/CollisionDrive"
+  },
+  {
+    "uri": "http://VeJaPlugins.com/plugins/Release/Compressor",
+    "bundle": "compressor.lv2",
+    "name": "Compressor",
+    "source_url": "https://github.com/moddevices/mod-host"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/crossoverDist",
+    "bundle": "crossover_dist-swh.lv2",
+    "name": "Crossover distortion",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/decimator",
+    "bundle": "decimator-swh.lv2",
+    "name": "Decimator",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "http://github.com/blablack/deteriorate-lv2/downsampler_mono",
+    "bundle": "deteriorate.lv2",
+    "name": "Downsampler - Mono",
+    "source_url": "https://github.com/blablack/deteriorate-lv2"
+  },
+  {
+    "uri": "urn:distrho:a-comp",
+    "bundle": "distrho-a-comp.lv2",
+    "name": "DIE Compressor",
+    "source_url": "https://github.com/DISTRHO/DIE-Plugins"
+  },
+  {
+    "uri": "urn:distrho:a-comp#stereo",
+    "bundle": "distrho-a-comp.lv2",
+    "name": "DIE Compressor (stereo)",
+    "source_url": "https://github.com/DISTRHO/DIE-Plugins"
+  },
+  {
+    "uri": "urn:distrho:a-exp",
+    "bundle": "distrho-a-exp.lv2",
+    "name": "DIE Expander",
+    "source_url": "https://github.com/DISTRHO/DPF-Plugins"
+  },
+  {
+    "uri": "urn:dragonfly:early",
+    "bundle": "DragonflyEarlyReflections.lv2",
+    "name": "Dragonfly Early Reflections",
+    "source_url": "https://github.com/michaelwillis/dragonfly-reverb"
+  },
+  {
+    "uri": "https://github.com/michaelwillis/dragonfly-reverb",
+    "bundle": "DragonflyHallReverb.lv2",
+    "name": "Dragonfly Hall Reverb",
+    "source_url": "https://github.com/michaelwillis/dragonfly-reverb"
+  },
+  {
+    "uri": "urn:dragonfly:plate",
+    "bundle": "DragonflyPlateReverb.lv2",
+    "name": "Dragonfly Plate Reverb",
+    "source_url": "https://github.com/michaelwillis/dragonfly-reverb"
+  },
+  {
+    "uri": "urn:dragonfly:room",
+    "bundle": "DragonflyRoomReverb.lv2",
+    "name": "Dragonfly Room Reverb",
+    "source_url": "https://github.com/michaelwillis/dragonfly-reverb"
+  },
+  {
+    "uri": "http://faust-lv2.googlecode.com/Freakclip",
+    "bundle": "Freakclip.lv2",
+    "name": "Freakclip",
+    "source_url": "https://github.com/pjotrompet/Freaked"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/gate",
+    "bundle": "gate-swh.lv2",
+    "name": "Gate",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_AxisFace_#_AxisFace_",
+    "bundle": "gx_AxisFace.lv2",
+    "name": "GxAxisFace",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_bajatubedriver_#_bajatubedriver_",
+    "bundle": "gx_bajatubedriver.lv2",
+    "name": "GxBaJaTubeDriver",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_boobtube_#_boobtube_",
+    "bundle": "gx_boobtube.lv2",
+    "name": "GxBoobTube",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_clubdrive_#_clubdrive_",
+    "bundle": "gx_clubdrive.lv2",
+    "name": "GxClubDrive",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_compressor#_compressor",
+    "bundle": "gx_compressor.lv2",
+    "name": "GxCompressor",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_cstb_#_cstb_",
+    "bundle": "gx_cstb.lv2",
+    "name": "GxColorSoundTonebender",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_DOP250_#_DOP250_",
+    "bundle": "gx_DOP250.lv2",
+    "name": "GxDOP250",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_epic_#_epic_",
+    "bundle": "gx_epic.lv2",
+    "name": "GxEpic",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_eternity_#_eternity_",
+    "bundle": "gx_eternity.lv2",
+    "name": "GxEternity",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_expander#_expander",
+    "bundle": "gx_expander.lv2",
+    "name": "GxExpander",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_fumaster_#_fumaster_",
+    "bundle": "gx_fumaster.lv2",
+    "name": "GxFuzzMaster",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_fuzzface_#_fuzzface_",
+    "bundle": "gx_fuzzface.lv2",
+    "name": "GxFuzzFaceJH-2",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_fuzzfacefm_#_fuzzfacefm_",
+    "bundle": "gx_fuzzfacefm.lv2",
+    "name": "GxFuzzFaceFullerMod",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_guvnor_#_guvnor_",
+    "bundle": "gx_guvnor.lv2",
+    "name": "GxGuvnor",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_Heathkit_#_Heathkit_",
+    "bundle": "gx_Heathkit.lv2",
+    "name": "GxHeathkit",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_hfb_#_hfb_",
+    "bundle": "gx_hfb.lv2",
+    "name": "GxHighFrequencyBrightener",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_hogsfoot_#_hogsfoot_",
+    "bundle": "gx_hogsfoot.lv2",
+    "name": "GxHogsFoot",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_hornet_#_hornet_",
+    "bundle": "gx_hornet.lv2",
+    "name": "GxHornet",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_hotbox_#_hotbox_",
+    "bundle": "gx_hotbox.lv2",
+    "name": "GxHotBox",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_KnightFuzz_#_KnightFuzz_",
+    "bundle": "gx_KnightFuzz.lv2",
+    "name": "GxKnightFuzz",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_liquiddrive_#_liquiddrive_",
+    "bundle": "gx_liquiddrive.lv2",
+    "name": "GxLiquidDrive",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_luna_#_luna_",
+    "bundle": "gx_luna.lv2",
+    "name": "GxLuna",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_maestro_fz1s_#_maestro_fz1s_",
+    "bundle": "gx_maestro_fz1s.lv2",
+    "name": "GxFz1s",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_mbcompressor_#_mbcompressor_",
+    "bundle": "gx_mbcompressor.lv2",
+    "name": "GxMultiBandCompressor",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_mbdistortion_#_mbdistortion_",
+    "bundle": "gx_mbdistortion.lv2",
+    "name": "GxMultiBandDistortion",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_mole_#_mole_",
+    "bundle": "gx_mole.lv2",
+    "name": "GxMole",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_muff_#_muff_",
+    "bundle": "gx_muff.lv2",
+    "name": "GxMuff",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_overdriver_#_overdriver_",
+    "bundle": "gx_overdriver.lv2",
+    "name": "GxOverDriver",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_rangem_#_rangem_",
+    "bundle": "gx_rangem.lv2",
+    "name": "GxRangemaster",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_saturate_#_saturate_",
+    "bundle": "gx_saturate.lv2",
+    "name": "GxSaturator",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_scream_#_scream_",
+    "bundle": "gx_scream.lv2",
+    "name": "GxScreamingBird",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_sd1sim_#_sd1sim_",
+    "bundle": "gx_sd1sim.lv2",
+    "name": "GxSD1",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_sd2lead_#_sd2lead_",
+    "bundle": "gx_sd2lead.lv2",
+    "name": "GxSD2Lead",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_shakatube_#_shakatube_",
+    "bundle": "gx_shakatube.lv2",
+    "name": "GxShakaTube",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_sloopyblue_#_sloopyblue_",
+    "bundle": "gx_sloopyblue.lv2",
+    "name": "GxSloopyBlue",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_supersonic_#_supersonic_",
+    "bundle": "gx_supersonic.lv2",
+    "name": "GxSupersonic",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_timray_#_timray_",
+    "bundle": "gx_timray.lv2",
+    "name": "GxTimRay",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_tonemachine_#_tonemachine_",
+    "bundle": "gx_tonemachine.lv2",
+    "name": "GxToneMachine",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_TubeDistortion_#_TubeDistortion_",
+    "bundle": "gx_TubeDistortion.lv2",
+    "name": "GxTubeDistortion",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_valvecaster_#_valvecaster_",
+    "bundle": "gx_valvecaster.lv2",
+    "name": "GxValveCaster",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gxtilttone#tilttone",
+    "bundle": "gxtilttone.lv2",
+    "name": "GxTiltTone",
+    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gxts9#ts9sim",
+    "bundle": "gxts9.lv2",
+    "name": "GxTubeScreamer",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "https://github.com/brummer10/HarmonicExciter",
+    "bundle": "Harmonic_Exciter.lv2",
+    "name": "Harmonic Exciter",
+    "source_url": "https://github.com/brummer10/HarmonicExciter"
+  },
+  {
+    "uri": "http://ssj71.github.io/infamousPlugins/plugs.html#hip2b",
+    "bundle": "hip2b.lv2",
+    "name": "the infamous Hip2B",
+    "source_url": "https://github.com/ssj71/infamousPlugins"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/compressor/mono",
+    "bundle": "invada.lv2",
+    "name": "Invada Compressor (mono)",
+    "source_url": "https://launchpad.net/invada-studio"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/compressor/stereo",
+    "bundle": "invada.lv2",
+    "name": "Invada Compressor (stereo)",
+    "source_url": "https://launchpad.net/invada-studio"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/AmpVTS",
+    "bundle": "mod-caps-AmpVTS.lv2",
+    "name": "C* AmpVTS - Tube amp + Tone stack",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/CabinetIII",
+    "bundle": "mod-caps-CabinetIII.lv2",
+    "name": "C* CabinetIII - Idealised loudspeaker cabinet emulation",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/CabinetIV",
+    "bundle": "mod-caps-CabinetIV.lv2",
+    "name": "C* CabinetIV - Idealised loudspeaker cabinet emulation",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/Compress",
+    "bundle": "mod-caps-Compress.lv2",
+    "name": "C* Compress - Mono compressor",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/CompressX2",
+    "bundle": "mod-caps-CompressX2.lv2",
+    "name": "C* CompressX2 - Stereo compressor",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/Noisegate",
+    "bundle": "mod-caps-Noisegate.lv2",
+    "name": "C* Noisegate",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/Saturate",
+    "bundle": "mod-caps-Saturate.lv2",
+    "name": "C* Saturate",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/Spice",
+    "bundle": "mod-caps-Spice.lv2",
+    "name": "C* Spice",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/SpiceX2",
+    "bundle": "mod-caps-SpiceX2.lv2",
+    "name": "C* SpiceX2",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/ToneStack",
+    "bundle": "mod-caps-ToneStack.lv2",
+    "name": "C* ToneStack - Tone stack emulation",
+    "source_url": "https://github.com/moddevices/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Bandisto",
+    "bundle": "mod-mda-Bandisto.lv2",
+    "name": "MDA Bandisto",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Combo",
+    "bundle": "mod-mda-Combo.lv2",
+    "name": "MDA Combo",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/DeEss",
+    "bundle": "mod-mda-DeEss.lv2",
+    "name": "MDA De-ess",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Degrade",
+    "bundle": "mod-mda-Degrade.lv2",
+    "name": "MDA Degrade",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Delay",
+    "bundle": "mod-mda-Delay.lv2",
+    "name": "MDA Delay",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Dither",
+    "bundle": "mod-mda-Dither.lv2",
+    "name": "MDA Dither",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Dynamics",
+    "bundle": "mod-mda-Dynamics.lv2",
+    "name": "MDA Dynamics",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Leslie",
+    "bundle": "mod-mda-Leslie.lv2",
+    "name": "MDA Leslie",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Limiter",
+    "bundle": "mod-mda-Limiter.lv2",
+    "name": "MDA Limiter",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Loudness",
+    "bundle": "mod-mda-Loudness.lv2",
+    "name": "MDA Loudness",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/MultiBand",
+    "bundle": "mod-mda-MultiBand.lv2",
+    "name": "MDA MultiBand",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Overdrive",
+    "bundle": "mod-mda-Overdrive.lv2",
+    "name": "MDA Overdrive",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Splitter",
+    "bundle": "mod-mda-Splitter.lv2",
+    "name": "MDA Splitter",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Transient",
+    "bundle": "mod-mda-Transient.lv2",
+    "name": "MDA Transient",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://github.com/bernhardrusch/molot-lite-mono-lv2",
+    "bundle": "molot-lite-mono.lv2",
+    "name": "Molot Lite Mono",
+    "source_url": "https://github.com/bernhardrusch/molot-lite-mono-lv2"
+  },
+  {
+    "uri": "http://romain-hennequin.fr/plugins/mod-devel/Freeze",
+    "bundle": "mrfreeze.lv2",
+    "name": "Mr. Freeze",
+    "source_url": "https://github.com/romi1502/MrFreeze"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#StompBox_fuzz",
+    "bundle": "rkr-labs.lv2",
+    "name": "Fuzz",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#awha",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr AlienWah",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#aphas",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Analog Phaser",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Arpie",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Arpie",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#cabe",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Cabinet",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#CoilCrafter",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Coil Crafter",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#CompBand",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr CompBand",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#comp",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Compressor",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#dere",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Derelict",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#DistBand",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr DistBand",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#dist",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Distorsion",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Dual_Flange",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Dual Flange",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#eco",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Echo",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Echotron",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Echotron",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Echoverse",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Echoverse",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#eql",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr EQ",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Exciter",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Exciter",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Expander",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Expander",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#chor",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Flanger/Chorus",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#har",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Harmonizer",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#har_no_mid",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Harmonizer (no midi)",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Infinity",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Infinity",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#delm",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Musical Delay",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#MuTroMojo",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr MuTroMojo",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Otrem",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr OpticalTrem",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#pan",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Pan",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#eqp",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Parametric EQ",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#reve",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Reverb",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Reverbtron",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Reverbtron",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Ring",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Ring",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Sequence",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Sequence",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#ShelfBoost",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Shelf Boost",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Shifter",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Shifter",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Shuffle",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Shuffle",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#StereoHarm_no_mid",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr StereoHarmonizer (no midi)",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#StompBox",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr StompBox",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Sustainer",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Sustainer",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Synthfilter",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Synthfilter",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Valve",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Valve",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#VaryBand",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr VaryBand",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Vibe",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Vibe",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Vocoder",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr Vocoder",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#wha",
+    "bundle": "rkr-labs.lv2",
+    "name": "rkr WahWah",
+    "source_url": "https://github.com/ssj71/rkrlv2"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/sc1",
+    "bundle": "sc1-swh.lv2",
+    "name": "SC1",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "http://jpcima.sdf1.org/lv2/string-machine",
+    "bundle": "string-machine.lv2",
+    "name": "String machine",
+    "source_url": "https://github.com/jpcima/string-machine"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/System-Compressor",
+    "bundle": "system-compressor.lv2",
+    "name": "Compressor",
+    "source_url": "https://github.com/moddevices/mod-host"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/System-NoiseGate",
+    "bundle": "system-noisegate.lv2",
+    "name": "Noise Gate",
+    "source_url": "https://github.com/moddevices/mod-host"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/deesser",
+    "bundle": "tap-deesser.lv2",
+    "name": "TAP DeEsser",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/dynamics-st",
+    "bundle": "tap-dynamics-st.lv2",
+    "name": "TAP Stereo Dynamics",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/dynamics",
+    "bundle": "tap-dynamics.lv2",
+    "name": "TAP Mono Dynamics",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/limiter",
+    "bundle": "tap-limiter.lv2",
+    "name": "TAP Scaling Limiter",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/sigmoid",
+    "bundle": "tap-sigmoid.lv2",
+    "name": "TAP Sigmoid Booster",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/tubewarmth",
+    "bundle": "tap-tubewarmth.lv2",
+    "name": "TAP Tubewarmth",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/tapeDelay",
+    "bundle": "tape_delay-swh.lv2",
+    "name": "Tape Delay Simulation",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "https://github.com/GuitarML/TS-M1N3",
+    "bundle": "TS-M1N3.lv2",
+    "name": "TS-M1N3",
+    "source_url": "https://github.com/GuitarML/TS-M1N3"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/valve",
+    "bundle": "valve-swh.lv2",
+    "name": "Valve saturation",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "urn:zamaudio:ZamComp",
+    "bundle": "ZamComp.lv2",
+    "name": "ZamComp",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZamCompX2",
+    "bundle": "ZamCompX2.lv2",
+    "name": "ZamCompX2",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZamDelay",
+    "bundle": "ZamDelay.lv2",
+    "name": "ZamDelay",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZamGate",
+    "bundle": "ZamGate.lv2",
+    "name": "ZamGate",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZamGateX2",
+    "bundle": "ZamGateX2.lv2",
+    "name": "ZamGateX2",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZaMultiComp",
+    "bundle": "ZaMultiComp.lv2",
+    "name": "ZaMultiComp",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZaMultiCompX2",
+    "bundle": "ZaMultiCompX2.lv2",
+    "name": "ZaMultiCompX2",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  }
+]

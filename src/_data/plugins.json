@@ -1,5 +1,16 @@
 [
   {
+    "uri": "http://drobilla.net/plugins/blop/sequencer_16",
+    "name": "16 Step Sequencer",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://moddevices.com/plugins/mod-devel/2Voices",
     "name": "2Voices",
     "bundle": "mod-2voices.lv2",
@@ -37,6 +48,54 @@
     "license": "LGPL",
     "maintainer": "DISTRHO",
     "version": "2.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/sequencer_32",
+    "name": "32 Step Sequencer",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/lp4pole",
+    "name": "4 Pole Resonant Low-Pass",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/parametric1",
+    "name": "4-Band Parametric Filter",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "ParaEQ"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nThere's one plugin in this first release, a four-band parametric equaliser. Each section has an active/bypass switch, frequency, bandwidth and gain controls. There is also a global bypass switch and gain control. The 2nd order resonant filters are implemented using a Mitra-Regalia style lattice filter, which has the nice property of being stable even while parameters are being changed. All switches and controls are internally smoothed, so they can be used 'live' whithout any clicks or zipper noises. This should make this plugin a good candidate for use in systems that allow automation of plugin control ports, such as Ardour, or for stage use.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/sequencer_64",
+    "name": "64 Step Sequencer",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "http://hippie.lt/lv2/gate",
@@ -165,6 +224,19 @@
     "version": null
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/amp",
+    "name": "Amplifier",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Amplifier"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://www.niallmoody.com/ndcplugs/ampimposer.htm",
     "name": "Amplitude Imposer",
     "bundle": "AmplitudeImposer.lv2",
@@ -183,6 +255,61 @@
     "bundle": "mod-ams.lv2",
     "categories": [],
     "comment": "The AMS Env is a Control Voltage envelope module with added spice. It features extra parameters for hold and delay as well as a variable scale which scales the whole duration of the envelope.\n\nFeatures:\nPorted from the AlsaModularSynth, a free and open-source project.",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": null,
+    "version": "1.0"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/lfo2_freq",
+    "name": "AMS LFO2 - Freq",
+    "bundle": "mod-ams.lv2",
+    "categories": [],
+    "comment": "The AMS LFO2 module is a Control Voltage LFO which offers a variety of waveforms: sine, triangle, sawtooth up, sawtooth down, square and Sample & Hold. It also has an input that can be used to reset the phase of the LFO, and a control to set the phase-angle.\n\nFeatures:\nPorted from the AlsaModularSynth, a free and open-source project.",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": null,
+    "version": "1.0"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vcaexp",
+    "name": "AMS VCA Exp",
+    "bundle": "mod-ams.lv2",
+    "categories": [],
+    "comment": "The AMS VCA Exp module is an exponential Voltage Controlled Amplifier used for volume modulation. It allows you to, for instance, modulate the output of the AMS VCO3 using the control voltage signal of the AMS Env.\n\nFeatures:\nPorted from the AlsaModularSynth, a free and open-source project.",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": null,
+    "version": "1.0"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vcalin",
+    "name": "AMS VCA Lin",
+    "bundle": "mod-ams.lv2",
+    "categories": [],
+    "comment": "The AMS VCA Lin module is a linear Voltage Controlled Amplifier used for volume modulation. It allows you to, for instance, modulate the output of the AMS VCO3 using the control voltage signal of the AMS Env.\n\nFeatures: \nPorted from the AlsaModularSynth, a free and open-source project.",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": null,
+    "version": "1.0"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vcf",
+    "name": "AMS VCF",
+    "bundle": "mod-ams.lv2",
+    "categories": [],
+    "comment": "The AMS VCF module is a voltage controlled filter which offers a wide variety of filter types and flavours (multiple low-pass and band-pass flavours, as well as a high-pass and notch option). Additionally, it enables you to use other CV signals to modulate some of its features, such as frequency and resonance. \n\nFeatures: \nPorted from the AlsaModularSynth, a free and open-source project.",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": null,
+    "version": "1.0"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vco3",
+    "name": "AMS VCO3",
+    "bundle": "mod-ams.lv2",
+    "categories": [],
+    "comment": "The AMS VCO3 is an oscillator module which can generate multiple waveforms (sine, square, triangle, sawtooth). Additionally, it features CV inputs that can be used for frequency and pulse-width modulation, as well as a Sync input which allows for various types of oscillator sync sounds. \n\nFeatures: \nPorted from the AlsaModularSynth, a free and open-source project.",
     "commentTruncated": true,
     "license": "ISC",
     "maintainer": null,
@@ -278,6 +405,32 @@
     "version": "2.0"
   },
   {
+    "uri": "http://kxstudio.sf.net/carla/plugins/audiogain_s",
+    "name": "Audio Gain (Stereo)",
+    "bundle": "carla-audiogain.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "A simple click-free audio gain plugin, where the gain parameter is a multiplication factor rather than attenuator/booster of dB.\nThis is the Stereo version.",
+    "commentTruncated": true,
+    "license": "GPLv2+",
+    "maintainer": "falkTX",
+    "version": "2.0"
+  },
+  {
+    "uri": "https://falktx.com/plugins/audio-bridge#playback",
+    "name": "Audio Playback",
+    "bundle": "audio-bridge.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "An audio bridge plugin that allows using external audio interfaces as part of the processing chain.\nThis is the \"playback\" side, it sends the output from the host into an audio interface.\n\nCurrently limited to 2 audio ports and a single device, which is automatically connected once available.",
+    "commentTruncated": true,
+    "license": "http://opensource.org/licenses/AGPL-3.0",
+    "maintainer": "falkTX",
+    "version": "0.0"
+  },
+  {
     "uri": "http://moddevices.com/plugins/mod-devel/mod-audio-to-cv",
     "name": "Audio to CV",
     "bundle": "mod-audio-to-cv.lv2",
@@ -309,19 +462,6 @@
     "comment": null,
     "commentTruncated": false,
     "license": null,
-    "maintainer": null,
-    "version": "0.0"
-  },
-  {
-    "uri": "http://drobilla.net/plugins/fomp/autowah",
-    "name": "Auto-wah",
-    "bundle": "fomp.lv2",
-    "categories": [
-      "Filter"
-    ],
-    "comment": "The auto-wah is a combination of an envelope follower and a resonant low pass filter.\nFor increasing sound levels, both the frequency and the bandwidth of the filter will increase. The intensity is controlled by 'Drive'.\nFor a normal wah, use an expression pedal to control 'Frequency' and set 'Drive' to zero.\n\nFeatures:\nModeled by FOMP",
-    "commentTruncated": true,
-    "license": "GPL-2.0",
     "maintainer": null,
     "version": "0.0"
   },
@@ -491,6 +631,19 @@
     "license": "GPL",
     "maintainer": "Bollie",
     "version": "0.1"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/branch",
+    "name": "Branch",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "http://VeJaPlugins.com/plugins/Release/veja-1960-cab",
@@ -870,6 +1023,253 @@
     "version": null
   },
   {
+    "uri": "http://calf.sourceforge.net/plugins/CompensationDelay",
+    "name": "Calf Compensation Delay Line",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "Compensation Delay Line is a metric based delay to compensate differing positions of microphones or speakers.\n\nDevelopment: Vladimir Sadovnikov",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Compressor",
+    "name": "Calf Compressor",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "Smooth sounding dynamic compressor with a variety of settings, written by Thor Harald Johansen. RMS/peak modes, A-weighting, metering - feels like real studio gear!\n\nDevelopment: Thor Harald Johansen, Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Crusher",
+    "name": "Calf Crusher",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "The Calf Crusher lets you crush your signal by reducing the bit resolution. The reduction can be done in a linear or logarithmic way while the logarithmic way results in a much smoother sound in low volume signals.\nOn top of that, the edges, which are created by the bit reduction, can be anti-aliased. This lets you create a numerous variety of sound effects for your signal.\n\nDevelopment: Markus Schmidt, Christian Holschuh",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/EnvelopeFilter",
+    "name": "Calf Envelope Filter",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "This plug-in is also known as Auto-Wah - a filter following the envelope of a signal. The Calf version provides a couple of filters to choose from together with some fine grained settings of the envelope to frequency calculation like setting a curve from convex over linear to concave. Additionally there's a sidechain input to use a different signal for the envelope than for the processing itself.\n\nDevelopment: Markus Schmidt",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Equalizer5Band",
+    "name": "Calf Equalizer 5 Band",
+    "bundle": "calf.lv2",
+    "categories": [
+      "EQ"
+    ],
+    "comment": "Based on different filters these series of equalizers was invented to provide some specialized tools for everyday's signal processing. A gain of +-36dB and maximum slew rates for the peak filters offer great flexibility for eliminating or creating resonances and shaping your frequency range. All bands are capable of processing stereo, left, right, M-S mid or M-S side individually. An Analyzer in the display provides a visual representation of your settings. This version offers two shelving filters and 3 peak filters. It's the right choice for some minor frequency range adjustments.\n\nDevelopment: Markus Schmidt, Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Exciter",
+    "name": "Calf Exciter",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Spectral"
+    ],
+    "comment": "Filtered distortion to add brilliance to your tracks. The saturation stage is taken from Tom Szilakyi's TAP-plugin pack.\n\nDevelopment: Markus Schmidt, Tom Szilagyi",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Filter",
+    "name": "Calf Filter",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "Selectable 12dB/24dB/36dB rolloff, lowpass or highpass with inertia/smoothing for cutoff for more \"analog\" sound when tweaking. Particularly useful for drum loops or guitars in house music.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Flanger",
+    "name": "Calf Flanger",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "Simple stereo flanger with linear interpolation. If \"zipper noise\" of basic flanger effects is driving you mad, try this one!\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Gate",
+    "name": "Calf Gate",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Expander"
+    ],
+    "comment": "Because of the flexibility of Thor's compression detection we were able to use it as a solid base for a noise gate. The controls may seem a bit unusual but they provide high flexibility in detecting and eleminating your noise floor - Calf Gate bites off your sustain!\n\nDevelopment: Damien Zammit, Thor Harald Johansson",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/MonoCompressor",
+    "name": "Calf Mono Compressor",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "Single banded compressor based on a different compression routine than the main Calf Compressor.\n\nDevelopment: Damien Zammit",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Monosynth",
+    "name": "Calf Monosynth",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Instrument"
+    ],
+    "comment": "Simple monophonic synthesizer with 2 oscillators, multimode filter and an envelope. Designed to maximize flexibility while minimizing the number of controls. Useful for synth basses and leads.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/MultiChorus",
+    "name": "Calf Multi Chorus",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "Multi-tap stereo chorus with adjustable number of voices. Adds warmth and richness, especially if you give it a lot of CPU power. A lot of options make this effect highly flexible in expression.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Organ",
+    "name": "Calf Organ",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Instrument"
+    ],
+    "comment": "A versatile organ/pad synthesizer, capable of producing many types of sounds:\n\n - tonewheel organs (up to 9 drawbars)\n - solid state organs (9 independent oscillators with many waveforms to choose from, individual panning, phase shift and detune for each oscillator)\n - strings-like or choir-like pads (thanks to a set of long looped samples generated using padsynth algorithm invented by Nasca Octavian Paul)\n - fat basses and searing leads\n - The sound from some or all oscillators can be processed using 2 independent (but connectable) filter sections, controlled by up to 3 ADSR envelopes. A vibrato/chorus/phaser section makes the sound more vivid.\n\nDevelopment: Krzysztof Foltman\nSample generation algorythm: Nasca Octavian Paul",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Phaser",
+    "name": "Calf Phaser",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "A pretty basic stereo phaser with all typical settings (center frequency, modulation depth, LFO rate number of stages, feedback, amount, L-R LFO phase difference and amount). Provides a LFO reset button for consistent song playback. The number of stages goes up to 12.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Pulsator",
+    "name": "Calf Pulsator",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "Calf Pulsator is something inbetween an autopanner and a tremolo, but it can produce funny stereo effects as well. Pulsator changes the volume of the left and right channel based on a LFO (low frequency oscillator) with different waveforms and shifted phases.\n\nDevelopment: Markus Schmidt",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Reverb",
+    "name": "Calf Reverb",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Simple reverb with basic controls and relatively neutral sound. No dreaded metal barrel sound, but at the expense of higher CPU use and less time density. Like most artificial reverberators, it is not suitable for every instrument, but try it on vocals, guitars or Calf synths, and you will like it.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Saturator",
+    "name": "Calf Saturator",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "Universal distortion tool. Saturator can act as a guitar distortion as well as a harmonics generator. Some useful filters before and after the distortion stage and gapless adjustment between 2nd and 3rd harmonics give you a great flexibility in sound. The saturation stage is taken from Tom Szilakyi's TAP-plugin pack.\n\nDevelopment: Tom Szilagyi, Markus Schmidt",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/VintageDelay",
+    "name": "Calf Vintage Delay",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "A very simple simulation of tape echo, with a filter in a feedback loop and BPM-based time setting. The number of controls is limited, but all the essential stuff is there. Suitable for synths, guitars and almost anything else.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Wavetable",
+    "name": "Calf Wavetable",
+    "bundle": "calf.lv2",
+    "categories": [
+      "Instrument"
+    ],
+    "comment": "This synthesizer is based on predefined wavetables with a ADSR section.\n\nDevelopment: Krzysztof Foltman",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "Calf Studio Gear",
+    "version": null
+  },
+  {
     "uri": "https://hannesbraun.net/ns/lv2/airwindows/capacitor",
     "name": "Capacitor",
     "bundle": "Airwindows-Capacitor.lv2",
@@ -959,6 +1359,32 @@
     "version": "2.0"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/sync_pulse",
+    "name": "Clock Pulse",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/sync_square",
+    "name": "Clock Square",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "https://github.com/brummer10/CollisionDrive",
     "name": "CollisionDrive",
     "bundle": "CollisionDrive.lv2",
@@ -974,6 +1400,32 @@
   {
     "uri": "http://plugin.org.uk/swh-plugins/comb_c",
     "name": "Comb delay line, cubic spline interpolation",
+    "bundle": "comb-swh.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "Based on work by James McCartney in SuperCollider.\n- Max Delay (s): Maximum delay. Used to set the delay buffer size upon activation. Cannot be modulated. Note that if you do not connect to this port before activation, it will default to 1 second.\n- Decay Time (s): Time for the echoes to decay by 60 decibels. If this time is negative then the feedback coefficient will be negative, thus emphasizing only odd harmonics at an octave lower.",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": "Steve Harris",
+    "version": null
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/comb_l",
+    "name": "Comb delay line, linear interpolation",
+    "bundle": "comb-swh.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "Based on work by James McCartney in SuperCollider.\n- Max Delay (s): Maximum delay. Used to set the delay buffer size upon activation. Cannot be modulated. Note that if you do not connect to this port before activation, it will default to 1 second.\n- Decay Time (s): Time for the echoes to decay by 60 decibels. If this time is negative then the feedback coefficient will be negative, thus emphasizing only odd harmonics at an octave lower.",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": "Steve Harris",
+    "version": null
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/comb_n",
+    "name": "Comb delay line, noninterpolating",
     "bundle": "comb-swh.lv2",
     "categories": [
       "Delay"
@@ -1079,6 +1531,19 @@
     "version": "3.0"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/interpolator",
+    "name": "Control to CV Interpolator",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "https://mod.audio/plugins/ConvolutionLoader",
     "name": "Convolution Loader",
     "bundle": "MOD-ConvolutionLoader.lv2",
@@ -1142,6 +1607,58 @@
     "license": null,
     "maintainer": "Vitling",
     "version": "0.3"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/cs_chorus1",
+    "name": "CS Chorus 1",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Chorus"
+    ],
+    "comment": "Based on a CSound orchestra file by Sean Costello. There are two low frequency oscillators, each having three outputs that are 120 degrees apart in phase.  The summed outputs modulate three delay lines.  Make sure the static delay (first parameter) is at least equal to the sum of the two modulation depths.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": null
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/cs_chorus2",
+    "name": "CS Chorus 2",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Chorus"
+    ],
+    "comment": "Functionally identical to variant 1, but upsamples the input to the delay lines in an attempt to mitigate the errors produced by the linear interpolation at the output.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/cs_phaser1",
+    "name": "CS Phaser 1",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nThis is similar to the CSound module 'phaser1'. It's a series connection of 1 to 30 first order allpass filters with feedback. For 'Output mix', the range -1 to 0 crossfades between the inverted output and the input, and the range 0 to 1 crossfades between the input and the non-inverted output. Without feedback, the maximum effect is at +/- 0.5. For both 'Feedback gain' and 'Output mix', the best polarity depends on whether the number of sections is even or odd.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/cs_phaser1_lfo",
+    "name": "CS Phaser 1 with LFO",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "Similar to CS Phaser 1, but the external modulation has been replaced by a built-in LFO.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-abs",
@@ -1340,6 +1857,19 @@
     "version": "2.2"
   },
   {
+    "uri": "urn:distrho:a-comp#stereo",
+    "name": "DIE Compressor (stereo)",
+    "bundle": "distrho-a-comp.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "A powerful stereo compressor.",
+    "commentTruncated": false,
+    "license": "GPL v2+",
+    "maintainer": null,
+    "version": "2.2"
+  },
+  {
     "uri": "urn:distrho:a-delay",
     "name": "DIE Delay",
     "bundle": "distrho-a-delay.lv2",
@@ -1379,6 +1909,19 @@
     "version": "2.2"
   },
   {
+    "uri": "urn:distrho:a-exp#stereo",
+    "name": "DIE Expander (stereo)",
+    "bundle": "distrho-a-exp.lv2",
+    "categories": [
+      "Expander"
+    ],
+    "comment": "A powerful stereo expander",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.2"
+  },
+  {
     "uri": "urn:distrho:a-fluidsynth",
     "name": "DIE Fluid Synth",
     "bundle": "distrho-a-fluidsynth.lv2",
@@ -1405,8 +1948,34 @@
     "version": "2.4"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/difference",
+    "name": "Difference",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://github.com/blablack/deteriorate-lv2/downsampler_mono",
     "name": "Downsampler - Mono",
+    "bundle": "deteriorate.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": "ISC",
+    "maintainer": null,
+    "version": null
+  },
+  {
+    "uri": "http://github.com/blablack/deteriorate-lv2/downsampler_stereo",
+    "name": "Downsampler - Stereo",
     "bundle": "deteriorate.lv2",
     "categories": [
       "Filter"
@@ -1624,6 +2193,19 @@
     "license": "ISC",
     "maintainer": "brummer10",
     "version": "35.7"
+  },
+  {
+    "uri": "http://www.openavproductions.com/artyfx#filta",
+    "name": "Filta",
+    "bundle": "artyfx.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "A highpass and lowpass filter combined in a single knob!\nThe simplest way of limiting your frequency range or sweeping your sound around.\n\nFeatures:\nModeled by OpenAV",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.0"
   },
   {
     "uri": "http://remaincalm.org/plugins/floaty",
@@ -1899,6 +2481,32 @@
     "version": "1.0"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/fmod",
+    "name": "Frequency Modulator",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Spectral"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#StompBox_fuzz",
+    "name": "Fuzz",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "The Fuzz is a physically informed fuzz stompbox emulation. Based on several popular Fuzz pedal schematics, it was designed to capture the sound on an era rather than emulate a specific model.\n\nFeatures:\nModeled by Rakarrack",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://moddevices.com/plugins/mod-devel/Gain",
     "name": "Gain",
     "bundle": "mod-gain.lv2",
@@ -1990,6 +2598,32 @@
     "version": null
   },
   {
+    "uri": "http://plugin.org.uk/swh-plugins/buttlow_iir",
+    "name": "GLAME Butterworth Lowpass",
+    "bundle": "butterworth-swh.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Butterworth Lowpass filter",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": "Steve Harris",
+    "version": null
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/bwxover_iir",
+    "name": "Glame Butterworth X-over Filter",
+    "bundle": "butterworth-swh.lv2",
+    "categories": [
+      "Bandpass"
+    ],
+    "comment": "Butterworth X-over filter",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": "Steve Harris",
+    "version": null
+  },
+  {
     "uri": "http://faust-lv2.googlecode.com/Granulator",
     "name": "Granulator",
     "bundle": "Granulator.lv2",
@@ -2001,6 +2635,32 @@
     "license": "GPL",
     "maintainer": "Mayank Sanganeria",
     "version": "1.0"
+  },
+  {
+    "uri": "http://github.com/blablack/deteriorate-lv2/granulator_mono",
+    "name": "Granulator - Mono",
+    "bundle": "deteriorate.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": "ISC",
+    "maintainer": null,
+    "version": null
+  },
+  {
+    "uri": "http://github.com/blablack/deteriorate-lv2/granulator_stereo",
+    "name": "Granulator - Stereo",
+    "bundle": "deteriorate.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": "ISC",
+    "maintainer": null,
+    "version": null
   },
   {
     "uri": "http://github.com/geraldmwangi/GuitarMidi-LV2",
@@ -2088,19 +2748,6 @@
       "Filter"
     ],
     "comment": "Analog wah emulation of the classic Dunlop Crybaby (*), in a auto-wah version.\n\n(*) 'Other product names modeled in this software are trademarks of their respective companies that do not endorse and are not associated or affiliated with MOD.\nDunlop Crybaby is trademark or trade name of other manufacturer and was used merely to identify the product whose sound was reviewed in the creation of this product.\nAll other trademarks are the property of their respective holders.'\n\n*Unofficial documentation",
-    "commentTruncated": true,
-    "license": "ISC",
-    "maintainer": "Guitarix",
-    "version": "28.3"
-  },
-  {
-    "uri": "http://guitarix.sourceforge.net/plugins/gxautowah#autowah",
-    "name": "GxAutoWah",
-    "bundle": "gxwah.lv2",
-    "categories": [
-      "Filter"
-    ],
-    "comment": "Analog wah emulation of the classic Dunlop Crybaby (*), in a auto-wah version.\n\n(*) 'Other product names modeled in this software are trademarks of their respective companies that do not endorse and are not associated or affiliated with MOD.\nDunlop Crybaby is a trademark or trade name of another manufacturer and was used merely to identify the product whose sound was reviewed in the creation of this product.\nAll other trademarks are the property of their respective holders.'\n\n*Unofficial documentation",
     "commentTruncated": true,
     "license": "ISC",
     "maintainer": "Guitarix",
@@ -3394,6 +4041,19 @@
     "version": "28.3"
   },
   {
+    "uri": "http://guitarix.sourceforge.net/plugins/gxautowah#wah",
+    "name": "GxWah",
+    "bundle": "gxwah.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "Analog wah emulation of the classic Dunlop Crybaby (*).\n\n(*) 'Other product names modeled in this software are trademarks of their respective companies that do not endorse and are not associated or affiliated with MOD.\nDunlop Crybaby is trademark or trade name of other manufacturer and was used merely to identify the product whose sound was reviewed in the creation of this product.\nAll other trademarks are the property of their respective holders.'\n\n*Unofficial documentation",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": "Guitarix",
+    "version": "28.3"
+  },
+  {
     "uri": "http://guitarix.sourceforge.net/plugins/gx_colwah_#_colwah_",
     "name": "GxWahwah",
     "bundle": "gx_colwah.lv2",
@@ -3539,25 +4199,233 @@
   {
     "uri": "http://invadarecords.com/plugins/lv2/compressor/mono",
     "name": "Invada Compressor (mono)",
-    "bundle": "invada-labs.lv2",
-    "categories": [
-      "Compressor"
-    ],
-    "comment": null,
-    "commentTruncated": false,
-    "license": "GPL",
-    "maintainer": "Invada",
-    "version": null
-  },
-  {
-    "uri": "http://invadarecords.com/plugins/lv2/compressor/mono",
-    "name": "Invada Compressor (mono)",
     "bundle": "invada.lv2",
     "categories": [
       "Compressor"
     ],
     "comment": "The Invada Compressor is a very easy to use, high-quality relaxed compressor that features 6 knobs and a high level of controllability. \n\nA compressor reduces the level of an audio signal if its amplitude exceeds the set threshold. The gain reduction is determined by the ratio: a ratio of 4:1 means that if the input level is 4dB over the threshold, the output signal is 1dB over the threshold. \n\nThe \u2018Attack\u2019 controls how quickly the compressor starts to act. the \u2018Release\u2019 is the period when the compressor gradually stops acting. The Knee controls whether the bend in the response curve between below threshold and above threshold is abrupt (hard) or graduated (soft).  \n\nFeatures:\nModeled by Invada",
     "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/compressor/stereo",
+    "name": "Invada Compressor (stereo)",
+    "bundle": "invada.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "The Invada Compressor is a very easy to use, high-quality relaxed compressor that features 6 knobs and a high level of controllability. \n\nA compressor reduces the level of an audio signal if its amplitude exceeds the set threshold. The gain reduction is determined by the ratio: a ratio of 4:1 means that if the input level is 4dB over the threshold, the output signal is 1dB over the threshold. \n\nThe \u2018Attack\u2019 controls how quickly the compressor starts to act. the \u2018Release\u2019 is the period when the compressor gradually stops acting. The Knee controls whether the bend in the response curve between below threshold and above threshold is abrupt (hard) or graduated (soft).  \n\nFeatures:\nModeled by Invada",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/delay/mono",
+    "name": "Invada Delay Munge (mono in)",
+    "bundle": "invada.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "The Delay Munge is a unique delay pedal that is great for ambient sounds. \nThe Munge effect sets this pedal apart from the rest of the delay pedal family. It alters the shape and feel of each repetition caused by the delay effect. This can be controlled by changing the values of the LFO and Munge knobs and offers a lot of authenticity and dynamics to a sound.\n\nFeatures:\nModeled by Invada",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/delay/sum",
+    "name": "Invada Delay Munge (sum L+R in)",
+    "bundle": "invada.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "The Delay Munge is a unique delay pedal that is great for ambient sounds. \nThe Munge effect sets this pedal apart from the rest of the delay pedal family. It alters the shape and feel of each repetition caused by the delay effect. This can be controlled by changing the values of the LFO and Munge knobs and offers a lot of authenticity and dynamics to a sound.\n\nFeatures:\nModeled by Invada",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/erreverb/mono",
+    "name": "Invada Early Reflection Reverb (mono in)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "A Room simulator wich let you set the height, width and length of the room.",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/erreverb/sum",
+    "name": "Invada Early Reflection Reverb (sum L+R in)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "A Room simulator wich let you set the height, width and length of the room.",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/filter/hpf/mono",
+    "name": "Invada High Pass Filter (mono)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Highpass"
+    ],
+    "comment": "Simple filter whitout resonance",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/filter/hpf/stereo",
+    "name": "Invada High Pass Filter (stereo)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Highpass"
+    ],
+    "comment": "Simple filter whitout resonance",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/input",
+    "name": "Invada Input Module",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Lets you modify the basics of a stereo signal, such as stereo width, panning and phase",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/filter/lpf/mono",
+    "name": "Invada Low Pass Filter (mono)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Simple filter whitout resonance",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/filter/lpf/stereo",
+    "name": "Invada Low Pass Filter (stereo)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Simple filter whitout resonance",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/meter",
+    "name": "Invada Meter",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Analyser"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": null
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/phaser/mono",
+    "name": "Invada Stereo Phaser (mono in)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "The Sphaser features unique controls such as Phase Offset and a very long oscillation which makes it a go-to pedal for authentic phase effects.\n\nFeatures:\nModeled by Invada",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/phaser/stereo",
+    "name": "Invada Stereo Phaser (stereo in)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "This is the stereo version of the Sphaser effect.\nThe Sphaser features unique controls such as Phase Offset and a very long oscillation which makes it a go-to pedal for authentic phase effects.\n\nFeatures:\nModeled by Invada",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/phaser/sum",
+    "name": "Invada Stereo Phaser (sum L+R in)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "This version of the Sphaser effect pedal sums up the two inputs.\nThe Sphaser features unique controls such as Phase Offset and a very long oscillation which makes it a go-to pedal for authentic phase effects.\n\nFeatures:\nModeled by Invada",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/testtone",
+    "name": "Invada Test Tones",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": "A sine generator to test connections",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/tube/mono",
+    "name": "Invada Tube Distortion (mono)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "Tube distortion, with a DC offset options",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.1"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/tube/stereo",
+    "name": "Invada Tube Distortion (stereo)",
+    "bundle": "invada-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "Tube distortion, with a DC offset options",
+    "commentTruncated": false,
     "license": "GPL",
     "maintainer": null,
     "version": "2.1"
@@ -3611,6 +4479,19 @@
     "license": "ISC",
     "maintainer": "falkTX",
     "version": "2.1"
+  },
+  {
+    "uri": "http://www.openavproductions.com/artyfx#kuiza",
+    "name": "Kuiza",
+    "bundle": "artyfx.lv2",
+    "categories": [
+      "EQ"
+    ],
+    "comment": "OpenAV Kuiza is a four-band EQ with low, low-mid, hi-mid, high and an overall gain control.\n\nFeatures:\nModeled by openAV",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.0"
   },
   {
     "uri": "https://github.com/ninodewit/SHIRO-Plugins/plugins/larynx",
@@ -3691,6 +4572,19 @@
   {
     "uri": "http://lsp-plug.in/plugins/lv2/impulse_responses_mono",
     "name": "LSP IR Mono",
+    "bundle": "lsp-plugins-impulsantworten.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "This plugin performs highly optimized real time zero-latency convolution to the input signal. It can be used as a cabinet emulator, some sort of equalizer or as a reverb simulation plugin. All what is needed is audio file with impulse response taken from the linear system (cabinet, equalizer or hall/room).",
+    "commentTruncated": true,
+    "license": "LGPL",
+    "maintainer": "LSP LV2",
+    "version": "0.2"
+  },
+  {
+    "uri": "http://lsp-plug.in/plugins/lv2/impulse_responses_stereo",
+    "name": "LSP IR Stereo",
     "bundle": "lsp-plugins-impulsantworten.lv2",
     "categories": [
       "Reverb"
@@ -4244,6 +5138,19 @@
     "version": "1.2"
   },
   {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mapcc",
+    "name": "MIDI CC Map",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI CC Map enables you to change one control message into another. Combined with MIDI Scale CC Value, it allows you to modify/scale the actual value.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
     "uri": "http://gareus.org/oss/lv2/midifilter#cctonote",
     "name": "MIDI CC to Note",
     "bundle": "midifilter.lv2",
@@ -4270,6 +5177,97 @@
     "version": null
   },
   {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midichanfilter",
+    "name": "MIDI Channel Filter",
+    "bundle": "carla-miditools.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": "falkTX",
+    "version": null
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#channelfilter",
+    "name": "MIDI Channel Filter",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI channel filter. Only data for selected channel shall pass. This filter only affects midi-data which is channel relevant (ie note-on/off, control and program changes, key and channel pressure and pitch bend). MIDI-SYSEX and Realtime message are always passed on.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#channelmap",
+    "name": "MIDI Channel Map",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Channel Map enables you to rewrite midi-channel numbers. This filter only affects midi-data which is channel relevant (ie note-on/off, control and program changes, key and channel pressure and pitch bend). MIDI-SYSEX and Realtime message are always passed thru unmodified.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mididup",
+    "name": "MIDI Channel Unisono",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Channel Filter Unisono enables you to duplicate MIDI events from one channel to another.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midichannelize",
+    "name": "MIDI Channelize",
+    "bundle": "carla-miditools.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": "falkTX",
+    "version": null
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#midichord",
+    "name": "MIDI Chord",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "This harmonizer creates chords from a single (fundamental) note in a given musical scale. The scale as well as intervals can be automated freely (currently held chords will change). Note-ons are latched, for multiple/combined chords only single note-on/off will be triggered for the duration of the combined chords. If a off-scale note is given, it will be passed through - no chord is allocated.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#miditranspose",
+    "name": "MIDI Chromatic Transpose",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "A chromatic transpose of midi notes and key-pressure. If an inversion point is set, the scale is mirrored around this point before transposing. Notes that end up outside the valid range 0..127 are discarded.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
     "uri": "http://gareus.org/oss/lv2/mclk",
     "name": "MIDI Clock Generator",
     "bundle": "mclk.lv2",
@@ -4281,6 +5279,19 @@
     "license": "GPL",
     "maintainer": "Robin Gareus",
     "version": "0.0"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mididelay",
+    "name": "MIDI Delayline",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Delayline enables you to delay all MIDI events by a given time which is shown as BPM and beats. If the delay includes a random factor, this effect takes care of always keeping note on/off events sequential regardless of the randomization.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
   },
   {
     "uri": "https://github.com/vallsv/midi-display.lv2",
@@ -4296,6 +5307,71 @@
     "version": "1.0"
   },
   {
+    "uri": "http://gareus.org/oss/lv2/midifilter#nodup",
+    "name": "MIDI Duplicate Blocker",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Duplicate Blocker enables you to filter out overlapping notes on/off and duplicate messages.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#enforcescale",
+    "name": "MIDI Enforce Scale",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Enforce Scale enables you to filter note-on/off events depending on musical scale. If the key is changed note-off events of are sent for all active off-key notes.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#eventblocker",
+    "name": "MIDI Event Filter",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Event Filter is a notch style message filter. It enables you to suppress specific messages. For flexible note-on/off range see also 'keyrange' and 'velocityrange'.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midifile",
+    "name": "MIDI File",
+    "bundle": "carla-files.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "This is a simple MIDI file player plugin.\n\nJust upload some files in the MOD file manager section (specifically MIDI songs) and load up the plugin.\nTransport is rolling as long as the plugin is enabled and a file is selected.\nYou can also sync to host transport, so the player follows host start/stop controls.\nWhen repeat mode is enabled, the player will restart playback from the beginning after playing the last MIDI event on the file.\n\nNote that MIDI time is converted to wall-clock time, not beats or ticks.\nThis means the file is played exactly as it was made (as if in \"song mode\").\nThis ignores host BPM, as the plugin is intended to play full MIDI songs and not MIDI clips.",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": "falkTX",
+    "version": "150.22"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midigain",
+    "name": "MIDI Gain",
+    "bundle": "carla-miditools.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": "falkTX",
+    "version": null
+  },
+  {
     "uri": "http://gareus.org/oss/lv2/midigen",
     "name": "MIDI Generator",
     "bundle": "midigen.lv2",
@@ -4307,6 +5383,201 @@
     "license": "GPL",
     "maintainer": "Robin Gareus",
     "version": "512.0"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midijoin",
+    "name": "MIDI Join",
+    "bundle": "carla-miditools.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": "falkTX",
+    "version": null
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#keyrange",
+    "name": "MIDI Key-Range Filter",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Key Range Filter lets you define a range of allowed midi notes. Notes-on/off events outside the allowed range are discarded. If the range changes, note-off events are sent to currently active notes that end up outside the valid range.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#keysplit",
+    "name": "MIDI Keysplit",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Keysplit enables you to change midi-channel number depending on note. The plugin keeps track of transposed midi-notes and sends note-off events accordingly if the range is changed even if a note is active.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#monolegato",
+    "name": "MIDI Monophonic Legato",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Monophonic Legato allows you to hold a note until the next one arrives. In order to switch it off, replay the same note again.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#ntapdelay",
+    "name": "MIDI N-Tap Delay",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI N-Tap Delay repeats notes N times, where N is either a fixed number or unlimited as long as a given key is pressed. BPM and delay-time variable allows tempo-ramps. On every repeat the given velocity-adjustment is added or subtracted, the result is clamped between 1 and 127.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#notetocc",
+    "name": "MIDI Note to CC",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Note to CC allows you to convert only MIDI note-on messages to control change messages (ignored in toggle mode).\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.32"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#notetoggle",
+    "name": "MIDI Note Toggle",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "With MIDI Note Toggle, play a note to turn it on and play it again to turn it off.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mapkeyscale",
+    "name": "MIDI Note Transpose",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Note Transpose is a flexible 12-tone map which allows you to map a note within an octave to another note in the same octave-range +- 12 semitones. Alternatively, notes can also be disabled. The settings can be changed dynamically: Note-on/off events will be sent accordingly.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mapkeychannel",
+    "name": "MIDI Note/Channel Map",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "A 12-tone channel map which allows you to change midi-channel per note.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#quantize",
+    "name": "MIDI Quantization",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Live event quantization. This filter aligns incoming MIDI events to a fixed time-grid. Since the effect operates on a live-stream, it will introduce latency: events will be delayed until the next 'tick'.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#noactivesensing",
+    "name": "MIDI Remove Active Sensing",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "A filter made to block all active sensing events. Active sensing messages are optional MIDI messages intended to be sent repeatedly to tell a receiver that a connection is alive, however they can clutter up the MIDI channel or be inadvertently recorded when dumping raw MIDI data to disk.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#scalecc",
+    "name": "MIDI Scale CC Value",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Scale CC Value enables you to modify the value (data-byte) of a MIDI control change message.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#onechannelfilter",
+    "name": "MIDI Simple Channel Filter",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Simple MIDI channel filter. Only data for selected channels may pass. This filter only affects midi-data which is channel relevant (ie note-on/off, control and program changes, key and channel pressure and pitchbend). MIDI-SYSEX and Realtime message are always passed on. See also 'MIDI Channel Map' filter.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#sostenuto",
+    "name": "MIDI Sostenuto",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Sostenuto delays note-off messages by a given time, emulating a piano sostenuto pedal. When the pedal is released, note-off messages that are queued will be sent immediately.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midisplit",
+    "name": "MIDI Split",
+    "bundle": "carla-miditools.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": "falkTX",
+    "version": null
   },
   {
     "uri": "http://gareus.org/oss/lv2/stepseq#s16n8",
@@ -4372,6 +5643,19 @@
     "license": "GPL",
     "maintainer": "Robin Gareus",
     "version": "777.5"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#midistrum",
+    "name": "MIDI Strum",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "A midi arpeggio effect intended to simulate strumming a stringed instrument (e.g. guitar). A chord is 'collected' and the single notes of the chord are played back, spread out over time. The 'Note Collect Timeout' allows for the effect to be played live with midi-keyboard.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
   },
   {
     "uri": "http://moddevices.com/plugins/mod-devel/MIDI-Switchbox_1-2",
@@ -4487,6 +5771,58 @@
     "version": "1.1"
   },
   {
+    "uri": "http://kxstudio.sf.net/carla/plugins/miditranspose",
+    "name": "MIDI Transpose",
+    "bundle": "carla-miditools.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": "falkTX",
+    "version": null
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#velocityscale",
+    "name": "MIDI Velocity Adjust",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "With MIDI Velocity Adjust, change the velocity of note events with separate controls for Note-on and Note-off. The input range 1 - 127 is mapped to the range between Min and Max. If Min is greater than Max, the range is reversed. The offsets value is added to the velocity event after mapping the Min/Max range.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#randvelocity",
+    "name": "MIDI Velocity Randomization",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Velocity Randomization lets you randomize the velocity of MIDI notes (both note on and note off).\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#velocityrange",
+    "name": "MIDI Velocity-Range Filter",
+    "bundle": "midifilter.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "MIDI Velocity-Range Filter will filter MIDI note-on events according to velocity. Note-on events outside the allowed range are discarded. If a Note-off is received for a note that was previously filtered, it is also not passed though.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1033.31"
+  },
+  {
     "uri": "https://hannesbraun.net/ns/lv2/airwindows/midside",
     "name": "MidSide",
     "bundle": "Airwindows-MidSide.lv2",
@@ -4563,6 +5899,71 @@
     "license": "GPL",
     "maintainer": "Bernhard Rusch",
     "version": "0.1"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/mvchpf1",
+    "name": "Moog High-Pass Filter 1",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Highpass"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nBased on the voltage controlled highpass filter by Robert Moog, with some attention to the nonlinear effects.  This is quite different from the lowpass filters.  When you 'overdrive' the filter, the cutoff frequency will rise.  This first version is really very experimental.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/mvclpf1",
+    "name": "Moog Low-Pass Filter 1",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nA fairly simple design which does not even pretend to come close the 'real thing'. It uses a very crude approximation of the non-linear resistor in the first filter section only. Retained in this distribution because it's a cheap (in terms of CPU usage) general purpose 24 dB/oct lowpass filter that could be useful.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/mvclpf2",
+    "name": "Moog Low-Pass Filter 2",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nUses five non-linear elements, in the input and in all four filter sections. It works by using the derivative of the nonlinearity (for which 1 / (1 + x * x) is reasonable approximation). The main advantage of this is that only one evaluation of the non-linear function is required for each section. The four variables that contain the filter state (c1...c4) represent not the voltage on the capacitors (as in the first filter) but the current flowing in the resistive part.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/mvclpf3",
+    "name": "Moog Low-Pass Filter 3",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen. \n\nBased on variant 2, with two differences. It uses the the technique described by Stilson and Smith to extend the constant-Q range, and the internal sample frequency is doubled, giving a better approximation to the non-linear behaviour at high freqencies. This variant has high Q over the entire frequency range and will oscillate up to above 10 kHz, while the two others show a decreasing Q at high frequencies. This filter is reasonably well tuned, and can be 'played' as a VCO up to at least 5 kHz.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/mvclpf4",
+    "name": "Moog Low-Pass Filter 4",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Lowpass"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nThe same as variant 3, but adds a selection of 0, 6, 12, 18 or 24 db/oct output.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "http://romain-hennequin.fr/plugins/mod-devel/Freeze",
@@ -4861,6 +6262,19 @@
     "version": null
   },
   {
+    "uri": "https://falktx.com/plugins/portal#source",
+    "name": "Portal Source",
+    "bundle": "portal.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "The Portal audio plugins allow you to magically send audio from one side of the processing chain into another.\nThis is the source/exit/transmitter side of the Portal.\n\nThey can be used as a way to parallelize the audio processing by forcely splitting a single chain into 2.\n\nImagine the scenario of 4 plugins running in series (one after the other), where each plugin is given a letter:\n\n  A -> B -> C -> D\n\nPlugin D waits for C, which waits for B which waits for A, all a single line.\nIn audio processing each plugin runs consecutively one after the other, typically on a single CPU core.\nFrom A to D, all plugins must be able to process audio within a certain time limit, otherwise xruns occur.\nIf one plugin in the chain is heavy, it will limit the amount of time and processing available to the others.\n\nNow imagine the scenario of 4 plugins running in parallel, using 2 series for simplicity:\n\n  A -> B\n  C -> D\n\nThere are only 2 dependency chains now, B waits for A and D waits for C.\nThis means the 2 series can run in parallel, each on its own CPU core.\nIn the audio processing side the time spent running all plugins is now up to half of the first example.\nWe can run as many series as there are cores in the system while keeping good performance.\n\nBy splitting the processing chain in 2, the Portal audio plugins allow running the 2nd part of a chain in another CPU core.\nSimply load both sink and source portal plugins and connect each to the appropriate plugins.\nNote that only load 1 sink and 1 source can be loaded at a time.\n\nThe side effect is 1 audio cycle of latency coming out of the source/exit/transmitter portal.\nFor some effects like delay and reverb this could be a worthy compromise.",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": "falkTX",
+    "version": null
+  },
+  {
     "uri": "urn:brummer:PowerAmpImpulses",
     "name": "PowerAmpImpulses",
     "bundle": "PowerAmpImpulses.lv2",
@@ -4939,6 +6353,78 @@
     "version": "2.0"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/product",
+    "name": "Product",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/pulse",
+    "name": "Pulse",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/pulse_vco",
+    "name": "Pulse VCO",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nBased on the principle of using a precomputed interpolated dirac pulse. This is the pulse variant (flat amplitude spectrum). Aliases should be below -80dB for fundamental frequencies below the sample rate / 6 (i.e. up to 8 kHz at Fsamp = 48 kHz). This frequency range includes the fundamental frequencies of all known musical instruments.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/quantiser_100",
+    "name": "Quantiser (100 Steps)",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/quantiser_20",
+    "name": "Quantiser (20 Steps)",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/quantiser_50",
+    "name": "Quantiser (50 Steps)",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-random",
     "name": "Random Generator",
     "bundle": "mod-cv-random.lv2",
@@ -4948,6 +6434,19 @@
     "license": "GPL v2+",
     "maintainer": "MOD",
     "version": "1.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/random",
+    "name": "Random Wave",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "urn:brummer:ratatouille",
@@ -4961,6 +6460,32 @@
     "license": "https://spdx.org/licenses/BSD-3-Clause",
     "maintainer": "brummer",
     "version": "9.5"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/ratio",
+    "name": "Ratio",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/rec_vco",
+    "name": "Rec VCO",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nBased on the principle of using a precomputed interpolated dirac pulse. The 'edge' for this rectangular variant is made by integrating the anti-aliased pulse. Aliases should be below -80dB for fundamental frequencies below the sample rate / 6 (i.e. up to 8 kHz at Fsamp = 48 kHz). This frequency range includes the fundamental frequencies of all known musical instruments. Tests by Matthias Nagorni revealed the output sounded quite 'harsh' when compared to his analogue instruments. Comparing the spectra, it became clear that a mathematically 'exact' spectrum was not desirable from a musical point of view. For this reason, a built-in lowpass filter was added. The default setting (0.5) will yield output identical to that of the Moog\u2122 Voyager.\n\nFeatures:\nModeled by FOMP\n\n(*) \"Other product names modeled in this software are trademarks of their respective companies that do not endorse and are not associated or affiliated with MOD.\nMoog is a trademark or trade name of another manufacturer and was used merely to identify the products used in the creation of this product. All other trademarks are the property of their respective holders.\"",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "https://github.com/brummer10/screcord#mono_record",
@@ -4989,6 +6514,58 @@
     "version": "2.2"
   },
   {
+    "uri": "https://github.com/brummer10/screcord#quad_record",
+    "name": "Record-Quad",
+    "bundle": "sc_record.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Quad Reocrder plugin, save audio stream as 4 channel wav or ogg files.\n\nFeatures:\nDeveloped by Brummer",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": "brummer",
+    "version": "2.2"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#quad_record_mini",
+    "name": "Record-Quad Mini",
+    "bundle": "sc_record_mini.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Quad Reocrder plugin with a minimalistic UI, save audio stream as 4 channel wav or ogg files.\n\nFeatures:\nDeveloped by Brummer",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": "brummer",
+    "version": "2.2"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#stereo_record",
+    "name": "Record-Stereo",
+    "bundle": "sc_record.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Stereo Reocrder plugin, save audio stream as wav or ogg files.\n\nFeatures:\nDeveloped by Brummer",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": "brummer",
+    "version": "2.2"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#stereo_record_mini",
+    "name": "Record-Stereo Mini",
+    "bundle": "sc_record_mini.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "Stereo Reocrder plugin with a minimalistic UI, save audio stream as wav or ogg files.\n\nFeatures:\nDeveloped by Brummer",
+    "commentTruncated": true,
+    "license": "ISC",
+    "maintainer": "brummer",
+    "version": "2.2"
+  },
+  {
     "uri": "https://github.com/lkjbdsp/lkjb-plugins#ReFine",
     "name": "ReFine",
     "bundle": "ReFine.lv2",
@@ -4998,6 +6575,58 @@
     "license": null,
     "maintainer": "Lkjb",
     "version": "2.1"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/adsr_gt",
+    "name": "Retriggerable ADSR Envelope",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Envelope"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/dahdsr",
+    "name": "Retriggerable DAHDSR Envelope",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Envelope"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/reverb",
+    "name": "reverb",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/reverb_amb",
+    "name": "reverb-amb",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nThis is a stereo reverb plugin based on the well-known greverb.\n\nFeatures:\nModeled by FOMP",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "http://plugin.org.uk/swh-plugins/revdelay",
@@ -5026,6 +6655,45 @@
     "version": null
   },
   {
+    "uri": "http://plugin.org.uk/swh-plugins/ringmod_2i1o",
+    "name": "Ringmod with two inputs",
+    "bundle": "ringmod-swh.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "This is a simple 2 input ring modulator. It is important that the modulator input is bounded to (-1, +1), otherwise you will get rubbish on the output.",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": "Steve Harris",
+    "version": null
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#awha",
+    "name": "rkr AlienWah",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "This effect features two alternating comb filters for a vocal/formant-like wah sound. It could be considered a combined flanger and phaser. It can be extreme or add very subtle shimmer",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#aphas",
+    "name": "rkr Analog Phaser",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Phaser"
+    ],
+    "comment": "A physically-informed, highly-configurable digital model of an analog FET phaser effect.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://rakarrack.sourceforge.net/effects.html#Arpie",
     "name": "rkr Arpie",
     "bundle": "rkr-labs.lv2",
@@ -5039,17 +6707,524 @@
     "version": "0.0"
   },
   {
-    "uri": "http://rakarrack.sourceforge.net/effects.html#Arpie",
-    "name": "rkr Arpie",
-    "bundle": "rkr.lv2",
+    "uri": "http://rakarrack.sourceforge.net/effects.html#cabe",
+    "name": "rkr Cabinet",
+    "bundle": "rkr-labs.lv2",
     "categories": [
-      "Delay"
+      "Filter"
     ],
-    "comment": "A pitch shifter that changes the shifting amount in a rhythmic pattern. Adds pulse and brightness to your sound.",
+    "comment": "Equalizer with preset curves to match the effect of various guitar cabinets.",
     "commentTruncated": false,
     "license": null,
     "maintainer": null,
     "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#CoilCrafter",
+    "name": "rkr Coil Crafter",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "A equalizer that makes your pickups sound like different pickups. Can switch a strat to sound like humbuckers in a strat etc.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#CompBand",
+    "name": "rkr CompBand",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "Multi-band compressor with 4 frequency bands and wet/dry mix control. Each band has individual ratio and threshold controls.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#comp",
+    "name": "rkr Compressor",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "A flexible compressor with optional soft knee and makeup gain.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#dere",
+    "name": "rkr Derelict",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "A very configurable waveshaping distortion module with resonance control of the filters for extra color.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#DistBand",
+    "name": "rkr DistBand",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "A multi-band distortion allowing different character distortion of different frequencies. It is a waveshaping distortion with a different waveshaper selectable for each band.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#dist",
+    "name": "rkr Distorsion",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "A flexible waveshaping distortion with 30 waveshapes to choose from.",
+    "commentTruncated": false,
+    "license": "GPL-2.0",
+    "maintainer": "Rakarrack Team",
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Dual_Flange",
+    "name": "rkr Dual Flange",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Flanger"
+    ],
+    "comment": "Two flange effects cascaded to create unique and more intense tones than available through a single flanger.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#eco",
+    "name": "rkr Echo",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Configurable echo effect with a reverse echo feature.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Echotron",
+    "name": "rkr Echotron",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "An extremely-configurable delay that allows up to 127 taps. Individual tap timing can be customized and loaded through text files. You can also have a custom filter on each tap. Several example files included.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Echoverse",
+    "name": "rkr Echoverse",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Configurable echo designed to be stable for thick, in-your-face walls of sound.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#eql",
+    "name": "rkr EQ",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "MultiEQ"
+    ],
+    "comment": "10 band graphical equalizer with resonance control.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Exciter",
+    "name": "rkr Exciter",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "Harmonic exciter that allows you to adjust the volume of each of 10 harmonics.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Expander",
+    "name": "rkr Expander",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Expander"
+    ],
+    "comment": "Analog BJT modeled dynamic expander for subtler noise suppression than a gate typically offers. Can also be used for interesting evelope-triggered swell and fade effects.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#chor",
+    "name": "rkr Flanger/Chorus",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Chorus"
+    ],
+    "comment": "A flanger or chorus (depending on delay time) effect. Allows for fractional delays for a more intense effect.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#har",
+    "name": "rkr Harmonizer",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "Pitch shifter that harmonizes with your dry signal. This works best for monophonic sounds (a single note at a time). Also allows selection of root and chord for intelligent harmonies. Midi input can be used to select the harmoization notes.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#har_no_mid",
+    "name": "rkr Harmonizer (no midi)",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "Pitch shifter that harmonizes with your dry signal. This works best for monophonic sounds (a single note at a time). Also allows selection of root and chord for intelligent harmonies.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Infinity",
+    "name": "rkr Infinity",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "This is the audio equivalent of a barber pole effect, with 8 filter bands continuously sweeping up or down. This has enough flexibility to create effects anywhere from subtle to insane.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#delm",
+    "name": "rkr Musical Delay",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "Dual delay with delay times selectable by tempo and note subdivision.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#MuTroMojo",
+    "name": "rkr MuTroMojo",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "State variable filter with envelope or LFO modulation. Allows it to act like a mixable blend of highpass, lowpass or bandpass filter. Similar to a mutron III. Also useful for classic wah pedal emulation when wah parameter is controlled by an expression pedal.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Otrem",
+    "name": "rkr OpticalTrem",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "An optical tremolo effect emulation such as often built into a guitar amplifier. This varies the signal volume through an LFO.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#pan",
+    "name": "rkr Pan",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Spatial"
+    ],
+    "comment": "LFO controlled auto-panning/stereo tremelo effect. Useful to expand your stereo image.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#eqp",
+    "name": "rkr Parametric EQ",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "ParaEQ"
+    ],
+    "comment": "The Parametric EQ is a straight-forward 3 band parametric peak-filter equalizer.\n\nFeatures:\nModeled by Rakarrack",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#reve",
+    "name": "rkr Reverb",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "A simple, efficient reverb effect.",
+    "commentTruncated": false,
+    "license": "GPL-2.0",
+    "maintainer": "Rakarrack Team",
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Reverbtron",
+    "name": "rkr Reverbtron",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Convolution-based reverb effect. IR samples can be converted to .rvb format and loaded into this effect for a less cpu-intensive convolution. Several files included.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Ring",
+    "name": "rkr Ring",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "A ring modulator with monophonic frequency recognition for synthesis.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Sequence",
+    "name": "rkr Sequence",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "8-step modulation sequencer. Each step is user-adjustable. Signal amplitude, filter cutoff frequency, or pitch shifting modulations available.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#ShelfBoost",
+    "name": "rkr Shelf Boost",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "Low-shelf filter for simple control of your tone.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Shifter",
+    "name": "rkr Shifter",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "Pitch shifter with easy controls for expression pedal controled whammy effects. Also has a mode for envelope based control.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Shuffle",
+    "name": "rkr Shuffle",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Spatial"
+    ],
+    "comment": "Creates interesting spatial effects. Converts stereo signal to Mid/Side and applys a parametric four band EQ to M or S channel. Effect based on Stereo Shuffling paper by Michael Gerzon.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#StereoHarm_no_mid",
+    "name": "rkr StereoHarmonizer (no midi)",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "Pitch shifter that harmonizes 2 voices with your dry signal. This works best for monophonic sounds (a single note at a time). This version has a detune for stereo chorus effects. Also allows selection of root and chord for intelligent harmonies.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#StompBox",
+    "name": "rkr StompBox",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "Physically-informed distortion stompbox emulation with 8 different distortion-character modes. Intended to allow quick dialing-in to the tone you want.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Sustainer",
+    "name": "rkr Sustainer",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Compressor"
+    ],
+    "comment": "A very simple, no-frills soft knee compressor good for making notes sustain. Brighter than the full Rakarrack Compressor.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Synthfilter",
+    "name": "rkr Synthfilter",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "A filter like what can be found in synthesizers. Up to 12 lowpass + 12 highpass filters with resonance. Cutoff frequency is controllable by LFO or volume envelope.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Valve",
+    "name": "rkr Valve",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Distortion"
+    ],
+    "comment": "Tube distortion emulation with extra distortion available.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#VaryBand",
+    "name": "rkr VaryBand",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "Multi-band tremolo effect allowing 2 LFOs to modulate volume of any combination of 4 frequency bands.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Vibe",
+    "name": "rkr Vibe",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "The UniVibe was intended as a rotating speaker emulation. It does a poor job of that, but in its own right became a popular phase-shifter effect. This version has optional feedback to achieve some additional tones.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#Vocoder",
+    "name": "rkr Vocoder",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Modulator"
+    ],
+    "comment": "32 band vocoder. This type of effect is well known for creating robot-like voices in popular music. The input is divided into frequency bands and each band's volume is controlled by an auxiliary input's frequency curve such that the output signal is filtered to sound like the aux signal.",
+    "commentTruncated": true,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://rakarrack.sourceforge.net/effects.html#wha",
+    "name": "rkr WahWah",
+    "bundle": "rkr-labs.lv2",
+    "categories": [
+      "Filter"
+    ],
+    "comment": "Wah effect controllable by the input volume envelope or by LFO.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://www.openavproductions.com/artyfx#roomy",
+    "name": "Roomy",
+    "bundle": "artyfx.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Our most easy to use reverb is the roomy reverb. It doesn't get more straightforward than this!\nWith 3 simple controls, it takes just a blink to get the roomy pedal to sound good. The Decay knob allows you to set the duration of the reverb, the Damping knob allows you to control the high frequencies in the reverb tail, producing a warmer sound with less \u201cedge\u201d, and finally the Mix knob selects the amount of dry and wet signal. \nRoom reverbs add a natural color and liveliness to the sound. When you\u2019re going for a natural, in-person kind of sound (a pretty common goal in acoustic styles of music), the roomy reverb is a good choice. \n\nFeatures:\nModeled by OpenAV",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "2.0"
   },
   {
     "uri": "http://www.breakfastquay.com/rubberband#Mono",
@@ -5059,6 +7234,19 @@
       "Pitch"
     ],
     "comment": "Time-stretching and pitch-shifting plugin. Mono version.",
+    "commentTruncated": false,
+    "license": "GPL",
+    "maintainer": "falkTX",
+    "version": "8.2"
+  },
+  {
+    "uri": "http://www.breakfastquay.com/rubberband#Stereo",
+    "name": "Rubberband (Stereo)",
+    "bundle": "rubberband.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "Time-stretching and pitch-shifting plugin. Stereo version.",
     "commentTruncated": false,
     "license": "GPL",
     "maintainer": "falkTX",
@@ -5097,6 +7285,32 @@
     "commentTruncated": false,
     "license": "http://spdx.org/licenses/BSL-1.0",
     "maintainer": "Jean Pierre Cimalando",
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/saw_vco",
+    "name": "Saw VCO",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": "Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.\n\nBased on the principle of using a precomputed interpolated dirac pulse. The 'edge' for this saw variant (1/F amplitude spectrum) is made by integrating the anti-aliased pulse. Aliases should be below -80dB for fundamental frequencies below the sample rate / 6 (i.e. up to 8 kHz at Fsamp = 48 kHz). This frequency range includes the fundamental frequencies of all known musical instruments. Tests by Matthias Nagorni revealed the output sounded quite 'harsh' when compared to his analogue instruments. Comparing the spectra, it became clear that a mathematically 'exact' spectrum was not desirable from a musical point of view. For this reason, a built-in lowpass filter was added. The default setting (0.5) will yield output identical to that of the Moog\u2122 Voyager.\n\nFeatures:\nModeled by FOMP\n\n(*) \"Other product names modeled in this software are trademarks of their respective companies that do not endorse and are not associated or affiliated with MOD.\nMoog is a trademark or trade name of another manufacturer and was used merely to identify the products used in the creation of this product. All other trademarks are the property of their respective holders.\"",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/sawtooth",
+    "name": "Sawtooth",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
     "version": "0.0"
   },
   {
@@ -5230,6 +7444,19 @@
     "version": "10.6"
   },
   {
+    "uri": "http://sfztools.github.io/sfizz-multi",
+    "name": "sfizz-multi",
+    "bundle": "sfizz.lv2",
+    "categories": [
+      "Instrument"
+    ],
+    "comment": "SFZ sampler, providing AU, LV2, PureData and VST plugins.",
+    "commentTruncated": false,
+    "license": "ISC",
+    "maintainer": "SFZTools",
+    "version": "10.6"
+  },
+  {
     "uri": "https://github.com/ninodewit/SHIRO-Plugins/plugins/shiroverb",
     "name": "Shiroverb",
     "bundle": "Shiroverb.lv2",
@@ -5346,6 +7573,19 @@
     "version": "2.0"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/square",
+    "name": "Square",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "https://hannesbraun.net/ns/lv2/airwindows/starchild",
     "name": "StarChild",
     "bundle": "Airwindows-StarChild.lv2",
@@ -5434,6 +7674,19 @@
     "commentTruncated": false,
     "license": "http://spdx.org/licenses/GPL-2.0-or-later",
     "maintainer": "Jean Pierre Cimalando",
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/sum",
+    "name": "Sum",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
     "version": "0.0"
   },
   {
@@ -6000,6 +8253,19 @@
     "version": "0.1"
   },
   {
+    "uri": "http://ssj71.github.io/infamousPlugins/plugs.html#stuckstacker",
+    "name": "the infamous stuck stacker",
+    "bundle": "stuck.lv2",
+    "categories": [
+      "Delay"
+    ],
+    "comment": "The Stuck Stacker is similar to the Stuck but does not allow dry signal to pass. This characteristic makes the Stuck Stacker even more \u201csticky\u201d and lets you build sustained chords from a single voice.\n\nFeatures:\nModeled by Infamous",
+    "commentTruncated": true,
+    "license": "GPL-2.0",
+    "maintainer": "Spencer Jackson",
+    "version": "0.1"
+  },
+  {
     "uri": "http://arcticanaudio.com/plugins/thepilgrim",
     "name": "The Pilgrim",
     "bundle": "ThePilgrim.lv2",
@@ -6037,6 +8303,19 @@
     "version": "770.0"
   },
   {
+    "uri": "http://gareus.org/oss/lv2/tinygain#stereo",
+    "name": "TinyGain Stereo",
+    "bundle": "tinygain.lv2",
+    "categories": [
+      "Utility"
+    ],
+    "comment": "A stereo gain-stage with the range of +/-20dB and additional mute-control.\nThe gain control is low-pass filtered at 20Hz to prevent zipper noise.\nThe level display shows digital-peak (dBFS) of the output signal\n(rise-time: immediate, falloff: 15dB/sec).\nAlso Available in a mono version.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": "Robin Gareus",
+    "version": "770.0"
+  },
+  {
     "uri": "http://moddevices.com/plugins/mod-devel/ToggleSwitch4",
     "name": "ToggleSwitch",
     "bundle": "mod-toggleswitch4.lv2",
@@ -6050,6 +8329,30 @@
     "version": "1.1"
   },
   {
+    "uri": "http://drobilla.net/plugins/blop/tracker",
+    "name": "Tracker",
+    "bundle": "blop.lv2",
+    "categories": [],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/triangle",
+    "name": "Triangle",
+    "bundle": "blop.lv2",
+    "categories": [
+      "Oscillator"
+    ],
+    "comment": null,
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
+  },
+  {
     "uri": "http://nickbailey.co.nr/triceratops",
     "name": "Triceratops",
     "bundle": "triceratops.lv2",
@@ -6061,6 +8364,19 @@
     "license": "GPL-3.0",
     "maintainer": null,
     "version": null
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/triple_chorus",
+    "name": "Triple chorus",
+    "bundle": "fomp-labs.lv2",
+    "categories": [
+      "Chorus"
+    ],
+    "comment": "The same as CS Chorus 2, but has three separate outputs.  Plan L,C,R for a nice stereo effect.",
+    "commentTruncated": false,
+    "license": null,
+    "maintainer": null,
+    "version": "0.0"
   },
   {
     "uri": "https://github.com/GuitarML/TS-M1N3",
@@ -6201,8 +8517,47 @@
     "version": "1.1"
   },
   {
+    "uri": "http://gareus.org/oss/lv2/zeroconvolv#CfgStereo",
+    "name": "x42 - IR Convolver Stereo",
+    "bundle": "zeroconvo.lv2",
+    "categories": [
+      "Reverb"
+    ],
+    "comment": "Plugin to convolve audio signals, allowing you to load so-called Reverb Impulse Responses.\nThis is the stereo variant, with a dual input and output. A mono variant is also available.\n\nThis plugin uses background processing and is suitable to process long impulse-responses.\nConfigurations up to true-stereo (4 channels) are supported.\n\nFeatures:\nModeled by x42",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": null,
+    "version": "1.1"
+  },
+  {
     "uri": "http://gareus.org/oss/lv2/fat1",
     "name": "x42-Autotune",
+    "bundle": "fat1.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "AT1 is an 'autotuner', normally used to correct the pitch of a voice singing (slightly) out of tune. The 'expected' pitch can be controlled by MIDI, or be a fixed set of notes. AT1 can probably be used on some instruments as well, but is primarily designed to cover the vocal range.",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": "Robin Gareus",
+    "version": "2049.11"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/fat1#microtonal",
+    "name": "x42-Autotune (microtonal)",
+    "bundle": "fat1.lv2",
+    "categories": [
+      "Pitch"
+    ],
+    "comment": "AT1 is an 'autotuner', normally used to correct the pitch of a voice singing (slightly) out of tune. The 'expected' pitch can be controlled by MIDI, or be a fixed set of notes. AT1 can probably be used on some instruments as well, but is primarily designed to cover the vocal range. This variant allows to apply microtonal adjustments per note.",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": "Robin Gareus",
+    "version": "2049.11"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/fat1#scales",
+    "name": "x42-Autotune (scales)",
     "bundle": "fat1.lv2",
     "categories": [
       "Pitch"
@@ -6221,6 +8576,19 @@
       "ParaEQ"
     ],
     "comment": "A very complete EQ with visual response.\nFeaturing 4 bands, highpass and lowpass filters, you can now use your stomp box in order to tweak each edge of your sound as you like it.\n\nFeatures:\nModeled by Robin Gareus",
+    "commentTruncated": true,
+    "license": "GPL",
+    "maintainer": "Robin Gareus",
+    "version": "1.1"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/fil4#stereo",
+    "name": "x42-eq - Parametric Equalizer Stereo",
+    "bundle": "fil4.lv2",
+    "categories": [
+      "ParaEQ"
+    ],
+    "comment": "A very complete stereo EQ with visual response.\nFeaturing 4 bands, highpass and lowpass filters, you can now use your stomp box in order to tweak each edge of your sound as you like it.\n\nFeatures:\nModeled by Robin Gareus",
     "commentTruncated": true,
     "license": "GPL",
     "maintainer": "Robin Gareus",
