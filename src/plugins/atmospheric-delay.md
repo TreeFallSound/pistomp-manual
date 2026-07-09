@@ -52,9 +52,13 @@ Place it as your main delay send. The tape-style time modulation produces the sa
 
 No single plugin does pitch-shifted delay taps. Chain **AM pitchshifter** (set to 2.0 for +1 octave) into **GxEcho-Stereo** with feedback. Each repeat is re-pitched because the shifter sits before the feedback loop, producing the ascending shimmer tail. For a less aggressive shimmer, lower the pitch shift ratio.
 
-### Pattern: no single-plugin match
+### Pattern: rkr Echotron
 
-A rhythmic multi-tap pattern delay has no direct equivalent on the device. The closest approach is to use **Bollie Delay XT** with its tempo-synced ping-pong mode and short delay times to create rhythmic repeats, or chain multiple delays at different subdivisions.
+**rkr Echotron** is a pattern delay, and it goes further than the machine it replaces. Up to 128 taps, each with its own time, pan, level, and its own resonant state-variable filter, read from a `.dly` pattern file. Two LFOs run on top: one modulates the tap times, the other sweeps the tap filters. A rhythmic pattern where each repeat lands in a different place in the frequency spectrum, breathing as it decays. Nothing else on the device does this.
+
+The catch is the interface: patterns are text files, not knobs. MOD-UI gives you a file chooser, and you author or edit the `.dly` table by hand.
+
+If you'd rather stay in knob-land, **Bollie Delay XT** with tempo-synced ping-pong and short delay times approximates rhythmic repeats, or chain multiple delays at different subdivisions.
 
 ## Also considered
 
@@ -69,6 +73,7 @@ A rhythmic multi-tap pattern delay has no direct equivalent on the device. The c
 | Tal-Dub-3 | TAL-Togu Audio Line | GPL | [tal-software.com](https://tal-software.com) |
 | Bollie Delay XT | Bollie | GPL | [ca9.eu/lv2](https://ca9.eu/lv2) |
 | Reverse Delay | Steve Harris | GPL | [plugin.org.uk](http://plugin.org.uk) |
+| rkr Echotron | Ryan Billing | GPL-2.0 | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
 | Duck Delay Stereo | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
 | AM pitchshifter | Steve Harris | GPL | [plugin.org.uk](http://plugin.org.uk) |
 | GxEcho-Stereo | Guitarix team | GPL | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
