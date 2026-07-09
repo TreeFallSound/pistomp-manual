@@ -6,6 +6,7 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 
 - Be direct, concise, no fluff.
 - No LLM-ese: avoid "delve," "elevate," "unlock," "seamless," "robust," "realm," "journey," "landscape," "it's worth noting," "let's dive in," "game-changer," "versatile" (as filler), "craft" (as verb for making music), "tap into," "empower," "quietly," "load-bearing," "genuinely." No "no X, no Y" constructions. No false profundity of any kind.
+  - I'm dead serious about this. Adding an adjective or adverb where one isn't necessary to understanding reads as an advertisement, and _hinders_ understanding, because the mind is trying to find meaning where there is none.
 - Structure first, prose second.
 - Correct imprecision immediately.
 - Prefer tables over lists for structured data.
@@ -27,7 +28,31 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 - All h2/h3 headers have `clear: both`.
 - Plugin names in articles must match what appears in MOD-UI (the `doap:name` from the .ttl file), not the directory name.
 - Plugin editorial pages follow Wirecutter style: Our pick → Also great → Also considered, with screenshots and settings tables.
-- Do not use real musician names in plugin editorial pages — allude instead.
+- Avoid using real musician names or pedal names in plugin editorial pages — allude instead.
 - The build page links to wiki steps by anchor, doesn't reproduce them.
 - The software install page uses the `pistomp.conf` workflow (not the old Imager settings dialog).
-- Research docs live in `../pi-gen-pistomp/research/`. Plugin screenshots are fetched from `http://pistomp.local/effect/image/screenshot.png?uri=<encoded-URI>`.
+
+# Contents of the manual
+
+1. Welcome: getting to know the ecosystem. Meta- things go here: provide framing that will help users understand the rest of the manual quickly. Consider introducing concepts if they are foundational to _understanding_ multiple other concepts.
+2. Building: sourcing / ordering part, building your kit, and installing the software.
+3. Using: the bulk of the series. pi-Stomp is an instrument: how do you use it creatively? Also includes maintenance and bugfixing.
+4. Developers: how developers can contribute features and bugfixes, extend the ecosystem, write their own plugins, and deeply customize their device to be their best friend on stage.
+5. Plugins: a data table of all plugins, as well as plugin editorials
+
+# Data (plugins)
+
+- a list of all plugins that ship with the pi-Stomp enosystem is in `src/_data/plugins.json`
+  - `scripts/build_plugin_index.py` re-builds `src/_data/plugins.json`
+- Research docs live in `../pi-gen-pistomp/research/`
+- Plugin screenshots are fetched from `http://pistomp.local/effect/image/screenshot.png?uri=<encoded-URI>`.
+
+# Sister repositories
+
+All repositories are hosted on Github and are checked out to `..` (i.e. they are siblings):
+
+* TreeFallSound/pi-stomp is the main software that runs on the hardware (LCD, encoders, footswitches, controls mod-ui/mod-host)
+* TreeFallSound/mod-ui (by MOD Devices) that hosts the webapp and interacts with mod-host. Vendored (bugfixes and new features)
+* TreeFallSound/mod-host is the actual plugin host that renders audio, also by MOD Devices and vendored (bugfixes)
+* TreeFallSound/pi-gen-pistomp generates the debian image that we run on as well as hosts the OTA apt repository (rerere / github pages)
+* TreeFallSound/pistomp-recovery takes over the LCD when something goes wrong, showing crash information ("BSOD"), allowing system recovery, as well as OTA updates
