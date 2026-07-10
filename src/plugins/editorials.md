@@ -24,6 +24,6 @@ The plugins themselves are open-source work by talented developers and musicians
 - [Glitch Granular Delay]({{ '/plugins/glitch-granular-delay/' | url }}) — Scattered grains, freeze, and bitcrush
 - [Blown-Out Overdrive]({{ '/plugins/blown-out-overdrive/' | url }}) — Asymmetric op-amp saturation that stays clear under gain
 - [Compressors]({{ '/plugins/compressors/' | url }}) — Every compressor on the device, by the job you want it to do
-- [The rakarrack Compressors]({{ '/plugins/rakarrack-compressors/' | url }}) — Four guitar-voiced dynamics plugins, read at the source
 - [Tremolo]({{ '/plugins/tremolo/' | url }}) — Amplitude modulation, from optical cells to bias trem
 - [Uni-Vibe and Phaser]({{ '/plugins/vibe-phaser/' | url }}) — Swept allpass: throb versus glide
+- [Equalizers]({{ '/plugins/eq/' | url }}) — Every EQ on the device, by the job you want it to do

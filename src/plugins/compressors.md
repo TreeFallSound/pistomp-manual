@@ -21,6 +21,7 @@ Compressors aren't fuzz pedals. The right pick depends on your instrument, your 
 - **Squash / effect** — obvious compression. Country, funk, chicken-pickin'.
 - **Multi-band / bass** — preserve low end. Slap, tapping, extended range.
 - **Studio pro** — sidechain, lookahead, full control. Recording and mix bus.
+- **Gates and expanders** — dynamics running the other direction. Silence, and swells.
 
 Each category has our pick, one or two "also great" alternatives, and an "also considered" section for the rest. A final "something weird" section covers the one compressor on the device that doesn't fit any bucket. Plugin names match what you'll see in MOD-UI.
 
@@ -114,9 +115,19 @@ For country squash, set a fast attack and a high ratio; for funk sustain, slow t
 
 <img src="{{ '/assets/images/plugin-comp-rkrsustainer.png' | url }}" alt="Sustainer" class="plugin-screenshot">
 
-**rkr Sustainer** is Ryan Billing's two-knob compressor from Rakarrack, and it is a different animal from the rkr Compressor engine, not a preset of it. Its threshold is dynamic state: each sample it slides up toward the level of the compressed output, then relaxes back down. The result is a compressor that gets out of the way as the note decays — the gain comes up underneath the tail instead of pumping against it. The Sustain knob simultaneously drives the input up to 36 dB hotter, raises the resting threshold, and tightens the feedback ratio, so "more sustain" really means more gain into a harder-working detector.
+**rkr Sustainer** is Ryan Billing's two-knob compressor from rakarrack, and it is a different animal from the rkr Compressor engine, not a preset of it. A note struck through it hangs. The pick attack lands where you played it, and then, instead of the note falling away, the tail comes up underneath it and keeps coming — the long, blooming decay of a note held under a slide, without the pumping you'd get from a normal compressor chasing a dying string.
 
-**What you give up:** No sidechain, no blend, no timing controls at all — attack and release are fixed. It's tuned for sustain, not surgical control. If you want to duck the detector with an external EQ, use ZamComp. Full teardown in [The rakarrack Compressors]({{ '/plugins/rakarrack-compressors/' | url }}).
+The trick is that its threshold isn't fixed. Each sample the threshold climbs toward the level of the compressed output, then relaxes back down, so the compressor gets out of the way as the note decays rather than clamping harder. Hit it hard and the threshold walks up with the attack; as the string dies, the threshold falls back and the gain rises into the tail.
+
+The Sustain knob does three things at once. At maximum it drives the input **36 dB** hotter, raises the resting threshold, and tightens the feedback ratio, so "more sustain" is literally more gain into a harder-working detector. Timing is fixed and fast — a 10 ms peak decay behind a 12.5 ms hold, 50 ms envelope in both directions — and nothing filters anything, which is where the brightness comes from.
+
+| Gain | Sustain |
+|------|---------|
+| 40 (trim to taste) | 85–100 |
+
+Place it early, before dirt, and let the pedal after it hear a signal that already has the sustain baked in. Past about 110 the input drive turns audibly aggressive — a fine place to be, if that's what you want.
+
+**What you give up:** No sidechain, no blend, no timing controls at all — attack and release are fixed. It's tuned for sustain, not surgical control. If you want to duck the detector with an external EQ, use ZamComp.
 
 ### Also great: GxCompressor
 
@@ -127,6 +138,14 @@ For country squash, set a fast attack and a high ratio; for funk sustain, slow t
 **What you give up:** No sidechain, no blend. It's a straight-ahead guitar compressor — which is exactly the point. Reach for it when you want something simple and dependable and ZamComp's control set is more than you need.
 
 ### Also considered
+
+**rkr Compressor** is the conventional one of the rakarrack four, with a limiter hiding inside it. It's a feed-forward peak compressor — threshold, ratio, attack, release, knee, auto makeup — whose timing changes with level. Once the envelope crosses 0.9, the attack coefficient walks toward instantaneous and the release stretches out; above 1.0 the attack is a hard 1.0 and the release drops to a tenth of what you dialed. It becomes a limiter on its own, by level, with no switch to flip. Turn on **Peak** and you also get a leaky peak-hold detector, a hard ceiling at ±0.999, and a clipping indicator. Leave **Stereo** off — it means *unlinked*, not "stereo mode," and off is the mono-summed detector you want for guitar.
+
+Two things keep it out of the picks. The Knee control doesn't do what the label implies: inside the knee the effective ratio ramps toward `log₂(ratio)`, not toward the ratio you set, so at 4:1 the knee softens to 2:1 and then snaps to 4:1 at the top of the bend — and at ratio 2 the knee does nothing whatsoever, because `log₂(2) = 1`. Gain stays continuous; the slope does not. Ratio also bottoms out at 2, so there is no neutral setting. Above threshold, this plugin is always compressing.
+
+| Threshold | Ratio | Attack | Release | Knee | Auto Output | Peak |
+|-----------|-------|--------|---------|------|-------------|------|
+| −24 dB | 4 | 20 ms | 120 ms | 40 % | On | Off |
 
 **MDA Dynamics** is Paul Kellett's compressor/limiter/gate-in-one, dating to 1999–2000. It works — it's a real dynamics processor — but the code is old, the controls are minimal, and it doesn't do anything the picks above don't do better. It's the one that's actually appeared in a shared pedalboard, which tells you it's usable, but ZamComp and Sustainer are more musical for this use case.
 
@@ -154,7 +173,13 @@ The listen/solo feature is what makes this a mixing tool rather than just a bass
 
 ### Also considered
 
-**rkr CompBand** is the only 4-band compressor on the device, and we no longer recommend it. Its crossovers are single 2nd-order Butterworth pairs summed with the same sign, which puts a null at every crossover frequency rather than summing flat — so its frequency response depends on how hard it is compressing. Per band you get ratio and threshold only; attack and release are frozen at construction. Its Wet/Dry also defaults to 5 out of 127, so it arrives 94% dry. [The rakarrack Compressors]({{ '/plugins/rakarrack-compressors/' | url }}) covers the whole family in detail.
+**rkr CompBand** is the only 4-band compressor on the device — four copies of rkr Compressor behind three filter pairs — and we no longer recommend it. The filters are 2nd-order Butterworth, one low-pass and one high-pass at the same corner, and the four bands are summed with the same sign. That sums to a null:
+
+```
+LP(s) + HP(s) = (1 + s²)/(s² + √2s + 1)   →   zero at the crossover
+```
+
+A Linkwitz-Riley crossover cascades two Butterworth sections precisely so the bands sum flat. This one doesn't, so at unity band gains you get a notch at each crossover frequency, and the notches only fill in when the per-band compressors have pulled the bands to different levels. Its frequency response is a function of how hard it is working. Per band you get ratio and threshold and nothing else — attack, release, and knee are frozen at construction. And its Wet/Dry defaults to 5 out of 127, so out of the box it is 94% dry and sounds like a bypass.
 
 **MDA MultiBand** is Paul Kellet's 3-band, dating to 1999–2000. It uses simple one-pole crossovers, which means significant band overlap — the bands don't separate cleanly. Its one unique trick is an M/S processing mode (mid/side) for stereo-width control, which neither pick above offers. If you specifically need M/S compression on a stereo source, it's the only option here; otherwise the better crossovers on ZaMultiComp win.
 
@@ -194,6 +219,30 @@ The Sharp/Smooth attack toggle changes the envelope follower's response shape. S
 
 ---
 
+## If you want a gate or an expander
+
+A compressor pulls loud things down. An expander pushes quiet things further down — hiss between phrases, amp buzz under a rest, the tail of a note you'd rather not hear. Crank the ratio and an expander becomes a gate.
+
+### Our pick: rkr Expander
+
+<img src="{{ '/assets/images/plugin-comp-rkrexpander.png' | url }}" alt="rkr Expander" class="plugin-screenshot">
+
+Below the threshold, **rkr Expander** doesn't slam shut — it rolls off along an exponential curve, the same `e^x − 1` shape a transistor junction gives you. The `Shape` control sets how steep that curve is. High Shape is a gate: notes stop when you stop. Low Shape is the more interesting setting, because the signal fades in as it crosses the threshold, so a chord swells up out of silence under your picking hand instead of snapping on. For swells, drop Shape to about 6 and stretch Attack out to 400–900 ms. Release governs how fast the gain opens as well as how fast it closes; Attack only shapes the envelope follower's rise.
+
+| Threshold | Shape | Attack | Release | LPF | HPF | Output |
+|-----------|-------|--------|---------|-----|-----|--------|
+| −50 dB | 22 | 50 ms | 50 ms | 26000 Hz | 20 Hz | 10 |
+
+**Open the LPF and HPF before you do anything else.** They are 2-pole Butterworth filters sitting in your signal path, not in a sidechain, and they ship defaulted to 3134 Hz and 76 Hz. Drop the Expander in at factory settings and it darkens your tone before it has expanded a thing. Set them to the extremes for transparency, or use them deliberately — a low LPF makes the detector-plus-tone pairing behave like a dark noise gate for high-gain work.
+
+### Also considered
+
+**TAP Mono Dynamics** and **MDA Dynamics** both include gate and expander curves alongside their compression, and if one of them is already in your chain there's no reason to add a second plugin. Neither does swells.
+
+There is **no rakarrack noise gate** on the device, despite what the upstream source tree suggests. `Gate.C` is compiled but never registered in the bundle manifest. The Expander is the gate.
+
+---
+
 ## If you want something weird
 
 ### Pressure5
@@ -216,6 +265,7 @@ This is the character piece. It won't replace a transparent compressor or a stud
 | Squash / effect | ZamComp | rkr Sustainer | GxCompressor |
 | Multi-band / bass | ZaMultiComp | GxMultiBandCompressor | — |
 | Studio pro | Calf Mono Compressor | Molot Lite Mono | — |
+| Gate / expander | rkr Expander | — | — |
 | Weird / character | Pressure5 | — | — |
 
 ---
@@ -230,8 +280,10 @@ This is the character piece. It won't replace a transparent compressor or a stud
 | ZamComp | Damien Zammit | GPL-2.0+ | [github.com/zamaudio/zam-plugins](https://github.com/zamaudio/zam-plugins) |
 | ZamCompX2 | Damien Zammit | GPL-2.0+ | [github.com/zamaudio/zam-plugins](https://github.com/zamaudio/zam-plugins) |
 | ZaMultiComp | Damien Zammit | GPL-2.0+ | [github.com/zamaudio/zam-plugins](https://github.com/zamaudio/zam-plugins) |
-| rkr Sustainer | Ryan Billing | GPL | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
-| rkr CompBand | Ryan Billing | GPL | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
+| rkr Sustainer | Ryan Billing | GPL-2.0 | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
+| rkr Compressor | Josep Andreu, Ryan Billing, after Kretz & Westerfeld | GPL-2.0 | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
+| rkr Expander | Ryan Billing, Josep Andreu, after Steve Harris | GPL-2.0 | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
+| rkr CompBand | Ryan Billing, Josep Andreu, Nasca Octavian Paul | GPL-2.0 | [github.com/ssj71/rkrlv2](https://github.com/ssj71/rkrlv2) |
 | GxCompressor | Albert Graef (guitarix) | ISC | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
 | GxMultiBandCompressor | Albert Graef (guitarix) | ISC | [guitarix.sourceforge.net](http://guitarix.sourceforge.net) |
 | Calf Mono Compressor | Calf Studio Gear | LGPL | [calf.sourceforge.net](http://calf.sourceforge.net) |
@@ -243,3 +295,5 @@ This is the character piece. It won't replace a transparent compressor or a stud
 | Compressor Advanced (MOD) | Jan Janssen (VeJa / MOD Devices), DSP by Sean Connelly | ISC / MIT | [github.com/moddevices/mod-host](https://github.com/moddevices/mod-host) |
 | DIE Compressor | Damien Zammit, Robin Gareus | GPL-2.0+ | [github.com/DISTRHO/DIE-Plugins](https://github.com/DISTRHO/DIE-Plugins) |
 | Invada Compressor | Fraser Stuart (Invada) | GPL-2.0 | [launchpad.net/invada-studio](https://launchpad.net/invada-studio) |
+
+The four rkr plugins are ports of the rakarrack guitar effects rack, and the dynamics code has three generations of authorship behind it. rkr Compressor and rkr CompBand descend from `artscompressor.cc` by Matthias Kretz and Stefan Westerfeld, reworked by Ryan Billing in 2009. rkr Expander is adapted from Steve Harris's swh-plugins noise gate. rkr Sustainer is Ryan Billing's own. LV2 port by Spencer Jackson.
