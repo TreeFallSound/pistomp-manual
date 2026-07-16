@@ -126,6 +126,27 @@ blend_snapshots:
 
 See [Configuration]({{ '/using/configuration/#blend-mode' | url }}) for details on blend mode.
 
+## JACK ports and memory
+
+JACK preallocates 33 KB of shared memory per "port", whether or not anything ever connects to it. We set the maximum number of ports based on hardware; weaker machines have 1GB of RAM or less total, so they get the smaller cap.
+
+We also cut the CPU some slack by doubling the period size:
+
+
+| Board | `--port-max` | `JACK_PERIOD` |
+|-------|--------------|---------------|
+| Pi 5 | 512 | 128 |
+| Everything else | 256 | 256 |
+
+
+We derive this each boot (see `/etc/default/jack`) rather than recording it to the SD card, so cards remain swappable between machines. Each pedal in a loaded pedalboard is a JACK client using an average of three ports each, so both caps leave several times the headroom needed.
+
+## Configuring JACK
+
+You can also override...
+
+TODO read pi-gen-pistomp
+
 ## Settings store
 
 Runtime settings like input gain and headphone volume are stored in `/home/pistomp/data/config/settings.yml`. These persist across reboots without needing to save a pedalboard.
