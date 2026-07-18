@@ -33,6 +33,18 @@ eleventyNavigation:
 
 Turn up the output volume (Tweak 3). The headphone output follows the same audio as the main outputs. Low-impedance earbuds (< 50 ohms) may sound quiet — use higher-impedance headphones.
 
+## Device is on the network but unreachable from a specific computer
+
+The pi-Stomp shows a healthy WiFi link, but your device (often a Mac) cannot reach it. The Pi's signal is strong and the router reports the Pi as connected.
+
+| Possible cause | Try |
+|----------------|-----|
+| Router's bridge forwarding table has a stale entry for the Mac | On the Mac (not the pi-Stomp), turn WiFi off and back on: System Settings → Wi‑Fi → toggle off, wait 5 seconds, toggle on. This forces the Mac to re-associate and corrects the router's forwarding table |
+| Router's bridge table entry for the Pi goes stale when idle | SSH in and ping another device on the LAN to provoke a broadcast ARP: `ping -c 3 192.168.2.1` (replace with your gateway IP) |
+| macOS Private Wi‑Fi Address cycling | In Mac's System Settings → Wi‑Fi → details next to your network, disable **Private Wi‑Fi Address** for that SSID. This prevents the Mac from using a different MAC on re-association, which can confuse router forwarding tables |
+| Stale ARP cache on the Mac | On the Mac: `sudo arp -a -d` to flush the ARP table. If that alone doesn't restore connectivity, also toggle WiFi off/on |
+| mDNS resolves to the wrong address (ethernet link-local) | Use the pi-Stomp's IP address directly instead of `pistomp.local`. Find the IP in System Menu → System Info |
+
 ## Cannot connect via WiFi
 
 | Possible cause | Try |
@@ -41,6 +53,7 @@ Turn up the output volume (Tweak 3). The headphone output follows the same audio
 | Out of range | Move pi-Stomp closer to the router. Reboot by cycling power |
 | Wrong config | Click WiFi icon → **Configure WiFi** and set the correct SSID and password |
 | mDNS not working | Use the IP address from System Menu → **System Info** instead of [pistomp.local](http://pistomp.local) |
+| Marginal power supply | The WiFi radio draws bursts of current during transmit. A weak PSU can cause the radio to fail to initialize or drop the connection. Try a different outlet (avoid power strips with many devices) or upgrade to the 27W factory adapter. Run `dmesg \| grep -i brcm` to check for firmware load failures |
 
 ## Cannot SSH
 
