@@ -1,5 +1,6 @@
 .plugin-index-controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
@@ -12,7 +13,7 @@
   border: 1px solid var(--color-border);
   border-radius: 4px;
   color: var(--color-text);
-  background: #fff;
+  background: var(--color-surface);
 }
 
 .plugin-index-controls input {
@@ -20,8 +21,15 @@
   min-width: 0;
 }
 
+/* Five columns of free text are genuinely wider than a 1440px window, so this
+   table stays a scroll container at every width rather than pushing the page
+   sideways. (Below 45em it is restyled as cards and this no longer applies.) */
 #plugin-table {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 #plugin-table .plugin-name {
@@ -34,7 +42,7 @@
 }
 
 #plugin-table .plugin-comment {
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 0.85rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -52,12 +60,12 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--color-text);
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 4px;
   padding: 0.15rem 0.5rem;
   cursor: pointer;
-  box-shadow: -0.6rem 0 0.4rem 0.1rem #fff;
+  box-shadow: -0.6rem 0 0.4rem 0.1rem var(--color-surface);
 }
 
 .plugin-comment-more:hover {
@@ -77,7 +85,7 @@
   border: 1px solid var(--color-border);
   border-radius: 6px;
   color: var(--color-text);
-  background: #fff;
+  background: var(--color-surface);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -122,5 +130,80 @@
 
 #plugin-empty-state {
   padding: 1rem 0;
-  color: #666;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Phone: each row becomes a card ---------- */
+
+@media (max-width: 44.9375em) {
+  .plugin-index-controls input,
+  .plugin-index-controls select {
+    flex-basis: 100%;
+  }
+
+  #plugin-table,
+  #plugin-table tbody,
+  #plugin-table tr,
+  #plugin-table td {
+    display: block;
+    width: auto;
+  }
+
+  #plugin-table thead {
+    display: none;
+  }
+
+  /* The filter script toggles `row.hidden`. Setting display:block on tr above
+     overrides the user-agent [hidden] rule, so restate it or filtering breaks. */
+  #plugin-table tr[hidden] {
+    display: none !important;
+  }
+
+  #plugin-table tr {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.75rem 0.9rem;
+    margin-bottom: 0.75rem;
+    background: var(--color-surface);
+  }
+
+  #plugin-table td {
+    border: 0;
+    padding: 0.1rem 0;
+    font-size: 0.85rem;
+  }
+
+  #plugin-table td[data-label] {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  #plugin-table td[data-label]::before {
+    content: attr(data-label);
+    flex: none;
+    width: 6rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+
+  #plugin-table .plugin-name {
+    font-size: 1rem;
+  }
+
+  /* Cards have room for the whole comment, so drop the clamp and its
+     absolutely positioned "More" affordance. */
+  #plugin-table .plugin-comment {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: none;
+    line-clamp: none;
+    margin-bottom: 0.4rem;
+  }
+
+  .plugin-comment-more {
+    display: none;
+  }
 }

@@ -21,7 +21,7 @@ The complete guide to the pi-Stomp ecosystem — from building your first kit to
 - **[Developers]({{ '/developers/' | url }})** — Architecture, code structure, and contributing
 - **[Plugins]({{ '/plugins/' | url }})** — Editorial reviews of the best open-source effects
 
-> **Spot a mistake?** Select any text on a page and click **Suggest edit** to fix it straight on GitHub. See [Editing this manual]({{ '/developers/contributing/#editing-this-manual' | url }}) for details.
+<blockquote class="desktop-only"><p><strong>Spot a mistake?</strong> Select any text on a page and click <strong>Suggest edit</strong> to fix it straight on GitHub. See <a href="{{ '/developers/contributing/#editing-this-manual' | url }}">Editing this manual</a> for details.</p></blockquote>
 
 ## What is pi-Stomp?
 

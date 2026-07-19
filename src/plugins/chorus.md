@@ -17,7 +17,7 @@ That second architecture is what the famous rack-mount string ensembles did, and
 
 ## Our pick: String machine stereo chorus
 
-<img src="{{ '/assets/images/plugin-dc-string-machine.png' | url }}" alt="String machine stereo chorus" class="plugin-screenshot" style="position: relative; left: 25px;">
+<img src="{{ '/assets/images/plugin-dc-string-machine.png' | url }}" alt="String machine stereo chorus" class="plugin-screenshot nudge-right">
 
 **String machine stereo chorus** is a direct descendant of the string-ensemble circuit. It runs two independent LFO rows, three phases each (0°, 120°, 240°), and sums the six delay lines through a sign matrix — `L = line1 + line2 − line3`, `R = line1 − line2 − line3`. That matrix is the whole trick. The result is wide, lush, and open, with a slow, organic motion.
 

@@ -38,7 +38,7 @@ Place it as your main delay send. The tape-style time modulation produces the sa
 
 ### Reverse: Reverse Delay
 
-<img src="{{ '/assets/images/plugin-strymon-revdelay.png' | url }}" alt="Reverse Delay" class="plugin-screenshot" style="position:relative;right:-35px">
+<img src="{{ '/assets/images/plugin-strymon-revdelay.png' | url }}" alt="Reverse Delay" class="plugin-screenshot nudge-left">
 
 **Reverse Delay** is a purpose-built reverse delay: a circular buffer where the read head moves backward as the write head advances, with feedback and a configurable crossfade window to avoid clicks. Max delay is 5 seconds. It is continuous (no attack-triggered capture), so add a noise gate before it if you need threshold-gated reverse.
 

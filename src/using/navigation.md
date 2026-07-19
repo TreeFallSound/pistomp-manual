@@ -15,7 +15,7 @@ The pi-Stomp v3 can be controlled entirely from the device: no computer needed o
 
 The home screen shows the current pedalboard, active snapshot, and all plugins in the chain. The Navigation encoder moves a yellow highlight between elements; clicking takes action on whatever is highlighted.
 
-<img src="{{ '/assets/images/lcd-homescreen-beths.png' | url }}" alt="Home screen with pedalboard loaded" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-homescreen-beths.png' | url }}" alt="Home screen with pedalboard loaded" class="figure-narrow">
 
 - **Pedalboard name** (top) — click to open the pedalboard menu
 - **Snapshot name** (below pedalboard) — click to open the snapshot menu
@@ -34,7 +34,7 @@ The leftmost encoder is the primary interface to the LCD.
 
 ## Selecting a pedalboard
 
-<img src="{{ '/assets/images/lcd-pedalboard-select.png' | url }}" alt="Pedalboard selection" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-pedalboard-select.png' | url }}" alt="Pedalboard selection" class="figure-narrow">
 
 1. Rotate the Navigation encoder until the pedalboard name is highlighted (yellow)
 2. Click to open the pedalboard menu
@@ -47,7 +47,7 @@ Loading a new pedalboard takes a few seconds, during which time audio can drop m
 
 Snapshots store the state of all plugin parameters on a pedalboard, allowing different gain staging and effect blending/bypass. Verse, chorus, bridge, even different songs: all from the same pedalboard.
 
-<img src="{{ '/assets/images/lcd-preset-select.png' | url }}" alt="Snapshot selection" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-preset-select.png' | url }}" alt="Snapshot selection" class="figure-narrow">
 
 1. Rotate the Navigation encoder until the snapshot name is highlighted
 2. Click to enter snapshot selection mode
@@ -63,11 +63,11 @@ You can also switch snapshots by long-pressing footswitches A and B (previous an
 
 An enabled plugin shows as a filled block:
 
-<img src="{{ '/assets/images/lcd-plugin-active.png' | url }}" alt="Plugin enabled — filled block" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-plugin-active.png' | url }}" alt="Plugin enabled — filled block" class="figure-narrow">
 
 A bypassed plugin shows as an unfilled (outline) block:
 
-<img src="{{ '/assets/images/lcd-plugin-bypassed.png' | url }}" alt="Plugin bypassed — outline block" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-plugin-bypassed.png' | url }}" alt="Plugin bypassed — outline block" class="figure-narrow">
 
 Plugins assigned to footswitches can also be toggled from the floor — the footswitch label on the LCD updates to reflect the current state. When it's bound to a plugin, pressing the footswitch will toggle it on and off (bypass/enable).
 
@@ -75,19 +75,19 @@ Plugins assigned to footswitches can also be toggled from the floor — the foot
 
 1. Highlight a plugin tile and long-press the Navigation encoder
 
-<img src="{{ '/assets/images/lcd-param-menu.png' | url }}" alt="Parameter menu" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-param-menu.png' | url }}" alt="Parameter menu" class="figure-narrow">
 
 2. Rotate to select a parameter, then click
 
-<img src="{{ '/assets/images/lcd-param-dialog.png' | url }}" alt="Parameter edit dialog" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-param-dialog.png' | url }}" alt="Parameter edit dialog" class="figure-narrow">
 
 3. Rotate to adjust the value — changes take effect immediately
 
-<img src="{{ '/assets/images/lcd-param-tweaked.png' | url }}" alt="Parameter adjusted" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-param-tweaked.png' | url }}" alt="Parameter adjusted" class="figure-narrow">
 
 4. Click to close the dialog
 
-<img src="{{ '/assets/images/lcd-param-closed.png' | url }}" alt="Back to home screen" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-param-closed.png' | url }}" alt="Back to home screen" class="figure-narrow">
 
 ## Footswitches
 
@@ -102,7 +102,7 @@ The four footswitches (A–D, left to right) are user-configurable via MIDI CC. 
 
 When a footswitch is assigned to a plugin, its label and color appear on the LCD:
 
-<img src="{{ '/assets/images/lcd-footswitches.png' | url }}" alt="Footswitch labels on LCD" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-footswitches.png' | url }}" alt="Footswitch labels on LCD" class="figure-narrow">
 
 ## Tweak encoders
 
@@ -130,7 +130,7 @@ v3.2.0 adds a notes panel for pedalboard and plugin annotations. Notes appear wi
 
 Navigate to the wrench icon in the toolbar and click to open the system menu.
 
-<img src="{{ '/assets/images/lcd-system-menu.png' | url }}" alt="System menu" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-system-menu.png' | url }}" alt="System menu" class="figure-narrow">
 
 From here you can manage pedalboards, configure Wi-Fi, adjust audio settings, and access system utilities.
 
@@ -138,10 +138,10 @@ From here you can manage pedalboards, configure Wi-Fi, adjust audio settings, an
 
 From the system menu, select **Tuner**. You can also open and close the tuner by long-pressing footswitch C.
 
-<img src="{{ '/assets/images/lcd-tuner.png' | url }}" alt="Tuner — no signal" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-tuner.png' | url }}" alt="Tuner — no signal" class="figure-narrow">
 
 Play a string and the tuner shows the note and a visual indicator.
 
-<img src="{{ '/assets/images/lcd-tuner-signal.png' | url }}" alt="Tuner — with signal" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/lcd-tuner-signal.png' | url }}" alt="Tuner — with signal" class="figure-narrow">
 
 Use the navigation encoder to toggle mute while tuning, if desired.

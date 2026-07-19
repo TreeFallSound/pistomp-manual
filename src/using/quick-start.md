@@ -38,4 +38,4 @@ Learn more in [Navigation & Controls]({{ '/using/navigation' | url }}).
 
 Point a browser on any device on the same network to [http://pistomp.local](http://pistomp.local) to open MOD-UI — the drag-and-drop pedalboard editor.
 
-<a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface" style="display:block;width:80%;margin:1.5rem auto"></a>
+<a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface"></a>

@@ -17,7 +17,7 @@ You can launch recovery at any time from the **System Menu** → **Recovery mode
 
 This is what you'll use recovery for most. pi-Stomp ships updates over the air from the Tree Fall Sound repository. When you open the Updates menu, it checks what's available and lets you choose what to install.
 
-<img src="{{ '/assets/images/recovery-main-menu.png' | url }}" alt="Recovery main menu" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/recovery-main-menu.png' | url }}" alt="Recovery main menu" class="figure-narrow">
 
 ### What gets updated
 
@@ -37,11 +37,11 @@ Updates need an internet connection. Recovery checks connectivity first; if the 
 
 When you select Updates, recovery shows you what's available and lets you pick individual packages or install everything at once. During installation, a progress bar shows what's happening:
 
-<img src="{{ '/assets/images/recovery-progress.png' | url }}" alt="Update progress" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/recovery-progress.png' | url }}" alt="Update progress" class="figure-narrow">
 
 If a package fails to install, recovery automatically restores the previous version from its cached copy before anything is restarted. After a successful install, it restarts only the services affected by the packages you updated.
 
-<img src="{{ '/assets/images/recovery-done.png' | url }}" alt="Update complete" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/recovery-done.png' | url }}" alt="Update complete" class="figure-narrow">
 
 ### Unverified packages
 
@@ -51,7 +51,7 @@ If installed package files no longer match what the system recorded (a `dpkg --v
 
 If a critical service crashes, recovery takes over the LCD automatically. This happens when `mod-ala-pi-stomp` or `mod-ui` fails 3 times within 60 seconds.
 
-<img src="{{ '/assets/images/recovery-crash-screen.png' | url }}" alt="Crash screen" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/recovery-crash-screen.png' | url }}" alt="Crash screen" class="figure-narrow">
 
 The crash screen shows:
 
@@ -72,7 +72,7 @@ The crash screen shows:
 
 The log viewer shows the complete journalctl output for the crashed service. Use the Navigation encoder to scroll through lines vertically. Use Tweak 1 to scroll long lines horizontally. Long-press or click the back icon to return to the crash screen.
 
-<img src="{{ '/assets/images/recovery-log-view.png' | url }}" alt="Log viewer" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/recovery-log-view.png' | url }}" alt="Log viewer" class="figure-narrow">
 
 ## Restarting services
 
@@ -101,7 +101,7 @@ For each domain, the system keeps two reference points:
 
 Both operations let you pick which domains to reset. You can reset just your pedalboards while keeping your config, or reset everything at once.
 
-<img src="{{ '/assets/images/recovery-confirm.png' | url }}" alt="Confirm dialog" style="display:block;width:70%;margin:2rem auto">
+<img src="{{ '/assets/images/recovery-confirm.png' | url }}" alt="Confirm dialog" class="figure-narrow">
 
 ## System actions
 

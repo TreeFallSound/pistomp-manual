@@ -1,3 +1,13 @@
+/* Mobile-first. Base rules describe the phone layout; the desktop sidebar is
+   restored at the 64em breakpoint near the bottom of this file.
+
+   Breakpoints:
+     phone    up to 44.9375em (719px)   drawer nav, stacked, no floats
+     tablet   45em to 63.9375em         drawer nav, floats return
+     desktop  from 64em (1024px)        permanent sidebar
+   64em is the desktop cutoff because 260px of sidebar plus an 800px text
+   column needs 1060px; below that the permanent sidebar squeezes the prose. */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -6,20 +16,57 @@
 
 :root {
   --color-bg: #fafafa;
+  --color-surface: #fff;
+  --color-surface-alt: #f0f0f0;
+  --color-code-bg: #eee;
   --color-sidebar: #1a1a2e;
   --color-sidebar-text: #ccc;
   --color-sidebar-active: #e94560;
   --color-text: #333;
+  --color-text-muted: #666;
   --color-heading: #1a1a2e;
   --color-link: #1a1a2e;
   --color-border: #ddd;
   --sidebar-width: 260px;
+  --topbar-height: 3.5rem;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+
+  /* Tells the browser which way to paint scrollbars, form controls and
+     caret. Without it the UA paints a light scrollbar over a dark page. */
+  color-scheme: light;
 }
 
-html {
-  font-size: 16px;
+/* The dark palette is written twice on purpose: once for "follow the system"
+   (no explicit choice stored) and once for an explicit dark choice. CSS has no
+   way to share one declaration block across a media query boundary. Keep the
+   two lists in sync. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --color-bg: #14141f;
+    --color-surface: #1e1e2e;
+    --color-surface-alt: #26263a;
+    --color-code-bg: #26263a;
+    --color-text: #d8d8dd;
+    --color-text-muted: #9a9aa6;
+    --color-heading: #eaeaf2;
+    --color-link: #c8c8f0;
+    --color-border: #35354a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #14141f;
+  --color-surface: #1e1e2e;
+  --color-surface-alt: #26263a;
+  --color-code-bg: #26263a;
+  --color-text: #d8d8dd;
+  --color-text-muted: #9a9aa6;
+  --color-heading: #eaeaf2;
+  --color-link: #c8c8f0;
+  --color-border: #35354a;
+  color-scheme: dark;
 }
 
 body {
@@ -27,23 +74,209 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.layout {
-  display: flex;
-  min-height: 100vh;
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  padding: 0.6rem 1rem;
+  background: var(--color-sidebar);
+  color: #fff;
 }
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------- Mobile top bar ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: var(--topbar-height);
+  padding-right: 0.25rem;
+  background: var(--color-sidebar);
+  color: #fff;
+}
+
+.nav-toggle {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: 0.25rem;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Three bars drawn from one element so there is no icon font to load. */
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.nav-toggle-bars {
+  position: relative;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-bars::before { top: -6px; }
+.nav-toggle-bars::after  { top: 6px; }
+
+.topbar-title {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.topbar-crumb {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Theme toggle ---------- */
+
+/* Cycles system → light → dark. Rendered twice — once in the mobile top bar,
+   once in the sidebar header for desktop — and the script keeps both in sync. */
+.theme-toggle {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show only the block matching the current mode. Absent attribute = system.
+   Each block holds an icon and, in the labelled variant, its name. */
+.theme-toggle .theme-icon {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:root:not([data-theme]) .theme-toggle .theme-icon-system,
+:root[data-theme="light"] .theme-toggle .theme-icon-light,
+:root[data-theme="dark"] .theme-toggle .theme-icon-dark {
+  display: flex;
+}
+
+.theme-name {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* The sidebar copy is desktop-only: on mobile the drawer is a navigation
+   surface and the top bar already carries a toggle. */
+.sidebar .theme-toggle {
+  display: none;
+}
+
+@media (min-width: 64em) {
+  .sidebar .theme-toggle {
+    display: flex;
+    margin: 0.85rem auto 0;
+    padding: 0.35rem 0.75rem;
+    min-height: 0;
+    color: var(--color-sidebar-text);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.scrim[hidden] {
+  display: none;
+}
+
+/* ---------- Sidebar / drawer ---------- */
 
 .sidebar {
-  width: var(--sidebar-width);
-  background: var(--color-sidebar);
-  color: var(--color-sidebar-text);
-  padding: 1.5rem 0;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
+  z-index: 200;
+  width: min(80vw, 300px);
+  padding: 1.5rem 0;
+  background: var(--color-sidebar);
+  color: var(--color-sidebar-text);
   overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translateX(-100%);
+  /* The sidebar is dark in both themes, so its scrollbar must be too. */
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sidebar {
+    transition: transform 0.2s ease;
+  }
+}
+
+body.nav-open .sidebar {
+  transform: translateX(0);
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 .sidebar-header {
@@ -75,7 +308,8 @@ body {
   font-weight: 700;
 }
 
-.nav-list {
+.nav-list,
+.nav-pages {
   list-style: none;
 }
 
@@ -85,7 +319,7 @@ body {
 
 .nav-section-title {
   display: block;
-  padding: 0.25rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -93,16 +327,13 @@ body {
   font-weight: 600;
 }
 
-.nav-pages {
-  list-style: none;
-}
-
+/* Roomy enough to hit with a thumb; tightened again at desktop. */
 .nav-link {
   display: block;
-  padding: 0.3rem 1.25rem 0.3rem 1.75rem;
+  padding: 0.6rem 1.25rem 0.6rem 1.75rem;
   color: var(--color-sidebar-text);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-left: 2px solid transparent;
 }
 
@@ -117,25 +348,29 @@ body {
   background: rgba(233,69,96,0.08);
 }
 
-.nav-depth-2 {
+/* Indent applies at every level, so third-level entries (Plugins ›
+   Editorials › a page) are distinguishable from their parent. */
+.nav-pages .nav-pages {
   margin-left: 1.75rem;
 }
 
-.nav-depth-2 > li > .nav-link {
+.nav-pages .nav-pages > li > .nav-link {
   padding-left: 0.75rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   border-left: 2px solid rgba(255,255,255,0.15);
 }
 
-.nav-depth-2 > li > .nav-link.active {
+.nav-pages .nav-pages > li > .nav-link.active {
   border-left-color: var(--color-sidebar-active);
 }
 
+/* ---------- Content ---------- */
+
 .content {
-  margin-left: var(--sidebar-width);
-  padding: 2rem 3rem;
+  padding: 1rem;
   max-width: 800px;
-  flex: 1;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .content-wide {
@@ -143,16 +378,17 @@ body {
 }
 
 .content h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--color-heading);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-border);
+  overflow-wrap: break-word;
 }
 
 .content h2 {
   clear: both;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--color-heading);
   margin-top: 2rem;
   margin-bottom: 0.75rem;
@@ -160,7 +396,7 @@ body {
 
 .content h3 {
   clear: both;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--color-heading);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
@@ -198,6 +434,7 @@ body {
 .content a {
   color: var(--color-link);
   text-decoration: underline;
+  overflow-wrap: break-word;
 }
 
 .content a:hover {
@@ -206,7 +443,7 @@ body {
 
 .content ul, .content ol {
   margin-bottom: 1rem;
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 .content li {
@@ -216,9 +453,10 @@ body {
 .content code {
   font-family: var(--font-mono);
   font-size: 0.875em;
-  background: #eee;
+  background: var(--color-code-bg);
   padding: 0.1em 0.3em;
   border-radius: 3px;
+  overflow-wrap: break-word;
 }
 
 .content pre {
@@ -229,38 +467,49 @@ body {
   overflow-x: auto;
   margin-bottom: 1rem;
   font-size: 0.85rem;
+  /* Code blocks are dark in both themes; keep their scrollbar dark too. */
+  color-scheme: dark;
 }
 
 .content pre code {
   background: none;
   padding: 0;
   font-size: inherit;
+  overflow-wrap: normal;
 }
 
 .content img {
   display: block;
-  width: 80%;
+  width: 100%;
+  height: auto;
   margin: 1.5rem auto;
   border-radius: 6px;
 }
 
+/* LCD screenshots and similar figures: narrow on desktop, full-bleed on phone
+   where there is no width to spare. Replaces inline width styles in markdown. */
+.content img.figure-narrow {
+  width: 100%;
+}
+
 .content img.plugin-screenshot {
-  float: right;
-  max-width: 200px;
-  max-height: 280px;
-  width: auto;
-  height: auto;
-  margin: 0 0 1rem 1.5rem;
+  width: 80%;
 }
 
 .content blockquote {
   border-left: 3px solid var(--color-sidebar-active);
   padding-left: 1rem;
   margin: 1rem 0;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
+/* Wide markdown tables scroll inside their own box rather than pushing the
+   page sideways. display:block is what makes the table a scroll container. */
 .content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   margin-bottom: 1rem;
 }
@@ -273,21 +522,61 @@ body {
 }
 
 .content th {
-  background: #f0f0f0;
+  background: var(--color-surface-alt);
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-  }
-  .content {
-    margin-left: 0;
-    padding: 1.5rem;
-  }
+/* ---------- Prev / next pager ---------- */
+
+.pager {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
 }
+
+/* Scoped under .content so it beats the generic `.content a` link styling. */
+.content .pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  text-decoration: none;
+  color: var(--color-heading);
+}
+
+.content .pager-link:hover {
+  border-color: var(--color-sidebar-active);
+  color: var(--color-sidebar-active);
+}
+
+.pager-next {
+  text-align: right;
+}
+
+.pager-dir {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.pager-title {
+  font-weight: 600;
+}
+
+/* Content that only makes sense alongside the desktop layout — currently the
+   text-selection "Suggest edit" affordance, which is hidden below 64em too.
+   Keep this breakpoint and .suggest-edit-btn's in step. */
+.desktop-only {
+  display: none;
+}
+
+/* ---------- Selection-based edit button (pointer devices only) ---------- */
 
 .suggest-edit-btn {
   position: absolute;
@@ -311,6 +600,101 @@ body {
   background: var(--color-sidebar-active);
 }
 
-.suggest-edit-btn.visible {
-  display: block;
+/* ---------- Tablet ---------- */
+
+@media (min-width: 45em) {
+  .content {
+    padding: 1.5rem;
+  }
+
+  .content h1 { font-size: 1.85rem; }
+  .content h2 { font-size: 1.4rem; }
+  .content h3 { font-size: 1.15rem; }
+
+  .content img {
+    width: 80%;
+  }
+
+  .content img.figure-narrow {
+    width: 70%;
+  }
+
+  /* Floats only make sense once there is a text column left beside them. */
+  .content img.plugin-screenshot {
+    float: right;
+    width: auto;
+    max-width: 200px;
+    max-height: 280px;
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  .content img.nudge-right { position: relative; left: 25px; }
+  .content img.nudge-left  { position: relative; right: -35px; }
+
+  .pager {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Keep next hard right even when there is no previous page. */
+  .pager-next:only-child {
+    grid-column: 2;
+  }
+}
+
+/* ---------- Desktop: permanent sidebar ---------- */
+
+@media (min-width: 64em) {
+  .topbar,
+  .scrim,
+  .nav-toggle {
+    display: none;
+  }
+
+  /* The sidebar is out of flow, so the shell reserves its width with padding
+     and the content column centres itself in what is left over. */
+  .layout {
+    min-height: 100vh;
+    padding-left: var(--sidebar-width);
+  }
+
+  .sidebar {
+    width: var(--sidebar-width);
+    transform: none;
+    transition: none;
+  }
+
+  body.nav-open {
+    overflow: auto;
+  }
+
+  .nav-link {
+    padding: 0.3rem 1.25rem 0.3rem 1.75rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-section-title {
+    padding: 0.25rem 1.25rem;
+  }
+
+  .nav-pages .nav-pages > li > .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .content {
+    padding: 2rem 3rem;
+  }
+
+  /* Enough room for the prose column, so tables can lay out normally again. */
+  .content table {
+    display: table;
+    width: auto;
+  }
+
+  .suggest-edit-btn.visible {
+    display: block;
+  }
+
+  .desktop-only {
+    display: revert;
+  }
 }

@@ -41,7 +41,7 @@ To use an expression pedal with a wah, first enable it by running the appropriat
 
 MOD-UI will now map the incoming MIDI CC to that port automatically. Remember to save your pedalboard at the top of the screen after you're done so the binding survives pedalboard changes and reboots.
 
-<img src="{{ '/assets/images/plugin-wah-expr-pedal.png' | url }}" alt="Expression pedal setup" style="display:block;width:80%;margin:0 auto 1rem auto">
+<img src="{{ '/assets/images/plugin-wah-expr-pedal.png' | url }}" alt="Expression pedal setup">
 
 ## Credits
 

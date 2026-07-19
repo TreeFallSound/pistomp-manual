@@ -50,6 +50,33 @@ module.exports = function (eleventyConfig) {
     return crypto.createHash("md5").update(content).digest("hex").slice(0, 8);
   });
 
+  // Walks the eleventyNavigation tree in depth-first reading order and returns
+  // this page's neighbours plus the top-level section it belongs to. The pager
+  // is how a mobile reader moves through the manual without opening the drawer;
+  // the section name is the breadcrumb in the mobile top bar.
+  //
+  // Depth-0 entries are skipped as pager stops: every one of them is a
+  // `redirect:` stub that bounces to its first child, so landing on one would
+  // send the reader straight back out again.
+  eleventyConfig.addFilter("navPager", (tree, currentUrl) => {
+    const stops = [];
+    (function walk(entries, section) {
+      for (const entry of entries || []) {
+        const top = section || entry.title;
+        if (section) stops.push({ url: entry.url, title: entry.title, section: top });
+        walk(entry.children, top);
+      }
+    })(tree, null);
+
+    const i = stops.findIndex((s) => s.url === currentUrl);
+    if (i === -1) return { prev: null, next: null, section: null };
+    return {
+      prev: i > 0 ? stops[i - 1] : null,
+      next: i < stops.length - 1 ? stops[i + 1] : null,
+      section: stops[i].section,
+    };
+  });
+
   eleventyConfig.addFilter("frontMatterLineCount", (inputPath) => {
     const raw = fs.readFileSync(inputPath, "utf8");
     const lines = raw.split("\n");

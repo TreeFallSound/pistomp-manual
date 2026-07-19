@@ -49,10 +49,10 @@ Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by
           </div>
           {%- endif %}
         </td>
-        <td>{% if plugin.categories.length %}{{ plugin.categories | join(', ') }}{% else %}—{% endif %}</td>
-        <td>{{ plugin.maintainer or '—' }}</td>
-        <td>{{ plugin.license or '—' }}</td>
-        <td>{{ plugin.version or '—' }}</td>
+        <td data-label="Categories">{% if plugin.categories.length %}{{ plugin.categories | join(', ') }}{% else %}—{% endif %}</td>
+        <td data-label="Maintainer">{{ plugin.maintainer or '—' }}</td>
+        <td data-label="License">{{ plugin.license or '—' }}</td>
+        <td data-label="Version">{{ plugin.version or '—' }}</td>
       </tr>
       {%- endfor %}
     </tbody>
