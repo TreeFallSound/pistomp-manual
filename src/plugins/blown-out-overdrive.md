@@ -25,6 +25,8 @@ The plugin's four ports are GAIN (exponential drive into the clipper, mapped `0.
 
 GAIN 0.95 puts the linear drive at ≈0.0073 into the asymmetric tables; the default 0.15 is ≈0.0003 and reads as nearly clean. BASS/TREBLE at 0.5 and VOLUME to taste. Pair it with a gentle high-pass ahead of it in the chain (the original circuit rolls the low end before the clipper) and a touch of post-EQ to shape the midrange. No plugin on the device gives you the bias-collapse gating artefact directly, but you can build it: an inverted envelope driving GAIN makes the note eat its own gain as it decays. See [Control Voltage]({{ '/using/control-voltage/#worked-example-bias-collapse' | url }}) for the patch.
 
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 ## Also great: GxAxisFace
 
 <img src="{{ '/assets/images/plugin-fuck-axisface.png' | url }}" alt="GxAxisFace" class="plugin-screenshot">

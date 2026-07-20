@@ -17,16 +17,15 @@ If you need a multi-machine delay for shoegaze or ambient, these pedals can get 
 
 **Tal-Dub-3** is the most polished delay plugin on the device — TAL Software's original, ported via DISTRHO/JUCE. It runs at 2× oversampling with allpass-style fractional interpolation, a DC-blocked feedback path with Moog-ladder lowpass and tanh saturation, and a tape-style time-slew modulation layer. This gives it a warm, evolving character, covering Digital, Tape, Analog, Modern, and Tube delay types in a single plugin.
 
-| Control | Setting |
-|---------|---------|
-| Delay | Tempo-synced to taste |
-| Feedback | 0.4–0.6 |
-| Tone | 0.5–0.7 (warm) |
-| Tape mod | 0.3–0.5 |
+| Delay | Feedback | Tone | Tape mod |
+|-------|----------|------|----------|
+| Tempo-synced to taste | 0.4–0.6 | 0.5–0.7 (warm) | 0.3–0.5 |
 
 Place it as your main delay send. The tape-style time modulation produces the same pitch-wobble character as a tape delay machine, while the filter+saturation path covers Analog and Tube textures.
 
-## Runner-up: Bollie Delay XT
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
+## Also great: Bollie Delay XT
 
 <img src="{{ '/assets/images/plugin-strymon-bolliedelayxt.png' | url }}" alt="Bollie Delay XT" class="plugin-screenshot">
 

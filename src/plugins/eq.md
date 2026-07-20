@@ -9,21 +9,9 @@ eleventyNavigation:
 
 # Equalizers
 
-An equalizer is the pedal you reach for when something in your chain is almost right. A fizz up high that won't go away, a boomy low end that muddies a mix, a pickup that honks at 800 Hz. You can fix all three with a fuzz swap, a cab change, and a new guitar — or you can fix them with one EQ plugin and five minutes. The wrong EQ plugin makes the fix harder: fixed bands that miss the frequency you need, gain-only knobs when you want to move the corner, or a control surface that won't ride live. The right one disappears into the chain the way a good compressor does.
+The pi-Stomp ships with over a dozen EQ and parametric-EQ plugins. This guide through walks every one we could read the source for, grouped by the job you actually want an EQ to do.
 
-The pi-Stomp ships with over a dozen EQ and parametric-EQ plugins. Most have never appeared in a single shared pedalboard. This guide walks every one we could read the source for, grouped by the job you actually want an EQ to do. There is no single best EQ here — there's the best one _for the frequency you are chasing_.
-
-## How to read this guide
-
-EQs split into three buckets by what they let you do:
-
-- **Surgical parametric** — cut or boost a specific frequency. Sweepable center, bandwidth, and gain. The precision tools.
-- **Fixed graphic** — broadstroke tone shaping across set bands. Reach for a slider, pull it, done.
-- **Voicing / colour** — fixed character, not surgical. Models a specific piece of analog hardware or a tone stack.
-
-Each category has our pick, one or two "also great" alternatives, and an "also considered" section for the rest. Plugin names match what you'll see in MOD-UI.
-
-A note on attribution: every EQ reviewed here is the work of its authors — Tim Goetze, Fons Adriaensen, Robin Gareus, Harry van Haaren, Tom Szilagyi, the guitarix team, the Calf team, lkjb, Chris Johnson, and others. pi-Stomp just ships them. Load them up and try them.
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
 
 ---
 

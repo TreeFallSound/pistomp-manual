@@ -19,13 +19,13 @@ If you need a midrange boost to push a fuzz or tighten up a high-gain amp, a Tub
 
 Set it up as a stacked boost:
 
-| Control | Setting |
-|---------|---------|
-| Drive | 0.2–0.3 (low) |
-| Tone | 400 Hz |
-| Level | Unity (adjust to taste) |
+| Drive | Tone | Level |
+|-------|------|-------|
+| 0.2–0.3 (low) | 400 Hz | Unity (adjust to taste) |
 
 Place it before your fuzz or amp in the MOD-UI chain. The 720 Hz mid-hump tightens the low end and helps the fuzz cut through the mix; a classic shoegaze trick.
+
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
 
 ## Also great: GxSD1
 

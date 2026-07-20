@@ -25,7 +25,9 @@ If you need a fat, thick, controlled fuzz for solo work — the kind that stays 
 
 This is the rare kind of plugin where chords remain articulate, even at high gains.
 
-## Runner-up: Fuzz Face JH-2
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
+## Also great: Fuzz Face JH-2
 
 <img src="{{ '/assets/images/plugin-fuzz-fuzzfacejh2.png' | url }}" alt="Fuzz Face JH-2" class="plugin-screenshot">
 

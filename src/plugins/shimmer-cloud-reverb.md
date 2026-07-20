@@ -17,16 +17,15 @@ If you need shimmer and/or cloud reverbs for shoegaze or ambient genres, these p
 
 **Shimmizita** is the only plugin on the device with a pitch shifter embedded *inside* an FDN reverb feedback loop — the same architecture as Valhalla Shimmer. Each of the 8 delay lines has its own pitch shifter, so the tail climbs exponentially into an ethereal ascending shimmer cloud. Controls for shift (±6 semitones), speed, depth, decay (1–8 s), and HF damping.
 
-| Control | Setting |
-|---------|---------|
-| SHIFT | +12 (octave up) |
-| PSDRYWET | 0.7 |
-| T60M | 6 s |
-| HF damping | 0.5 |
+| SHIFT | PSDRYWET | T60M | HF damping |
+|-------|-----------|------|------------|
+| +12 (octave up) | 0.7 | 6 s | 0.5 |
 
 This is the single most capable shimmer reverb on the device, hands-down.
 
-## Runner-up: TheCloud
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
+## Also great: TheCloud
 
 <img src="{{ '/assets/images/plugin-strymon-thecloud.png' | url }}" alt="TheCloud" class="plugin-screenshot">
 

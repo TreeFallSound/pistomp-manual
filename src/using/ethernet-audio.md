@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: ethernet-audio
   title: Ethernet Audio Interface
-  order: 11
+  order: 12
 ---
 
 # Ethernet Audio Interface

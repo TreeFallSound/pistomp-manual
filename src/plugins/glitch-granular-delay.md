@@ -23,6 +23,8 @@ A glitch pedal turns your guitar into a glitch machine — scattered grains, ran
 
 Place it after your drives and before reverb. It won't do per-grain pitch shifting (the signature trick of the glitch-pedal genre), but the scatter and density are dead on — glitchy, unpredictable, and addictive.
 
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 ## Also great: Mr. Freeze
 
 <img src="{{ '/assets/images/plugin-particle-mrfreeze.png' | url }}" alt="Mr. Freeze" class="plugin-screenshot">

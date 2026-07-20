@@ -27,6 +27,8 @@ The LFO itself is the full rakarrack set: sine, triangle, ramp up/down, zigzag, 
 
 Place it after your drives and before time effects. The wet signal *is* the gain cell, so there is no dry/wet control and no risk of loading it bypassed — a common rakarrack trap that this plugin sidesteps.
 
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 ## Also great: Gx Tube Tremolo
 
 <img src="{{ '/assets/images/plugin-trem-gxtubetremelo.png' | url }}" alt="Gx Tube Tremolo" class="plugin-screenshot">

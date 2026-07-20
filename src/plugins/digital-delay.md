@@ -19,15 +19,13 @@ If you need a clean, full-bandwidth digital delay — just a transparent repeat 
 
 It also has BPM sync and an invert toggle — extras the DD-3 lacks, but useful for tempo-locked delays.
 
-| Control | Setting |
-|---------|---------|
-| Delay | 400 ms (or to taste) |
-| Feedback | 0.3–0.5 |
-| LPF | 20000 (critical) |
-| Mix | 50% |
-| Sync | Off |
+| Delay | Feedback | LPF | Mix | Sync |
+|-------|----------|-----|-----|------|
+| 400 ms (or to taste) | 0.3–0.5 | 20000 (critical) | 50% | Off |
 
 Place it in the MOD-UI chain after your drive pedals and before reverb.
+
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
 
 ## Also great: TAP Stereo Echo
 
@@ -37,16 +35,9 @@ Place it in the MOD-UI chain after your drive pedals and before reverb.
 
 **What you give up:** No BPM sync. The stereo controls add complexity if you only need mono.
 
-| Control | Setting |
-|---------|---------|
-| Delay L | 400 ms (or to taste) |
-| Delay R | Same as L (linked) |
-| Feedback L | 0.3–0.5 |
-| Feedback R | Same as L (linked) |
-| Strength L | 0.5 |
-| Strength R | Same as L (linked) |
-| Dry L | 1.0 |
-| Dry R | Same as L (linked) |
+| Delay L | Delay R | Feedback L | Feedback R | Strength L | Strength R | Dry L | Dry R |
+|---------|---------|------------|------------|------------|------------|-------|-------|
+| 400 ms (or to taste) | Same as L (linked) | 0.3–0.5 | Same as L (linked) | 0.5 | Same as L (linked) | 1.0 | Same as L (linked) |
 
 ## Also considered
 

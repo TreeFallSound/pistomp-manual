@@ -51,7 +51,7 @@ These files are **LARGE**, so never read them directly: it will interfere with y
 
 - a list of all plugins that ship with the pi-Stomp enosystem is in `src/_data/plugins.json`
   - `scripts/build_plugin_index.py` re-builds `src/_data/plugins.json`
-- `src/_data/plugins-seen.json` maps plugin URI to pedalboard occurrence count (from TreeFallSound/pi-stomp-pedalboards and sastraxi/dot-pedalboards)
+- `src/_data/pluginsSeen.json` maps plugin URI to pedalboard occurrence count (from TreeFallSound/pi-stomp-pedalboards and sastraxi/dot-pedalboards)
 - `src/_data/plugins-source.json` caches upstream source repos, keyed by the same `uri` as `plugins.json`. Add an entry whenever research turns one up and you have verified it resolves (`git ls-remote`).A plugin's homepage (e.g. guitarix.sourceforge.net) is not its source repo.
   - Copy `uri`, `bundle`, and `name` verbatim out of `plugins.json`; never retype or reconstruct them. URIs differ from what you would guess (`gx_compressor#_compressor`, not `#compressor`; `System-NoiseGate`, not `NoiseGate`; `http://` where you would expect `https://`). A mistyped `uri` silently fails to join and is worse than a missing entry.
   - After writing, assert every `uri` exists in `plugins.json` and that no `uri` repeats.

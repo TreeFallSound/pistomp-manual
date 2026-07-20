@@ -11,6 +11,8 @@ eleventyNavigation:
 
 Chasing a particular sound? Each page here picks the LV2 plugins that get you there, with settings to dial in and chain-position advice. Think of it as buying guides for the effects already on your pi-Stomp — _these are just like, our opinions, man_.
 
+New to loading plugins on the device? Start with [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 The plugins themselves are open-source work by talented developers and musicians: load them up and try them out as you read through these editorials!
 
 - [Tube Screamer]({{ '/plugins/tube-screamer/' | url }}) — TS-9 / TS-10 stacked boost
@@ -27,3 +29,7 @@ The plugins themselves are open-source work by talented developers and musicians
 - [Tremolo]({{ '/plugins/tremolo/' | url }}) — Amplitude modulation, from optical cells to bias trem
 - [Uni-Vibe and Phaser]({{ '/plugins/vibe-phaser/' | url }}) — Swept allpass: throb versus glide
 - [Equalizers]({{ '/plugins/eq/' | url }}) — Every EQ on the device, by the job you want it to do
+- [Utility Staples]({{ '/plugins/utility-staples/' | url }}) — Gain, gate, mixer, meter: the plugins that hold a chain together
+- [Loopers]({{ '/plugins/loopers/' | url }}) — SooperLooper, ALO, Loopor for live looping
+- [Amp, Cabinet, and Neural Capture]({{ '/plugins/amp-cab-sim/' | url }}) — GxAmplifier-X, GxCabinet, NAM, and when to pick which
+- [Everyday Reverb]({{ '/plugins/everyday-reverb/' | url }}) — Plate, hall, room: MVerb, C\* Plate, TAP Reverberator

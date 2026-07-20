@@ -17,6 +17,8 @@ A wah is a resonant peak you move through the midrange. The question is what mov
 
 **GxCrybaby** is a circuit-accurate model of the Dunlop GCB-95 Cry Baby. The developers ran a SPICE simulation of the real pedal's inductor-capacitor network at multiple pedal positions, then fit a 4th-order filter to each one — the same approach used in high-end amp modelling. The result is a sweep that goes from a deep, resonant low-end at heel to a bright, cutting peak at toe, with the correct inverted-log taper that makes it feel just right.
 
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 ## Also great: rkr MuTroMojo
 
 <img src="{{ '/assets/images/plugin-wah-mutromojo.png' | url }}" alt="rkr MuTroMojo" class="plugin-screenshot">

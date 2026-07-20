@@ -23,7 +23,9 @@ If you need a treadle-controlled pitch shifter for dive bombs, octave-up leads, 
 
 On single-note lines the glissando is clean and smooth. On chords the phase vocoder smears transients — a different character from the original pedal's pitch-tracking confusion, but usable for texture.
 
-## Runner-up: Drop
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
+## Also great: Drop
 
 <img src="{{ '/assets/images/plugin-pitch-drop.png' | url }}" alt="Drop" class="plugin-screenshot">
 

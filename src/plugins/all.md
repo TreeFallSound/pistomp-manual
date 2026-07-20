@@ -11,7 +11,7 @@ eleventyNavigation:
 
 # All Plugins
 
-Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by name or category — this is a raw index, not editorial. See the [Plugin Reference]({{ '/plugins/' | url }}) for curated picks.
+Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by name or category — this is a raw index, not editorial. The **Usage** column shows how often the plugin appears in shared pedalboards (from `plugins-seen.json`); a blank means unseen. See the [Plugin Reference]({{ '/plugins/' | url }}) for curated picks.
 
 <div class="plugin-index" id="plugin-index">
   <div class="plugin-index-controls">
@@ -25,6 +25,7 @@ Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by
       <tr>
         <th>Name</th>
         <th>Categories</th>
+        <th>Usage</th>
         <th>Maintainer</th>
         <th>License</th>
         <th>Version</th>
@@ -32,7 +33,7 @@ Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by
     </thead>
     <tbody>
       {%- for plugin in plugins %}
-      <tr data-name="{{ plugin.name | lower }}" data-categories="{{ plugin.categories | join(',') }}" data-maintainer="{{ plugin.maintainer or '' }}">
+      <tr data-name="{{ plugin.name | lower }}" data-categories="{{ plugin.categories | join(',') }}" data-maintainer="{{ plugin.maintainer or '' }}" data-usage="{{ pluginsSeen[plugin.uri] or 0 }}">
         <td>
           <span class="plugin-name">{{ plugin.name }}</span>
           {%- if plugin.comment %}
@@ -50,6 +51,7 @@ Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by
           {%- endif %}
         </td>
         <td data-label="Categories">{% if plugin.categories.length %}{{ plugin.categories | join(', ') }}{% else %}—{% endif %}</td>
+        <td data-label="Usage" class="plugin-usage">{% if pluginsSeen[plugin.uri] %}{{ pluginsSeen[plugin.uri] }}{% else %}—{% endif %}</td>
         <td data-label="Maintainer">{{ plugin.maintainer or '—' }}</td>
         <td data-label="License">{{ plugin.license or '—' }}</td>
         <td data-label="Version">{{ plugin.version or '—' }}</td>

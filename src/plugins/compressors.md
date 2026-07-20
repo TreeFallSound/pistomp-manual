@@ -13,19 +13,7 @@ A compressor is the least exciting pedal you'll ever buy and the one you'll leav
 
 The pi-Stomp ships with over a dozen compressor and dynamics plugins. Most have never appeared in a single shared pedalboard. This guide walks every one we could read the source for, grouped by the job you actually want a compressor to do. There is no single best compressor here — there's the best one _for what you're playing_.
 
-## How to read this guide
-
-Compressors aren't fuzz pedals. The right pick depends on your instrument, your genre, and what you want compression to do for you — transparent leveling, obvious squash, low-end preservation, or full studio control. We've split the field into four buckets:
-
-- **Transparent, always-on** — sustain without squashing. Set it and forget it.
-- **Squash / effect** — obvious compression. Country, funk, chicken-pickin'.
-- **Multi-band / bass** — preserve low end. Slap, tapping, extended range.
-- **Studio pro** — sidechain, lookahead, full control. Recording and mix bus.
-- **Gates and expanders** — dynamics running the other direction. Silence, and swells.
-
-Each category has our pick, one or two "also great" alternatives, and an "also considered" section for the rest. A final "something weird" section covers the one compressor on the device that doesn't fit any bucket. Plugin names match what you'll see in MOD-UI.
-
-A note on attribution: every compressor reviewed here is the work of its authors — Tim Goetze, Steve Harris, Damien Zammit, Ryan Billing, Albert Graef, the Calf team, Bernhard Rusch, Chris Johnson, and others. pi-Stomp just ships them. Load them up and try them.
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
 
 ---
 
@@ -79,19 +67,9 @@ This is the one to reach for when you want compression you can't hear — especi
 
 ### Also considered
 
-**DIE Compressor** is Damien Zammit and Robin Gareus's DISTRHO-packaged mono compressor — and reading the source confirmed what the bundle's absence from DPF-Plugins should have told us: it lives in its own repo (DIE-Plugins). The algorithm is a near-twin of ZamComp: same soft-knee (the same quadratic `Lyg = xg + (1/ratio - 1)(xg - thres + width/2)² / (2·width)` curve), same peak-detect VCA, same sidechain input. Attack 0.1–100 ms, release 1–2000 ms, knee 0–8 dB, ratio 1–20 (logarithmic), threshold −60 to 0 dB, makeup 0–30 dB. Notable differences from ZamComp: the Slew control is gone, release range extends to 2 s (vs ZamComp's 500 ms), and makeup gain is smoothed with a 25 Hz one-pole — a slow ramp that prevents makeup changes from clicking in. There's an inline-display UI (a live gain-reduction meter drawn via cairo, when LV2_EXTENDED is compiled in).
+**DIE Compressor** (Damien Zammit, Robin Gareus) is a near-twin of ZamComp — same soft-knee quadratic curve, same peak-detect VCA, same sidechain input. Differences: the Slew control is gone, release extends to 2 s, and makeup gain is smoothed with a 25 Hz one-pole to prevent clicks. Pick whichever UI you like looking at; ZamComp keeps the Slew.
 
-**What you give up:** No Slew control — ZamComp's transient-aware attack adjustment is the one feature that distinguishes it on transients, and DIE drops it. Otherwise this is ZamComp in a different wrapper. Pick whichever UI you like looking at.
-
-**Compressor** (MOD System-Compressor) and **Compressor Advanced** (MOD Advanced-Compressor) are the end-of-chain compressors bundled into mod-host, developed by Jan Janssen (VeJa Plugins) for MOD Devices. The DSP is Sean Connelly's [sndfilter](https://github.com/velipso/sndfilter) — a dynamics compressor implemented to the [WebAudio DynamicsCompressor specification](https://webaudio.github.io/web-audio-api/#the-dynamicscompressornode-interface). That's an unusual lineage: most compressors here derive from analog circuits or studio DSP; this one derives from a browser API spec.
-
-The algorithm is a peak-detecting compressor with two distinctive features. First, the soft knee uses an exponential curve (`linearthreshold + (1 - exp(-k·(x - threshold)))/k`) rather than the quadratic polynomials used by SC1, ZamComp, or DIE — and the knee width is found by a 15-iteration binary search at parameter-set time, matching the knee slope to the compression slope. Second, the release is adaptive: a cubic polynomial (`ax³ + bx² + cx + d`) shaped so that the release time is slower for small gain reductions and faster for large ones, with four fixed anchors at 9%, 16%, 42%, and 98% of the release time. This is the same adaptive-release idea behind Pressure5's vari-µ, arrived at from a different direction. The gain cell applies via `sin(π/2 · compgain)` — a sine-tapered fader that's linear in the middle and smooth at the extremes, which prevents clicks when the gain ramps. Processing happens in 32-sample mini-chunks.
-
-**Compressor** (System) collapses this to three preset modes — Light (−12 dB threshold, 12 dB knee, 2:1 ratio), Mild (−12 dB, 12 dB, 3:1), and Heavy (−15 dB, 15 dB, 4:1) — plus release (50–500 ms) and master volume. It's the same compressor that runs in the MOD Dwarf and Duox output-processing settings, which is why it exists: a set-and-forget end-of-chain limiter that you don't have to understand to use. It has appeared in a shared pedalboard, confirming it's fit for that job.
-
-**Compressor Advanced** exposes the full parameter set: threshold (−70 to 0 dB), knee (0–40 dB), attack (0.1–200 ms), release (1–1000 ms), ratio (1–20, logarithmic), makeup (−30 to 24 dB). Same DSP, full control.
-
-**What you give up:** No sidechain input, no wet/dry blend, no lookahead, no oversampling. The WebAudio spec wasn't designed for those. The sine-tapered gain cell and adaptive release are genuinely different from the VCA-style compressors in the rest of this guide — to our ears that makes them worth trying on a full mix or an end-of-chain slot, where the smooth gain transitions and adaptive release prevent the pumping you get from a fixed release on program material. For instrument-level compression, the analog-modelled picks above are more predictable.
+**Compressor** (MOD System) and **Compressor Advanced** (MOD Advanced) are the end-of-chain compressors bundled into mod-host, developed by Jan Janssen for MOD Devices. The DSP is Sean Connelly's [sndfilter](https://github.com/velipso/sndfilter), implemented to the [WebAudio DynamicsCompressor spec](https://webaudio.github.io/web-audio-api/#the-dynamicscompressornode-interface). Two unusual details: the soft knee uses an exponential curve fit by a 15-iteration binary search, and the release is adaptive (a cubic polynomial that's slower for small gain reductions, faster for large ones). **Compressor** collapses this to three preset modes — Light/Mild/Heavy — plus release and master volume; **Compressor Advanced** exposes the full parameter set. No sidechain, no blend, no lookahead, no oversampling — the WebAudio spec wasn't designed for those. Worth trying on a full mix or end-of-chain slot, where the smooth gain transitions prevent pumping; for instrument-level compression the analog-modelled picks above are more predictable.
 
 ---
 
@@ -139,15 +117,9 @@ Place it early, before dirt, and let the pedal after it hear a signal that alrea
 
 ### Also considered
 
-**rkr Compressor** is the conventional one of the rakarrack four, with a limiter hiding inside it. It's a feed-forward peak compressor — threshold, ratio, attack, release, knee, auto makeup — whose timing changes with level. Once the envelope crosses 0.9, the attack coefficient walks toward instantaneous and the release stretches out; above 1.0 the attack is a hard 1.0 and the release drops to a tenth of what you dialed. It becomes a limiter on its own, by level, with no switch to flip. Turn on **Peak** and you also get a leaky peak-hold detector, a hard ceiling at ±0.999, and a clipping indicator. Leave **Stereo** off — it means *unlinked*, not "stereo mode," and off is the mono-summed detector you want for guitar.
+**rkr Compressor** is the conventional one of the rakarrack four, with a limiter hiding inside it — once the envelope crosses 0.9 the attack walks toward instantaneous and the release stretches out, and above 1.0 it becomes a hard limiter by level, no switch to flip. Turn on **Peak** for a leaky peak-hold with a hard ceiling at ±0.999. Leave **Stereo** off — it means *unlinked*, not "stereo mode," and off is the mono-summed detector you want. Two things keep it out of the picks: the Knee control ramps the effective ratio toward `log₂(ratio)` inside the knee (so at 4:1 the knee softens to 2:1, then snaps to 4:1 at the top of the bend — at ratio 2 the knee does nothing at all), and ratio bottoms out at 2, so above threshold this plugin is always compressing.
 
-Two things keep it out of the picks. The Knee control doesn't do what the label implies: inside the knee the effective ratio ramps toward `log₂(ratio)`, not toward the ratio you set, so at 4:1 the knee softens to 2:1 and then snaps to 4:1 at the top of the bend — and at ratio 2 the knee does nothing whatsoever, because `log₂(2) = 1`. Gain stays continuous; the slope does not. Ratio also bottoms out at 2, so there is no neutral setting. Above threshold, this plugin is always compressing.
-
-| Threshold | Ratio | Attack | Release | Knee | Auto Output | Peak |
-|-----------|-------|--------|---------|------|-------------|------|
-| −24 dB | 4 | 20 ms | 120 ms | 40 % | On | Off |
-
-**MDA Dynamics** is Paul Kellett's compressor/limiter/gate-in-one, dating to 1999–2000. It works — it's a real dynamics processor — but the code is old, the controls are minimal, and it doesn't do anything the picks above don't do better. It's the one that's actually appeared in a shared pedalboard, which tells you it's usable, but ZamComp and Sustainer are more musical for this use case.
+**MDA Dynamics** is Paul Kellett's 1999-era compressor/limiter/gate-in-one. It works, but the picks above are more musical for this use case.
 
 ---
 
@@ -173,15 +145,15 @@ The listen/solo feature is what makes this a mixing tool rather than just a bass
 
 ### Also considered
 
-**rkr CompBand** is the only 4-band compressor on the device — four copies of rkr Compressor behind three filter pairs — and we no longer recommend it. The filters are 2nd-order Butterworth, one low-pass and one high-pass at the same corner, and the four bands are summed with the same sign. That sums to a null:
+**rkr CompBand** is the only 4-band compressor on the device — four copies of rkr Compressor behind three filter pairs — and we no longer recommend it. The filters are 2nd-order Butterworth, one low-pass and one high-pass at the same corner, summed with the same sign. That sums to a null:
 
 ```
 LP(s) + HP(s) = (1 + s²)/(s² + √2s + 1)   →   zero at the crossover
 ```
 
-A Linkwitz-Riley crossover cascades two Butterworth sections precisely so the bands sum flat. This one doesn't, so at unity band gains you get a notch at each crossover frequency, and the notches only fill in when the per-band compressors have pulled the bands to different levels. Its frequency response is a function of how hard it is working. Per band you get ratio and threshold and nothing else — attack, release, and knee are frozen at construction. And its Wet/Dry defaults to 5 out of 127, so out of the box it is 94% dry and sounds like a bypass.
+A Linkwitz-Riley crossover cascades two Butterworth sections precisely so the bands sum flat. This one doesn't, so at unity band gains you get a notch at each crossover, and the notches only fill in when the per-band compressors pull the bands to different levels — its frequency response is a function of how hard it is working. Per band you get ratio and threshold only; attack, release, and knee are frozen at construction. Wet/Dry defaults to 5/127, so out of the box it sounds like a bypass.
 
-**MDA MultiBand** is Paul Kellet's 3-band, dating to 1999–2000. It uses simple one-pole crossovers, which means significant band overlap — the bands don't separate cleanly. Its one unique trick is an M/S processing mode (mid/side) for stereo-width control, which neither pick above offers. If you specifically need M/S compression on a stereo source, it's the only option here; otherwise the better crossovers on ZaMultiComp win.
+**MDA MultiBand** is Paul Kellet's 1999-era 3-band with simple one-pole crossovers (significant band overlap). Its one unique trick is an M/S processing mode for stereo-width control — the only option here if you need M/S compression on a stereo source; otherwise ZaMultiComp's Cytomic crossovers win.
 
 ---
 

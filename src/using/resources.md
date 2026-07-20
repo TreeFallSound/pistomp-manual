@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: resources
   title: Resources
-  order: 12
+  order: 13
 ---
 
 # Resources

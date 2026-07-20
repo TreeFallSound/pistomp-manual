@@ -4,7 +4,7 @@ redirect: /using/quick-start/
 eleventyNavigation:
   key: using
   title: Using
-  order: 3
+  order: 0
 ---
 
 # Using pi-Stomp

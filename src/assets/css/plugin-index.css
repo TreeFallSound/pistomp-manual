@@ -36,6 +36,21 @@
   font-weight: 600;
 }
 
+/* Usage is the decision-relevant column; metadata columns (Maintainer/License/Version)
+   stay in the table but read as secondary. */
+#plugin-table .plugin-usage {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#plugin-table td[data-label="Maintainer"],
+#plugin-table td[data-label="License"],
+#plugin-table td[data-label="Version"] {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
 .plugin-comment-wrap {
   position: relative;
   margin-top: 0.2rem;

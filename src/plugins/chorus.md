@@ -29,6 +29,8 @@ The slow LFO row defaults to 0.6 Hz, well under the 1 Hz that separates "breathi
 
 Place it after your drives and before delay and reverb, and listen as your riffs take up more space.
 
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 ## Also great: C* Wider - Stereo image Synthesis
 
 <img src="{{ '/assets/images/plugin-dc-wider.png' | url }}" alt="C* Wider" class="plugin-screenshot">

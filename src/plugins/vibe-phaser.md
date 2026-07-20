@@ -35,6 +35,8 @@ Place it **after your fuzz**. This is the famous pairing, and the reason it work
 
 Watch your levels, though. The transistor curve between each stage runs out of road at ±1.0 — full scale — and the plugin applies no input trim. A fuzz pinned near full scale drives all four stages into the flat part of that curve, where you get hard clipping instead of throb. Back the fuzz's output off until peaks sit around half scale and the sweep opens up. Feedback adds to the input ahead of the same curve, so turning Feedback up moves that ceiling down.
 
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
 ## Also great: rkr Analog Phaser
 
 <img src="{{ '/assets/images/plugin-vibe-aphaser.png' | url }}" alt="rkr Analog Phaser" class="plugin-screenshot">
