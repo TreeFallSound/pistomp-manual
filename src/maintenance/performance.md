@@ -39,7 +39,7 @@ The change persists across updates. `firstboot.sh` only writes this file once; a
 
 XRUNs (buffer underruns) happen when the CPU can't deliver audio data in time. A few XRUNs during pedalboard loading are normal. If you see more than 100 during normal play, the CPU is overworked.
 
-In MOD-UI, the top bar shows the XRUN count. Click it to reset the counter.
+In MOD-UI, the bottom bar shows the XRUN count. Click it to reset the counter.
 
 ## CPU-intensive plugins
 
