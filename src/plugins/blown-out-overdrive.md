@@ -17,11 +17,13 @@ Some overdrives are polite. This is the opposite — an op-amp circuit that stay
 
 **GxSupersonic** models the push-pull 6L6 output stage of a Fender SuperSonic amp — an op-amp-driven clipper with two distinct lookup tables for the positive and negative halves. Because the tables aren't mirror images, the clipping is asymmetrical, producing the same rich even-harmonic saturation that makes this style of overdrive so distinctive. Crank the gain and it stays articulate — chords don't turn to mush.
 
-| Pregain | Gain |
-|---------|------|
-| 0.6 | 0.7 |
+The plugin's four ports are GAIN (exponential drive into the clipper, mapped `0.0011·(exp(2·g)−1)`), BASS and TREBLE (tone-stack IIR coefficients, defaults 0.5), and VOLUME (post-clip gain, default 0.25). GAIN is the only one that touches the clipper's drive — the blown-out voice lives at the top of its range.
 
-Pair it with a gentle high-pass ahead of it in the chain (the original circuit rolls the low end before the clipper) and a touch of post-EQ to shape the midrange. No plugin on the device gives you the bias-collapse gating artefact directly, but you can build it: an inverted envelope driving GAIN makes the note eat its own gain as it decays. See [Control Voltage]({{ '/using/control-voltage/#worked-example-bias-collapse' | url }}) for the patch.
+| GAIN |
+|------|
+| 0.95 |
+
+GAIN 0.95 puts the linear drive at ≈0.0073 into the asymmetric tables; the default 0.15 is ≈0.0003 and reads as nearly clean. BASS/TREBLE at 0.5 and VOLUME to taste. Pair it with a gentle high-pass ahead of it in the chain (the original circuit rolls the low end before the clipper) and a touch of post-EQ to shape the midrange. No plugin on the device gives you the bias-collapse gating artefact directly, but you can build it: an inverted envelope driving GAIN makes the note eat its own gain as it decays. See [Control Voltage]({{ '/using/control-voltage/#worked-example-bias-collapse' | url }}) for the patch.
 
 ## Also great: GxAxisFace
 

@@ -387,7 +387,7 @@
     "uri": "http://guitarix.sourceforge.net/plugins/gx_supersonic_#_supersonic_",
     "bundle": "gx_supersonic.lv2",
     "name": "GxSupersonic",
-    "source_url": "https://github.com/brummer10/GxPlugins.lv2"
+    "source_url": "https://github.com/brummer10/GxSupersonic.lv2"
   },
   {
     "uri": "http://guitarix.sourceforge.net/plugins/gx_timray_#_timray_",
@@ -1137,7 +1137,7 @@
     "uri": "http://guitarix.sourceforge.net/plugins/gx_tonemender_#_tonemender_",
     "bundle": "gx_tonemender.lv2",
     "name": "GxToneMender",
-    "source_url": "https://github.com/brummer10/guitarix"
+    "source_url": "https://github.com/brummer10/GxToneMender.lv2"
   },
   {
     "uri": "http://calf.sourceforge.net/plugins/Equalizer5Band",

@@ -35,7 +35,7 @@ Candidate enumeration was done from `plugins.json` (per the manual's research ru
 | GxBarkGraphicEQ | gx_barkgraphiceq.lv2 | 24-band Orfanidis Butterworth on Bark scale | 50 Hz–13.5 kHz, per-band VU; guitarix's deepest EQ |
 | GxBooster | gxbooster.lv2 | 2-slider bass/treble boost | Trivial — `fslider0_`, `fslider1_`, that's it |
 | GxGraphicEQ | gx_graphiceq.lv2 | 11-band graphic + 11 VU meters | `G1`–`G11`, `V1`–`V11`; older guitarix graphic |
-| GxToneMender | gx_tonemender.lv2 | "Clean boost with 3-knob tonestack" | Source not in the current guitarix LV2 tree — likely a faust tonestack wrapper |
+| GxToneMender | gx_tonemender.lv2 | 3-knob tonestack (BASS/MID/TREBLE) + LEVEL + TONE | Standalone `brummer10/GxToneMender.lv2` (not in main guitarix LV2 tree). Ports: BASS/MID/TREBLE/TONE/LEVEL, all 0–1, defaults 0.5/0.5/0.5/0.0/0.5 |
 | Luftikus | Luftikus.lv2 | Fixed half-octave analog-modelled, 4 bands + shelf | 10/40/160/640 Hz + selectable 2.5/5/10/20/40 kHz shelf; lkjb, DISTRHO port |
 | TAP Equalizer/BW | tap-eqbw.lv2 | TAP Equalizer + per-band bandwidth | The full version of TAP Equalizer |
 | x42-eq (stereo) | fil4.lv2 | Same as mono, stereo | 2 channels |
@@ -171,7 +171,7 @@ Mono→stereo, lightweight. The URI is `https://hannesbraun.net/ns/lv2/airwindow
 
 - **On-device `modgui:label`s and screenshots** — the pi-Stomp was offline. The editorial step must fetch these via `ssh pistomp@pistomp.local` and `http://pistomp.local/effect/image/screenshot.png?uri=<encoded>`.
 - **TAP Equalizer exact port ranges** — read from the TTL defaults via `plugins.json`, not from a live `lilv` query; the ±24 dB figure should be confirmed on-device.
-- **GxToneMender DSP** — the LV2 dir is not in the guitarix checkout. If a reader finds it (likely `src/LV2/gx_tonemender.lv2/` in a different branch), the "clean boost with 3-knob tonestack" claim can be verified; until then it is a comment-string, not a read.
+- **GxToneMender DSP** — verified from standalone repo `https://github.com/brummer10/GxToneMender.lv2` (not in main guitarix LV2 tree). Ports read from `gx_tonemender.ttl`: BASS/MID/TREBLE/TONE/LEVEL, all 0–1, defaults 0.5/0.5/0.5/0.0/0.5. The earlier "clean boost with 3-knob tonestack" claim was a comment-string read; corrected above to the 5-port reality.
 - **Luftikus authorship** — the DSP header has no author line; the `lkjbdsp.wordpress.com/luftikus` page attributes it to lkjb. The DISTRHO port is by falkTX. Confirm `doap:maintainer` on-device.
 
 ## Source URLs to cache
@@ -191,7 +191,7 @@ Verified to resolve (`git ls-remote`) and should be added to `src/_data/plugins-
 | `http://guitarix.sourceforge.net/plugins/gx_barkgraphiceq_#_barkgraphiceq_` | `gx_barkgraphiceq.lv2` | `https://github.com/brummer10/guitarix` |
 | `http://guitarix.sourceforge.net/plugins/gx_graphiceq_#_graphiceq_` | `gx_graphiceq.lv2` | `https://github.com/brummer10/guitarix` |
 | `http://guitarix.sourceforge.net/plugins/gxbooster#booster` | `gxbooster.lv2` | `https://github.com/brummer10/guitarix` |
-| `http://guitarix.sourceforge.net/plugins/gx_tonemender_#_tonemender_` | `gx_tonemender.lv2` | `https://github.com/brummer10/guitarix` |
+| `http://guitarix.sourceforge.net/plugins/gx_tonemender_#_tonemender_` | `gx_tonemender.lv2` | `https://github.com/brummer10/GxToneMender.lv2` |
 | `http://calf.sourceforge.net/plugins/Equalizer5Band` | `calf.lv2` | `https://github.com/calf-studio-gear/calf` |
 | `https://code.google.com/p/lkjb-plugins/luftikus` | `Luftikus.lv2` | `https://github.com/DISTRHO/distrho-ports` |
 | `https://hannesbraun.net/ns/lv2/airwindows/baxandall` | `Airwindows-Baxandall.lv2` | `https://github.com/airwindows/Airwindows` |

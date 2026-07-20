@@ -83,15 +83,21 @@ saturates at +0.474) and `supersonic_neg_table` (negative half, saturates at
 −0.467) — and the positive/negative tables are **not mirror images**, so the
 clipping is **asymmetrical → rich even harmonics → that "gnarly, blown-out
 but chord-articulate" character** the Fuck is loved for. Op-amp-style
-saturation, not transistor fuzz. Parameters are just `Pregain`/`Gain`
-(slew-limited via one-pole smoothers), so it stays articulate under heavy
-gain — chords don't turn to mush.
+saturation, not transistor fuzz. Ports are `GAIN` (exponential drive into the
+clipper, `0.0011·(exp(2·g)−1)`), `BASS`/`TREBLE` (tone-stack IIR coefficient
+drivers), and `VOLUME` (post-clip gain) — all 0–1, slew-limited via one-pole
+smoothers. The standalone `GxSupersonic.lv2` build dropped the ±30 dB
+`Pregain`/`Gain` pair from guitarix main tree's `poweramp_ctrl` wrapper and
+added the BASS/TREBLE tone stack the main-tree module doesn't have; the two
+builds share only the clipper tables. GAIN stays articulate under heavy drive
+— chords don't turn to mush.
 
 **The one missing Fuck feature: the bias-collapse control.** None of the
 candidates has a parameter that shifts the waveshaper's operating point or
 duty-cycle modulates the output. You can approximate the Fuck's collapsing
-artefact by automating `gx_supersonic`'s `Gain`/`Pregain` with a slow
-envelope, but you won't get the real thing from any installed plugin.
+artefact by automating `gx_supersonic`'s `GAIN` (exponential drive into the
+clipper) with a slow envelope, but you won't get the real thing from any
+installed plugin.
 
 **Avoid for this slot:** `CollisionDrive.lv2` is the best *engineered*
 plugin of the set — an honest Horizon Devices Precision Drive clone with a
@@ -707,9 +713,9 @@ For a patch inspired by the lush, wide, shoegaze-indie sound of those tracks:
    ~0.25, Level near unity, Tone ~400 Hz; place before the fuzz in the
    MOD-Host chain.)
 2. **`gx_supersonic.lv2`** (for the SS/BS Fuck slot — op-amp-style asymmetric
-   saturation that stays articulate under heavy gain. Automate
-   `Gain`/`Pregain` with a slow envelope to approximate the bias-collapse
-   gating artefact.)
+   saturation that stays articulate under heavy gain. Automate `GAIN`
+   (exponential drive into the clipper) with a slow envelope to approximate
+   the bias-collapse gating artefact.)
 3. **`gx_gcb_95.lv2`** (Cry Baby, treadle-controlled via expression pedal)
 4. **`mod-superwhammy.lv2`** (set `First`=0, `Last`=+12 or +24, `Clean`=0,
    `Fidelity`=1; map expression pedal MIDI CC to `Step` for shoegaze dives)
@@ -756,7 +762,7 @@ defining feature:
   Fuck's signature collapsing/splatty artefact at extreme bias settings is
   unavailable. `gx_supersonic`'s asymmetric clipping gives the right *harmonic*
   character but not the *gating* behaviour. Approximate by automating
-  `Gain`/`Pregain` with a slow envelope.
+  `GAIN` with a slow envelope.
 - **Red Panda Particle per-grain pitch shifting.** No installed plugin
   applies a rate/resample multiplier per grain voice. `Granulator` scatters
   grains but they all play at native rate. This is the Particle's single
