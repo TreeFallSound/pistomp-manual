@@ -178,26 +178,20 @@ This uncomments the `analog_controllers:` block. Restart the service or reboot f
 ~/extras/expression-pedal.sh off
 ```
 
-## The extras scripts
+## Factory-installed customization scripts
 
-`~/extras/` holds scripts for things that don't belong on a knob. Run them over SSH.
+In `~/extras` you'll find these scripts:
 
 | Script | What it does |
 |--------|-------------|
 | `expression-pedal.sh on\|off` | Enables the expression pedal input, as above |
-| `more-user-files.sh` | Downloads a starter pack of SFZ instruments and soundfonts into `~/data/user-files` |
 | `swap-pedalboards.sh <git-url> [branch]` | Repoints your pedalboard collection at a different git remote and resyncs both MOD and pi-Stomp |
 | `journal-toggle.sh on\|off` | Persists logs across reboots (capped at 50 MB) instead of keeping them in RAM. Turn this on before trying to catch an intermittent fault |
-| `tune.sh` | Trades kernel security mitigations and the hardware watchdog for lower audio latency |
 | `wifi-backend-toggle.sh iwd\|wpa_supplicant\|status` | Switches NetworkManager's WiFi backend |
 
-Three of these deserve a warning.
+Importantly, `swap-pedalboards.sh` will _remove all of your current pedalboards_. It stops pi-Stomp, replaces the `.pedalboards` git tree, and clears MOD's cached state before restarting. It backs up first, but it is a wholesale replacement of your boards, not a merge.
 
-`swap-pedalboards.sh` stops pi-Stomp, replaces the `.pedalboards` git tree, and clears MOD's cached state before restarting. It backs up first, but it is a wholesale replacement of your boards, not a merge.
-
-`tune.sh` disables CPU vulnerability mitigations and disarms the watchdog. On a pedal that never sees untrusted input this is a reasonable trade, but it is a real reduction in both security and crash recovery — without the watchdog, a hard lockup stays locked up until you pull power.
-
-`wifi-backend-toggle.sh iwd` is experimental on the Pi's Broadcom hardware, and the setup hotspot may stop working under it. Switch over Ethernet if you can, since changing backends restarts NetworkManager and drops WiFi for a few seconds.
+If you are experiencing WiFi drops, you can try out the experiment `wifi-backend-toggle.sh iwd`. Switch over Ethernet before running, if possible, since changing backends restarts NetworkManager and your WiFi will likely drop for a few seconds.
 
 ## Per-pedalboard overrides
 

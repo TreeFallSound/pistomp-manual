@@ -15,21 +15,16 @@ Neural Amp Modeler captures the behaviour of a real amplifier or pedal by traini
 
 NAM is the most CPU-hungry thing on the device.
 
-NAM models are trained at a range of architecture sizes, and a lighter architecture costs a fraction of a heavier one to run while giving up some fidelity — especially in how the high end and the edge of breakup are reproduced.
+NAM models are trained at a range of architecture sizes, and a lighter architecture costs a fraction of a heavier one to run while giving up some fidelity — especially in how the high end and the edge of breakup are reproduced. My observations have been as follows, when run without other plugins taking CPU:
 
-| Hardware | Lighter architectures | Heavy architectures |
+| Hardware | Low-quality | High-quality |
 |----------|----------------------|---------------------|
-| v3 (Pi 5) | About 10 at once | Runs, but fewer |
-| v2 (Pi 3/4) | About 4 at once | Not successfully |
+| v3 (Pi 5) | 8 simultaneously, no issue | Three, maybe four |
+| v2 (Pi 3/4) | Up to four | Not successfully |
 
-These are whole-device budgets, not per-chain ones. Ten NAM instances means ten and nothing else of consequence, so treat the numbers as a ceiling to stay well under rather than a target.
+These are whole-device budgets, not per-chain ones: treat the numbers as a ceiling to stay well under, rather than a target. The practical consequence is that on v2, NAM introduces a cost you must spend deliberately. One amp capture, plus conventional plugins for everything else, will go further than four captures in a row.
 
-Two practical consequences:
-
-- **On v3, NAM is a normal building block.** A capture for the amp, another for a drive pedal, and room left over is a reasonable board.
-- **On v2, NAM is a feature you spend deliberately.** One amp capture plus conventional plugins for everything else will go further than four captures in a row.
-
-If audio starts clicking, you've run out of CPU rather than doing something wrong. [Performance]({{ '/maintenance/performance/' | url }}) covers reading XRUN counts and raising the JACK period to buy headroom.
+If audio starts dropping out, you've run out of CPU. [Performance]({{ '/maintenance/performance/' | url }}) covers reading XRUN counts and raising the JACK period to buy headroom.
 
 ## Sample rate
 
