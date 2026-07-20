@@ -21,7 +21,7 @@ Some overdrives are polite. This is the opposite — an op-amp circuit that stay
 |---------|------|
 | 0.6 | 0.7 |
 
-Pair it with a gentle high-pass ahead of it in the chain (the original circuit rolls the low end before the clipper) and a touch of post-EQ to shape the midrange. You won't get the bias-collapse gating artefact from any plugin on the device — that's the one signature you'd have to live without, or approximate by automating the gain with a slow envelope.
+Pair it with a gentle high-pass ahead of it in the chain (the original circuit rolls the low end before the clipper) and a touch of post-EQ to shape the midrange. No plugin on the device gives you the bias-collapse gating artefact directly, but you can build it: an inverted envelope driving GAIN makes the note eat its own gain as it decays. See [Control Voltage]({{ '/using/control-voltage/#worked-example-bias-collapse' | url }}) for the patch.
 
 ## Also great: GxAxisFace
 

@@ -4,7 +4,7 @@ redirect: /plugins/all/
 eleventyNavigation:
   key: plugins-section
   title: Plugins
-  order: 5
+  order: 6
 ---
 
 # Plugin Reference

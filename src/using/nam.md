@@ -4,12 +4,38 @@ eleventyNavigation:
   parent: using
   key: nam
   title: Neural Amp Modeler
-  order: 8
+  order: 10
 ---
 
 # Neural Amp Modeler (NAM)
 
-Neural Amp Modeler is a machine-learning-based amp and pedal profiler that captures the exact sound of a real amplifier or effects pedal. pi-Stomp includes full NAM support — you can load thousands of free community models or capture your own gear.
+Neural Amp Modeler captures the behaviour of a real amplifier or pedal by training a neural network on how it responds to a known signal. The result is a `.nam` file that sounds like the thing it was trained on, including how it breaks up as you dig in. Thousands of community captures are free to download, and you can make your own on the device.
+
+## What your hardware can run
+
+NAM is the most CPU-hungry thing on the device.
+
+NAM models are trained at a range of architecture sizes, and a lighter architecture costs a fraction of a heavier one to run while giving up some fidelity — especially in how the high end and the edge of breakup are reproduced.
+
+| Hardware | Lighter architectures | Heavy architectures |
+|----------|----------------------|---------------------|
+| v3 (Pi 5) | About 10 at once | Runs, but fewer |
+| v2 (Pi 3/4) | About 4 at once | Not successfully |
+
+These are whole-device budgets, not per-chain ones. Ten NAM instances means ten and nothing else of consequence, so treat the numbers as a ceiling to stay well under rather than a target.
+
+Two practical consequences:
+
+- **On v3, NAM is a normal building block.** A capture for the amp, another for a drive pedal, and room left over is a reasonable board.
+- **On v2, NAM is a feature you spend deliberately.** One amp capture plus conventional plugins for everything else will go further than four captures in a row.
+
+If audio starts clicking, you've run out of CPU rather than doing something wrong. [Performance]({{ '/maintenance/performance/' | url }}) covers reading XRUN counts and raising the JACK period to buy headroom.
+
+## Sample rate
+
+NAM models are trained at a fixed sample rate, and 48 kHz is the standard. The pi-Stomp runs at 48 kHz, so community models load and run at the rate they were trained at with nothing to configure.
+
+Capture enforces this. If JACK is running at any other rate, the capture refuses to start rather than producing a file that trains into a subtly wrong model.
 
 ## Loading NAM models
 

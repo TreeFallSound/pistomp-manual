@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: contributing
   title: Contributing
-  order: 0
+  order: 8
 ---
 
 # Contributing
@@ -113,7 +113,7 @@ The `snapshot` fixture compares the rendered LCD image to a baseline PNG. If you
 
 ## Code style
 
-- Python 3.12+
+- Python 3.11+ (`requires-python`, and Pyright's `pythonVersion`, are both 3.11)
 - Ruff for linting
 - Pyright for type checking (zero errors)
 - No `getattr` or `hasattr`

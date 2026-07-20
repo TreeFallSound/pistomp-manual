@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: midi-control
   title: MIDI & Control System
-  order: 6
+  order: 4
 ---
 
 # MIDI & Control System

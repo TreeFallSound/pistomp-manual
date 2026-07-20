@@ -36,12 +36,8 @@ I'm a software developer based out of Canada and play a lot of bass guitar. Open
 
 We love the Earth and hope you do too. Electronics are inherently not good for our planet. Our hope is that by building something yourself that can be upgraded, you'll be able to make use of it longer than you would have a commercial product, and that you might be able to reuse or recycle many of the components when its life is truly over.
 
-- All pi-Stomp PCBs are Lead Free HASL RoHS compliant
-- Any presoldered parts were soldered with Lead Free RoHS solder
-- All board components are RoHS compliant
+The PCBs, their solder, and all board components are RoHS compliant. The TFT colour LCD and the audio card are the only parts in the current design that aren't.
 
-The only non-RoHS compliant components in the current design are the TFT color LCD and the audio card.
+When you're done with your pi-Stomp, consider reusing the Raspberry Pi, LCD, and other components in another project or donating them to a local Makerspace. If you do dispose of it, follow your local guidelines, and pull the two non-RoHS parts out to handle separately.
 
-When you are done with your pi-Stomp, please consider using the Raspberry Pi, LCD, and other components for other projects or donating them to your local Makerspace. If you eventually dispose of your pi-Stomp components, please do so according to your local guidelines. Removing the non-RoHS parts to deal with them appropriately is encouraged.
-
-treefallsound.com is hosted by [GreenGeeks](https://my.greengeeks.com/seal/). The carbon footprint is reduced (not offset) by matching every amp they pull from the grid with 3 times that in the form of renewable energy via Bonneville Environmental Foundation. They also plant one tree for every hosting account they provision.
+treefallsound.com is hosted by [GreenGeeks](https://my.greengeeks.com/seal/), who match every amp they draw from the grid with three times that in renewable energy through the Bonneville Environmental Foundation. That reduces the carbon footprint rather than offsetting it.

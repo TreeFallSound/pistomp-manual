@@ -16,7 +16,7 @@ A pedalboard is a collection of plugins (effects, modelers, generators) wired to
 - **Plugins** — the LV2 effects, amps, synths, and utilities that process or generate audio
 - **Routing** — how audio flows between plugins (serial, parallel, split/merge)
 - **Snapshots** — saved states of every plugin parameter on the board
-- **Controller bindings** — which footswitches, tweak knobs, and expression pedals control which parameters
+- **Controller bindings** — which footswitches, tweak encoders, and expression pedals control which parameters
 
 ## Creating and editing pedalboards
 
@@ -24,19 +24,16 @@ Pedalboards are built in MOD-UI, the drag-and-drop web interface. Point a browse
 
 1. Open the plugin browser at the bottom of the screen and drag a plugin onto the canvas
 2. Wire effects together by dragging from an output port to an input port. Signal flows left to right — the leftmost plugin in the chain receives your dry signal first
-3. Assign footswitches and tweak knobs via the plugin settings dialog
+3. Assign footswitches and tweak encoders via the plugin settings dialog
 4. Save the pedalboard when you're done
 
 Changes made in MOD-UI sync to the LCD automatically. The LCD reflects the current pedalboard state in real time.
 
 ## Loading a pedalboard from the LCD
 
-1. Rotate the Navigation encoder until the pedalboard name is highlighted (yellow)
-2. Click to open the pedalboard menu
-3. Rotate to scroll through available pedalboards
-4. Click to load the selected pedalboard
+Highlight the pedalboard name with the Navigation encoder and click to open the menu — see [Navigation & Controls]({{ '/using/navigation/#selecting-a-pedalboard' | url }}) for the steps.
 
-Loading a new pedalboard takes a few seconds. Audio may drop momentarily.
+Loading a new pedalboard takes a few seconds, and audio drops while it happens. This is the reason to keep a song's sounds on one board as snapshots rather than spread across several boards: snapshot changes are instant, pedalboard changes are not.
 
 ## Banks
 

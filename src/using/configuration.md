@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: configuration
   title: Configuration
-  order: 7
+  order: 9
 ---
 
 # Configuration
@@ -73,8 +73,53 @@ footswitches:
 | `adc_input` | Analog input pin on the MCP3008 ADC |
 | `ledstrip_position` | v3 LED strip pixel index for this switch |
 | `midi_CC` | MIDI CC number sent on press |
-| `longpress` | Long-press action: `next_snapshot`, `previous_snapshot`, `toggle_bypass`, `toggle_tuner_enable`, `toggle_tap_tempo_enable` |
+| `longpress` | Long-press action — see below |
 | `tap_tempo` | Action for tap tempo mode (`set_mod_tap_tempo`) |
+
+### Long-press actions
+
+`longpress` accepts three forms.
+
+**A handler name.** The full set:
+
+| Name | What it does |
+|------|-------------|
+| `next_snapshot` | Next snapshot on the current pedalboard |
+| `previous_snapshot` | Previous snapshot |
+| `next_pedalboard` | Load the next pedalboard |
+| `previous_pedalboard` | Load the previous pedalboard |
+| `toggle_bypass` | Global bypass on/off |
+| `toggle_tuner_enable` | Open or close the tuner |
+| `toggle_tap_tempo_enable` | Enter or leave tap tempo mode |
+| `set_mod_tap_tempo` | Set the host tempo directly |
+
+Remember that a pedalboard change drops audio for a few seconds while a snapshot change does not, so `next_pedalboard` belongs between songs rather than inside one.
+
+**A single-key mapping**, for actions that need an argument:
+
+```yaml
+longpress: {midi_CC: 80}          # send a raw CC on the switch's channel
+longpress: {preset: next}         # next | previous | <index>
+longpress: {pedalboard: next}     # next | previous
+```
+
+**A list**, which is how you build chords:
+
+```yaml
+footswitches:
+  - id: 0
+    midi_CC: 60
+    longpress: [previous_snapshot, toggle_tuner_enable]
+  - id: 1
+    midi_CC: 61
+    longpress: [next_snapshot, toggle_tuner_enable]
+```
+
+Each name in the list is a group the switch joins. A name held by exactly one switch fires on its own. A name held by two switches becomes a chord: it fires only when both are long-pressed within 0.4 seconds of each other, and the individual actions are suppressed.
+
+In the example above, long-pressing A alone gives you the previous snapshot, B alone gives you the next, and A and B together open the tuner. That frees footswitch C's long-press for something else. The chord window is also why a lone member waits 0.4 s before acting — it's giving you time to press the other switch.
+
+Only names with a matching handler callback participate, so a typo in a group name silently drops that switch out of the chord rather than erroring.
 
 ## Encoders
 
@@ -132,6 +177,27 @@ This uncomments the `analog_controllers:` block. Restart the service or reboot f
 ```bash
 ~/extras/expression-pedal.sh off
 ```
+
+## The extras scripts
+
+`~/extras/` holds scripts for things that don't belong on a knob. Run them over SSH.
+
+| Script | What it does |
+|--------|-------------|
+| `expression-pedal.sh on\|off` | Enables the expression pedal input, as above |
+| `more-user-files.sh` | Downloads a starter pack of SFZ instruments and soundfonts into `~/data/user-files` |
+| `swap-pedalboards.sh <git-url> [branch]` | Repoints your pedalboard collection at a different git remote and resyncs both MOD and pi-Stomp |
+| `journal-toggle.sh on\|off` | Persists logs across reboots (capped at 50 MB) instead of keeping them in RAM. Turn this on before trying to catch an intermittent fault |
+| `tune.sh` | Trades kernel security mitigations and the hardware watchdog for lower audio latency |
+| `wifi-backend-toggle.sh iwd\|wpa_supplicant\|status` | Switches NetworkManager's WiFi backend |
+
+Three of these deserve a warning.
+
+`swap-pedalboards.sh` stops pi-Stomp, replaces the `.pedalboards` git tree, and clears MOD's cached state before restarting. It backs up first, but it is a wholesale replacement of your boards, not a merge.
+
+`tune.sh` disables CPU vulnerability mitigations and disarms the watchdog. On a pedal that never sees untrusted input this is a reasonable trade, but it is a real reduction in both security and crash recovery — without the watchdog, a hard lockup stays locked up until you pull power.
+
+`wifi-backend-toggle.sh iwd` is experimental on the Pi's Broadcom hardware, and the setup hotspot may stop working under it. Switch over Ethernet if you can, since changing backends restarts NetworkManager and drops WiFi for a few seconds.
 
 ## Per-pedalboard overrides
 
@@ -224,7 +290,7 @@ If you edit the snapshots in MOD-UI, pi-Stomp detects the change and re-preps th
 
 Some settings are saved without needing to save a pedalboard:
 
-- **Input gain** — set from the Audio menu or System Menu
-- **Headphone volume** — set from the System Menu
+- **Input gain** — set from the Audio & MIDI panel
+- **Headphone volume** — set from the Audio & MIDI panel
 
 These live in `/home/pistomp/data/config/settings.yml`.

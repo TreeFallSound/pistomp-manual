@@ -4,12 +4,33 @@ eleventyNavigation:
   parent: using
   key: quick-start
   title: Quick Start
-  order: 0
+  order: 1
 ---
 
 # Quick Start
 
-Your pi-Stomp is built and booted — now let's make it your best friend on stage (other than the drummer). Once your pedalboards are set up, you run the whole thing from the device itself: no computer on stage, just you, your pedalboards, snapshots, and footswitches.
+Your pi-Stomp is built and booted — now let's make it your best friend on stage (other than the drummer). Once your pedalboards are set up, you run the whole thing from the device itself: no other computer on stage, just you, your pedalboards, snapshots, and footswitches.
+
+- A **pedalboard** is a saved chain of effects — which plugins are loaded, how they're wired, and what their knobs are set to. It's a file on the device, not the device itself.
+- A **snapshot** is a saved set of knob positions within one pedalboard. Same plugins and wiring with different parameter settings. Snapshots are useful for dialing in different parts of a song, or different "local maxima" in the soundscape.
+
+[Pedalboards]({{ '/using/pedalboards/' | url }}) covers both in full.
+
+## The controls
+
+<img src="{{ '/assets/images/pi-stomp-v3-hero.png' | url }}" alt="pi-Stomp v3">
+
+Working clockwise:
+
+| Control | What it does |
+|---------|--------------|
+| **Navigation encoder** (bottom-leftmost) | Rotate to move the highlight, click to select, long-press to deep-edit the highlighted plugin |
+| **Tweak 1** and **Tweak 2** | Adjust the highlighted parameter; long-press for previous/next snapshot |
+| **Volume** (Tweak 3) | Output level |
+| **Footswitches A–D** | Toggle effects, tap tempo, change snapshots |
+| **LCD** | Current pedalboard, parameter values, and the toolbar icons along the top |
+
+[Hardware Overview]({{ '/using/hardware-overview/' | url }}) has the rear panel and the full spec.
 
 ## Connect
 
@@ -30,7 +51,7 @@ If the audio sounds distorted (in a bad way) or the input clipping LEDs turn yel
 
 ## Make music
 
-The default pedalboard loads automatically. Use the footswitches to toggle effects, the Navigation encoder to browse and to bypass/enable plugins, and the tweak knobs to adjust parameters.
+The default pedalboard loads automatically. Use the footswitches to toggle effects, the Navigation encoder to browse and to bypass/enable plugins, and the tweak encoders to adjust parameters.
 
 Learn more in [Navigation & Controls]({{ '/using/navigation' | url }}).
 

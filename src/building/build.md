@@ -34,24 +34,7 @@ The linked wiki pages have detailed instructions and photos for each step.
 
 ## Hardware reference
 
-The kit uses labeled hardware. Keep the bag organized — these IDs are referenced in the wiki:
-
-| ID | Part |
-|----|------|
-| S6 | 6mm screw |
-| H10 | 10mm hex spacer (audio card) |
-| H15 | 15mm hex spacer (Pi) |
-| S10 | 10mm M2.5 screw (LCD) |
-| N2 | 2mm nut (LCD) |
-| W1 | 1mm washer |
-| J8 | 8-conductor Dupont jumper (LCD) |
-| EWN | Nylon encoder washer |
-| EWM | Metal encoder washer |
-| EN | Encoder nut |
-| EK | Soft-touch encoder knob |
-| LL | LED lens |
-| LR | LED lens retainer ring |
-| FS | Footswitch with Molex connector |
+Kit hardware comes in labelled bags — `S6` for a 6 mm screw, `H15` for the 15 mm Pi spacer, and so on. Each wiki step names the IDs it needs, so keep the bags sorted and work from the step rather than memorizing the list.
 
 ## Common gotchas
 

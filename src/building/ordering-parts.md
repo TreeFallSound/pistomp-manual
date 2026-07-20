@@ -9,6 +9,26 @@ eleventyNavigation:
 
 # Ordering Parts
 
+## How pi-Stomp compares
+
+pi-Stomp is a DIY platform, not a commercial product. If you want a polished, warranty-backed unit, buy a MOD Dwarf, HX Stomp, or Headrush. If you want to build something yourself and hack on it, pi-Stomp is the only open-source option at this level.
+
+| | pi-Stomp v3 | MOD Dwarf | HX Stomp | Headrush MX5 |
+|---|---|---|---|---|
+| Audio | 24-bit 48–96 kHz | 24-bit 48 kHz | 24-bit 96 kHz | 24-bit 96 kHz |
+| Plugins | 600+ (upgradeable) | 330+ (upgradeable) | 200 (fixed) | 107 (fixed) |
+| Simultaneous | 12+ (CPU-dependent) | 12+ | 6 | 12 |
+| Routing | Fully flexible | Fully flexible | Serial or 2 parallel | Serial or 2 parallel |
+| MIDI | Optional DIN + USB | DIN in/out + USB | DIN in/out/thru | DIN in/out |
+| Expression | Optional (up to 8 analog) | Yes | Yes | Yes |
+| Footswitches | 4 (assignable) | 2 (assignable) | 3 (multi-mode) | 4 (multi-mode) |
+| True bypass | Yes (ch 1) | Yes (relay) | Yes (relay) | No |
+| LCD | 2.8" color TFT | 2x monochrome | Color | Color touch |
+| WiFi | Built-in | Built-in | None | None |
+| Software | Open source | Open source | Proprietary | Proprietary |
+| Hardware | Hackable/upgradeable | Expandable via port | Fixed | Fixed |
+| Cost (kit) | USD 299 | USD 550 | USD 650 | USD 599 |
+
 ## v3 Kit (recommended)
 
 The [pi-Stomp v3 kit](https://treefallsound.com/opencart/index.php?route=product/product&product_id=64) costs USD 299 and includes everything needed to build a working unit:

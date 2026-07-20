@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: plugins
   title: Plugins & Effects
-  order: 5
+  order: 6
 ---
 
 # Plugins & Effects
@@ -56,7 +56,7 @@ In MOD-UI, the top bar shows real-time CPU usage and XRUN (buffer underrun) coun
 
 - Removing CPU-intensive plugins (generators, simulators, pitch shifters)
 - Reducing the number of active plugins on the pedalboard
-- Adjusting the JACK period size (see [Performance Tuning]({{ '/using/performance' | url }}))
+- Adjusting the JACK period size (see [Performance Tuning]({{ '/maintenance/performance' | url }}))
 
 ## Plugin reference
 

@@ -35,15 +35,16 @@ Fixed-frequency loops avoid surprise latency from interrupt handlers. The 10ms t
 
 ## Hardware versions
 
-Three variants share a common base class, selected by `hardware.version` in the YAML config:
+Two variants share a common base class, selected by `hardware.version` in the YAML config:
 
 | Version | Product | Processor | Controls | LCD |
 |---------|---------|-----------|----------|-----|
-| < 2.0 | pi-Stomp v1 | Pi 3 | 3 footswitches, 2 encoders, 1 pot | Monochrome 128x64 |
 | 2.0–2.9 | pi-Stomp Core (v2) | Pi 3/4 | Up to 5 footswitches, 1 encoder | Color 320x240 |
 | ≥ 3.0 | pi-Stomp Tre (v3) | Pi 5 | 4 footswitches, 4 encoders, LED strip | Color 320x240 |
 
-Each version has its own hardware class (`Pistomp`, `Pistompcore`, `Pistomptre`). A factory creates the right one from the config. v2 and v3 share the same handler logic (`Modhandler`); only the hardware layer changes.
+Each version has its own hardware class (`Pistompcore`, `Pistomptre`), and `Hardwarefactory.create()` picks one from the config. v2 and v3 share the same handler logic (`Modhandler`); only the hardware layer changes.
+
+pi-Stomp v1 is no longer supported. There is no v1 hardware class: a version below 2.0 makes the factory return `None`, and the app exits. `firstboot.sh` never writes a version below 2.0, and `modify_version.sh` still carries a v1 branch that points at a template file no longer shipped.
 
 ## How controls become sound
 
@@ -80,5 +81,5 @@ Only the per-pedalboard layer is a runtime merge. This lets you have different f
 - **Polling over events** — predictable timing, no surprise latency
 - **Explicit version routing** — factory pattern, not capability detection
 - **Overlay, don't replace** — per-pedalboard config merges field-by-field
-- **Single writer** — MOD-UI owns the truth; pi-Stomp paints optimistically and reconciles
+- **Single writer, mostly** — MOD-UI owns the truth; pi-Stomp paints optimistically and reconciles. The exception is footswitch bypass, which pi-Stomp applies locally; see [WebSocket Bridge]({{ '/developers/websocket-bridge/' | url }})
 - **Trust MOD for audio** — pi-Stomp is a controller, not an audio processor

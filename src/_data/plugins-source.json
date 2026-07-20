@@ -1156,5 +1156,149 @@
     "bundle": "Airwindows-Baxandall.lv2",
     "name": "Baxandall",
     "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/env",
+    "bundle": "mod-ams.lv2",
+    "name": "AMS Envelope",
+    "source_url": "https://github.com/blablack/ams-lv2"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/lfo2_freq",
+    "bundle": "mod-ams.lv2",
+    "name": "AMS LFO2 - Freq",
+    "source_url": "https://github.com/blablack/ams-lv2"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vcaexp",
+    "bundle": "mod-ams.lv2",
+    "name": "AMS VCA Exp",
+    "source_url": "https://github.com/blablack/ams-lv2"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vcalin",
+    "bundle": "mod-ams.lv2",
+    "name": "AMS VCA Lin",
+    "source_url": "https://github.com/blablack/ams-lv2"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vcf",
+    "bundle": "mod-ams.lv2",
+    "name": "AMS VCF",
+    "source_url": "https://github.com/blablack/ams-lv2"
+  },
+  {
+    "uri": "http://github.com/blablack/ams-lv2/vco3",
+    "bundle": "mod-ams.lv2",
+    "name": "AMS VCO3",
+    "source_url": "https://github.com/blablack/ams-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-attenuverter",
+    "bundle": "mod-cv-attenuverter.lv2",
+    "name": "Attenuverter Booster",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-audio-to-cv",
+    "bundle": "mod-audio-to-cv.lv2",
+    "name": "Audio to CV",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-control",
+    "bundle": "mod-cv-control.lv2",
+    "name": "Control to CV",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-abs",
+    "bundle": "mod-cv-abs.lv2",
+    "name": "CV ABS",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-clock",
+    "bundle": "mod-cv-clock.lv2",
+    "name": "CV Clock",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-gate",
+    "bundle": "mod-cv-gate.lv2",
+    "name": "CV Gate",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-meter",
+    "bundle": "mod-cv-meter.lv2",
+    "name": "CV meter",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-parameter-modulation",
+    "bundle": "mod-cv-parameter-modulation.lv2",
+    "name": "CV Parameter Modulation",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-range",
+    "bundle": "mod-cv-range.lv2",
+    "name": "CV Range Divider",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-round",
+    "bundle": "mod-cv-round.lv2",
+    "name": "CV Round",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-switch1",
+    "bundle": "mod-cv-switch1.lv2",
+    "name": "CV Switchbox 1-2",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-switch3",
+    "bundle": "mod-cv-switch3.lv2",
+    "name": "CV Switchbox 1-3",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-switch2",
+    "bundle": "mod-cv-switch2.lv2",
+    "name": "CV Switchbox 2-1",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-switch4",
+    "bundle": "mod-cv-switch4.lv2",
+    "name": "CV Switchbox 3-1",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-to-cv-mono",
+    "bundle": "mod-midi-to-cv-mono.lv2",
+    "name": "MIDI to CV mono",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-to-cv-poly",
+    "bundle": "mod-midi-to-cv-poly.lv2",
+    "name": "MIDI to CV Poly",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-random",
+    "bundle": "mod-cv-random.lv2",
+    "name": "Random Generator",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mod-cv-slew",
+    "bundle": "mod-cv-slew.lv2",
+    "name": "Slew Rate Limiter",
+    "source_url": "https://github.com/moddevices/mod-cv-plugins"
   }
 ]

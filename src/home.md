@@ -18,6 +18,7 @@ The complete guide to the pi-Stomp ecosystem — from building your first kit to
 - **[About]({{ '/about/' | url }})** — The people and mission behind pi-Stomp
 - **[Building]({{ '/building/' | url }})** — Obtaining hardware, assembly, and software installation
 - **[Using]({{ '/using/' | url }})** — Navigation, pedalboards, plugins, MIDI, and configuration
+- **[Maintenance]({{ '/maintenance/' | url }})** — Troubleshooting, performance tuning, backups, and recovery
 - **[Developers]({{ '/developers/' | url }})** — Architecture, code structure, and contributing
 - **[Plugins]({{ '/plugins/' | url }})** — Editorial reviews of the best open-source effects
 
@@ -27,13 +28,17 @@ The complete guide to the pi-Stomp ecosystem — from building your first kit to
 
 pi-Stomp is a DIY high-definition multi-effects platform for guitar, bass, and keyboards.
 
-Built on top of the Raspberry Pi, it runs 600+ open-source LV2 effects, Neural Amp Models (NAM), and 60+ synth/drum machine/sampler plugins, all controllable from the hardware front panel or a web browser. No computer required on stage!
+Built on top of the Raspberry Pi, it runs 600+ open-source LV2 effects, Neural Amp Models (NAM), and 60+ synth/drum machine/sampler plugins, all controllable from the hardware front panel or a web browser. LV2 is the open plugin format the Linux audio world standardized on — the same role VST plays elsewhere — which is why there are so many effects to draw on and why anyone can write another.
+
+You build pedalboards in a browser and play them from the floor. Setup needs a computer once; after that, none on stage.
 
 | Version | Status | Pi | Build | Controls | LCD |
 |---------|--------|----|-------|----------|-----|
 | **v3** | [Current](https://treefallsound.com/opencart/index.php?route=product/product&product_id=64&search=kit) | Pi 5 | Solderless kit | 4 footswitches, 3 tweak encoders | 2.8" color TFT |
 | **v2** | Supported | Pi 3/4 | Through-hole | Up to 5 footswitches, 1 encoder | Color TFT |
-| **v1** | Legacy | Pi 3 | Through-hole | 3 footswitches | Monochrome |
+| **v1** | Unsupported | Pi 3 | Through-hole | 3 footswitches | Monochrome |
+
+The current OS image does not run on v1 hardware — the software has no v1 class and exits on startup.
 
 All pi-Stomp software is free open source (AGPL-3.0). Join us on [GitHub](https://github.com/TreeFallSound): we'd love to hear your feature requests / bug reports and welcome code contributions.
 

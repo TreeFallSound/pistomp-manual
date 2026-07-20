@@ -1,10 +1,10 @@
 ---
 title: Developer Guide
-redirect: /developers/contributing/
+redirect: /developers/architecture/
 eleventyNavigation:
   key: developers
   title: Developers
-  order: 4
+  order: 5
 ---
 
 # Developer Guide

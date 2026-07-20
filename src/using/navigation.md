@@ -13,7 +13,7 @@ The pi-Stomp v3 can be controlled entirely from the device: no computer needed o
 
 ## The LCD screen
 
-The home screen shows the current pedalboard, active snapshot, and all plugins in the chain. The Navigation encoder moves a yellow highlight between elements; clicking takes action on whatever is highlighted.
+The home screen shows the current pedalboard, active snapshot, and all plugins in the chain.
 
 <img src="{{ '/assets/images/lcd-homescreen-beths.png' | url }}" alt="Home screen with pedalboard loaded" class="figure-narrow">
 
@@ -61,33 +61,19 @@ You can also switch snapshots by long-pressing footswitches A and B (previous an
 1. Rotate the Navigation encoder until a plugin tile is highlighted (yellow border)
 2. Click to toggle between enabled and bypassed
 
-An enabled plugin shows as a filled block:
+<img src="{{ '/assets/images/lcd-plugin-bypassed.png' | url }}" alt="A bypassed plugin, drawn as an outline block" class="figure-narrow">
 
-<img src="{{ '/assets/images/lcd-plugin-active.png' | url }}" alt="Plugin enabled — filled block" class="figure-narrow">
-
-A bypassed plugin shows as an unfilled (outline) block:
-
-<img src="{{ '/assets/images/lcd-plugin-bypassed.png' | url }}" alt="Plugin bypassed — outline block" class="figure-narrow">
-
-Plugins assigned to footswitches can also be toggled from the floor — the footswitch label on the LCD updates to reflect the current state. When it's bound to a plugin, pressing the footswitch will toggle it on and off (bypass/enable).
+Plugins assigned to footswitches can also be toggled from the floor, and the footswitch label on the LCD follows the current state.
 
 ## Editing plugin parameters
 
-1. Highlight a plugin tile and long-press the Navigation encoder
-
-<img src="{{ '/assets/images/lcd-param-menu.png' | url }}" alt="Parameter menu" class="figure-narrow">
-
-2. Rotate to select a parameter, then click
-
-<img src="{{ '/assets/images/lcd-param-dialog.png' | url }}" alt="Parameter edit dialog" class="figure-narrow">
-
-3. Rotate to adjust the value — changes take effect immediately
-
-<img src="{{ '/assets/images/lcd-param-tweaked.png' | url }}" alt="Parameter adjusted" class="figure-narrow">
-
+1. Highlight a plugin tile and long-press the Navigation encoder to open its parameter list
+2. Rotate to select a parameter, then click to open it
+3. Rotate to adjust the value — changes take effect immediately, so you can set it by ear
 4. Click to close the dialog
 
-<img src="{{ '/assets/images/lcd-param-closed.png' | url }}" alt="Back to home screen" class="figure-narrow">
+<img src="{{ '/assets/images/lcd-param-menu.png' | url }}" alt="Parameter menu" class="figure-narrow">
+<img src="{{ '/assets/images/lcd-param-dialog.png' | url }}" alt="Parameter edit dialog" class="figure-narrow">
 
 ## Footswitches
 

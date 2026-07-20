@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: pistomp-recovery
   title: pistomp-recovery
-  order: 8
+  order: 7
 ---
 
 # pistomp-recovery
@@ -18,7 +18,7 @@ The code lives at [github.com/TreeFallSound/pistomp-recovery](https://github.com
 ## Activation
 
 - **Automatic**: systemd `OnFailure` — the recovery screen triggers when `mod-ala-pi-stomp` or `mod-ui` fails 3 times within 60 seconds (`StartLimitBurst=3`, `StartLimitIntervalSec=60` in the service units)
-- **Manual**: System Menu → Recovery mode
+- **Manual**: System Menu → "Updates and Recovery >". The row is inserted only when `handler.recovery_available` is true (`pi-stomp/pistomp/lcd320x240.py`)
 
 ## Features
 
@@ -36,17 +36,24 @@ If you've run `util/expand-git.sh` to turn the installed `/opt/pistomp/pi-stomp`
 
 ## Architecture
 
-The application uses a **Facet** pattern — each subsystem is a self-contained facet with git-backed versioning. The five facets (config, pedalboards, plugins, packages, boot) are grouped into the four user-facing **domains** the recovery UI exposes: Pedalboards, Plugins, Config (config + boot facets), and System (packages facet).
+The application uses a **Facet** pattern — each subsystem is a self-contained facet with git-backed versioning. Six facets are registered in `facet.py`, and `DOMAIN_FACETS` (`constants.py`) maps each to one user-facing **domain**, currently one-to-one.
 
 ### Facets
 
-| Facet | File | Purpose |
-|-------|------|---------|
-| Config | `config.py` | Manages `default_config.yml` and `settings.yml` |
-| Pedalboards | `pedalboards.py` | Git-backed pedalboard versioning |
-| Plugins | `plugins.py` | LV2 plugin management, factory reset |
-| Packages | `packages/packages.py` | System package management |
-| Boot | `boot.py` | `/boot/config.txt`, `/boot/cmdline.txt`, `/boot/pistomp.conf`, `jackdrc`, ALSA state |
+| Facet | Domain | File | Tracks |
+|-------|--------|------|--------|
+| `pedalboards` | Pedalboards | `pedalboards.py` | Git-backed pedalboard versioning |
+| `plugins` | Plugins | `plugins.py` | LV2 plugin management, factory reset |
+| `config` | Config | `config.py` | `default_config.yml`, `settings.yml`, `config.py` |
+| `audio` | Audio | `audio.py` | `/etc/default/jack` and `/var/lib/alsa/asound.state` |
+| `boot` | Boot | `boot.py` | `/boot/config.txt`, `/boot/cmdline.txt`, `/boot/pistomp.conf` |
+| `packages` | System | `packages/packages.py` | System package management |
+
+`/etc/default/jack` is the JACK source of truth on Trixie; `/etc/jackdrc` is deprecated and no facet tracks it.
+
+Capabilities differ per facet and drive what the UI offers. `FileFacet` defaults to `CAP_ROLLBACK_STAMP | CAP_ROLLBACK_FACTORY | CAP_STAMP`, so config and boot get both rollback targets. Audio declares factory-only (ALSA state churns at runtime), plugins is factory-only, and packages declares `CAP_APPLY_UPDATES | CAP_ROLLBACK_FACTORY`.
+
+`Backend.domains()` filters by mode: `updates` returns System alone, and `recovery` drops Audio and Pedalboards because both are promoted to the main menu.
 
 Service and crash management (`service.py`) sits alongside the facets but is not itself a facet.
 

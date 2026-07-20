@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: websocket-bridge
   title: WebSocket Bridge
-  order: 4
+  order: 5
 ---
 
 # WebSocket Bridge
@@ -30,13 +30,28 @@ The WebSocket bridge connects pi-Stomp to MOD-UI for real-time state synchroniza
 
 ### Inbound messages
 
+`parse_message()` recognises every pattern below; anything else becomes `UnknownMessage`, which carries the raw string so unhandled traffic is visible rather than silently dropped.
+
 | Pattern | Typed message | Effect |
 |---------|---------------|--------|
-| `param_set …/:bypass v` | `PluginBypassMessage` | Set bypass, redraw |
-| `param_set …/{sym} v` | `ParamSetMessage` | Cache value, mirror to bound control |
-| `add {inst} … {bypassed} …` | `AddPluginMessage` | Connect/reconnect dump |
-| `loading_end {snapshot}` | `LoadingEndMessage` | Stash snapshot index |
+| `param_set /graph/{inst} :bypass {v}` | `PluginBypassMessage` | Set bypass, redraw. Must match before the general `param_set` arm |
+| `param_set /graph/{inst} {sym} {v}` | `ParamSetMessage` | Cache value, mirror to bound control |
+| `patch_set {inst} {writable} {uri} {type} {value}` | `PatchSetMessage` | A plugin's writable property changed; replayed in full on reconnect |
+| `midi_map /graph/{inst} {sym} {ch} {ctrl} {min} {max}` | `MidiMapMessage` | A MIDI binding was learned or assigned in MOD-UI |
+| `add /graph/{inst} {uri} {x} {y} {bypassed} {ver} {env}` | `AddPluginMessage` | Connect/reconnect dump |
+| `remove /graph/{inst}` | `RemovePluginMessage` | Plugin removed from the graph |
+| `connect {from} {to}` | `ConnectMessage` | Port connected |
+| `disconnect {from} {to}` | `DisconnectMessage` | Port disconnected |
+| `add_hw_port /graph/{name} {type} {isOutput} {title} {index}` | `AddHwPortMessage` | Hardware port appeared |
+| `remove_hw_port /graph/{name}` | `RemoveHwPortMessage` | Hardware port went away |
+| `loading_start {isDefault}` | `LoadingStartMessage` | Pedalboard load began |
+| `loading_end {snapshotId}` | `LoadingEndMessage` | Stash snapshot index |
 | `pedal_snapshot {id} {name}` | `PedalSnapshotMessage` | In-board snapshot change |
+| `transport {rolling} {beatsPerBar} {bpm} {syncMode}` | `TransportMessage` | Tempo and sync-mode state |
+| `truebypass {left} {right}` | `TrueBypassMessage` | Hardware true-bypass relay state |
+| `size {width} {height}` | `SizeMessage` | MOD-UI canvas size |
+
+Most arms have shorter fallback forms for truncated messages — `pedal_snapshot` alone parses to snapshot 0 with an empty name, for instance — so a missing trailing field degrades to a default rather than raising.
 
 ### Outbound messages
 
@@ -51,7 +66,7 @@ MOD-UI is authoritative for bypass and parameter state, but pi-Stomp updates its
 
 1. `footswitch._on_switch()` emits a `SwitchEvent`; `handler._handle_footswitch()` flips local `toggled`, updates the LED immediately, and sends the absolute MIDI CC
 2. mod-host applies bypass and echoes `param_set …/:bypass` to all clients
-3. The echo parses to `PluginBypassMessage`; `modhandler` calls `plugin.set_bypass()` and `lcd.refresh_plugin()` to reconcile cached state and redraw the LCD
+3. The echo parses to `PluginBypassMessage`; `modhandler` calls `plugin.set_bypass()`, and the LCD redraws through `_refresh_plugin()`, which runs from a subscription callback on the plugin's bypass field rather than being called directly (`pistomp/lcd320x240.py`)
 
 Because the echo is absolute (not a delta), a wrong optimistic prediction is overwritten rather than compounded.
 
