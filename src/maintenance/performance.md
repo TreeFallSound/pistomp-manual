@@ -24,28 +24,16 @@ Larger buffers reduce CPU load and XRUNs at the cost of higher latency. If you h
 
 ### Changing the period size
 
-The period is set at boot time by `firstboot.sh` based on the `JACK_PERIOD` value in `/boot/firmware/pistomp.conf`. There are two ways to change it:
+You can find the current period in the bottom-right of the MOD-UI pedalboard application at [http://pistomp.local](http://pistomp.local).
 
-**Via SSH (takes effect after reboot):**
-
-```bash
-# Edit pistomp.conf on the boot partition
-sudo sed -i 's/JACK_PERIOD="128"/JACK_PERIOD="256"/' /boot/firmware/pistomp.conf
-```
-
-Then reboot. The change persists across updates.
-
-**Via firstboot re-run (for testing):**
-
-If you want firstboot to re-apply settings, edit `pistomp.conf`, then:
+Edit `JACK_PERIOD` in `/etc/default/jack` and reboot:
 
 ```bash
-sudo mv /boot/firmware/firstboot.done /boot/firmware/firstboot.sh
-sudo systemctl enable firstboot.service
+sudo sed -i 's/JACK_PERIOD="128"/JACK_PERIOD="256"/' /etc/default/jack
 sudo reboot
 ```
 
-Firstboot will run again and apply the new period.
+The change persists across updates. `firstboot.sh` only writes this file once; after that, `/etc/default/jack` is the source of truth.
 
 ## Monitoring XRUNs
 
@@ -118,7 +106,3 @@ To suppress voltage warnings (not recommended if you actually have a power probl
 ```bash
 echo avoid_warnings=2 | sudo tee -a /boot/config.txt
 ```
-
-## Reducing boot time
-
-First boot takes about a minute. Subsequent boots are about 20 seconds. You can reduce boot time by disabling unnecessary services (WiFi, MIDI, etc.) if you don't need them.
