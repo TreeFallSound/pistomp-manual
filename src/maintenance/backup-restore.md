@@ -21,7 +21,7 @@ The backup includes everything under `/home/pistomp/data/`:
 - Banks (`banks.json`)
 - Current pedalboard state (`last.json`)
 
-## Backup from USB drive
+## Backup to USB drive
 
 1. Insert a USB drive (500 MB or more) into the pi-Stomp
 2. On the LCD, navigate to **System Menu** → **Pedalboard Management** → **Backup data**
