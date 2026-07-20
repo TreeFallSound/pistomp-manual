@@ -1300,5 +1300,953 @@
     "bundle": "mod-cv-slew.lv2",
     "name": "Slew Rate Limiter",
     "source_url": "https://github.com/moddevices/mod-cv-plugins"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_cabinet#CABINET",
+    "bundle": "gx_cabinet.lv2",
+    "name": "GxCabinet",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_amp#GUITARIX",
+    "bundle": "gx_amp.lv2",
+    "name": "GxAmplifier-X",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_amp_stereo#GUITARIX_ST",
+    "bundle": "gx_amp_stereo.lv2",
+    "name": "GxAmplifier Stereo",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_MicroAmp_#_MicroAmp_",
+    "bundle": "gx_MicroAmp.lv2",
+    "name": "GxMicroAmp",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_studiopre#studiopre",
+    "bundle": "gx_studiopre.lv2",
+    "name": "GxAlembic",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_studiopre_st#studiopre_st",
+    "bundle": "gx_studiopre_st.lv2",
+    "name": "Gx Studio Preamp Stereo",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_jcm800pre_#_jcm800pre_",
+    "bundle": "gx_jcm800pre.lv2",
+    "name": "GxJCM800pre",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_jcm800pre_st#_jcm800pre_st",
+    "bundle": "gx_jcm800pre_st.lv2",
+    "name": "GxJCM800pre ST",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_plexi_#_plexi_",
+    "bundle": "gx_plexi.lv2",
+    "name": "GxPlexi",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_ampegsvt_#_ampegsvt_",
+    "bundle": "gx_ampegsvt.lv2",
+    "name": "GxSVT",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_ultracab_#_ultracab_",
+    "bundle": "gx_ultracab.lv2",
+    "name": "GxUltraCab",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_uvox_#_uvox_",
+    "bundle": "gx_uvox.lv2",
+    "name": "GxUVox720k",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_voxbass_#_voxbass_",
+    "bundle": "gx_voxbass.lv2",
+    "name": "GxVBassPreAmp",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_vmk2d_#_vmk2d_",
+    "bundle": "gx_vmk2d.lv2",
+    "name": "GxVMK2",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_blueamp_#_blueamp_",
+    "bundle": "gx_blueamp.lv2",
+    "name": "GxBlueAmp",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_CreamMachine_#_CreamMachine_",
+    "bundle": "gx_CreamMachine.lv2",
+    "name": "GxCreamMachine",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_fenderizer_#_fenderizer_",
+    "bundle": "gx_fenderizer.lv2",
+    "name": "GxFenderizer",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/XDarkTerror_#_darkterror_",
+    "bundle": "XDarkTerror.lv2",
+    "name": "XDarkTerror",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/XTinyTerror_#_tinyterror_",
+    "bundle": "XTinyTerror.lv2",
+    "name": "XTinyTerror",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://github.com/mikeoliphant/neural-amp-modeler-lv2",
+    "bundle": "neural_amp_modeler.lv2",
+    "name": "Neural Amp Modeler",
+    "source_url": "https://github.com/mikeoliphant/neural-amp-modeler-lv2"
+  },
+  {
+    "uri": "http://aidadsp.cc/plugins/aidadsp-bundle/rt-neural-generic",
+    "bundle": "rt-neural-generic.lv2",
+    "name": "AIDA-X",
+    "source_url": "https://github.com/AidaDSP/AIDA-X"
+  },
+  {
+    "uri": "https://github.com/brummer10/FatFrog#_FatFrog_",
+    "bundle": "FatFrog.lv2",
+    "name": "FatFrog",
+    "source_url": "https://github.com/brummer10/FatFrog"
+  },
+  {
+    "uri": "urn:brummer:ratatouille",
+    "bundle": "Ratatouille.lv2",
+    "name": "Ratatouille",
+    "source_url": "https://github.com/brummer10/Ratatouille.lv2"
+  },
+  {
+    "uri": "https://github.com/brummer10/VintageAC30",
+    "bundle": "VintageAC30.lv2",
+    "name": "VintageAC30",
+    "source_url": "https://github.com/brummer10/VintageAC30.lv2"
+  },
+  {
+    "uri": "urn:distrho:SwankyAmp",
+    "bundle": "SwankyAmp.lv2",
+    "name": "Swanky Amp",
+    "source_url": "https://github.com/resonantdsp/SwankyAmp"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/b_whirl#mod",
+    "bundle": "b_whirl_mod",
+    "name": "setBfree Whirl Speaker",
+    "source_url": "https://github.com/pantherb/setbfree"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/b_whirl#simple",
+    "bundle": "b_whirl",
+    "name": "setBfree Whirl Speaker (Old version)",
+    "source_url": "https://github.com/pantherb/setbfree"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/b_whirl#extended",
+    "bundle": "b_whirl_xt",
+    "name": "setBfree Whirl Speaker - Extended Version",
+    "source_url": "https://github.com/pantherb/setbfree"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/cabsim-IR-loader",
+    "bundle": "cabsim-IR-loader.lv2",
+    "name": "IR loader cabsim",
+    "source_url": "https://github.com/mod-audio/mod-cabsim-IR-loader"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/tinygain#mono",
+    "bundle": "tinygain.lv2",
+    "name": "TinyGain Mono",
+    "source_url": "https://github.com/x42/tinyamp.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/tinygain#stereo",
+    "bundle": "tinygain.lv2",
+    "name": "TinyGain Stereo",
+    "source_url": "https://github.com/x42/tinyamp.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/modmeter",
+    "bundle": "modmeter.lv2",
+    "name": "Level Meter",
+    "source_url": "https://github.com/x42/modmeter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/modspectre",
+    "bundle": "modspectre.lv2",
+    "name": "Spectrum Analyzer",
+    "source_url": "https://github.com/x42/modspectre.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/mclk",
+    "bundle": "mclk.lv2",
+    "name": "MIDI Clock Generator",
+    "source_url": "https://github.com/x42/mclk.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/mtc",
+    "bundle": "mtc.lv2",
+    "name": "MIDI Timecode (MTC) Generator",
+    "source_url": "https://github.com/x42/mtc.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midigen",
+    "bundle": "midigen.lv2",
+    "name": "MIDI Generator",
+    "source_url": "https://github.com/x42/midigen.lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mixer",
+    "bundle": "mod-mixer.lv2",
+    "name": "Mixer",
+    "source_url": "https://github.com/mod-audio/mod-audio-mixer-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/mixer-stereo",
+    "bundle": "mod-mixer-stereo.lv2",
+    "name": "Mixer Stereo",
+    "source_url": "https://github.com/mod-audio/mod-audio-mixer-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/sooperlooper",
+    "bundle": "sooperlooper.lv2",
+    "name": "SooperLooper",
+    "source_url": "https://github.com/mod-audio/sooperlooper-lv2-plugin"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/sooperlooper-2x2",
+    "bundle": "sooperlooper-2x2.lv2",
+    "name": "SooperLooper 2x2",
+    "source_url": "https://github.com/mod-audio/sooperlooper-lv2-plugin"
+  },
+  {
+    "uri": "http://devcurmudgeon.com/alo",
+    "bundle": "alo.lv2",
+    "name": "ALO",
+    "source_url": "https://github.com/devcurmudgeon/alo"
+  },
+  {
+    "uri": "http://radig.com/plugins/loopor",
+    "bundle": "loopor.lv2",
+    "name": "Loopor",
+    "source_url": "https://github.com/stevie67/loopor"
+  },
+  {
+    "uri": "http://open-music-kontrollers.ch/lv2/notes#notes",
+    "bundle": "notes.lv2",
+    "name": "Notes",
+    "source_url": "https://git.ventosus.ch/notes.lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/Click",
+    "bundle": "mod-caps-Click.lv2",
+    "name": "C* Click - Metronome",
+    "source_url": "https://github.com/mod-audio/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/Gain",
+    "bundle": "mod-gain.lv2",
+    "name": "Gain",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/Gain2x2",
+    "bundle": "mod-gain2x2.lv2",
+    "name": "Gain 2x2",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/SwitchBox2",
+    "bundle": "mod-switchbox2.lv2",
+    "name": "Switchbox 1-2",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/switchbox_1-2_st",
+    "bundle": "switchbox_1-2_st.lv2",
+    "name": "Switchbox 1-2 ST",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/switchbox_2-1",
+    "bundle": "switchbox_2-1.lv2",
+    "name": "Switchbox 2-1",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/switchbox_2-1_st",
+    "bundle": "switchbox_2-1_st.lv2",
+    "name": "Switchbox 2-1 ST",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/SwitchTrigger4",
+    "bundle": "mod-switchtrigger4.lv2",
+    "name": "SwitchTrigger4",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/ToggleSwitch4",
+    "bundle": "mod-toggleswitch4.lv2",
+    "name": "ToggleSwitch",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/MIDI-Switchbox_1-2",
+    "bundle": "midi-switchbox_1-2.lv2",
+    "name": "MIDI SwitchBox 1-2",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-switchbox_1-2_2C",
+    "bundle": "midi-switchbox_1-2_2C.lv2",
+    "name": "MIDI SwitchBox 1-2 2C",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-switchbox_1-3",
+    "bundle": "midi-switchbox_1-3.lv2",
+    "name": "MIDI SwitchBox 1-3",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-switchbox_2-1",
+    "bundle": "midi-switchbox_2-1.lv2",
+    "name": "MIDI SwitchBox 2-1",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-switchbox_2-1_2C",
+    "bundle": "midi-switchbox_2-1_2C.lv2",
+    "name": "MIDI SwitchBox 2-1 2C",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/midi-switchbox_3-1",
+    "bundle": "midi-switchbox_3-1.lv2",
+    "name": "MIDI SwitchBox 3-1",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/arpeggiator",
+    "bundle": "mod-arpeggiator.lv2",
+    "name": "Arpeggiator",
+    "source_url": "https://github.com/mod-audio/mod-arpeggiator-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mod-devel/PeakToCC",
+    "bundle": "peak-to-cc.lv2",
+    "name": "Peak To CC",
+    "source_url": "https://github.com/mod-audio/mod-utilities"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/audiofile",
+    "bundle": "carla-files.lv2",
+    "name": "Audio File",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/audiogain",
+    "bundle": "carla-audiogain.lv2",
+    "name": "Audio Gain (Mono)",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/audiogain_s",
+    "bundle": "carla-audiogain.lv2",
+    "name": "Audio Gain (Stereo)",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midichanab",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Channel A/B",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midichanfilter",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Channel Filter",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midichannelize",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Channelize",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midifile",
+    "bundle": "carla-files.lv2",
+    "name": "MIDI File",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midigain",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Gain",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midijoin",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Join",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/midisplit",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Split",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://kxstudio.sf.net/carla/plugins/miditranspose",
+    "bundle": "carla-miditools.lv2",
+    "name": "MIDI Transpose",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "https://falktx.com/plugins/audio-bridge#capture",
+    "bundle": "audio-bridge.lv2",
+    "name": "Audio Capture",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "https://falktx.com/plugins/audio-bridge#playback",
+    "bundle": "audio-bridge.lv2",
+    "name": "Audio Playback",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "https://falktx.com/plugins/portal#sink",
+    "bundle": "portal.lv2",
+    "name": "Portal Sink",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "https://falktx.com/plugins/portal#source",
+    "bundle": "portal.lv2",
+    "name": "Portal Source",
+    "source_url": "https://github.com/falkTX/Carla"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/branch",
+    "bundle": "blop.lv2",
+    "name": "Branch",
+    "source_url": "http://git.drobilla.net/blop.lv2.git"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/interpolator",
+    "bundle": "blop.lv2",
+    "name": "Control to CV Interpolator",
+    "source_url": "http://git.drobilla.net/blop.lv2.git"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/difference",
+    "bundle": "blop.lv2",
+    "name": "Difference",
+    "source_url": "http://git.drobilla.net/blop.lv2.git"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/product",
+    "bundle": "blop.lv2",
+    "name": "Product",
+    "source_url": "http://git.drobilla.net/blop.lv2.git"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/ratio",
+    "bundle": "blop.lv2",
+    "name": "Ratio",
+    "source_url": "http://git.drobilla.net/blop.lv2.git"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/blop/sum",
+    "bundle": "blop.lv2",
+    "name": "Sum",
+    "source_url": "http://git.drobilla.net/blop.lv2.git"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mapcc",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI CC Map",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#cctonote",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI CC to Note",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#channelfilter",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Channel Filter",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#channelmap",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Channel Map",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mididup",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Channel Unisono",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#midichord",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Chord",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#miditranspose",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Chromatic Transpose",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mididelay",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Delayline",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#nodup",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Duplicate Blocker",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#enforcescale",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Enforce Scale",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#eventblocker",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Event Filter",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#keyrange",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Key-Range Filter",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#keysplit",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Keysplit",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#monolegato",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Monophonic Legato",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#ntapdelay",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI N-Tap Delay",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#notetocc",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Note to CC",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#notetoggle",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Note Toggle",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mapkeyscale",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Note Transpose",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#mapkeychannel",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Note/Channel Map",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#quantize",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Quantization",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#noactivesensing",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Remove Active Sensing",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#scalecc",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Scale CC Value",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#onechannelfilter",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Simple Channel Filter",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#sostenuto",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Sostenuto",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#midistrum",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Strum",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#velocityscale",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Velocity Adjust",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#randvelocity",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Velocity Randomization",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/midifilter#velocityrange",
+    "bundle": "midifilter.lv2",
+    "name": "MIDI Velocity-Range Filter",
+    "source_url": "https://github.com/x42/midifilter.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/stepseq#s16n8",
+    "bundle": "stepseq_s16n8.lv2",
+    "name": "MIDI Step Sequencer16x8",
+    "source_url": "https://github.com/x42/stepseq.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/stepseq#s32n8",
+    "bundle": "stepseq_s32n8.lv2",
+    "name": "MIDI Step Sequencer32x8",
+    "source_url": "https://github.com/x42/stepseq.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/stepseq#s8n16",
+    "bundle": "stepseq_s8n16.lv2",
+    "name": "MIDI Step Sequencer8x16",
+    "source_url": "https://github.com/x42/stepseq.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/stepseq#s8n4",
+    "bundle": "stepseq_s8n4.lv2",
+    "name": "MIDI Step Sequencer8x4",
+    "source_url": "https://github.com/x42/stepseq.lv2"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/stepseq#s8n8",
+    "bundle": "stepseq_s8n8.lv2",
+    "name": "MIDI Step Sequencer8x8",
+    "source_url": "https://github.com/x42/stepseq.lv2"
+  },
+  {
+    "uri": "https://github.com/vallsv/midi-display.lv2",
+    "bundle": "midi-display.lv2",
+    "name": "MIDI display",
+    "source_url": "https://github.com/vallsv/midi-display.lv2"
+  },
+  {
+    "uri": "https://github.com/vallsv/setbfree-controller",
+    "bundle": "setbfree-controller.lv2",
+    "name": "setBfree MIDI controller",
+    "source_url": "https://github.com/vallsv/setbfree-controller.lv2"
+  },
+  {
+    "uri": "urn:brummer10:neuralrecord",
+    "bundle": "neuralrecord.lv2",
+    "name": "Neural Record",
+    "source_url": "https://github.com/brummer10/neuralrecord"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#mono_record",
+    "bundle": "sc_record.lv2",
+    "name": "Record-Mono",
+    "source_url": "https://github.com/brummer10/screcord"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#mono_record_mini",
+    "bundle": "sc_record_mini.lv2",
+    "name": "Record-Mono Mini",
+    "source_url": "https://github.com/brummer10/screcord"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#quad_record",
+    "bundle": "sc_record.lv2",
+    "name": "Record-Quad",
+    "source_url": "https://github.com/brummer10/screcord"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#quad_record_mini",
+    "bundle": "sc_record_mini.lv2",
+    "name": "Record-Quad Mini",
+    "source_url": "https://github.com/brummer10/screcord"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#stereo_record",
+    "bundle": "sc_record.lv2",
+    "name": "Record-Stereo",
+    "source_url": "https://github.com/brummer10/screcord"
+  },
+  {
+    "uri": "https://github.com/brummer10/screcord#stereo_record_mini",
+    "bundle": "sc_record_mini.lv2",
+    "name": "Record-Stereo Mini",
+    "source_url": "https://github.com/brummer10/screcord"
+  },
+  {
+    "uri": "http://invadarecords.com/plugins/lv2/input",
+    "bundle": "invada-labs.lv2",
+    "name": "Invada Input Module",
+    "source_url": "https://launchpad.net/invada-studio"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/sidepass",
+    "bundle": "Airwindows-Sidepass.lv2",
+    "name": "Sidepass",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "http://ssj71.github.io/infamousPlugins/plugs.html#mindi",
+    "bundle": "mindi.lv2",
+    "name": "the infamous mindi",
+    "source_url": "https://github.com/ssj71/infamousPlugins"
+  },
+  {
+    "uri": "urn:zamaudio:ZamPhono",
+    "bundle": "ZamPhono.lv2",
+    "name": "ZamPhono",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "http://distrho.sf.net/plugins/MVerb",
+    "bundle": "MVerb.lv2",
+    "name": "MVerb",
+    "source_url": "https://github.com/DISTRHO/MVerb"
+  },
+  {
+    "uri": "urn:distrho:a-reverb",
+    "bundle": "distrho-a-reverb.lv2",
+    "name": "DIE Reverb",
+    "source_url": "https://github.com/DISTRHO/DIE-Plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tap/reverb",
+    "bundle": "tap-reverb.lv2",
+    "name": "TAP Reverberator",
+    "source_url": "https://github.com/moddevices/tap-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/Plate",
+    "bundle": "mod-caps-Plate.lv2",
+    "name": "C* Plate - Versatile plate reverb",
+    "source_url": "https://github.com/mod-audio/caps-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/caps/PlateX2",
+    "bundle": "mod-caps-PlateX2.lv2",
+    "name": "C* PlateX2 - Stereo in/out Versatile plate reverb",
+    "source_url": "https://github.com/mod-audio/caps-lv2"
+  },
+  {
+    "uri": "http://www.openavproductions.com/artyfx#roomy",
+    "bundle": "artyfx.lv2",
+    "name": "Roomy",
+    "source_url": "https://github.com/openAVproductions/openAV-ArtyFX"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Ambience",
+    "bundle": "mod-mda-Ambience.lv2",
+    "name": "MDA Ambience",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://github.com/Dougal-s/Aether",
+    "bundle": "aether.lv2",
+    "name": "Aether",
+    "source_url": "https://github.com/Dougal-s/Aether"
+  },
+  {
+    "uri": "urn:juce:TalReverb",
+    "bundle": "TAL-Reverb.lv2",
+    "name": "Tal-Reverb",
+    "source_url": "https://github.com/DISTRHO/DISTRHO-Ports"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/tal-reverb-2",
+    "bundle": "mod-tal-Reverb-2.lv2",
+    "name": "TAL-Reverb-II",
+    "source_url": "https://github.com/DISTRHO/DISTRHO-Ports"
+  },
+  {
+    "uri": "urn:juce:TalReverb3",
+    "bundle": "TAL-Reverb-3.lv2",
+    "name": "Tal-Reverb-III",
+    "source_url": "https://github.com/DISTRHO/DISTRHO-Ports"
+  },
+  {
+    "uri": "http://www.drowaudio.co.uk/audio/audio_plugins/reverb",
+    "bundle": "drowaudio-reverb.lv2",
+    "name": "dRowAudio: Reverb",
+    "source_url": "https://github.com/DISTRHO/DISTRHO-Ports"
+  },
+  {
+    "uri": "urn:zamaudio:ZamVerb",
+    "bundle": "ZamVerb.lv2",
+    "name": "ZamVerb",
+    "source_url": "https://github.com/zamaudio/zam-plugins"
+  },
+  {
+    "uri": "http://zynaddsubfx.sourceforge.net/fx#Reverb",
+    "bundle": "ZynReverb.lv2",
+    "name": "ZynReverb",
+    "source_url": "https://github.com/zynaddsubfx/zynaddsubfx"
+  },
+  {
+    "uri": "http://plugin.org.uk/swh-plugins/gverb",
+    "bundle": "gverb-swh.lv2",
+    "name": "GVerb",
+    "source_url": "https://github.com/swh/lv2"
+  },
+  {
+    "uri": "https://github.com/ninodewit/SHIRO-Plugins/plugins/shiroverb",
+    "bundle": "Shiroverb.lv2",
+    "name": "Shiroverb",
+    "source_url": "https://github.com/ninodewit/SHIRO-Plugins"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/galactic",
+    "bundle": "Airwindows-Galactic.lv2",
+    "name": "Galactic",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/pocketverbs",
+    "bundle": "Airwindows-PocketVerbs.lv2",
+    "name": "PocketVerbs",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/starchild",
+    "bundle": "Airwindows-StarChild.lv2",
+    "name": "StarChild",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "https://hannesbraun.net/ns/lv2/airwindows/mv",
+    "bundle": "Airwindows-MV.lv2",
+    "name": "MV",
+    "source_url": "https://github.com/airwindows/Airwindows"
+  },
+  {
+    "uri": "http://faust-lv2.googlecode.com/Freaktail",
+    "bundle": "Freaktail.lv2",
+    "name": "Freaktail",
+    "source_url": "https://github.com/pjotrompet/Freaked"
+  },
+  {
+    "uri": "http://faust-lv2.googlecode.com/Prefreak",
+    "bundle": "Prefreak.lv2",
+    "name": "Prefreak",
+    "source_url": "https://github.com/pjotrompet/Freaked"
+  },
+  {
+    "uri": "http://lsp-plug.in/plugins/lv2/impulse_responses_mono",
+    "bundle": "lsp-plugins-impulsantworten.lv2",
+    "name": "LSP IR Mono",
+    "source_url": "https://github.com/lsp-plugins/lsp-plugins-impulse-responses"
+  },
+  {
+    "uri": "http://lsp-plug.in/plugins/lv2/impulse_responses_stereo",
+    "bundle": "lsp-plugins-impulsantworten.lv2",
+    "name": "LSP IR Stereo",
+    "source_url": "https://github.com/lsp-plugins/lsp-plugins-impulse-responses"
+  },
+  {
+    "uri": "https://mod.audio/plugins/ConvolutionLoader",
+    "bundle": "MOD-ConvolutionLoader.lv2",
+    "name": "Convolution Loader",
+    "source_url": "https://github.com/mod-audio/mod-convolution-loader"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Reverb",
+    "bundle": "calf.lv2",
+    "name": "Calf Reverb",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/reverb",
+    "bundle": "fomp-labs.lv2",
+    "name": "reverb",
+    "source_url": "https://gitlab.com/drobilla/fomp"
+  },
+  {
+    "uri": "http://drobilla.net/plugins/fomp/reverb_amb",
+    "bundle": "fomp-labs.lv2",
+    "name": "reverb-amb",
+    "source_url": "https://gitlab.com/drobilla/fomp"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_reverb_stereo#_reverb_stereo",
+    "bundle": "gx_reverb.lv2",
+    "name": "GxReverb-Stereo",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_room_simulator_#_room_simulator_",
+    "bundle": "gx_room_simulator.lv2",
+    "name": "Gxroom_simulator",
+    "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://guitarix.sourceforge.net/plugins/gx_mbreverb_#_mbreverb_",
+    "bundle": "gx_mbreverb.lv2",
+    "name": "GxMultiBandReverb",
+    "source_url": "https://github.com/brummer10/guitarix"
   }
 ]
