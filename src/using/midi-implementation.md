@@ -48,9 +48,11 @@ The parameter is now mapped. Save the pedalboard to retain the assignment.
 
 A control cannot be assigned to a new parameter until it is un-assigned from the old one. Open the modify dialog for the parameter it's currently bound to, click **None**, then **Save**.
 
-### Advanced mapping
+### The Advanced panel does not apply to pi-Stomp
 
-For continuous controllers, you can set a custom range in the advanced mapping dialog. For example, if a Drive parameter ranges from 0 to 10 but you never want it below 5, set the low value to 5. The control will then sweep only the useful range with finer resolution.
+The assignment dialog has an **Advanced** button exposing Range (min–max), Sensitivity, LED colour, and Mode. These are MOD hardware (Control Chain / HMI actuator) features. pi-Stomp has no HMI microcontroller, so mod-ui addresses controls through a stub that never forwards these settings — setting a custom Range there binds nothing you can rotate, and it clamps the parameter to a single value once on save.
+
+On pi-Stomp, bind Tweak encoders with MIDI learn (above). The parameter sweeps its full plugin range on the device; the LCD reads the plugin's declared range, not any custom min/max.
 
 ## External MIDI
 
