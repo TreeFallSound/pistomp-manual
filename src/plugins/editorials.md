@@ -33,3 +33,5 @@ The plugins themselves are open-source work by talented developers and musicians
 - [Loopers]({{ '/plugins/loopers/' | url }}) — SooperLooper, ALO, Loopor for live looping
 - [Amp, Cabinet, and Neural Capture]({{ '/plugins/amp-cab-sim/' | url }}) — GxAmplifier-X, GxCabinet, NAM, and when to pick which
 - [Everyday Reverb]({{ '/plugins/everyday-reverb/' | url }}) — Plate, hall, room: MVerb, C\* Plate, TAP Reverberator
+- [MIDI Instruments]({{ '/plugins/midi-instruments/' | url }}) — Plug in a keyboard: FM keys, tonewheel organ, and a GM ROMpler
+- [Analog Polysynth]({{ '/plugins/analog-polysynth/' | url }}) — Warm pads and brass from six virtual-analog synths

@@ -2248,5 +2248,275 @@
     "bundle": "gx_mbreverb.lv2",
     "name": "GxMultiBandReverb",
     "source_url": "https://github.com/brummer10/guitarix"
+  },
+  {
+    "uri": "http://code.google.com/p/amsynth/amsynth",
+    "bundle": "amsynth.lv2",
+    "name": "amsynth",
+    "source_url": "https://github.com/amsynth/amsynth"
+  },
+  {
+    "uri": "http://tytel.org/helm",
+    "bundle": "Helm.lv2",
+    "name": "Helm",
+    "source_url": "https://github.com/mtytel/helm"
+  },
+  {
+    "uri": "https://obxd.wordpress.com",
+    "bundle": "Obxd.lv2",
+    "name": "Obxd",
+    "source_url": "https://github.com/2DaT/Obxd"
+  },
+  {
+    "uri": "http://zynaddsubfx.sourceforge.net",
+    "bundle": "ZynAddSubFX.lv2",
+    "name": "ZynAddSubFX",
+    "source_url": "https://github.com/zynaddsubfx/zynaddsubfx"
+  },
+  {
+    "uri": "https://github.com/dcoredump/dexed.lv2",
+    "bundle": "dexed.lv2",
+    "name": "Dexed",
+    "source_url": "https://github.com/dcoredump/dexed.lv2"
+  },
+  {
+    "uri": "http://www.openavproductions.com/sorcer",
+    "bundle": "sorcer.lv2",
+    "name": "Sorcer",
+    "source_url": "https://github.com/openAVproductions/openAV-Sorcer"
+  },
+  {
+    "uri": "https://github.com/vitling/crypt",
+    "bundle": "Crypt.lv2",
+    "name": "Crypt",
+    "source_url": "https://github.com/vitling/crypt"
+  },
+  {
+    "uri": "http://distrho.sf.net/plugins/Nekobi",
+    "bundle": "Nekobi.lv2",
+    "name": "Nekobi",
+    "source_url": "https://github.com/DISTRHO/DPF-Plugins"
+  },
+  {
+    "uri": "http://distrho.sf.net/plugins/Kars",
+    "bundle": "Kars.lv2",
+    "name": "Kars",
+    "source_url": "https://github.com/DISTRHO/DPF-Plugins"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/DX10",
+    "bundle": "mod-mda-DX10.lv2",
+    "name": "MDA DX10",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/JX10",
+    "bundle": "mod-mda-JX10.lv2",
+    "name": "MDA JX10",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/EPiano",
+    "bundle": "mod-mda-EPiano.lv2",
+    "name": "MDA ePiano",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://moddevices.com/plugins/mda/Piano",
+    "bundle": "mod-mda-Piano.lv2",
+    "name": "MDA Piano",
+    "source_url": "https://github.com/moddevices/mda-lv2"
+  },
+  {
+    "uri": "http://sfztools.github.io/sfizz",
+    "bundle": "sfizz.lv2",
+    "name": "sfizz",
+    "source_url": "https://github.com/sfztools/sfizz"
+  },
+  {
+    "uri": "http://sfztools.github.io/sfizz-multi",
+    "bundle": "sfizz.lv2",
+    "name": "sfizz-multi",
+    "source_url": "https://github.com/sfztools/sfizz"
+  },
+  {
+    "uri": "http://gareus.org/oss/lv2/b_synth",
+    "bundle": "b_synth",
+    "name": "setBfree DSP Tonewheel Organ",
+    "source_url": "https://github.com/pantherb/setBfree"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Monosynth",
+    "bundle": "calf.lv2",
+    "name": "Calf Monosynth",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Organ",
+    "bundle": "calf.lv2",
+    "name": "Calf Organ",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "http://calf.sourceforge.net/plugins/Wavetable",
+    "bundle": "calf.lv2",
+    "name": "Calf Wavetable",
+    "source_url": "https://github.com/calf-studio-gear/calf"
+  },
+  {
+    "uri": "urn:distrho:a-fluidsynth",
+    "bundle": "distrho-a-fluidsynth.lv2",
+    "name": "DIE Fluid Synth",
+    "source_url": "https://github.com/DISTRHO/DISTRHO-Ports"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_AirFont320",
+    "bundle": "AirFont320.lv2",
+    "name": "AirFont320",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_Black_Pearl_4A",
+    "bundle": "Black_Pearl_4A.lv2",
+    "name": "Black Pearl 4A",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_Black_Pearl_4B",
+    "bundle": "Black_Pearl_4B.lv2",
+    "name": "Black Pearl 4B",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_Black_Pearl_5",
+    "bundle": "Black_Pearl_5.lv2",
+    "name": "Black Pearl 5",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidBass",
+    "bundle": "FluidBass.lv2",
+    "name": "Fluid Bass",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidBrass",
+    "bundle": "FluidBrass.lv2",
+    "name": "Fluid Brass",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidChromPerc",
+    "bundle": "FluidChromPerc.lv2",
+    "name": "Fluid Chromatic Percussion",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidDrums",
+    "bundle": "FluidDrums.lv2",
+    "name": "Fluid Drums",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidEnsemble",
+    "bundle": "FluidEnsemble.lv2",
+    "name": "Fluid Ensemble",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidEthnic",
+    "bundle": "FluidEthnic.lv2",
+    "name": "Fluid Ethnic",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidGuitars",
+    "bundle": "FluidGuitars.lv2",
+    "name": "Fluid Guitars",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidOrgans",
+    "bundle": "FluidOrgans.lv2",
+    "name": "Fluid Organs",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidPercussion",
+    "bundle": "FluidPercussion.lv2",
+    "name": "Fluid Percussion",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidPianos",
+    "bundle": "FluidPianos.lv2",
+    "name": "Fluid Pianos",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidPipes",
+    "bundle": "FluidPipes.lv2",
+    "name": "Fluid Pipes",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidReeds",
+    "bundle": "FluidReeds.lv2",
+    "name": "Fluid Reeds",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidSoundFX",
+    "bundle": "FluidSoundFX.lv2",
+    "name": "Fluid SoundFX",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidStrings",
+    "bundle": "FluidStrings.lv2",
+    "name": "Fluid Strings",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidSynthFX",
+    "bundle": "FluidSynthFX.lv2",
+    "name": "Fluid SynthFX",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidSynthLeads",
+    "bundle": "FluidSynthLeads.lv2",
+    "name": "Fluid SynthLeads",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidSynthPads",
+    "bundle": "FluidSynthPads.lv2",
+    "name": "Fluid SynthPads",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://kxstudio.linuxaudio.org/plugins/FluidPlug_FluidGM",
+    "bundle": "FluidGM.lv2",
+    "name": "FluidGM",
+    "source_url": "https://github.com/falkTX/FluidPlug"
+  },
+  {
+    "uri": "http://nickbailey.co.nr/triceratops",
+    "bundle": "triceratops.lv2",
+    "name": "Triceratops",
+    "source_url": "https://github.com/thunderox/triceratops"
+  },
+  {
+    "uri": "http://tumbetoene.tuxfamily.org",
+    "bundle": "Wolpertinger.lv2",
+    "name": "Wolpertinger",
+    "source_url": "https://github.com/kroll-j/wolpertinger"
+  },
+  {
+    "uri": "http://www.moddevices.com/plugins/mod_editions/tal-noisemaker",
+    "bundle": "TAL-NoiseMaker-ME.lv2",
+    "name": "Noise Maker - ME",
+    "source_url": "https://github.com/mod-audio/mod-tal-noisemaker"
   }
 ]
