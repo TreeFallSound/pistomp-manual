@@ -64,19 +64,11 @@ Footswitch D sends tap tempo BPM via WebSocket (`transport-bpm`), not MIDI. The 
 
 ## Clock source
 
-Tap tempo sets the tempo only when the pi-Stomp is its own clock. The clock source lives in the [Audio & MIDI menu]({{ '/using/audio-midi/#clock-source' | url }}) as a three-way choice:
+Tap tempo sets the tempo only when the pi-Stomp is its own clock. The clock source is a three-way choice — **Internal**, **Ableton Link**, or **MIDI Clock Slave** — set in the [Audio & MIDI menu]({{ '/using/audio-midi/#clock-source' | url }}).
 
-| Source | Where the tempo comes from |
-|--------|---------------------------|
-| **Internal** | The pi-Stomp itself. Tap tempo sets it |
-| **Ableton Link** | Shared with any Link-enabled software or device on the same network. Tempo changes propagate both ways |
-| **MIDI Clock Slave** | Incoming MIDI clock from an external device |
-
-Set this to match who's in charge of time. If the pi-Stomp is following a drummer's track or a DAW, put it in Link or MIDI Clock Slave and stop worrying about tapping. If it's leading, leave it Internal.
+Set it to match who's in charge of time. If the pi-Stomp is following a drummer's track or a DAW, put it in Link or MIDI Clock Slave and stop worrying about tapping. If it's leading, leave it Internal.
 
 Whichever source is active, tempo-synced plugins follow it the same way — via host tempo — so the choice doesn't change how you set a delay up, only where its clock originates.
-
-The transport state is owned by MOD-UI and mirrored to the LCD, so a change made in either place appears in the other.
 
 ## Services
 

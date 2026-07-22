@@ -36,6 +36,8 @@ Both persist to `settings.yml` without saving a pedalboard.
 
 ## Global EQ
 
+The iQAudioCodec's DAC is 
+
 Five bands of tone shaping across everything the device outputs. Switching the Equalizer row off drops the bands out of the Navigation cycle and dims them.
 
 This EQ is not a plugin. It runs in the IQAudio Codec's DAC hardware (a Dialog DA7213), which is why it costs no CPU and why its controls are more limited than a plugin EQ:
@@ -48,9 +50,7 @@ This EQ is not a plugin. It runs in the IQAudio Codec's DAC hardware (a Dialog D
 | H-Mid | Band-pass | 2596 Hz |
 | High | High shelf | 9560 Hz |
 
-Gain runs from −10.5 dB to +12 dB in 1.5 dB steps. Q is fixed in silicon and isn't exposed at all, so gain is the only control — the on-screen bars show gain only because that's genuinely all there is.
-
-Two consequences worth knowing:
+Gain runs from −10.5 dB to +12 dB in 1.5 dB steps. Q is fixed in silicon and isn't exposed at all, so gain is the only control — the on-screen bars show gain only because that's genuinely all there.
 
 - **The frequencies move with the sample rate.** The table above is for 48 kHz, the device's normal rate. At other supported rates the whole set shifts.
 - **At 88.2 and 96 kHz the EQ is unavailable.** The DAC's EQ block doesn't run at those rates, so the bands grey out. If you need tone shaping at high rates, use a plugin EQ instead.

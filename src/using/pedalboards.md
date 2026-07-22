@@ -4,54 +4,28 @@ eleventyNavigation:
   parent: using
   key: pedalboards
   title: Pedalboards
-  order: 4
+  order: 5
 ---
 
 # Pedalboards
 
-A pedalboard is a collection of plugins (effects, modelers, generators) wired together with virtual cables. You can build as many as you like — one for each song, each tuning, each mood. Only one pedalboard is active at a time.
+A pedalboard is a saved audio graph: which plugins are loaded, how they're wired, every plugin's current knob settings, and the controller bindings (footswitches, encoders, expression pedals). See [Product Overview]({{ '/product-overview/' | url }}) for where the term sits alongside *snapshot* and *bank*.
 
-## What's in a pedalboard
+## Building one
 
-- **Plugins** — the LV2 effects, amps, synths, and utilities that process or generate audio
-- **Routing** — how audio flows between plugins (serial, parallel, split/merge)
-- **Snapshots** — saved states of every plugin parameter on the board
-- **Controller bindings** — which footswitches, tweak encoders, and expression pedals control which parameters
-
-## Creating and editing pedalboards
-
-Pedalboards are built in MOD-UI, the drag-and-drop web interface. Point a browser to [http://pistomp.local](http://pistomp.local) from any device on the same network.
-
-1. Open the plugin browser at the bottom of the screen and drag a plugin onto the canvas
-2. Wire effects together by dragging from an output port to an input port. Signal flows left to right — the leftmost plugin in the chain receives your dry signal first
-3. Assign footswitches and tweak encoders via the plugin settings dialog
-4. Save the pedalboard when you're done
-
-Changes made in MOD-UI sync to the LCD automatically. The LCD reflects the current pedalboard state in real time.
+Pedalboards are built in MOD-UI. The [MOD-UI]({{ '/using/mod-ui/' | url }}) page covers the canvas, wiring, plugin settings dialog, snapshots, banks, the file manager, and saving. This page covers only the things that live at the pedalboard level on the device itself.
 
 ## Loading a pedalboard from the LCD
 
 Highlight the pedalboard name with the Navigation encoder and click to open the menu — see [Navigation & Controls]({{ '/using/navigation/#selecting-a-pedalboard' | url }}) for the steps.
 
-Loading a new pedalboard takes a few seconds, and audio drops while it happens. This is the reason to keep a song's sounds on one board as snapshots rather than spread across several boards: snapshot changes are instant, pedalboard changes are not.
-
-## Banks
-
-A bank is a subset of pedalboards organized for easy access. Banks are useful for setlists — you can order pedalboards in a specific sequence and scroll through only the ones you need.
-
-To select a bank, open the System Menu and choose **Bank Select**. The default mode shows all pedalboards on the device. A single pedalboard can belong to multiple banks. Deleting a bank does not delete the pedalboards inside it.
-
-Banks are created and edited in MOD-UI, which writes `banks.json`. The pi-Stomp detects changes and reloads automatically.
-
-## Snapshots
-
-A snapshot stores the state of all plugin parameters on a pedalboard. Verse, chorus, bridge, even different songs — all from the same pedalboard, just different snapshots.
-
-See [Navigation & Controls]({{ '/using/navigation' | url }}) for how to select snapshots from the LCD.
+Loading a new pedalboard takes a few seconds, and audio drops while it happens. This is the reason to keep a song's sounds on one board as snapshots rather than spread across several boards: snapshot changes are instant, pedalboard changes are not. See [Playing Live]({{ '/using/playing-live/' | url }}) for the setlist judgement.
 
 ## Saving changes
 
-Changes made to a pedalboard on the LCD or MOD-UI (effects/routing changes, parameter tweaks, bypass toggles) are not automatically saved. To persist them:
+Changes made to a pedalboard on the LCD or in MOD-UI (effects/routing changes, parameter tweaks, bypass toggles) are not automatically saved. To persist them:
 
 - **System Menu** → **Pedalboard Management** → **Save current pedalboard**
-- Or save from MOD-UI
+- Or **Save** from MOD-UI
+
+The pedalboard bundle lives under `/home/pistomp/data/.pedalboards/`. Snapshots and per-pedalboard config overrides are stored inside the bundle, so saving the pedalboard is also what saves your snapshots.

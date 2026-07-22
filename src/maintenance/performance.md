@@ -9,11 +9,11 @@ eleventyNavigation:
 
 # Performance Tuning
 
-The Raspbery Pi 5 in the v3 model has a ton of CPU headroom; the 3/4 models in v1/v2 builds are much less capable. No matter which device you have, pi-Stomp maximizes its performance by shipping with a real-time enabled linux kernel, prioritizing audio processing and I/O.
+The Raspberry Pi 5 in the v3 model has a ton of CPU headroom; the 3/4 models in v1/v2 builds are much less capable. No matter which device you have, pi-Stomp maximizes its performance by shipping with a real-time enabled linux kernel, prioritizing audio processing and I/O.
 
 ## Monitoring for XRUNs
 
-XRUNs (buffer over/under-runs) happen when the CPU can't deliver audio data in time. A few during system start-up / pedalboard loading are normal. If you start seeing hundres during normal play, the CPU is overworked.
+XRUNs (buffer over/under-runs) happen when the CPU can't deliver audio data in time. A few during system start-up / pedalboard loading are normal. If you start seeing hundreds during normal play, the CPU is overworked.
 
 In [MOD-UI](http://pistomp.local), the bottom bar shows the XRUN count. Click it to reset the counter.
 

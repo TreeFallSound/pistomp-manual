@@ -11,6 +11,8 @@ eleventyNavigation:
 
 The pi-Stomp v3 can be controlled entirely from the device: no computer needed once your pedalboards are set up. Simply use the Navigation encoder, the footswitches, and the tweak encoders.
 
+> **v2** has up to 5 footswitches and 1 encoder (the Navigation encoder). The tweak encoders and the long-press snapshot shortcuts in this page are v3-specific — on v2, footswitches A–E map to MIDI CCs 60–64 and the encoder is navigation only. See [Configuration]({{ '/using/configuration/' | url }}) for how footswitch assignments differ.
+
 ## The LCD screen
 
 The home screen shows the current pedalboard, active snapshot, and all plugins in the chain.
@@ -45,7 +47,7 @@ Loading a new pedalboard takes a few seconds, during which time audio can drop m
 
 ## Selecting a snapshot
 
-Snapshots store the state of all plugin parameters on a pedalboard, allowing different gain staging and effect blending/bypass. Verse, chorus, bridge, even different songs: all from the same pedalboard.
+A snapshot stores every plugin parameter on the pedalboard — same plugins and wiring, different knob positions. See [Product Overview]({{ '/product-overview/' | url }}) for the term, and [MOD-UI]({{ '/using/mod-ui/#snapshots' | url }}) for how to create one.
 
 <img src="{{ '/assets/images/lcd-preset-select.png' | url }}" alt="Snapshot selection" class="figure-narrow">
 
@@ -77,14 +79,7 @@ Plugins assigned to footswitches can also be toggled from the floor, and the foo
 
 ## Footswitches
 
-The four footswitches (A–D, left to right) are user-configurable via MIDI CC. Default behaviour:
-
-| Footswitch | Click | Long-press |
-|------------|-------|------------|
-| A | Toggle MIDI CC 60 (plugin bypass) | Previous snapshot |
-| B | Toggle MIDI CC 61 (plugin bypass) | Next snapshot |
-| C | Toggle MIDI CC 62 (plugin bypass) | Open tuner |
-| D | Toggle MIDI CC 63 (plugin bypass) or tap tempo | Toggle tap tempo mode |
+The four footswitches (A–D, left to right) are user-configurable via MIDI CC. Default behaviour — click toggles a plugin bypass, long-press moves between snapshots or opens the tuner/tap tempo — is in the [default CC map]({{ '/using/midi-implementation/#default-cc-map' | url }}). See [Configuration]({{ '/using/configuration/#footswitches' | url }}) to change it.
 
 When a footswitch is assigned to a plugin, its label and color appear on the LCD:
 
@@ -92,7 +87,7 @@ When a footswitch is assigned to a plugin, its label and color appear on the LCD
 
 ## Tweak encoders
 
-Tweak 1 and Tweak 2 send MIDI CC messages (default 70 and 71) and can be assigned to any plugin parameter via MOD-UI. Long-pressing them also changes snapshots by default — Tweak 1 previous, Tweak 2 next. The Volume encoder (Tweak 3) adjusts the master output level.
+Tweak 1 and Tweak 2 send MIDI CC messages (default 70 and 71 — see the [default CC map]({{ '/using/midi-implementation/#default-cc-map' | url }})) and can be assigned to any plugin parameter via MOD-UI. Long-pressing them also changes snapshots by default — Tweak 1 previous, Tweak 2 next. The Volume encoder (Tweak 3) adjusts the master output level.
 
 ## Global bypass
 

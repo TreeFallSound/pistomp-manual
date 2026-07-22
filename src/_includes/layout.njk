@@ -80,7 +80,7 @@
       {%- endmacro %}
       {{ navList(navTree, 0) }}
     </nav>
-    <main class="content{% if wide %} content-wide{% endif %}" id="content" data-source-path="{{ page.inputPath }}" data-line-offset="{{ page.inputPath | frontMatterLineCount }}">
+    <main class="content{% if wide %} content-wide{% endif %}" id="content" data-source-path="{{ page.inputPath }}" data-line-offset="{{ page.inputPath | frontMatterLineCount }}" data-repo-root="{{ repoRoot }}">
       {{ content | safe }}
       {%- if pager.prev or pager.next %}
       <nav class="pager" aria-label="Manual pages">

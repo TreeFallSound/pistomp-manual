@@ -8,7 +8,9 @@
    64em is the desktop cutoff because 260px of sidebar plus an 800px text
    column needs 1060px; below that the permanent sidebar squeezes the prose. */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -142,8 +144,13 @@ body {
   left: 0;
 }
 
-.nav-toggle-bars::before { top: -6px; }
-.nav-toggle-bars::after  { top: 6px; }
+.nav-toggle-bars::before {
+  top: -6px;
+}
+
+.nav-toggle-bars::after {
+  top: 6px;
+}
 
 .topbar-title {
   color: #fff;
@@ -281,7 +288,7 @@ body.nav-open {
 
 .sidebar-header {
   padding: 0.75rem 1.25rem 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -323,7 +330,7 @@ body.nav-open {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   font-weight: 600;
 }
 
@@ -339,13 +346,13 @@ body.nav-open {
 
 .nav-link:hover {
   color: #fff;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-link.active {
   color: var(--color-sidebar-active);
   border-left-color: var(--color-sidebar-active);
-  background: rgba(233,69,96,0.08);
+  background: rgba(233, 69, 96, 0.08);
 }
 
 /* Indent applies at every level, so third-level entries (Plugins ›
@@ -354,13 +361,13 @@ body.nav-open {
   margin-left: 1.75rem;
 }
 
-.nav-pages .nav-pages > li > .nav-link {
+.nav-pages .nav-pages>li>.nav-link {
   padding-left: 0.75rem;
   font-size: 0.9rem;
-  border-left: 2px solid rgba(255,255,255,0.15);
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-.nav-pages .nav-pages > li > .nav-link.active {
+.nav-pages .nav-pages>li>.nav-link.active {
   border-left-color: var(--color-sidebar-active);
 }
 
@@ -441,7 +448,8 @@ body.nav-open {
   color: var(--color-sidebar-active);
 }
 
-.content ul, .content ol {
+.content ul,
+.content ol {
   margin-bottom: 1rem;
   padding-left: 1.25rem;
 }
@@ -514,7 +522,8 @@ body.nav-open {
   margin-bottom: 1rem;
 }
 
-.content th, .content td {
+.content th,
+.content td {
   border: 1px solid var(--color-border);
   padding: 0.5rem 0.75rem;
   text-align: left;
@@ -600,6 +609,15 @@ body.nav-open {
   background: var(--color-sidebar-active);
 }
 
+.open-editor-btn {
+  background: #0e639c;
+  /* VS Code blue */
+}
+
+.open-editor-btn:hover {
+  background: #1177bb;
+}
+
 /* ---------- Tablet ---------- */
 
 @media (min-width: 45em) {
@@ -607,9 +625,17 @@ body.nav-open {
     padding: 1.5rem;
   }
 
-  .content h1 { font-size: 1.85rem; }
-  .content h2 { font-size: 1.4rem; }
-  .content h3 { font-size: 1.15rem; }
+  .content h1 {
+    font-size: 1.85rem;
+  }
+
+  .content h2 {
+    font-size: 1.4rem;
+  }
+
+  .content h3 {
+    font-size: 1.15rem;
+  }
 
   .content img {
     width: 80%;
@@ -628,8 +654,15 @@ body.nav-open {
     margin: 0 0 1rem 1.5rem;
   }
 
-  .content img.nudge-right { position: relative; left: 25px; }
-  .content img.nudge-left  { position: relative; right: -35px; }
+  .content img.nudge-right {
+    position: relative;
+    left: 25px;
+  }
+
+  .content img.nudge-left {
+    position: relative;
+    right: -35px;
+  }
 
   .pager {
     grid-template-columns: 1fr 1fr;
@@ -644,6 +677,7 @@ body.nav-open {
 /* ---------- Desktop: permanent sidebar ---------- */
 
 @media (min-width: 64em) {
+
   .topbar,
   .scrim,
   .nav-toggle {
@@ -676,7 +710,7 @@ body.nav-open {
     padding: 0.25rem 1.25rem;
   }
 
-  .nav-pages .nav-pages > li > .nav-link {
+  .nav-pages .nav-pages>li>.nav-link {
     font-size: 0.85rem;
   }
 

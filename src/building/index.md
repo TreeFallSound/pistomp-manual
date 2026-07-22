@@ -4,7 +4,7 @@ redirect: /building/ordering-parts/
 eleventyNavigation:
   key: building
   title: Building
-  order: 2
+  order: 1
 ---
 
 # Building

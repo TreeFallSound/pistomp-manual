@@ -32,66 +32,21 @@ This manual is its own repo: [pistomp-manual](https://github.com/sastraxi/pistom
 
 The fastest way to fix something: select any text on a page and click the **Suggest edit** button that appears in the right margin. It opens GitHub's editor scrolled to that exact line — edit, commit, and open a PR straight from the browser, no local setup needed.
 
-For bigger changes (new pages, restructuring), clone the repo and follow the same fork/branch/PR workflow described above.
+For bigger changes (new pages, restructuring), clone the repo and follow the standard fork → branch → PR flow. GitHub's own [fork a repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) and [creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) docs walk through it. The repo-specific bits are below.
 
 ## Workflow
-
-### 1. Fork the repo
-
-Click the **Fork** button on the [pi-stomp project page](https://github.com/TreeFallSound/pi-stomp). This creates a copy under your own GitHub account.
-
-### 2. Clone your fork
 
 ```bash
 git clone https://github.com/<your-username>/pi-stomp.git
 cd pi-stomp
-```
-
-### 3. Add the original repo as upstream
-
-```bash
 git remote add upstream https://github.com/TreeFallSound/pi-stomp.git
-```
-
-### 4. Create a branch
-
-```bash
 git checkout -b my-cool-feature
-```
-
-### 5. Make changes
-
-Edit files, test on your pi-Stomp or emulator, commit:
-
-```bash
-git add .
-git commit -m "Add cool feature"
-```
-
-### 6. Push and open a PR
-
-```bash
+# edit, test on your pi-Stomp or emulator
+git add . && git commit -m "Add cool feature"
 git push origin my-cool-feature
 ```
 
-Then open a Pull Request on GitHub targeting the `main` branch. Describe what your change does and why.
-
-### 7. Keep your fork in sync
-
-```bash
-git fetch upstream
-git checkout main
-git merge upstream/main
-git push origin main
-```
-
-Then rebase your feature branch:
-
-```bash
-git checkout my-cool-feature
-git rebase main
-git push -f origin my-cool-feature
-```
+Then open a Pull Request on GitHub targeting `main`. Describe what your change does and why. Keep your branch rebased on `upstream/main` before pushing updates.
 
 ## What we look for in a PR
 

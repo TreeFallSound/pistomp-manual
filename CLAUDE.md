@@ -41,9 +41,10 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 
 1. Welcome: getting to know the ecosystem. Meta- things go here: provide framing that will help users understand the rest of the manual quickly. Consider introducing concepts if they are foundational to _understanding_ multiple other concepts.
 2. Building: sourcing / ordering part, building your kit, and installing the software.
-3. Using: the bulk of the series. pi-Stomp is an instrument: how do you use it creatively? Also includes maintenance and bugfixing.
-4. Developers: how developers can contribute features and bugfixes, extend the ecosystem, write their own plugins, and deeply customize their device to be their best friend on stage.
-5. Plugins: a data table of all plugins, as well as plugin editorials
+3. Using: the bulk of the series. pi-Stomp is an instrument: how do you use it creatively?
+4. Maintenance: troubleshooting, performance tuning, backups, and recovery.
+5. Developers: how developers can contribute features and bugfixes, extend the ecosystem, write their own plugins, and deeply customize their device to be their best friend on stage.
+6. Plugins: a data table of all plugins, as well as plugin editorials
 
 # Data (plugins)
 

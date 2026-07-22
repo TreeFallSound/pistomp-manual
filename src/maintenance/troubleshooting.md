@@ -86,14 +86,7 @@ Check for misaligned or poorly soldered resistors. Reflow the joint if needed.
 
 ## Expression pedal not working
 
-The expression pedal input is disabled by default. Run the enable script:
-
-```bash
-ssh pistomp@pistomp.local
-~/extras/expression-pedal.sh on
-```
-
-Then restart the pi-Stomp service or reboot. See the [Configuration]({{ '/using/configuration' | url }}) page for details on the `analog_controllers` settings.
+The expression pedal input is disabled by default. See [Configuration → Enabling the expression pedal]({{ '/using/configuration/#enabling-the-expression-pedal' | url }}) for the enable script and the `analog_controllers` settings that control it.
 
 ## General hardware troubleshooting
 

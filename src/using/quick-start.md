@@ -11,10 +11,7 @@ eleventyNavigation:
 
 Your pi-Stomp is built and booted — now let's make it your best friend on stage (other than the drummer). Once your pedalboards are set up, you run the whole thing from the device itself: no other computer on stage, just you, your pedalboards, snapshots, and footswitches.
 
-- A **pedalboard** is a saved chain of effects — which plugins are loaded, how they're wired, and what their knobs are set to. It's a file on the device, not the device itself.
-- A **snapshot** is a saved set of knob positions within one pedalboard. Same plugins and wiring with different parameter settings. Snapshots are useful for dialing in different parts of a song, or different "local maxima" in the soundscape.
-
-[Pedalboards]({{ '/using/pedalboards/' | url }}) covers both in full.
+If the words *pedalboard*, *snapshot*, and *bank* aren't familiar yet, read [Product Overview]({{ '/product-overview/' | url }}) — the rest of this page uses them.
 
 ## The controls
 
@@ -37,6 +34,8 @@ Working clockwise:
 - Plug your instrument into the **In 1** jack
 - Connect **Out 1** to your amp, interface, or headphones
 
+In 2 and Out 2 are for re-amping and NAM capture — see [Hardware Overview]({{ '/using/hardware-overview/#rear-panel' | url }}).
+
 ## Boot
 
 Plug in the 27W USB-C power supply. First boot takes a minute or two — subsequent boots are about 20 seconds. The LCD will show the home screen when ready.
@@ -57,6 +56,6 @@ Learn more in [Navigation & Controls]({{ '/using/navigation' | url }}).
 
 ## Edit online
 
-Point a browser on any device on the same network to [http://pistomp.local](http://pistomp.local) to open MOD-UI — the drag-and-drop pedalboard editor.
+Point a browser on any device on the same network to [http://pistomp.local](http://pistomp.local) to open MOD-UI — the drag-and-drop pedalboard editor. The [MOD-UI]({{ '/using/mod-ui/' | url }}) page covers it in full.
 
 <a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface"></a>

@@ -13,9 +13,11 @@ Everything on this page follows from one distinction.
 
 ## Snapshots change, pedalboards reload
 
-Loading a **pedalboard** builds an audio graph: plugins are instantiated, ports are connected, buffers are allocated. That takes seconds, and the audio drops while it happens.
+A **pedalboard** is a saved audio graph; a **snapshot** is a saved set of parameter values within one pedalboard. See [Product Overview]({{ '/product-overview/' | url }}) for the terms. What matters on stage is the cost of switching between them.
 
-Changing a **snapshot** sets parameter values on plugins that are already running. Nothing is instantiated, nothing is reconnected, and the graph is never torn down. The change is immediate.
+Loading a pedalboard builds the audio graph: plugins are instantiated, ports are connected, buffers are allocated. That takes seconds, and the audio drops while it happens.
+
+Changing a snapshot sets parameter values on plugins that are already running. Nothing is instantiated, nothing is reconnected, and the graph is never torn down. The change is immediate.
 
 Because the graph survives, so does everything living inside it. Delay buffers keep their contents and reverb tails keep decaying straight through a snapshot change. A delay repeat that started in the verse will still be audible in the chorus, at the chorus's settings. There's no trails or spillover setting to enable — nothing is being destroyed, so nothing needs rescuing.
 
@@ -82,7 +84,7 @@ Two ways to organize a set:
 
 The second avoids load gaps entirely and is worth reaching for when you can. The first is unavoidable when two songs need different plugins.
 
-A **bank** is an ordered subset of pedalboards. Build one per set, sequenced to match the running order, so advancing a pedalboard moves you to the next song rather than into an alphabetical list. Open the System Menu and choose **Bank Select**. Banks are edited in MOD-UI, and a pedalboard can belong to several.
+A **bank** is an ordered subset of pedalboards — see [MOD-UI]({{ '/using/mod-ui/#banks' | url }}) for how to create one. Build one per set, sequenced to match the running order, so advancing a pedalboard moves you to the next song rather than into an alphabetical list. Open the System Menu and choose **Bank Select** to activate a bank on the LCD.
 
 Bind `next_pedalboard` to a long-press so that a song change is one deliberate gesture. Keep it off short presses, where a mistake costs you seconds of silence.
 
