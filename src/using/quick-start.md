@@ -27,14 +27,14 @@ Working clockwise:
 | **Footswitches A–D** | Toggle effects, tap tempo, change snapshots |
 | **LCD** | Current pedalboard, parameter values, and the toolbar icons along the top |
 
-[Hardware Overview]({{ '/using/hardware-overview/' | url }}) has the rear panel and the full spec.
+[Hardware Overview]({{ '/building/hardware-overview/' | url }}) has the rear panel and the full spec.
 
 ## Connect
 
 - Plug your instrument into the **In 1** jack
 - Connect **Out 1** to your amp, interface, or headphones
 
-In 2 and Out 2 are for re-amping and NAM capture — see [Hardware Overview]({{ '/using/hardware-overview/#rear-panel' | url }}).
+In 2 and Out 2 are for re-amping and NAM capture — see [Hardware Overview]({{ '/building/hardware-overview/#rear-panel' | url }}).
 
 ## Boot
 

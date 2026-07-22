@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: building
   key: software-install
   title: Software Installation
-  order: 3
+  order: 4
 ---
 
 # Software Installation

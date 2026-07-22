@@ -1,7 +1,7 @@
 ---
 title: Hardware Overview
 eleventyNavigation:
-  parent: using
+  parent: building
   key: hardware-overview
   title: Hardware Overview
   order: 2

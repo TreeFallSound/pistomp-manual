@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: building
   key: build
   title: Build Guide
-  order: 2
+  order: 3
 ---
 
 # Build Guide
