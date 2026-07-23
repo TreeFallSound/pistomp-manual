@@ -132,13 +132,25 @@ System Menu → **Bank Select**. The default mode shows all pedalboards on the d
 
 See [Playing Live]({{ '/using/playing-live/#setlists-and-banks' | url }}) for the setlist judgement — when to use one pedalboard per song vs. one pedalboard for the set.
 
+## Recording your session
+
+In version 3.0-13 and above, MOD-UI gains the ability to record the output of your pedalboard into a 32-bit stereo WAV (Out1/Out2). This can be triggered by clicking the record button on the bottom toolbar:
+
+<img src="{{ '/assets/images/mod-ui-record-button.png' | url }}" alt="Start recording button in the bottom bar">
+
+The recording button will turn into a stopwatch, showing you how much time has elapsed since recording has begun. Recordings are limited to 4GB (about 5 hours, 48 minutes at 48 KHz), and you must have sufficient space available on your SD card to begin recording. To stop recording click the button again; a pop-up will then appear, allowing you to download the file:
+
+<img src="{{ '/assets/images/mod-ui-record-notification.png' | url }}" alt="Recording saved notification" class="figure-narrow">
+
+The file can also be downloaded anytime by navigating to the file manager.
+
 ## The file manager
 
 <img src="{{ '/assets/images/mod-ui-file-manager.png' | url }}" alt="Clicking the parameter's modify button" class="figure-narrow">
 
 Plugin parameters sometimes need a file — a NAM model, an impulse response, a sample. MOD-UI's file manager (top bar) uploads files into `/home/pistomp/data/user-files/` and makes them available to any plugin that takes that file type. Drag a file in; it's stored on the device and appears in any plugin's file picker.
 
-See [NAM]({{ '/using/nam/' | url }}) for the NAM model workflow, which uses this.
+[NAM]({{ '/using/nam/' | url }}) and session captures (see [above](#recording-your-session)) put their recordings into the Audio Recordings folder.
 
 ## Downloading new LV2 plugins from Patchstorage
 
