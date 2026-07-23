@@ -9,29 +9,25 @@ eleventyNavigation:
 
 # Playing Live
 
-Three things bite on stage that never bite at home: levels that jump when you switch, a room that isn't your room, and controls that countermand each other.
-
 ## Matching levels
 
-Snapshots don't level-match themselves. A drive lifts output even at unity, so any snapshot that adds gain reads louder until you pull it back. Set every snapshot to the same output except where the jump is the point, and check by ear — same phrase, switch, listen for the step.
+Many pedals do not provide unity gain out of the box (e.g. drives, modellers). Proper gain staging is crucial to ensure that tones that work at home or in the practice space translate to the stage.
 
-A gain plugin at the end of the chain gives you one number per snapshot to trim, faster than rebalancing three pedals. Match the whole board to the rest of the set the same way, so a clean or bypassed board lands where front-of-house left the fader.
+Consider adding limiters or compressors at the end of complex / parallel chains to, but watch that you don't compromise playing dynamics. Try to match each pedalboard's default gain, so pedalboard changes don't make front-of-house's job difficult.
 
 ## Output headroom
 
-Input gain has a meter — you set it at soundcheck ([Quick Start]({{ '/using/quick-start/#adjust-input-gain' | url }})). The output doesn't. Stack a drive, a boost, and a wetter reverb in one snapshot and you can clip the output converter with nothing on the LCD to show it, and it reads as a brittle top end the room pins on the PA.
-
-Set your loudest snapshot a few dB under the ceiling and bring the rest down to meet it. The end-of-chain gain you level-match with is where you take that headroom back — pull the board down, not each pedal.
+Input gain has the LED clipping meters, but your output channels don't. Stack a drive, a boost, and a wetter reverb in one snapshot and you can clip the output converter with nothing on the LCD to show it. Adding a TinyGain to the end of your board is a solid approach that helps you monitor your sound from the browser. 
 
 ## Use the global equalizer
 
-Reflective rooms — tile, glass, concrete — throw mids and highs back at you and pile up the low end. The [global EQ]({{ '/using/audio-midi/#global-eq' | url }}) sits after every board and stays constant through pedalboard changes, so it's a good place to make tweaks.
+The [global EQ]({{ '/using/audio-midi/#global-eq' | url }}) sits after every board and stays constant through pedalboard changes, so it's a good place to make tweaks to counteract bad room tone.
 
 ## Footswitches and snapshots can disagree
 
-A footswitch toggles a plugin; a snapshot also sets that plugin's bypass state. When both touch the same plugin, the switch's meaning depends on which snapshot you're in — hit it after a snapshot that already turned the plugin on and you turn it off.
+Nothing stops a snapshot change from changing a paramater that's already bound to a footswitch or analog control via MIDI Learn. This can make it very difficult to keep track of your plugins' state.
 
-Give each plugin one owner. Either it's footswitch territory and no snapshot touches it, or it's the snapshots' and no switch is bound to it. Blend mode already assumes this: parameters driven by footswitch MIDI CCs stay out of the interpolation, so a blend never fights a switch.
+You should provide this rigour yoursef: give each plugin one owner. Either it's footswitch territory and no snapshot touches it, or it's the snapshots' and no switch is bound to it. Blend mode already assumes this: parameters driven by footswitch MIDI CCs stay out of the interpolation, so a blend never fights a switch.
 
 ## Setlists and banks
 
