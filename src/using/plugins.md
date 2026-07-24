@@ -13,18 +13,22 @@ pi-Stomp ships with over 600 open-source LV2 plugins — effects, modeled amps a
 
 ## Plugin categories
 
-| Category | Examples |
-|----------|----------|
-| Overdrive, Distortion, Fuzz | GxTubeScreamer, Fuzz Face FM, GxSupersonic, GxKnightFuzz |
-| Dynamics | Calf Mono Compressor, DISTRHO Compressor, MDA Dynamics, SC2 |
-| Filter / EQ | x42 fil4 parametric EQ, C* EQ, GxCrybaby, CAPS EQ10 |
-| Modulation | String machine stereo chorus, TAP Chorus/Flanger, GxPhaser |
-| Delay | ZamDelay, Tal-Dub-3, Bollie Delay XT, bentdelay |
-| Reverb | Shimmizita, Dragonfly Hall/Plate, TheCloud, gx_zita_rev1 |
-| Pitch / Spectral | Super Whammy, Drop, MaPitchshift |
-| Simulator (Amp/Cab) | GxFenderizer, GxCabinet, NAM (Neural Amp Modeler) |
-| Generator (Synth/Drum) | 60+ synth, sampler, drum machine, and General MIDI modules |
-| Utility | Noisegate, Tuner, Gain, MIDI tools, Phrase Looper, Sequencer |
+Chasing a specific sound? Each category maps to one or more editorials — buying guides that pick the plugins worth loading, with settings and chain-position advice.
+
+| Category | Editorials |
+|----------|------------|
+| Overdrive, Distortion, Fuzz | [Tube Screamer]({{ '/plugins/tube-screamer/' | url }}), [Blown-Out Overdrive]({{ '/plugins/blown-out-overdrive/' | url }}), [Vintage Fuzz]({{ '/plugins/vintage-fuzz/' | url }}) |
+| Dynamics | [Compressors]({{ '/plugins/compressors/' | url }}) |
+| Filter / EQ | [Equalizers]({{ '/plugins/eq/' | url }}), [Wah]({{ '/plugins/wah/' | url }}) |
+| Modulation | [Chorus]({{ '/plugins/chorus/' | url }}), [Uni-Vibe and Phaser]({{ '/plugins/vibe-phaser/' | url }}), [Tremolo]({{ '/plugins/tremolo/' | url }}) |
+| Delay | [Atmospheric Delay]({{ '/plugins/atmospheric-delay/' | url }}), [Digital Delay]({{ '/plugins/digital-delay/' | url }}), [Glitch Granular Delay]({{ '/plugins/glitch-granular-delay/' | url }}) |
+| Reverb | [Everyday Reverb]({{ '/plugins/everyday-reverb/' | url }}), [Shimmer and Cloud Reverb]({{ '/plugins/shimmer-cloud-reverb/' | url }}) |
+| Pitch / Spectral | [Pitch Shifter]({{ '/plugins/pitch-shifter/' | url }}) |
+| Simulator (Amp/Cab) | [Amp, Cabinet, and Neural Capture]({{ '/plugins/amp-cab-sim/' | url }}) |
+| Generator (Synth/Drum) | [MIDI Instruments]({{ '/plugins/midi-instruments/' | url }}), [Analog Polysynth]({{ '/plugins/analog-polysynth/' | url }}) |
+| Utility | [Utility Staples]({{ '/plugins/utility-staples/' | url }}), [Loopers]({{ '/plugins/loopers/' | url }}) |
+
+Want the whole catalog instead of picks? The [All Plugins]({{ '/plugins/all/' | url }}) index lists every LV2 plugin on the device — searchable by name, category, or maintainer, with a usage column showing how often each one turns up in shared pedalboards.
 
 ## Browsing and adding plugins
 
@@ -37,18 +41,13 @@ Use MOD-UI to browse, add, and remove plugins:
 
 You can also install additional plugins from the [Patch Storage](https://patchstorage.com) cloud directly from MOD-UI — look for the Patch Storage tab in the plugin browser.
 
-## Plugin panels
+## Editing on the device
 
-Many plugins have custom LCD panels that show controls and visual feedback specific to that effect. These panels appear when you long-press a plugin tile on the LCD. Supported panels include:
+You do not need MOD-UI to edit plugin parameters; rich, tactile parameter editing lives on the device itself. Long-press a plugin tile on the LCD and it opens a deep-edit panel for that effect: the main controls pinned up top as dials, and a scrollable list for the rest.
 
-- x42 parametric EQ (fil4) — live frequency-response graph
-- Graphic EQ — 10-band sliders
-- GX Cabinet — cab selection and mic placement
-- CAPS Noisegate — threshold and reduction meter
-- DISTRHO Compressor — gain reduction metering
-- NAM — capture status and model loading
-- Tap Reverb — decay and tone controls
-- ZAM Compressor, Compressor, EQ — dedicated layouts
+Controls carry small numbered badges (**1**, **2**, or **3**) telling you which physical tweak encoder will change them. Generally speaking, Tweak1 will edit the currently-selected parameter, chosen by rotating the Navigation encoder. 
+
+Compressors draw a live gain-reduction meter and plot input/output against the transfer curve while audio plays, letting you see the compressor in action.
 
 ## CPU and XRUN monitoring
 
@@ -57,7 +56,3 @@ In MOD-UI, the top bar shows real-time CPU usage and XRUN (buffer underrun) coun
 - Removing CPU-intensive plugins (generators, simulators, pitch shifters)
 - Reducing the number of active plugins on the pedalboard
 - Adjusting the JACK period size (see [Performance Tuning]({{ '/maintenance/performance' | url }}))
-
-## Plugin reference
-
-For detailed editorial reviews of specific plugins — our picks for each effect type, settings, and chain position advice — see the [Plugin Reference]({{ '/plugins/' | url }}).
