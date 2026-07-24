@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: playing-live
   title: Playing Live
-  order: 5
+  order: 7
 ---
 
 # Playing Live
@@ -28,6 +28,8 @@ The [global EQ]({{ '/using/audio-midi/#global-eq' | url }}) sits after every boa
 Nothing stops a snapshot change from changing a paramater that's already bound to a footswitch or analog control via MIDI Learn. This can make it very difficult to keep track of your plugins' state.
 
 You should provide this rigour yoursef: give each plugin one owner. Either it's footswitch territory and no snapshot touches it, or it's the snapshots' and no switch is bound to it. Blend mode already assumes this: parameters driven by footswitch MIDI CCs stay out of the interpolation, so a blend never fights a switch.
+
+Tempo has the same problem. Every snapshot stores the transport BPM alongside its parameter values, and recalling one restores that BPM — so a tempo you tap mid-set is overwritten at the next snapshot change. Either save the pedalboard after tapping, or keep the tempo identical across every snapshot on the board.
 
 ## Setlists and banks
 

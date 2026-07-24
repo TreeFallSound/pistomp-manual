@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: configuration
   title: Configuration
-  order: 9
+  order: 10
 ---
 
 # Configuration

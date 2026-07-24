@@ -4,14 +4,14 @@ eleventyNavigation:
   parent: using
   key: wifi
   title: WiFi Setup
-  order: 13
+  order: 5
 ---
 
 # WiFi Setup
 
 pi-Stomp needs WiFi for two things: opening MOD-UI from a browser on your phone or laptop, and pulling OS updates through the recovery system. You set it once — at build time, in the OS image wizard — and the device remembers it. This page is what to do when you're setting up at a new venue, a new router, or no router at all.
 
-The WiFi status icon lives in the LCD toolbar. Orange means hotspot mode; blue (or the bars filling in) means it's on a router.
+The WiFi status icon lives in the LCD toolbar. Grey means not connected, silver means connected to a router, orange means hotspot mode.
 
 ## Setting WiFi at build time
 

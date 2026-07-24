@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: audio-midi
   title: Audio & MIDI Menu
-  order: 7
+  order: 4
 ---
 
 # Audio & MIDI Menu

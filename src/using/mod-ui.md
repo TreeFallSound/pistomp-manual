@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: mod-ui
   title: MOD-UI
-  order: 4
+  order: 6
 ---
 
 # MOD-UI
@@ -68,11 +68,15 @@ The parameter is now mapped. Save the pedalboard to keep the assignment.
 
 > **MIDI mode must be set to *Separated*** (not *Aggregated*) in the plugin's settings, or MIDI learn will not work correctly.
 
-See [MIDI Implementation]({{ '/using/midi-implementation/' | url }}) for the default CC numbers each footswitch and encoder sends, and for advanced mapping — sweeping only part of a parameter's range, for example.
+If no confirmation appears in the top right, the control is probably already bound to something else — see Un-assigning below.
+
+**Advanced** on the same dialog sets a Range narrower than the parameter's own. Set a drive's range to 5–10 and full counter-clockwise on the tweak knob now lands at 5, spending all 128 MIDI steps on the half of the range you use. [MIDI Implementation]({{ '/using/midi-implementation/#assigning-only-a-certain-range' | url }}) has the transform and its two gotchas, along with the default CC numbers each footswitch and encoder sends.
 
 ### Un-assigning
 
-A control can't be bound to a new parameter until it's released from the old one. Open the modify dialog for the parameter it's currently bound to, click **None**, then **Save**.
+A control can't be bound to a new parameter until it's released from the old one. Open the modify dialog for the parameter it's currently bound to, click **None**, then **Save**. There's no confirmation; you'll know it worked because the control will now bind elsewhere.
+
+This catches people on the pedalboards that ship with the device, since most of them already have footswitches and tweak knobs assigned. Re-mapping one silently does nothing until you release it from its original parameter.
 
 ## Pedalboards are not automatically saved
 
@@ -161,8 +165,6 @@ The plugin browser has a Patchstorage tab near the bottom left, beside the file 
 <img src="{{ '/assets/images/mod-ui-patchstorage-browse.png' | url }}" alt="Patchstorage tab">
 
 ## What you can't do from MOD-UI
-
-... yet? Yet. Hopefully someday.
 
 - Assigning footswitch long-press actions and other pi-Stomp `default_config.yml` concerns (see [Configuration]({{ '/using/configuration/#long-press-actions' | url }}))
 - Modifying and/or creating `config.yml` *inside* a pedalboard bundle; see [Per-pedalboard overrides]({{ '/using/configuration/#per-pedalboard-overrides' | url }}) and [External MIDI routing]({{ '/using/configuration/#external-midi-routing' | url }})

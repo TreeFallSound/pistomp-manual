@@ -33,6 +33,8 @@ New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) f
 
 **What you give up:** The sonic character is a notch below Tal-Dub-3 — plain linear interpolation (no oversampling) with no analog-style saturation. Use it when you need ping-pong stereo width or aggressive filter sweeps.
 
+It's also one of the few plugins here that follows the [host tap tempo]({{ '/using/navigation/#tap-tempo' | url }}), but only with Tempo Mode set to **MOD/Host**. At any other setting your taps do nothing.
+
 ## Per-machine guide
 
 ### Reverse: Reverse Delay

@@ -26,13 +26,17 @@ The home screen shows the current pedalboard, active snapshot, and all plugins i
 
 ## Navigation encoder
 
-The leftmost encoder is the primary interface to the LCD.
+The leftmost encoder is the primary interface to the LCD. Three gestures cover every screen, including ones this page doesn't document.
 
-| Action | Result |
-|--------|--------|
-| Rotate | Moves the yellow highlight between elements |
-| Click | Selects the highlighted element |
-| Long-press | Enters deep edit mode on a plugin |
+| Gesture | What it does |
+|---------|--------------|
+| **Turn** | Moves the yellow highlight across the toolbar icons, pedalboard name, snapshot name, and plugin tiles |
+| **Click** | Acts on what's highlighted — opens the pedalboard or snapshot list, toggles a plugin's bypass, toggles global bypass, opens the system menu from the wrench icon |
+| **Long press** | Goes one level deeper, or exits. On a plugin tile it opens deep edit; on the home screen it opens the system menu |
+
+A long press fires at 0.5 seconds while the control is still held down, and it suppresses the click that would otherwise follow on release. This applies to the footswitches too: stomp slowly and you get the long-press action — a snapshot change — instead of the toggle you wanted.
+
+The sections below walk through each of these in turn.
 
 ## Selecting a pedalboard
 
@@ -97,11 +101,11 @@ Click the button to toggle. Long-press to change which channels are bypassed —
 
 ## Tap tempo
 
-Long-press footswitch D to enter tap tempo mode. The footswitch label changes to show the current BPM. The tempo is set from the second tap onward; keep tapping (it averages the last four intervals) to home in on a steady value. Tempos below 40 BPM are ignored. Long-press again to return to normal mode.
+Long-press footswitch D to enter tap tempo mode. The footswitch label changes to show the current BPM. The tempo is set from the second tap onward; keep tapping (it averages up to three intervals) to home in on a steady value. Leave more than 1.5 seconds between taps and the samples are discarded as stale, which also puts the floor at 40 BPM. Long-press again to return to normal mode.
 
 To save the tempo for a pedalboard: System Menu → **Pedalboard Management** → **Save current pedalboard**.
 
-Not all plugins use the host tap tempo. Bollie Delay is one that does — set its Tempo Mode to **MOD/Host**.
+Few plugins read the host tempo. Bollie Delay does, but only with its Tempo Mode set to **MOD/Host** — at any other setting it ignores your taps and nothing appears to happen.
 
 ## Notes panel
 

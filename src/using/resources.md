@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: resources
   title: Resources
-  order: 13
+  order: 15
 ---
 
 # Resources
@@ -45,6 +45,6 @@ The hardware comparison table moved to [Ordering Parts]({{ '/building/ordering-p
 - **[pi-stomp](https://github.com/TreeFallSound/pi-stomp)** — main controller software and firmware
 - **[pi-gen-pistomp](https://github.com/TreeFallSound/pi-gen-pistomp)** — OS image builder
 - **[pistomp-recovery](https://github.com/TreeFallSound/pistomp-recovery)** — recovery and update service
-- **[pi-stomp-pedalboards](https://github.com/TreeFallSound/pi-stomp-pedalboards)** — starter pedalboards
+- **[pi-stomp-pedalboards](https://github.com/TreeFallSound/pi-stomp-pedalboards)** — the pedalboards that ship with the image, and where to send yours — see [Sharing a pedalboard]({{ '/using/pedalboards/#sharing-a-pedalboard' | url }})
 - **[mod-host](https://github.com/moddevices/mod-host)** — LV2 plugin host (by MOD Devices)
 - **[mod-ui](https://github.com/moddevices/mod-ui)** — web interface (by MOD Devices)

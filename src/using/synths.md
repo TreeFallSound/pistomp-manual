@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: synths
   title: Hosting Synths & Samplers
-  order: 14
+  order: 13
 ---
 
 # Hosting Synths & Samplers

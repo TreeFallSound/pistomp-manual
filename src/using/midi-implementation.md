@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: midi-implementation
   title: MIDI Implementation
-  order: 8
+  order: 9
 ---
 
 # MIDI Implementation
@@ -50,9 +50,15 @@ A control cannot be assigned to a new parameter until it is un-assigned from the
 
 ### Assigning only a certain range
 
-The assignment dialog has an Advanced button exposing Range (min–max). When configured, this sets the minimum/maximum extents of the parameter.
+The assignment dialog has an Advanced button exposing Range (min–max). The custom range doesn't clip the parameter — it *replaces* the port's declared range in the transform, so all 128 MIDI steps redistribute across the shorter span:
 
-By default, the whole range is used. Because MIDI values are represented by only 7 bits (128 unique values, 0..1), binding a sub-range can help you gain precision where you need it.
+```
+value = min + (max − min) × (cc / 127)
+```
+
+Narrow a 0–10 drive to 5–10 and full counter-clockwise on the tweak knob now lands at 5, with each step worth 0.039 instead of 0.079. You spend the whole controller on the half of the range you actually use, at double the resolution.
+
+Two things to know. The parameter can no longer reach its own floor from the hardware — only from MOD-UI. And on a port marked logarithmic the curve is computed against your custom range rather than the port's, `value = min × (max/min)^(cc/127)`, which mod-host carries a `FIXME` for; a custom minimum of 0 on such a port makes that ratio undefined.
 
 ## External MIDI
 

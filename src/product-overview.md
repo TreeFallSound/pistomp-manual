@@ -32,7 +32,7 @@ pi-Stomp is four pieces of software stacked on top of each other. They are, star
 | **JACK** | The Linux audio server | Routes audio buffers between clients on a fixed schedule |
 | **mod-host** | The plugin host, from [MOD Devices](https://mod.audio) | Loads LV2 plugins, wires their ports together, runs them each buffer |
 | **MOD-UI** | The web app, also from MOD Devices | Drag-and-drop editor for the graph mod-host is running. Open it at [http://pistomp.local](http://pistomp.local) |
-| **pi-Stomp controller** | Tree Fall Sound's Python app | Reads the footswitches, encoders, and expression pedals; sends MIDI CCs into mod-host; draws the LCD |
+| **pi-Stomp controller** | Tree Fall Sound's Python app | Reads the footswitches, encoders, and expression pedals; sends MIDI CCs into mod-host; draws the LCD. Its behaviour — footswitch actions, encoder CCs, chords, blend curves — is a YAML file you can edit at `/home/pistomp/data/config/default_config.yml`. See [Configuration]({{ '/using/configuration/' | url }}) |
 
 ### Notes
 
@@ -46,6 +46,8 @@ The controller and MOD-UI talk over HTTP and WebSocket on localhost to keep in s
 
 | Term | What it is | When it changes |
 |------|-----------|-----------------|
+| **Plugin** | An LV2 effect, instrument, or MIDI processor, identified by a URI. Every plugin on the device is listed in [All Plugins]({{ '/plugins/all/' | url }}) | Loading a pedalboard instantiates the plugins it names |
+| **Parameter** | One control port on a plugin — Gain, Mix, Bypass. Bypass is a parameter like any other, which is why a footswitch can drive it | Any parameter can be bound to a footswitch, encoder, or external MIDI CC |
 | **Pedalboard** | A saved audio graph: which plugins are loaded, how they're wired, every plugin's current knob settings, and the controller bindings (footswitches, encoders, expression pedals) | Loading a different pedalboard instantiates a new graph — takes a few seconds, audio drops while it happens |
 | **Snapshot** | A saved set of parameter values *within one pedalboard*. Same plugins, same wiring, different knob positions | Changing a snapshot sets values on already-running plugins — instant, no audio drop, delay tails and reverb trails survive |
 | **Bank** | An ordered subset of pedalboards, used to lay out a setlist |  Switching banks changes which pedalboards you scroll through, not which one is loaded |

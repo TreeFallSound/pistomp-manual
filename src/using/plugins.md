@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: plugins
   title: Plugins & Effects
-  order: 6
+  order: 8
 ---
 
 # Plugins & Effects

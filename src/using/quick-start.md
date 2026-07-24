@@ -9,9 +9,7 @@ eleventyNavigation:
 
 # Quick Start
 
-Your pi-Stomp is built and booted — now let's make it your best friend on stage (other than the drummer). Once your pedalboards are set up, you run the whole thing from the device itself: no other computer on stage, just you, your pedalboards, snapshots, and footswitches.
-
-If the words *pedalboard*, *snapshot*, and *bank* aren't familiar yet, read [Product Overview]({{ '/product-overview/' | url }}) — the rest of this page uses them.
+Once your pedalboards are set up, you run the whole thing from the device itself. No computer on stage.
 
 ## The controls
 
@@ -54,8 +52,24 @@ The default pedalboard loads automatically. Use the footswitches to toggle effec
 
 Learn more in [Navigation & Controls]({{ '/using/navigation' | url }}).
 
+## If you hear nothing
+
+Check the power icon in the toolbar before you suspect the build. Green means processing is active; grey means global bypass is on and the signal is passing through unprocessed. Click the icon to toggle it. Then check the Volume encoder (Tweak 3), which is the master output level.
+
+## Get on the network
+
+Look at the Wi-Fi icon in the toolbar:
+
+| Icon | State | What to do |
+|------|-------|------------|
+| Orange | Hotspot mode | Join the **pistomp** Wi-Fi network from your laptop or phone. Password: **pistompwifi** |
+| Silver | Connected to your router | Put your laptop or phone on the same network |
+| Grey | Not connected | Enter your router's credentials on the LCD — see [WiFi Setup]({{ '/using/wifi/' | url }}) |
+
+The device falls back to hotspot mode when it can't reach the Wi-Fi network you configured, so a fresh build on an unfamiliar network is usually orange unless you baked the WiFi password in when you flashed it.
+
 ## Edit online
 
-Point a browser on any device on the same network to [http://pistomp.local](http://pistomp.local) to open MOD-UI — the drag-and-drop pedalboard editor. The [MOD-UI]({{ '/using/mod-ui/' | url }}) page covers it in full.
+Point a browser at [http://pistomp.local](http://pistomp.local) to open MOD-UI — the drag-and-drop pedalboard editor. The [MOD-UI]({{ '/using/mod-ui/' | url }}) page covers it in full.
 
 <a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface"></a>

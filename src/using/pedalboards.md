@@ -9,22 +9,9 @@ eleventyNavigation:
 
 # Pedalboards
 
-A pedalboard is the whole rig: which plugins are loaded, how they're wired into a chain, where every knob sits, and what each footswitch, encoder, and expression pedal does. It's the thing you play. Everything else in this manual — the build, the menus, MOD-UI, the plugins — exists to get a pedalboard under your feet.
+Load a pedalboard and the device becomes that rig. A clean amp into a spring reverb for one song, a fuzz into a tape delay into a shimmer for the next — switching between them is a click on the Navigation encoder. The work happened once, in a browser; on the floor you pick the rig you already made.
 
-Load a pedalboard and the device *becomes* that rig. A clean amp into a spring reverb for one song, a fuzz into a tape delay into a shimmer for the next — each is a pedalboard, and switching is a click on the Navigation encoder. You're not rebuilding anything on stage. The work happened once, in a browser; on the floor you just pick the rig you already made.
-
-## What's inside a pedalboard
-
-Four things travel together in every pedalboard:
-
-| Part | What it is |
-|------|------------|
-| **The chain** | The plugins you loaded and the order signal flows through them, left to right — instrument into the first plugin, last plugin into the output. |
-| **The settings** | Every plugin's current parameter values — the exact position of each knob and switch. |
-| **The snapshots** | Named sets of those settings you switch between *instantly*, with the same plugins and wiring. A verse tone and a solo tone on one board. |
-| **The bindings** | Which hardware control moves which parameter: footswitches A–D, Tweak 1 and 2, and an expression pedal if fitted. |
-
-The chain and the bindings are the instrument. The snapshots are the presets *within* that instrument. This split is the whole reason pi-Stomp works on stage, and it's worth getting straight now because the rest of the Using section leans on it.
+[Product Overview]({{ '/product-overview/#vocabulary' | url }}) defines pedalboards, snapshots, and banks. This page is about living with them.
 
 ## One board per rig, not per song part
 
@@ -48,3 +35,26 @@ Changes you make — swapping plugins, re-wiring, tweaking parameters, toggling 
 - Or **Save** in MOD-UI
 
 Each pedalboard is a bundle under `/home/pistomp/data/.pedalboards/`. Snapshots and per-pedalboard config overrides live inside that bundle, so saving the pedalboard is also what saves your snapshots. Back the directory up and you've backed up every rig you've made.
+
+## Sharing a pedalboard
+
+A bundle is a directory, so a pedalboard is a thing you can hand to someone. Copy one off the device:
+
+```
+scp -r pistomp@pistomp.local:/home/pistomp/data/.pedalboards/MyBoard.pedalboard .
+```
+
+Six files travel with it:
+
+| File | What it holds |
+|------|---------------|
+| `manifest.ttl` | Bundle declaration — what the host reads first |
+| `<name>.ttl` | The graph: plugins by URI, their port values, and the connections between them |
+| `snapshots.json` | Every snapshot's parameter values |
+| `addressings.json` | Footswitch, encoder, and MIDI bindings |
+| `config.yml` | Per-pedalboard controller overrides |
+| `screenshot.png` | The board as MOD-UI drew it |
+
+To contribute one, fork [TreeFallSound/pi-stomp-pedalboards](https://github.com/TreeFallSound/pi-stomp-pedalboards), commit the bundle directory whole, and open a pull request. Before you do, check the two things that make a board work on someone else's device: every plugin URI in the `.ttl` must be one that ships with the stock image (a board that needs a Patchstorage plugin should say so in the PR), and `screenshot.png` should be present, since it's how people browse. Include the snapshots — a board with a verse and a solo tone teaches more than a board with one.
+
+Going the other way, `swap-pedalboards.sh <git-url>` replaces your whole collection from any git remote. See [Configuration]({{ '/using/configuration/#factory-installed-customization-scripts' | url }}).

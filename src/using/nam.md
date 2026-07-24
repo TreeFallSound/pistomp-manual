@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: nam
   title: Neural Amp Modeler
-  order: 11
+  order: 12
 ---
 
 # Neural Amp Modeler (NAM)

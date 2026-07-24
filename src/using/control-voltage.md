@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: control-voltage
   title: Control Voltage
-  order: 10
+  order: 11
 ---
 
 # Control Voltage
