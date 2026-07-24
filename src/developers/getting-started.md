@@ -88,6 +88,33 @@ scp modalapi/*.py pistomp@pistomp.local:/home/pistomp/pi-stomp/modalapi/
 ssh pistomp@pistomp.local "ps-restart"
 ```
 
+## Dev mode: git-managed source on the device
+
+The packaged install ships a `.git-meta/` folder recording the origin URL, branch, and the exact commit the `.deb` was built from. If you edit source directly on the device and want real git, "expand" the tree into a repo:
+
+```bash
+~/pi-stomp/util/expand-git.sh
+```
+
+This reads `.git-meta/`, runs `git init`, fetches full history and tags from the recorded origin, then points `HEAD` at the packaged commit with `git reset --mixed`. That never touches the working tree — your files stay exactly as `dpkg` unpacked them, so nothing on disk changes. It's idempotent: re-running on an already-expanded tree no-ops. When it finishes, the tree is a normal clone and `git describe --dirty='*'` prints something like `v3.0.4-224-gab12cd3`.
+
+Two things change once the tree is expanded (both keyed off the `.git/EXPANDED` marker the script writes):
+
+| Behavior | Packaged (default) | Expanded (dev mode) |
+|---|---|---|
+| Version string in the system menu | dpkg package version, with `*` on file drift | `git describe --dirty='*'` — tag, commits-since, short SHA, `*` if dirty |
+| `pi-stomp` OTA updates | Applied normally | **Refused.** pistomp-recovery blocks them so an `apt upgrade` can't overwrite your git tree |
+
+In recovery, a blocked update shows the `pi-stomp` row in red with "Cannot update pi-stomp: using git. Run util/contract-git.sh to re-enable updates." Only `pi-stomp` is blocked — every other package still updates.
+
+This is the point of dev mode: **you own the source, so OTA opts out.** When you're done and want OTA updates back:
+
+```bash
+~/pi-stomp/util/contract-git.sh
+```
+
+This removes `.git` entirely and leaves the files untouched (still whatever `dpkg` last unpacked), so the tree reads as packaged again and `apt upgrade pi-stomp` works. There is no packaged commit to fall back to, so contracting **discards any fetched history and local commits** — push a branch to your own remote first if you want to keep work. Re-run `expand-git.sh` from scratch to get git back later.
+
 ## Running tests
 
 ```bash
