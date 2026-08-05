@@ -1,10 +1,10 @@
 ---
 title: Plugins & Effects
 eleventyNavigation:
-  parent: using
+  parent: in-the-browser
   key: plugins
   title: Plugins & Effects
-  order: 8
+  order: 3
 ---
 
 # Plugins & Effects

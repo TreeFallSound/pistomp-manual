@@ -1,10 +1,10 @@
 ---
 title: WiFi Setup
 eleventyNavigation:
-  parent: using
+  parent: on-the-pedal
   key: wifi
   title: WiFi Setup
-  order: 5
+  order: 3
 ---
 
 # WiFi Setup

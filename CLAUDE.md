@@ -30,7 +30,7 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 - All image paths must be absolute (start with `/`), not relative.
 - Images default to 80% width, centered, display: block.
 - Plugin screenshots use class `plugin-screenshot`: float right, 25% width.
-- All h2/h3 headers have `clear: both`.
+- All headers below h1 (h2–h6) have `clear: both`, so consecutive floated screenshots are separated by a heading rather than a per-image clear.
 - Plugin names in articles must match what appears in MOD-UI (the `doap:name` from the .ttl file), not the directory name.
 - Plugin editorial pages follow Wirecutter style: Our pick → Also great → Also considered, with screenshots and settings tables.
 - Avoid using real musician names or pedal names in plugin editorial pages — allude instead.

@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: resources
   title: Resources
-  order: 15
+  order: 8
 ---
 
 # Resources
@@ -33,6 +33,10 @@ The hardware comparison table moved to [Ordering Parts]({{ '/building/ordering-p
 - **[Bricasti M7 IRs](https://www.yohng.com/software/bricasti.html)** — free reverb impulse responses
 - **[Openair](https://www.openair.hosted.york.ac.uk/)** — open-source impulse response library
 - **[Archaeoacoustics Scotland](https://www.archaeoacoustics.scot/)** — unique space impulse responses
+
+## The old wiki
+
+This manual replaces the [Tree Fall Sound wiki](https://www.treefallsound.com/wiki/doku.php?id=start) for pi-Stomp v3. The wiki is still the reference for hardware this manual doesn't cover: see [Ordering Parts]({{ '/building/ordering-parts/#v2-core-diy' | url }}) for the v1, v2, enclosure, and customization pages.
 
 ## Plugin development
 

@@ -1,10 +1,10 @@
 ---
 title: Configuration
 eleventyNavigation:
-  parent: using
+  parent: control
   key: configuration
   title: Configuration
-  order: 10
+  order: 1
 ---
 
 # Configuration
@@ -172,11 +172,9 @@ ssh pistomp@pistomp.local
 ~/extras/expression-pedal.sh on
 ```
 
-This uncomments the `analog_controllers:` block. Restart the service or reboot for the change to take effect. To disable:
+This uncomments the `analog_controllers:` block. Restart the service or reboot for the change to take effect. `~/extras/expression-pedal.sh off` reverses it.
 
-```bash
-~/extras/expression-pedal.sh off
-```
+Which pedals are compatible, how to wire your own jack, and how to assign one to a parameter are on [Expression Pedals]({{ '/using/expression-pedals/' | url }}).
 
 ## Factory-installed customization scripts
 
@@ -274,7 +272,7 @@ Up to four stops are allowed.
 
 When a blend-enabled pedalboard loads, pi-Stomp pre-computes which parameters differ between each pair of adjacent snapshots. As you move the control, only the parameters that actually change between stops are interpolated — everything else stays put. Parameters controlled by footswitch MIDI CCs are excluded from interpolation to prevent conflicts.
 
-The result is seamless: no audible glitches, no MIDI storm, just smooth morphing between your sounds.
+Because the diff is computed once at load rather than per movement, the treadle sends no MIDI and touches only the handful of parameters that actually differ.
 
 ### Editing blend snapshots
 

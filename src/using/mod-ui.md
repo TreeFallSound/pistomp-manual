@@ -1,10 +1,10 @@
 ---
 title: MOD-UI
 eleventyNavigation:
-  parent: using
+  parent: in-the-browser
   key: mod-ui
   title: MOD-UI
-  order: 6
+  order: 1
 ---
 
 # MOD-UI
@@ -155,6 +155,17 @@ The file can also be downloaded anytime by navigating to the file manager.
 Plugin parameters sometimes need a file — a NAM model, an impulse response, a sample. MOD-UI's file manager (top bar) uploads files into `/home/pistomp/data/user-files/` and makes them available to any plugin that takes that file type. Drag a file in; it's stored on the device and appears in any plugin's file picker.
 
 [NAM]({{ '/using/nam/' | url }}) and session captures (see [above](#recording-your-session)) put their recordings into the Audio Recordings folder.
+
+### Loading an impulse response
+
+An impulse response is a `.wav` recording of a short burst played through a cabinet or a room. Convolve your signal with it and you get that cabinet or room back. The folder you upload to decides which plugins can see the file:
+
+| Folder | Plugin that reads it | Category |
+|--------|---------------------|----------|
+| Speaker Cabinets IRs | IR loader cabsim | Simulator |
+| Reverb IRs | x42 - IR Convolver Mono / Stereo | Reverb |
+
+Upload the file, add the matching plugin to your chain, then open its gear icon and pick the IR from the file selector. A cab IR goes after your amp model; see [Amp, Cabinet, and Neural Capture]({{ '/plugins/amp-cab-sim/' | url }}) for where it sits relative to the rest of the chain. Sources for free IRs are on the [Resources]({{ '/using/resources/#free-nam-models-and-irs' | url }}) page.
 
 ## Downloading new LV2 plugins from Patchstorage
 

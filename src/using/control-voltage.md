@@ -1,10 +1,10 @@
 ---
 title: Control Voltage
 eleventyNavigation:
-  parent: using
+  parent: control
   key: control-voltage
   title: Control Voltage
-  order: 11
+  order: 4
 ---
 
 # Control Voltage

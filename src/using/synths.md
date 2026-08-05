@@ -1,10 +1,10 @@
 ---
 title: Hosting Synths & Samplers
 eleventyNavigation:
-  parent: using
+  parent: going-further
   key: synths
   title: Hosting Synths & Samplers
-  order: 13
+  order: 2
 ---
 
 # Hosting Synths & Samplers

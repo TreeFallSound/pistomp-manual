@@ -31,7 +31,7 @@ If you're hitting CPU limits, replace heavy plugins with lighter alternatives, r
 
 ## Buffer size and sample rate
 
-The JACK audio server runs at 48 kHz. The period defaults to 128 frames on a Pi 5 and 256 frames on older hardware. JACK uses two periods by default (`-n 2`), so actual round-trip I/O latency is roughly double:
+The JACK audio server ships at 48 kHz. The period defaults to 128 frames on a Pi 5 and 256 frames on older hardware. JACK uses two periods by default (`-n 2`), so actual round-trip I/O latency is roughly double:
 
 | Frames | Per-period latency at 48 kHz | CPU load |
 |--------|-------------------|----------|
@@ -41,6 +41,22 @@ The JACK audio server runs at 48 kHz. The period defaults to 128 frames on a Pi 
 | 512 | 10.67 ms | Lowest |
 
 Larger buffers reduce CPU load and XRUNs at the cost of higher latency. If you hear glitches, go up one step.
+
+The sample rate is editable too — `JACK_SAMPLE_RATE`, in the same `/etc/default/jack`. The codec supports 44100, 48000 and 96000. A given frame count buys you less latency at a higher rate, and costs proportionally more CPU per plugin:
+
+| Frames | 44.1 kHz | 48 kHz | 96 kHz |
+|--------|----------|--------|--------|
+| 64  | 1.45 ms | 1.33 ms | 0.67 ms |
+| 128 | 2.90 ms | 2.67 ms | 1.33 ms |
+| 256 | 5.80 ms | 5.33 ms | 2.67 ms |
+
+Stay on 48 kHz unless you have a reason not to. Every LV2 plugin on the device runs at it, and most of the shipped pedalboards were built and voiced at it.
+
+The other rates work, but the plugins decide. An LV2 plugin declares which rates it supports, and some — particularly ones with baked-in filter coefficients, and neural models trained at a fixed rate — support one. A plugin that won't instantiate at 96 kHz drops out of the pedalboard silently. If you change the rate, load every board you care about and check them.
+
+96 kHz is worth trying if your boards are light: 128 frames gets you the same 2.67 ms round trip as 256 frames at 48 kHz, with half the buffer. Heavy chains (NAM, pitch shifters, convolution) run out of CPU there first.
+
+Scope measurements published by Tree Fall Sound on earlier hardware came in 0.1–0.5 ms above these figures. That gap is the converters, which these numbers don't account for.
 
 ### Changing the period size
 

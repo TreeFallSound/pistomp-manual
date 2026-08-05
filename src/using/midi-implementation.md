@@ -1,10 +1,10 @@
 ---
 title: MIDI Implementation
 eleventyNavigation:
-  parent: using
+  parent: control
   key: midi-implementation
   title: MIDI Implementation
-  order: 9
+  order: 3
 ---
 
 # MIDI Implementation

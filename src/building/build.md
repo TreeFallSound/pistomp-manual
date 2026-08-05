@@ -44,6 +44,20 @@ Kit hardware comes in labelled bags — `S6` for a 6 mm screw, `H15` for the 15 
 - **LCD ribbon clearance** — you may need to flatten the ribbon cable before the bottom plate fits.
 - **Footswitch connectors** — the Molex connectors are keyed; they only go in one way.
 
+## First power-up check
+
+Apply power. The LCD will light up immediately in pure white; your CPU fan will spin up for a moment; second afterwards, the first-boot sequence appears on the LCD screen. Your pi-Stomp will restart once and then land on a pedalboard shortly after: this entire initial step should take about one minute (subsequent starts are around 15s, growing with the number of LV2 effects you have installed).
+
+| Check | What should happen |
+|-------|--------------------|
+| Navigation encoder | Turning it moves the highlight around the LCD; clicking a plugin block toggles its fill between enabled and bypassed |
+| Footswitches A–D | Each toggles a plugin, changes the footswitch icon on the LCD, and lights its LED |
+| Tweak 1 and Tweak 2 | Turning either opens a parameter dialog and moves the value; clicking closes it |
+| Output | Plug headphones into the 3.5 mm jack or an amp into Out 1, play something in, and you should hear it |
+| Input LEDs | Plug a cable into In 1 and touch the other end's tip — the corresponding LED should flicker |
+
+If a footswitch or encoder does nothing, `ps-run --host test` gives you a per-control readout over SSH; see [Troubleshooting]({{ '/maintenance/troubleshooting/#hardware-debug-utility' | url }}). If the LCD stays blank or stuck on the logo, the controller service failed to start — that's [also in Troubleshooting]({{ '/maintenance/troubleshooting/#lcd-is-white-or-stuck-on-the-logo' | url }}), not a wiring fault.
+
 ## Next step
 
 Once the hardware is assembled, [install the software]({{ '/building/software-install/' | url }}).

@@ -1,10 +1,10 @@
 ---
 title: Navigation & Controls
 eleventyNavigation:
-  parent: using
+  parent: on-the-pedal
   key: navigation
   title: Navigation & Controls
-  order: 3
+  order: 1
 ---
 
 # Navigation & Controls

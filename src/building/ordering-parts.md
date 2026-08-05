@@ -20,9 +20,9 @@ pi-Stomp is a DIY platform, not a commercial product. If you want a polished, wa
 | Simultaneous | 12+ (CPU-dependent) | 12+ | 6 | 12 |
 | Routing | Fully flexible | Fully flexible | Serial or 2 parallel | Serial or 2 parallel |
 | MIDI | Optional DIN + USB | DIN in/out + USB | DIN in/out/thru | DIN in/out |
-| Expression | Optional (up to 8 analog) | Yes | Yes | Yes |
+| Expression | Optional (1 jack) | Yes | Yes | Yes |
 | Footswitches | 4 (assignable) | 2 (assignable) | 3 (multi-mode) | 4 (multi-mode) |
-| True bypass | Yes (ch 1) | Yes (relay) | Yes (relay) | No |
+| True bypass | No (codec routing) | Yes (relay) | Yes (relay) | No |
 | LCD | 2.8" color TFT | 2x monochrome | Color | Color touch |
 | WiFi | Built-in | Built-in | None | None |
 | Software | Open source | Open source | Proprietary | Proprietary |
@@ -70,4 +70,19 @@ Free shipping within the US. Kits typically ship the Thursday following the orde
 
 ## v2 Core / DIY
 
-The pi-Stomp Core v2 board is no longer sold. If you already have one, the build requires through-hole soldering and sourcing your own components (Pi 3/4, enclosure, audio card, LCD, etc.). See the [v2 Core wiki](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_core) for the bill of materials.
+The pi-Stomp Core v2 board is no longer sold. If you already have one, the build requires through-hole soldering and sourcing your own components (Pi 3/4, enclosure, audio card, LCD, etc.). Those builds are documented on the old wiki, which this manual does not duplicate:
+
+| Wiki page | What's on it |
+|-----------|--------------|
+| [pi-Stomp Core v2](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_core) | Landing page for everything v2 |
+| [Core build instructions](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_core_build_instructions) | Full through-hole assembly, step by step |
+| [Full bill of materials](https://www.treefallsound.com/wiki/doku.php?id=full_bill_of_materials) | Every part with supplier links |
+| [Enclosure considerations](https://www.treefallsound.com/wiki/doku.php?id=enclosure_considerations) | Which Hammond 1590 sizes fit, LCD mounting options, drill template PDF |
+| [Customization guide](https://www.treefallsound.com/wiki/doku.php?id=customization_guide) | Wiring the analog and switch expansion headers, direct GPIO, swapping the audio card, balanced I/O, GPIO pinouts for v2 and v3 |
+| [pi-Stomp v1](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_v1) | The original build, unsupported by current software |
+
+The MIDI + Expression add-on is a soldered kit for both v2 and v3; its assembly and the v3 drill template live on the [breakout board build page](https://www.treefallsound.com/wiki/doku.php?id=midi_expression_breakout_board_build_instructions).
+
+### Using a different Raspberry Pi
+
+The v3 board takes any "B" form-factor Pi 3, 4, or 5. A Pi 4 or a CM4 on a B-form carrier works; a Pi 3 will run out of CPU quickly. The Pi 5 is what the shipped JACK defaults are tuned for and what you want if you plan to run NAM or convolution.

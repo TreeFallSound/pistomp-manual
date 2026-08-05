@@ -1,7 +1,7 @@
 ---
 title: Pedalboards
 eleventyNavigation:
-  parent: using
+  parent: in-the-browser
   key: pedalboards
   title: Pedalboards
   order: 2
@@ -44,7 +44,7 @@ A bundle is a directory, so a pedalboard is a thing you can hand to someone. Cop
 scp -r pistomp@pistomp.local:/home/pistomp/data/.pedalboards/MyBoard.pedalboard .
 ```
 
-Six files travel with it:
+Six files travel with it, plus one directory per plugin that stores LV2 state:
 
 | File | What it holds |
 |------|---------------|
@@ -54,7 +54,28 @@ Six files travel with it:
 | `addressings.json` | Footswitch, encoder, and MIDI bindings |
 | `config.yml` | Per-pedalboard controller overrides |
 | `screenshot.png` | The board as MOD-UI drew it |
+| `effect-<n>/` | LV2 state for the plugin at position `<n>` |
 
-To contribute one, fork [TreeFallSound/pi-stomp-pedalboards](https://github.com/TreeFallSound/pi-stomp-pedalboards), commit the bundle directory whole, and open a pull request. Before you do, check the two things that make a board work on someone else's device: every plugin URI in the `.ttl` must be one that ships with the stock image (a board that needs a Patchstorage plugin should say so in the PR), and `screenshot.png` should be present, since it's how people browse. Include the snapshots — a board with a verse and a solo tone teaches more than a board with one.
+### Impulse responses and NAM models
+
+An `effect-<n>/` directory does not contain the IR or NAM model its plugin uses. It contains a **symlink** into `/home/pistomp/data/user-files/`:
+
+```
+effect-21/Clean (G1 L0 B1 T1).nam -> ../../../user-files/NAM Models/Clean (G1 L0 B1 T1).nam
+```
+
+`scp -r` dereferences symlinks and copies the file contents. `git` and `tar` do not — they preserve the link, which then dangles on the recipient's device. The plugin instantiates and the board loads; the model is silently absent.
+
+List what a bundle depends on:
+
+```bash
+find MyBoard.pedalboard -type l -exec readlink -f {} \;
+```
+
+Each of those files must be copied to the recipient's device, into the same subdirectory of `/home/pistomp/data/user-files/` it came from — `NAM Models`, `Speaker Cabinets IRs`, or `Reverb IRs`. Names must match, including spaces and case.
+
+**Redistribution.** Commercial IR packs and NAM captures are frequently licensed to a single purchaser, and a captured amp may carry restrictions of its own. Verify the licence before sending these files to anyone. The pedalboard repository does not accept them.
+
+To contribute one, fork [TreeFallSound/pi-stomp-pedalboards](https://github.com/TreeFallSound/pi-stomp-pedalboards), commit the bundle directory whole, and open a pull request. Before you do, check the three things that make a board work on someone else's device: every plugin URI in the `.ttl` must be one that ships with the stock image (a board that needs a Patchstorage plugin should say so in the PR), `screenshot.png` should be present, since it's how people browse, and `find . -type l` should come back empty — a board that depends on a file in `user-files` cannot be distributed as a bundle alone. Include the snapshots — a board with a verse and a solo tone teaches more than a board with one.
 
 Going the other way, `swap-pedalboards.sh <git-url>` replaces your whole collection from any git remote. See [Configuration]({{ '/using/configuration/#factory-installed-customization-scripts' | url }}).

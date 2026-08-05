@@ -1,10 +1,10 @@
 ---
 title: Ethernet Audio (alpha)
 eleventyNavigation:
-  parent: using
+  parent: going-further
   key: ethernet-audio
   title: Ethernet Audio (alpha)
-  order: 14
+  order: 3
 ---
 
 # Ethernet Audio (alpha)

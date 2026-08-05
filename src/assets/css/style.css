@@ -393,20 +393,35 @@ body.nav-open {
   overflow-wrap: break-word;
 }
 
-.content h2 {
+/* Every heading below h1 starts a new band of the page, so none of them may
+   sit beside a floated screenshot from the section above. Declaring it once
+   here is what lets a page place consecutive screenshots without each one
+   needing its own clear. */
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
   clear: both;
-  font-size: 1.3rem;
   color: var(--color-heading);
+}
+
+.content h2 {
+  font-size: 1.3rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .content h3 {
-  clear: both;
   font-size: 1.1rem;
-  color: var(--color-heading);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+.content h4 {
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
 }
 
 .content a.heading-anchor {

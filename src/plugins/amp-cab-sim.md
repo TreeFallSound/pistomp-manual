@@ -9,89 +9,121 @@ eleventyNavigation:
 
 # Amp, Cabinet, and Neural Capture
 
-If you need an amp and cabinet on the pi-Stomp, the choice is between a modeled plugin with knob-per-control and a neural capture that is one amp at one setting. **GxAmplifier-X** is the modeled all-in-one (18 tube preamps × 28 tonestacks × 18 cabs in one plugin) and **GxCabinet** is the standalone cab IR convolver with a 3-knob IR former. **Neural Amp Modeler** is the only NAM player on the device — it loads `.nam` captures (A1 Standard/Lite/Feather/Nano, A2 Lite/Full) plus RTNeural keras JSON for AIDA-X / GuitarML models:
+Three different things live on this page, and they are not substitutes for each other.
 
-## Our pick (modeled): GxAmplifier-X
+| | What it is | What you do with it |
+|---|---|---|
+| **Neural capture** | A trained network that reproduces one real signal chain | Load a capture of the rig you actually want |
+| **Modeled amp** | Tube stages, tonestack and cab as live DSP | Turn knobs and hear the amp respond |
+| **Cabinet** | Speaker and mic, on its own | Put one after a preamp, or after a capture that has none |
 
-<img src="{{ '/assets/images/plugin-amp-gxamplifier-x.png' | url }}" alt="GxAmplifier-X" class="plugin-screenshot">
+Start with the neural capture. It is the thing the pi-Stomp does that a pedal at this price has no business doing.
 
-GxAmplifier-X (guitarix team) chains three guitarix blocks in one LV2 instance: 18 tube preamp models (selected by `Model`, Faust-generated DSPs from `gxamp.dsp` to `gxamp18.dsp`), 28 tonestacks (`Tonestack Model` — Bassman, Twin, Princeton, JCM-800, JCM-2000, M-Lead, M2199, AC-30, SOL 100, Mesa, JTM-45, AC-15, Peavey, Ibanez, Roland, Ampeg, Rev.Rocket, MIG 100 H, Triple Giant, Trio, H&K, Fender Junior, Fender, Fender Deville, Gibsen, Off, Engl), and the same 18-IR cabinet table as GxCabinet. The tube stage is not a waveshaper — each tube type (12AX7, 12AU7, 12AT7, 6V6, 6DJ8, 6C16, 6L6CG, EL34, 12AY7, JJECC83S, JJECC99, EL84, EF86, SVEL34) has two precomputed 1-D lookup tables derived from SPICE simulation of the characteristic curves, indexed by grid-to-cathode voltage and linearly interpolated.
-
-PreGain, Drive, Distortion, Master, Bass, Middle, Treble, Presence, Cabinet, plus Model and Tonestack selections — all live, all RT-safe, no model reload. The integrated plugin resamples the 96 kHz Faust design rate to the host rate via `gx_resample::FixedRateResampler`. `GxAmplifier-Stereo-X` (`gx_amp_stereo.lv2`) is the stereo build — same engine, two channels.
-
-| Model | Tonestack | Cab Model | PreGain | Master | Presence |
-|-------|-----------|-----------|--------|--------|----------|
-| 12ax7 | Bassman | 4x12 | 0.5 | 0.5 | 0.5 |
-
-Use it when you want to turn knobs and hear the amp respond. The 18 tube models include combinations (pre 12ax7 / push-pull 6V6, etc.) that do not correspond to any production amp — NAM can only capture amps that exist; the modeled amp can be a sound no real amp makes.
-
-New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
-
-## Our pick (cabinet only): GxCabinet
-
-<img src="{{ '/assets/images/plugin-amp-gxcabinet.png' | url }}" alt="GxCabinet" class="plugin-screenshot">
-
-GxCabinet is not a static cabinet model — it is a partitioned-block convolution reverb running on 18 embedded cabinet IRs (68 to 1000 taps at 48 kHz, sourced from `cab_data_table.cc`). The three tone knobs (`Cabinet` level 0.5–5, `Bass` −10…+10, `Treble` −10…+10) do not post-EQ the convolver output — they pre-shape the IR itself, via `Impf::compute()` in `cabinet_impulse_former.h`, a Faust-generated two-band shelving filter applied to the IR coefficients before the convolution kernel is loaded. When you tweak a knob, a worker thread recomputes the shaped IR and swaps it into the convolver. There is no per-sample tone filter in the audio path; the tone controls cost nothing at runtime.
-
-The bass shelf corner is ~300 Hz, the treble shelf corner ~2400 Hz, Q = 1.414 (Butterworth). The 18 embedded cabs: 4x12, 2x12, 1x12, 4x10, 2x10, HighGain, Twin, Bassman, Marshall, AC30, Princeton, A2, 1x15, Mesa, Briliant, Vitalize, Charisma, 1x8. Most are stylized; the named ones are guitarix's own captures of those styles, not licensed IR packs.
-
-| Cab Model | Cabinet | Bass | Treble |
-|-----------|---------|------|--------|
-| 4x12 | 1.0 | 0 | 0 |
-
-Use it after a NAM amp-only capture, after a preamp plugin, or anywhere you want a cabinet without managing IR files. The 8-occurrence count in shared pedalboards says this is what most builders do.
-
-## Also great: Neural Amp Modeler (NAM)
+## Our pick (neural capture): Neural Amp Modeler
 
 <img src="{{ '/assets/images/plugin-amp-nam.png' | url }}" alt="Neural Amp Modeler" class="plugin-screenshot">
 
-NAM (Mike Oliphant) is the only NAM player on the device. It loads A1 `.nam` files in four sizes (Standard 16×8, Lite 12×6, Feather 8×4, Nano 4×2 — all with dilations 1…512 over two layers) and A2 files in two channel widths (Lite 1×3, Full 1×8, both with 23 dilations up to ~1000). It also loads RTNeural keras JSON for AIDA-X / GuitarML LSTM and GRU models (seven static LSTM sizes: 1×8, 1×12, 1×16, 1×24, 2×8, 2×12, 2×16). A2 slimmable composite files pack multiple sub-models into one `.nam` and the `Quality` port (0.0–1.0) selects which runs; the loader prewarms all sub-models so quality switching is RT-safe.
+Load a capture of a cranked Twin and it breathes the way the real thing does — the bloom as you dig in, the tightening as you roll the volume back. A modeled amp is somebody's stylized take on a 12AX7 front end. A capture is the specific amp, in the specific room.
 
-Four controls: `Input` (pre-model gain, dB), `Output` (post-model volume, dB), `Quality` (sub-model selector for A2), `Model` (atom:Path — the `.nam` file). Mono audio in/out. The plugin implements LV2 State and Worker — model loads happen off the audio thread. NAM models embed their training sample rate in the JSON; if the host rate differs and is an integer multiple, the loader scales dilation sizes to match. If the host rate is not an integer multiple of the model rate, the model loads but runs at the wrong effective rate — the plugin does not resample. pi-Stomp runs JACK at 48 kHz, so community models load at their training rate. The capture workflow enforces it (see [Using NAM]({{ '/using/nam/' | url }})).
+A capture is of a *signal chain*, not of an amp. People capture pedals, preamps, heads, head-and-cab together, a fuzz into an amp, or a whole rig with a mic in front of it. Whatever was on the far end of the sweep is what you load, which is why the first question about any capture is what it already includes — a head-only capture sounds thin and buzzy until you put a cabinet after it, and a full-rig capture sounds smothered if you do.
 
-A NAM amp-only capture needs an IR after it (the README is explicit). Pair with GxCabinet, with a generic IR loader (`IR loader cabsim` from mod-audio, `Cabinet Loader` from mod.audio), or with a custom IR file.
+NAM (Mike Oliphant) is the only NAM player on the device. Architecture decides CPU cost:
+
+| Format | Sizes |
+|--------|-------|
+| A1 `.nam` | Standard 16×8, Lite 12×6, Feather 8×4, Nano 4×2 — dilations 1…512 over two layers |
+| A2 `.nam` | Lite 1×3, Full 1×8 — 23 dilations up to ~1000 |
+| RTNeural keras JSON | AIDA-X / GuitarML LSTM and GRU, seven sizes from 1×8 to 2×16 |
+
+Four controls: `Input` (pre-model gain, dB), `Output` (post-model volume, dB), `Quality` (picks the sub-model in A2 slimmable files, which pack several into one `.nam`), `Model` (the file itself). Mono in and out. Model loads run on the LV2 worker thread, off the audio thread, and A2 sub-models are prewarmed, so neither loading nor switching quality drops audio.
 
 | Input (dB) | Output (dB) | Quality | Model |
 |------------|-------------|---------|-------|
 | 0 | 0 | 0.5 (A2 lite) | (path to .nam) |
 
-**What you give up vs. a modeled amp:** no knob-per-control. A NAM capture is a fixed instance of one amp at one setting (or one knob sweep, for slimmable models) — you cannot turn a "Drive" knob and hear the amp break up further, you load a different capture. Fixed sample rate. No on-plugin tonestack; the tonestack is baked into the capture. No on-plugin cabinet; you supply the IR. CPU is the budget to plan against: the per-device ceiling in [Using NAM]({{ '/using/nam/' | url }}) is roughly 10 lighter-architecture instances on v3 (Pi 5) and 4 on v2 (Pi 4). The A2 Lite architecture is cheaper than A1 Standard by construction (1 layer vs 2, channels 3 vs 16); the CMake flag `MULTIFRAME_8X8_CONVOLUTION` (defaulting to 8 on Pi 5's 256-bit SIMD) is the meaningful lever for affordability on the Pi 5.
+Models carry their training sample rate. The plugin does not resample — at an integer multiple it scales dilation sizes to compensate, and at anything else the model runs at the wrong effective rate. pi-Stomp runs JACK at 48 kHz, which is where community models are trained, and the on-device capture workflow refuses to run at any other rate. See [Using NAM]({{ '/using/nam/' | url }}).
 
-**When NAM wins:** when you want a specific real amp's sound, not a stylized one. GxAmplifier-X's 18 models are guitarix's stylized takes on 12AX7/6V6/etc. preamps — not captures of a specific Twin Reverb or JCM800. A NAM capture of an actual Twin Reverb tracks the real amp's edge of breakup and its cabinet interaction in a way a stylized model cannot. NAM also captures pedals — a drive pedal capture (Klon, Big Muff) replaces the modeled drives with the real thing.
+**What you give up:** knobs. A capture is one rig at one setting — you don't dial in more break-up, you load a different capture. And CPU is a budget you plan against, not an afterthought: roughly 10 lighter-architecture instances on v3, 4 on v2. A2 Lite is cheaper than A1 Standard by construction, 1 layer against 2 and 3 channels against 16.
+
+New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
+
+## Our pick (modeled): GxAmplifier-X
+
+<img src="{{ '/assets/images/plugin-amp-gxamplifier-x.png' | url }}" alt="GxAmplifier-X" class="plugin-screenshot">
+
+Where a capture is fixed, this one moves. Wind the Drive up and the amp gets meaner under your hands — the thing you give up the moment you commit to a capture.
+
+GxAmplifier-X (guitarix team) is a whole rig in one instance: preamp, tonestack, cabinet. The tube stage is not a waveshaper. Each tube type carries two precomputed lookup tables derived from SPICE simulation of its characteristic curves, indexed by grid-to-cathode voltage and linearly interpolated — which is why it responds to level the way it does rather than just clipping harder.
+
+| Stage | Choices |
+|-------|---------|
+| Preamp | 12AX7, 12AU7, 12AT7, 6V6, 6DJ8, 6C16, 6L6CG, EL34, 12AY7, JJECC83S, JJECC99, EL84, EF86, SVEL34 — 18 models in all |
+| Tonestack | 28: Bassman, Twin, Princeton, JCM-800, JCM-2000, M-Lead, M2199, AC-30, SOL 100, Mesa, JTM-45, AC-15, Peavey, Ibanez, Roland, Ampeg, Rev.Rocket, MIG 100 H, Triple Giant, Trio, H&K, Fender Junior, Fender, Fender Deville, Gibsen, Engl, Off |
+| Cabinet | The same 18 IRs as GxCabinet |
+
+Every control is live and RT-safe, including the model and tonestack selectors — no reload, so you can hunt for a voicing while playing. `GxAmplifier-Stereo-X` is the same engine in stereo.
+
+| Model | Tonestack | Cab Model | PreGain | Master | Presence |
+|-------|-----------|-----------|--------|--------|----------|
+| 12ax7 | Bassman | 4x12 | 0.5 | 0.5 | 0.5 |
+
+Some of the 18 tube models are combinations no production amp used — a 12ax7 front end into push-pull 6V6, and others. A capture can only reproduce an amp that exists; this can be a sound no amp ever made.
+
+## Our pick (cabinet only): GxCabinet
+
+<img src="{{ '/assets/images/plugin-amp-gxcabinet.png' | url }}" alt="GxCabinet" class="plugin-screenshot">
+
+Reach for this the moment a head-only capture sounds thin and buzzy. It is missing its speaker, and this is the speaker.
+
+It is a partitioned-block convolver running 18 embedded cabinet IRs (68 to 1000 taps at 48 kHz). The three tone knobs — `Cabinet` level 0.5–5, `Bass` and `Treble` ±10 — do not EQ the output. They reshape the IR itself before it is loaded into the convolution kernel, on a worker thread, using a two-band shelving filter: bass corner ~300 Hz, treble ~2400 Hz, Butterworth Q = 1.414. Nothing filters the audio path, so the tone controls cost nothing at runtime.
+
+The 18 cabs: 4x12, 2x12, 1x12, 4x10, 2x10, 1x15, 1x8, HighGain, Twin, Bassman, Marshall, AC30, Princeton, A2, Mesa, Briliant, Vitalize, Charisma. Most are stylized, and the named ones are guitarix's own captures of those styles rather than licensed IR packs.
+
+| Cab Model | Cabinet | Bass | Treble |
+|-----------|---------|------|--------|
+| 4x12 | 1.0 | 0 | 0 |
+
+Put it after a capture with no cab, after a preamp plugin, or anywhere you want a cabinet without managing IR files. It appears in 8 shared pedalboards, more than any other cab plugin here.
 
 ## Also great: C\* AmpVTS
 
 <img src="{{ '/assets/images/plugin-amp-ampvts.png' | url }}" alt="C* AmpVTS" class="plugin-screenshot">
 
-C\* AmpVTS (Tim Goetze, after David Yeh for the tonestack) is what the descriptor calls "Idealised guitar amplification" — not a model of a specific amp. The signal path: input HPF → preamp gain → tonestack (9 real R/C network simulations: Bassman 5F6-A, Princeton AA1164, Mesa Dual Rectifier "Orange", Vox "top boost", JCM-800 Lead 100 2203, Twin Reverb AA270, H&K Tube 20, Roland Jazz Chorus, Pignose G40V) → bias offset → 2×/4×/8× oversample → 5th-order symmetric polynomial preamp waveshaper → DC blocker → lowpass → `atan()`-shaped symmetric power-amp waveshaper → downsample → DC blocker 2 → RMS compressor → makeup. Both waveshapers are symmetric (one polynomial per polarity, no separate up/down tables) — not a circuit simulation, a stylized amp model with real tonestack simulations.
+Open and a little generic — an amp-shaped sound rather than a particular amp. Reach for it when you want the tonestack more than the character.
 
-**What you give up:** no cabinet. Use a separate cab plugin after it (GxCabinet, C\* CabinetIII, C\* CabinetIV, or an IR loader). The oversampling multiplies per-sample cost; at 8× on a Pi 5 it is audible but not catastrophic — still cheaper than any NAM architecture. The waveshapers are symmetric, so they produce only odd harmonics — a real tube amp's asymmetric transfer produces even harmonics too. For the same reason as Valve saturation below, this is a colour stage that reads as "amp-ish" rather than a model of a specific tube behaviour.
+C\* AmpVTS (Tim Goetze, tonestack after David Yeh) calls itself "idealised guitar amplification" and means it. The tonestacks are real R/C network simulations — Bassman 5F6-A, Princeton AA1164, Mesa Dual Rectifier, Vox top boost, JCM-800 2203, Twin Reverb AA270, H&K Tube 20, Jazz Chorus, Pignose G40V — but the two gain stages either side of them are stylized: a 5th-order polynomial preamp shaper and an `atan()` power-amp shaper, at 2×, 4× or 8× oversampling.
+
+**What you give up:** a cabinet, so put one after it. Both shapers are symmetric, which means odd harmonics only — a real tube stage is asymmetric and gives you even harmonics too. That is the audible difference between this and the picks above, and it is why it reads as "amp-ish" rather than as an amp. The oversampling multiplies per-sample cost, though even 8× stays cheaper than any NAM architecture.
 
 ## Also considered
 
-### Cabinet plugins
+### Cabinets
 
-**C\* CabinetIII** — 17 cabs as 31st-order IIR filters, no convolver. Zero partitioned-convolution cost. Also great if CPU matters and you want a cab character without the IR fidelity.
+**C\* CabinetIII** — 17 cabs as 31st-order IIR filters, no convolver at all. Reach for it when CPU is tight and cab character matters more than IR fidelity.
 
-**C\* CabinetIV** — newer cabs as IIR + FIR hybrid, oversampled for ≥96 kHz. Also great for more modern voicings than CabinetIII.
+**C\* CabinetIV** — IIR and FIR hybrid, oversampled for 96 kHz and up. More modern voicings than CabinetIII.
 
-**IR loader cabsim** (mod-audio, `moddevices.com/plugins/mod-devel/cabsim-IR-loader`) and **Cabinet Loader** (mod.audio, `MOD-CabinetLoader.lv2`) — generic IR loaders if you have your own IR file. Useful but you supply the IR.
+**IR loader cabsim** (mod-audio) and **Cabinet Loader** (mod.audio) — generic loaders for when you have your own IR file.
 
-**Cabinet** (VeJa cabsim) — source not located; topology cannot be verified. Skip editorially until a repo surfaces.
+### Saturation and colour
 
-### Saturation / colour (the "tube" tag used as a colour stage)
+Two "tube"-tagged plugins that are colour stages, not amps. Put either after a clean amp sim.
 
-**TAP Tubewarmth** (Tom Szilagyi) — a piecewise waveshaper with separate positive and negative paths using different coefficients, so the saturation is asymmetric rather than symmetric. Two knobs (Drive 0.1–10, Blend −10…+10). The final stage is a ~1.6 Hz DC blocker. The "tape" half of the name is aspirational — no tape hysteresis or HF compression. Use it after a clean amp sim to add harmonics.
+#### TAP Tubewarmth
 
 <img src="{{ '/assets/images/plugin-amp-tubewarmth.png' | url }}" alt="TAP Tubewarmth" class="plugin-screenshot">
+
+The better of the two, because it is genuinely asymmetric — separate positive and negative paths with different coefficients, so you get even harmonics as well as odd. Two knobs, Drive 0.1–10 and Blend ±10, and a ~1.6 Hz DC blocker on the way out. The "tape" half of the name is aspirational; there is no hysteresis and no HF compression.
 
 | Drive | Blend |
 |-------|-------|
 | 2 | +3 |
 
-**Valve saturation** (Steve Harris, after Ragnar Bendiksen's thesis) — a single-valve-style exponential saturator (`x / (1 - e^{-k x})`), symmetric, two knobs (Distortion level 0–1, Distortion character mapped to `dist = dist_p × 40 + 0.1`). The plugin's own description is honest about the limitation: "lacking some of the harmonics you would get in a real tube amp." A symmetric shaper produces only odd harmonics. Simpler voicing, lighter on the highs than TAP Tubewarmth. One-pole DC blocker on output.
+#### Valve saturation
 
 <img src="{{ '/assets/images/plugin-amp-valve-saturation.png' | url }}" alt="Valve saturation" class="plugin-screenshot">
+
+A single exponential saturator, `x / (1 - e^{-k x})`, symmetric — odd harmonics only. The plugin's own description admits it, "lacking some of the harmonics you would get in a real tube amp." Simpler and lighter on the highs than TAP Tubewarmth, which is occasionally what you want.
 
 | Distortion level | Distortion character |
 |------------------|----------------------|
@@ -99,19 +131,19 @@ C\* AmpVTS (Tim Goetze, after David Yeh for the tonestack) is what the descripto
 
 ### Other neural players
 
-**AIDA-X** (`rt-neural-generic.lv2`) — alternative neural player using RTNeural. Loads `.aidax` / keras JSON models. Zero occurrences in shared pedalboards. NAM's plugin loads the same keras JSON format, so the editorial pick is NAM unless you specifically want the AIDA-X toolchain.
+**AIDA-X** (`rt-neural-generic.lv2`) — loads `.aidax` and keras JSON via RTNeural. Zero occurrences in shared pedalboards, and NAM's plugin reads the same keras JSON, so pick it only if you specifically want the AIDA-X toolchain.
 
-### Skip editorially
+### No public source
 
-**brummer10 `urn:brummer:*` plugins** (PreAmpTubes, PowerAmpTubes, PreAmpImpulses, PowerAmpImpulses) — closed source, no public repo. Cannot verify DSP.
+These ship on the device, but their DSP is closed, so we can't tell you what they do or rank them honestly. Try them if you like — we can't vouch for them.
 
-**Amp Profiler** (`faustlv2.bitbucket.io`) — source not located. Same status.
+**brummer10 `urn:brummer:*`** (PreAmpTubes, PowerAmpTubes, PreAmpImpulses, PowerAmpImpulses), **Amp Profiler** (`faustlv2.bitbucket.io`), and **Cabinet** (VeJa cabsim).
 
 ## Credits
 
 | Plugin | Author | License | Homepage |
 |--------|--------|---------|----------|
-| GxAmplifier-X / GxAmplifier-Stereo-X / GxCabinet | Guitarix team | ISC | [guitarix.sourceforge.net](http://www.guitarix.org/) |
+| GxAmplifier-X / GxAmplifier-Stereo-X / GxCabinet | Guitarix team | ISC | [guitarix.org](http://www.guitarix.org/) |
 | Neural Amp Modeler | Mike Oliphant | MIT | [github.com/mikeoliphant/neural-amp-modeler-lv2](https://github.com/mikeoliphant/neural-amp-modeler-lv2) |
 | C\* AmpVTS | Tim Goetze (tonestack after David Yeh) | GPL-3.0 | [quitte.de/dsp/caps.html](http://quitte.de/dsp/caps.html) |
 | C\* CabinetIII / CabinetIV / ToneStack | Tim Goetze | GPL-3.0 | [quitte.de/dsp/caps.html](http://quitte.de/dsp/caps.html) |

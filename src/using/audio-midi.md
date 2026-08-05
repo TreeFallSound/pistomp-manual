@@ -1,10 +1,10 @@
 ---
 title: Audio & MIDI Menu
 eleventyNavigation:
-  parent: using
+  parent: on-the-pedal
   key: audio-midi
   title: Audio & MIDI Menu
-  order: 4
+  order: 2
 ---
 
 # Audio & MIDI Menu

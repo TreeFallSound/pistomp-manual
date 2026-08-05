@@ -1,10 +1,10 @@
 ---
 title: Neural Amp Modeler (NAM)
 eleventyNavigation:
-  parent: using
+  parent: going-further
   key: nam
   title: Neural Amp Modeler
-  order: 12
+  order: 1
 ---
 
 # Neural Amp Modeler (NAM)
@@ -34,15 +34,29 @@ Capture enforces this. If JACK is running at any other rate, the capture refuses
 
 ## Loading NAM models
 
-pi-Stomp ships with the NAM LV2 plugin pre-installed. Models are `.nam` files placed in `/home/pistomp/data/user-files/`. Upload them via MOD-UI's file manager or SCP:
+pi-Stomp ships with the NAM LV2 plugin pre-installed. Models are `.nam` files, and they belong in `/home/pistomp/data/user-files/NAM Models/`. MOD-UI lists that directory and no other, so a `.nam` file left at the root of `user-files` will not appear in the plugin's file browser. Upload via MOD-UI's file manager or SCP:
 
 ```bash
-scp my-amp.nam pistomp@pistomp.local:/home/pistomp/data/user-files/
+scp my-amp.nam "pistomp@pistomp.local:/home/pistomp/data/user-files/NAM Models/"
 ```
+
+Subdirectories are fine — the browser walks them — so organising by pack or by amp works.
 
 Once uploaded, the NAM plugin appears in MOD-UI's plugin browser. Drag it onto your pedalboard and select the model file from the plugin's parameter list.
 
 The NAM plugin tile on the LCD uses a distinctive tri-color border (red, yellow, blue) and shows the model filename as a subtitle.
+
+### Models are not stored in the pedalboard
+
+Selecting a model writes a **symlink** into the pedalboard bundle, not a copy:
+
+```
+effect-21/Clean (G1 L0 B1 T1).nam -> ../../../user-files/NAM Models/Clean (G1 L0 B1 T1).nam
+```
+
+A bundle copied to another device by `git` or `tar` carries the link but not the file. The board loads and the plugin instantiates with no model. Copy the `.nam` files separately, to the same path, and check the licence first — see [Sharing a pedalboard]({{ '/using/pedalboards/#impulse-responses-and-nam-models' | url }}).
+
+The stock [backup]({{ '/maintenance/backup-restore/' | url }}) covers all of `/home/pistomp/data/`, so both directories travel together and nothing needs doing. It is only moving a bundle on its own that loses the model.
 
 ## Capturing your own models
 
@@ -89,13 +103,13 @@ If the input clips (red), the capture will fail. Reduce your amp's volume or adj
 
 ### After capture
 
-**Success:**
+#### Success
 
 <img src="{{ '/assets/images/nam-done.png' | url }}" alt="NAM Capture — complete" class="plugin-screenshot">
 
 The captured WAV file is saved to `/home/pistomp/data/user-files/Audio Recordings/`. Transfer it to a computer and train it using the [NAM trainer](https://github.com/mikeoliphant/neural-amp-modeler) or the [Tone3000 capture page](https://tone3000.com/capture).
 
-**Failure:**
+#### Failure
 
 <img src="{{ '/assets/images/nam-failed.png' | url }}" alt="NAM Capture — failed" class="plugin-screenshot">
 
@@ -105,7 +119,7 @@ The panel shows the error message and freezes the meters for diagnosis. Common c
 - No signal from the amp (check connections)
 - Sweep file not found (old image?)
 
-**Aborted:**
+#### Aborted
 
 <img src="{{ '/assets/images/nam-aborted.png' | url }}" alt="NAM Capture — aborted" class="plugin-screenshot">
 
