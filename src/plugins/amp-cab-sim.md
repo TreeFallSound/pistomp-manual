@@ -35,11 +35,13 @@ NAM (Mike Oliphant) is the only NAM player on the device. Architecture decides C
 | A2 `.nam` | Lite 1×3, Full 1×8 — 23 dilations up to ~1000 |
 | RTNeural keras JSON | AIDA-X / GuitarML LSTM and GRU, seven sizes from 1×8 to 2×16 |
 
-Four controls: `Input` and `Output` gain in dB, `Quality` (picks the sub-model inside an A2 slimmable file), and `Model`. Mono in and out. Loading and quality switching both happen off the audio thread, so neither drops audio.
+Four controls: `Input` and `Output` gain in dB, `Quality`, and `Model`. Mono in and out. Loading and quality switching both happen off the audio thread, so neither drops audio.
+
+`Quality` looks like a continuous 0–1 knob and is really a two-position switch. At 0.5 and below you get Lite; above 0.5 you get Full. Nothing happens in between, and nothing happens at all unless the loaded file is an A2 slimmable one — those pack both sub-models into a single `.nam`. Set it to 0 or 1 so it's obvious which one is running.
 
 | Input (dB) | Output (dB) | Quality | Model |
 |------------|-------------|---------|-------|
-| 0 | 0 | 0.5 (A2 lite) | (path to .nam) |
+| 0 | 0 | 1 (Full) | (path to .nam) |
 
 Models carry their training rate and the plugin does not resample, so a mismatch runs the model at the wrong effective rate. pi-Stomp runs at 48 kHz, where community models are trained, and the on-device capture refuses any other rate. See [Using NAM]({{ '/using/nam/' | url }}).
 
