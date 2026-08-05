@@ -1,7 +1,7 @@
 ---
 title: Atmospheric Delay
 eleventyNavigation:
-  parent: editorials
+  parent: cat-delay-reverb
   key: atmospheric-delay
   title: Atmospheric Delay
   order: 2

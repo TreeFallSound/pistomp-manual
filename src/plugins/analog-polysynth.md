@@ -1,10 +1,10 @@
 ---
 title: Analog Polysynth
 eleventyNavigation:
-  parent: editorials
+  parent: cat-instruments-looping
   key: analog-polysynth
   title: Analog Polysynth
-  order: 20
+  order: 2
 ---
 
 # Analog Polysynth

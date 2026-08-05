@@ -1,10 +1,10 @@
 ---
 title: Blown-Out Overdrive
 eleventyNavigation:
-  parent: editorials
+  parent: cat-gain-drive
   key: blown-out-overdrive
   title: Blown-Out Overdrive
-  order: 10
+  order: 2
 ---
 
 # Blown-Out Overdrive

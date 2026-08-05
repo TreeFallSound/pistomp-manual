@@ -1,10 +1,10 @@
 ---
 title: Vintage Fuzz
 eleventyNavigation:
-  parent: editorials
+  parent: cat-gain-drive
   key: vintage-fuzz
   title: Vintage Fuzz
-  order: 4
+  order: 3
 ---
 
 # Vintage Fuzz

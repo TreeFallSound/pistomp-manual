@@ -1,10 +1,10 @@
 ---
 title: Amp, Cabinet, and Neural Capture
 eleventyNavigation:
-  parent: editorials
+  parent: cat-amp-tone
   key: amp-cab-sim
   title: Amp, Cabinet, and Neural Capture
-  order: 17
+  order: 1
 ---
 
 # Amp, Cabinet, and Neural Capture

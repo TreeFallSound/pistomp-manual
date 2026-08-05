@@ -1,10 +1,10 @@
 ---
 title: Utility Staples
 eleventyNavigation:
-  parent: editorials
+  parent: cat-amp-tone
   key: utility-staples
   title: Utility Staples
-  order: 15
+  order: 4
 ---
 
 # Utility Staples

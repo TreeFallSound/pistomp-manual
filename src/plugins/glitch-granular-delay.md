@@ -1,10 +1,10 @@
 ---
 title: Glitch Granular Delay
 eleventyNavigation:
-  parent: editorials
+  parent: cat-delay-reverb
   key: glitch-granular-delay
   title: Glitch Granular Delay
-  order: 9
+  order: 3
 ---
 
 # Glitch Granular Delay

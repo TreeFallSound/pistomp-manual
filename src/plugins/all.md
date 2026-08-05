@@ -11,7 +11,7 @@ eleventyNavigation:
 
 # All Plugins
 
-Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by name or category — this is a raw index, not editorial. The **Usage** column shows how often the plugin appears in shared pedalboards; a blank means unseen. See the [Editorials]({{ '/plugins/editorials/' | url }}) for curated picks, or [Pedalboards with an LLM]({{ '/plugins/llm-pedalboards/' | url }}) to have a model read this table and design a chain from it.
+Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by name or category — this is a raw index, not editorial. The **Usage** column shows how often the plugin appears in shared pedalboards; a blank means unseen. For curated picks, see the editorials: [Gain & Drive]({{ '/plugins/gain-drive/' | url }}), [Amp & Tone]({{ '/plugins/amp-tone/' | url }}), [Delay & Reverb]({{ '/plugins/delay-reverb/' | url }}), [Modulation & Filter]({{ '/plugins/modulation-filter/' | url }}), [Instruments & Looping]({{ '/plugins/instruments-looping/' | url }}). Or use [Pedalboards with an LLM]({{ '/plugins/llm-pedalboards/' | url }}) to have a model read this table and design a chain from it.
 
 <div class="plugin-index" id="plugin-index">
   <div class="plugin-index-controls">

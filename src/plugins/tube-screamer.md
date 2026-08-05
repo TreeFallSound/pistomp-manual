@@ -1,7 +1,7 @@
 ---
 title: Tube Screamer
 eleventyNavigation:
-  parent: editorials
+  parent: cat-gain-drive
   key: tube-screamer
   title: Tube Screamer
   order: 1

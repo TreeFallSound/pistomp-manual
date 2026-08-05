@@ -1,10 +1,10 @@
 ---
 title: Everyday Reverb
 eleventyNavigation:
-  parent: editorials
+  parent: cat-delay-reverb
   key: everyday-reverb
   title: Everyday Reverb
-  order: 18
+  order: 4
 ---
 
 # Everyday Reverb

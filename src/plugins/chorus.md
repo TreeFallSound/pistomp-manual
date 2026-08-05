@@ -1,10 +1,10 @@
 ---
 title: Chorus
 eleventyNavigation:
-  parent: editorials
+  parent: cat-modulation-filter
   key: chorus
   title: Chorus
-  order: 8
+  order: 1
 ---
 
 # Chorus

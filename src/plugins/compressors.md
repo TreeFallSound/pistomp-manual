@@ -1,10 +1,10 @@
 ---
 title: Compressors
 eleventyNavigation:
-  parent: editorials
+  parent: cat-amp-tone
   key: compressors
   title: Compressors
-  order: 11
+  order: 2
 ---
 
 # Compressors

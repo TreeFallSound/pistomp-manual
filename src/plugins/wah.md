@@ -1,10 +1,10 @@
 ---
 title: Wah
 eleventyNavigation:
-  parent: editorials
+  parent: cat-modulation-filter
   key: wah
   title: Wah
-  order: 7
+  order: 4
 ---
 
 # Wah

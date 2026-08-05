@@ -1,10 +1,10 @@
 ---
 title: Equalizers
 eleventyNavigation:
-  parent: editorials
+  parent: cat-amp-tone
   key: equalizers
   title: Equalizers
-  order: 12
+  order: 3
 ---
 
 # Equalizers

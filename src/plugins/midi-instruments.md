@@ -1,10 +1,10 @@
 ---
 title: MIDI Instruments
 eleventyNavigation:
-  parent: editorials
+  parent: cat-instruments-looping
   key: midi-instruments
   title: MIDI Instruments
-  order: 19
+  order: 1
 ---
 
 # MIDI Instruments

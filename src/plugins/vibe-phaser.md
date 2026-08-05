@@ -1,10 +1,10 @@
 ---
 title: Uni-Vibe and Phaser
 eleventyNavigation:
-  parent: editorials
+  parent: cat-modulation-filter
   key: vibe-phaser
   title: Uni-Vibe and Phaser
-  order: 14
+  order: 3
 ---
 
 # Uni-Vibe and Phaser

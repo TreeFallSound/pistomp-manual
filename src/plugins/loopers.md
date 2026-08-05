@@ -1,10 +1,10 @@
 ---
 title: Loopers
 eleventyNavigation:
-  parent: editorials
+  parent: cat-instruments-looping
   key: loopers
   title: Loopers
-  order: 16
+  order: 3
 ---
 
 # Loopers

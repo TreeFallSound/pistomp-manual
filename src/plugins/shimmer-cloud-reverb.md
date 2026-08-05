@@ -1,10 +1,10 @@
 ---
 title: Shimmer and Cloud Reverb
 eleventyNavigation:
-  parent: editorials
+  parent: cat-delay-reverb
   key: shimmer-cloud-reverb
   title: Shimmer and Cloud Reverb
-  order: 3
+  order: 5
 ---
 
 # Shimmer and Cloud Reverb

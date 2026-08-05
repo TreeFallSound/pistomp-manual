@@ -1,10 +1,10 @@
 ---
 title: Digital Delay
 eleventyNavigation:
-  parent: editorials
+  parent: cat-delay-reverb
   key: digital-delay
   title: Digital Delay
-  order: 5
+  order: 1
 ---
 
 # Digital Delay

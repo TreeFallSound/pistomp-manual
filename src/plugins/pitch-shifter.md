@@ -1,10 +1,10 @@
 ---
 title: Pitch Shifter
 eleventyNavigation:
-  parent: editorials
+  parent: cat-modulation-filter
   key: pitch-shifter
   title: Pitch Shifter
-  order: 6
+  order: 5
 ---
 
 # Pitch Shifter

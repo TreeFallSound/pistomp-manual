@@ -1,10 +1,10 @@
 ---
 title: Tremolo
 eleventyNavigation:
-  parent: editorials
+  parent: cat-modulation-filter
   key: tremolo
   title: Tremolo
-  order: 13
+  order: 2
 ---
 
 # Tremolo
