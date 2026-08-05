@@ -4,7 +4,7 @@ eleventyNavigation:
   key: editorials
   parent: plugins-section
   title: Editorials
-  order: 1
+  order: 2
 ---
 
 # Editorials
