@@ -32,7 +32,7 @@ Working clockwise:
 - Plug your instrument into the **In 1** jack
 - Connect **Out 1** to your amp, interface, or headphones
 
-### Unlimited routing
+### Routing strategies
 
 In 1/2 and Out 1/2 can be used to create stereo pedalboards.
 
