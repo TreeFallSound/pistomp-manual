@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: building-images
   title: Building Custom Images
-  order: 6
+  order: 7
 ---
 
 # Building Custom Images

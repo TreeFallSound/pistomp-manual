@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: websocket-bridge
   title: WebSocket Bridge
-  order: 5
+  order: 6
 ---
 
 # WebSocket Bridge

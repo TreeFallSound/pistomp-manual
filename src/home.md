@@ -16,6 +16,7 @@ The complete guide to the pi-Stomp ecosystem — from building your first kit to
 ## In this manual
 
 - **[About]({{ '/about/' | url }})** — The people and mission behind pi-Stomp
+- **[AI Declaration]({{ '/ai-declaration/' | url }})** — How large language models were used to write this manual, and what that costs
 - **[Product Overview]({{ '/product-overview/' | url }})** — The software stack and the three terms the rest of the manual uses
 - **[Building]({{ '/building/' | url }})** — Obtaining hardware, assembly, and software installation
 - **[Using]({{ '/using/' | url }})** — Navigation, pedalboards, plugins, MIDI, and configuration

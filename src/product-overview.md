@@ -4,7 +4,7 @@ eleventyNavigation:
   key: product-overview
   parent: home
   title: Product Overview
-  order: 2
+  order: 3
 ---
 
 # Product Overview

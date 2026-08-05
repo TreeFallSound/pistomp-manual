@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: configuration
   title: Configuration Guide
-  order: 3
+  order: 4
 ---
 
 # Configuration Guide

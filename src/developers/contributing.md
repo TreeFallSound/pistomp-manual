@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: contributing
   title: Contributing
-  order: 8
+  order: 9
 ---
 
 # Contributing
@@ -54,6 +54,8 @@ Then open a Pull Request on GitHub targeting `main`. Describe what your change d
 - **It's typed** — we use pyright and expect zero type errors
 - **It has tests** — new features should include tests; bug fixes should add a test that would have caught the bug
 - **It follows the style** — we use ruff for linting. Run `uv run ruff check` before pushing
+
+If a model wrote part of the diff, say so in the description and read [Coding with LLMs]({{ '/developers/coding-with-llms/' | url }}) first.
 
 If you're not sure about any of this, open a draft PR and ask. We'd rather help you through it than have you not contribute at all.
 
