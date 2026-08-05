@@ -27,6 +27,12 @@ You build and edit them in [MOD-UI]({{ '/using/mod-ui/' | url }}), the drag-and-
 
 You load and play them from the device itself. Highlight the pedalboard name with the Navigation encoder and click to open the list — see [Navigation & Controls]({{ '/using/navigation/#selecting-a-pedalboard' | url }}) for every device-side control.
 
+## Deciding what goes on one
+
+Knowing how to wire the canvas doesn't tell you which of the 663 plugins to wire. [Choosing Pedals]({{ '/plugins/choosing-pedals/' | url }}) is the workflow for that: design the chain against the [editorials]({{ '/plugins/' | url }}), find and stage any captures or impulse responses it needs, confirm the plugins exist on your device, then build and save.
+
+Start there if you have a sound in your head and no idea which plugin makes it.
+
 ## Saving
 
 Changes you make — swapping plugins, re-wiring, tweaking parameters, toggling bypass, on the LCD or in MOD-UI — are **not** saved automatically. To keep them:
@@ -74,7 +80,7 @@ find MyBoard.pedalboard -type l -exec readlink -f {} \;
 
 Each of those files must be copied to the recipient's device, into the same subdirectory of `/home/pistomp/data/user-files/` it came from — `NAM Models`, `Speaker Cabinets IRs`, or `Reverb IRs`. Names must match, including spaces and case.
 
-**Redistribution.** Commercial IR packs and NAM captures are frequently licensed to a single purchaser, and a captured amp may carry restrictions of its own. Verify the licence before sending these files to anyone. The pedalboard repository does not accept them.
+**Redistribution.** Commercial IR packs and NAM captures are frequently licensed to a single purchaser, and a captured amp may carry restrictions of its own. Free downloads are not exempt: Tone3000's terms bar bundling or redistributing tones from the site through third-party platforms — see [the licensing note]({{ '/plugins/choosing-pedals/stage/#licensing' | url }}). Verify the licence before sending these files to anyone. The pedalboard repository does not accept them.
 
 To contribute one, fork [TreeFallSound/pi-stomp-pedalboards](https://github.com/TreeFallSound/pi-stomp-pedalboards), commit the bundle directory whole, and open a pull request. Before you do, check the three things that make a board work on someone else's device: every plugin URI in the `.ttl` must be one that ships with the stock image (a board that needs a Patchstorage plugin should say so in the PR), `screenshot.png` should be present, since it's how people browse, and `find . -type l` should come back empty — a board that depends on a file in `user-files` cannot be distributed as a bundle alone. Include the snapshots — a board with a verse and a solo tone teaches more than a board with one.
 
