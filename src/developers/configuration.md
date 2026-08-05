@@ -176,7 +176,7 @@ Runtime settings like input gain and headphone volume are stored in `/home/pisto
 
 1. Expands the root partition to fill the SD card
 2. Checks whether Raspberry Pi Imager already configured the OS (see below)
-3. Applies `/boot/firmware/pistomp.conf`: WiFi, hostname, user password, timezone, SSH key
+3. Applies `/boot/firmware/pistomp.conf`: Wi-Fi, hostname, user password, timezone, SSH key
 4. Runs the SSH lockout guard
 5. Writes `/etc/default/jack` from the `JACK_*` keys
 6. Detects the Pi model and runs `modify_version.sh` to write `default_config.yml`
@@ -185,9 +185,9 @@ Runtime settings like input gain and headphone volume are stored in `/home/pisto
 
 ### Preseed takes precedence over pistomp.conf
 
-`pistomp.conf` is the fallback path, not the main one. If the card was flashed with the Imager customization wizard, Imager writes `/boot/firmware/rpi-preseed.toml` and the `rpi-preseed` package applies it before firstboot runs. firstboot detects this and skips every OS-level setting (WiFi, hostname, password, timezone, SSH key) so it doesn't overwrite the user's Imager choices. pi-Stomp-specific settings — JACK, hardware version — are applied either way.
+`pistomp.conf` is the fallback path, not the main one. If the card was flashed with the Imager customization wizard, Imager writes `/boot/firmware/rpi-preseed.toml` and the `rpi-preseed` package applies it before firstboot runs. firstboot detects this and skips every OS-level setting (Wi-Fi, hostname, password, timezone, SSH key) so it doesn't overwrite the user's Imager choices. pi-Stomp-specific settings — JACK, hardware version — are applied either way.
 
-The detection keys on the `/var/lib/rpi-preseed/applied` stamp, not on whether the TOML exists: `rpi-preseed` redacts the TOML's secrets in place and leaves the file on the boot partition, so its presence proves nothing. A TOML with no stamp means the apply failed, which would leave the device with no WiFi and no credentials — firstboot reports that on the LCD and falls back to `pistomp.conf` rather than booting a silently unreachable system.
+The detection keys on the `/var/lib/rpi-preseed/applied` stamp, not on whether the TOML exists: `rpi-preseed` redacts the TOML's secrets in place and leaves the file on the boot partition, so its presence proves nothing. A TOML with no stamp means the apply failed, which would leave the device with no Wi-Fi and no credentials — firstboot reports that on the LCD and falls back to `pistomp.conf` rather than booting a silently unreachable system.
 
 ### SSH lockout guard
 

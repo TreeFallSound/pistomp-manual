@@ -28,7 +28,7 @@ Everything runs on a fixed 10ms heartbeat:
 | 20ms | Update LEDs and VU meters |
 | ~80ms | Redraw the LCD |
 | 1s | Check if the pedalboard changed in MOD-UI |
-| 2s | Check WiFi and Ethernet status |
+| 2s | Check Wi-Fi and Ethernet status |
 | 60s | Check CPU temperature and throttling |
 
 Fixed-frequency loops avoid surprise latency from interrupt handlers. The 10ms tick is fast enough for instant-feeling controls, slow enough to leave CPU for audio.

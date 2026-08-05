@@ -64,9 +64,9 @@ Look at the Wi-Fi icon in the toolbar:
 |------|-------|------------|
 | Orange | Hotspot mode | Join the **pistomp** Wi-Fi network from your laptop or phone. Password: **pistompwifi** |
 | Silver | Connected to your router | Put your laptop or phone on the same network |
-| Grey | Not connected | Enter your router's credentials on the LCD — see [WiFi Setup]({{ '/using/wifi/' | url }}) |
+| Grey | Not connected | Enter your router's credentials on the LCD — see [Wi-Fi Setup]({{ '/using/wifi/' | url }}) |
 
-The device falls back to hotspot mode when it can't reach the Wi-Fi network you configured, so a fresh build on an unfamiliar network is usually orange unless you baked the WiFi password in when you flashed it.
+The device falls back to hotspot mode when it can't reach the Wi-Fi network you configured, so a fresh build on an unfamiliar network is usually orange unless you baked the Wi-Fi password in when you flashed it.
 
 ## Edit online
 

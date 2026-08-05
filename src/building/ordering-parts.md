@@ -24,7 +24,7 @@ pi-Stomp is a DIY platform, not a commercial product. If you want a polished, wa
 | Footswitches | 4 (assignable) | 2 (assignable) | 3 (multi-mode) | 4 (multi-mode) |
 | True bypass | No (codec routing) | Yes (relay) | Yes (relay) | No |
 | LCD | 2.8" color TFT | 2x monochrome | Color | Color touch |
-| WiFi | Built-in | Built-in | None | None |
+| Wi-Fi | Built-in | Built-in | None | None |
 | Software | Open source | Open source | Proprietary | Proprietary |
 | Hardware | Hackable/upgradeable | Expandable via port | Fixed | Fixed |
 | Cost (kit) | USD 299 | USD 550 | USD 650 | USD 599 |

@@ -15,4 +15,4 @@ This is the part of the manual to know before a gig. Once a pedalboard is loaded
 
 - [Navigation & Controls]({{ '/using/navigation/' | url }}) — what each encoder and footswitch does, and how to move around the LCD
 - [Audio & MIDI Menu]({{ '/using/audio-midi/' | url }}) — input gain, headphone level, global EQ, MIDI devices
-- [WiFi Setup]({{ '/using/wifi/' | url }}) — joining a network, and the hotspot for when there isn't one
+- [Wi-Fi Setup]({{ '/using/wifi/' | url }}) — joining a network, and the hotspot for when there isn't one

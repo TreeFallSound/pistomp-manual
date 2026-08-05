@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # Software Installation
 
-pi-Stomp ships as a pre-built OS image. You flash it to a microSD card, tell it your WiFi details, and boot — there's nothing to compile and no packages to install by hand.
+pi-Stomp ships as a pre-built OS image. You flash it to a microSD card, tell it your Wi-Fi details, and boot — there's nothing to compile and no packages to install by hand.
 
 ## What you need
 
@@ -26,7 +26,7 @@ Check your Imager version before you start (**Raspberry Pi Imager → About**). 
 2. **Choose OS** → **Use custom** → select the downloaded `.img.xz` file.
 3. **Choose Storage** → select your microSD card.
 4. Click **EDIT SETTINGS** and fill in:
-   - **WiFi** network name, password, and country. The network name is case-sensitive.
+   - **Wi-Fi** network name, password, and country. The network name is case-sensitive.
    - **Hostname** — leave it as `pistomp` unless you have a reason to change it.
    - **Username and password** — these are the SSH login. You won't need SSH to play, but it's how you reach the device's filesystem later for things like enabling the expression pedal input.
    - **Timezone**.
@@ -41,7 +41,7 @@ The wizard writes an `rpi-preseed.toml` to the card's boot partition. On first b
 
 Insert the microSD into the pi-Stomp's mainboard (inside the enclosure) and connect power. The boot splash appears on the LCD within a few seconds. First boot takes about a minute while the filesystem expands and services initialize, then the device reboots once on its own.
 
-When the home screen appears, the pi-Stomp is on your WiFi network.
+When the home screen appears, the pi-Stomp is on your Wi-Fi network.
 
 ## Step 3 — Open the editor
 
@@ -51,7 +51,7 @@ MOD-UI comes from [MOD Devices](https://mod.audio), who make their own Linux-bas
 
 <a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface"></a>
 
-That address works through mDNS, a protocol that lets devices announce their own names on a local network with no router configuration. Not every network passes it through. If the name doesn't resolve, get the device's IP address from the LCD instead: highlight the **wrench** icon in the toolbar with the Navigation encoder, click it, choose **System info**, and read the address on the `WiFi:` line. Browse to that address directly.
+That address works through mDNS, a protocol that lets devices announce their own names on a local network with no router configuration. Not every network passes it through. If the name doesn't resolve, get the device's IP address from the LCD instead: highlight the **wrench** icon in the toolbar with the Navigation encoder, click it, choose **System info**, and read the address on the `Wi-Fi:` line. Browse to that address directly.
 
 ## What's next
 
@@ -75,8 +75,8 @@ Open `pistomp.conf` on that volume and edit:
 
 | Setting | What to put | Default |
 |---------|-------------|---------|
-| `WIFI_SSID` | Your WiFi network name | `""` |
-| `WIFI_PASSWORD` | Your WiFi password | `""` |
+| `WIFI_SSID` | Your Wi-Fi network name | `""` |
+| `WIFI_PASSWORD` | Your Wi-Fi password | `""` |
 | `WIFI_COUNTRY` | Your country code (e.g. `US`, `GB`, `DE`, `CA`) | `US` |
 | `HOSTNAME` | Leave as `pistomp` | `pistomp` |
 | `USER_PASSWORD` | A password for SSH access | `pistomp` |
@@ -86,12 +86,12 @@ Save the file, eject the card, and continue from [Step 2](#step-2--boot).
 
 The file also carries the `JACK_*` audio settings. Leave those alone for now; [Performance]({{ '/maintenance/performance/' | url }}) explains when to change them.
 
-If both `rpi-preseed.toml` and `pistomp.conf` are present, they don't conflict: the preseed wins for the keys it covers (WiFi, hostname, password, timezone), and `pistomp.conf` still supplies everything else.
+If both `rpi-preseed.toml` and `pistomp.conf` are present, they don't conflict: the preseed wins for the keys it covers (Wi-Fi, hostname, password, timezone), and `pistomp.conf` still supplies everything else.
 
 ## Troubleshooting
 
 - **Nothing on the LCD after a minute** — check that the SD card is fully seated and the power supply is adequate (27W recommended).
 - **`pistomp.local` doesn't resolve** — confirm your computer is on the same network, then use the IP address from **System info** as described in Step 3. Some routers and most corporate or guest networks block mDNS.
-- **WiFi not connecting** — recheck the network name and password; the name is case-sensitive. Check the country code too: a wrong one can disable the channels your network uses.
+- **Wi-Fi not connecting** — recheck the network name and password; the name is case-sensitive. Check the country code too: a wrong one can disable the channels your network uses.
 - **The Imager wizard settings were ignored** — the wizard needs Imager v2.0.11 or newer. Either upgrade Imager or use [`pistomp.conf`](#configuring-with-pistompconf).
-- **The LCD said "Imager setup FAILED"** — the preseed file was present but didn't apply, which would otherwise leave the device with no WiFi and no credentials. The pi-Stomp falls back to `pistomp.conf` and keeps booting. Configure it using the fallback path.
+- **The LCD said "Imager setup FAILED"** — the preseed file was present but didn't apply, which would otherwise leave the device with no Wi-Fi and no credentials. The pi-Stomp falls back to `pistomp.conf` and keeps booting. Configure it using the fallback path.

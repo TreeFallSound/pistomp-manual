@@ -185,11 +185,8 @@ In `~/extras` you'll find these scripts:
 | `expression-pedal.sh on\|off` | Enables the expression pedal input, as above |
 | `swap-pedalboards.sh <git-url> [branch]` | Repoints your pedalboard collection at a different git remote and resyncs both MOD and pi-Stomp |
 | `journal-toggle.sh on\|off` | Persists logs across reboots (capped at 50 MB) instead of keeping them in RAM. Turn this on before trying to catch an intermittent fault |
-| `wifi-backend-toggle.sh iwd\|wpa_supplicant\|status` | Switches NetworkManager's WiFi backend |
 
 Importantly, `swap-pedalboards.sh` will _remove all of your current pedalboards_. It stops pi-Stomp, replaces the `.pedalboards` git tree, and clears MOD's cached state before restarting. It backs up first, but it is a wholesale replacement of your boards, not a merge.
-
-If you are experiencing WiFi drops, you can try out the experiment `wifi-backend-toggle.sh iwd`. Switch over Ethernet before running, if possible, since changing backends restarts NetworkManager and your WiFi will likely drop for a few seconds.
 
 ## Per-pedalboard overrides
 

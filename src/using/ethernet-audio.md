@@ -170,7 +170,7 @@ In order of likelihood:
 
 The bridge is enabled on demand from the LCD and is not started at boot, so it costs nothing when you aren't recording.
 
-If **Wired Connection** never appears, the pi-Stomp sees no wired carrier — check the cable and that the far end is powered. If it appears but enabling fails, the service could not find a wired interface to pin the netJACK2 multicast group to; that failure is deliberate and loud, because the alternative is discovery leaking out over WiFi and appearing to work while sounding terrible.
+If **Wired Connection** never appears, the pi-Stomp sees no wired carrier — check the cable and that the far end is powered. If it appears but enabling fails, the service could not find a wired interface to pin the netJACK2 multicast group to; that failure is deliberate and loud, because the alternative is discovery leaking out over Wi-Fi and appearing to work while sounding terrible.
 
 To pin the bridge to a particular NIC on the pi side, set `JACKBRIDGE_IFACE` in `/etc/default/jackbridge`. Leaving it unset auto-detects.
 
