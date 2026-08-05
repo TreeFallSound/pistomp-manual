@@ -24,4 +24,4 @@ Toggle Wi-Fi off and on **on the Mac**. Do not reboot the pi-Stomp; no action on
 Ethernet to the pi-Stomp as well as the device hotspot (via the Wi-Fi menu) do not seem to be affected.
 
 ### Contributing
-A full analysis is available at [docs/wifi-unreachable-investigation.md in pi-gen-pistomp](https://github.com/TreeFallSound/pi-gen-pistomp/blob/main/docs/wifi-unreachable-investigation.md). If you know what's going on, we encourage you to contribute!
+Tracked as [pi-gen-pistomp#39](https://github.com/TreeFallSound/pi-gen-pistomp/issues/39), with a full analysis at [docs/wifi-unreachable-investigation.md](https://github.com/TreeFallSound/pi-gen-pistomp/blob/main/docs/wifi-unreachable-investigation.md). If you know what's going on, we encourage you to contribute!
