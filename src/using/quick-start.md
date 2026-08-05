@@ -32,7 +32,11 @@ Working clockwise:
 - Plug your instrument into the **In 1** jack
 - Connect **Out 1** to your amp, interface, or headphones
 
-In 2 and Out 2 are for re-amping and NAM capture — see [Hardware Overview]({{ '/building/hardware-overview/#rear-panel' | url }}).
+### Unlimited routing
+
+In 1/2 and Out 1/2 can be used to create stereo pedalboards.
+
+In 2 and Out 2 can also be used as an effects loop, if desired: connect Out 2 to the input of an external pedal, and In 2 to its output. Keep in mind that this can create phase issues, as you'll pay an additional DAC+ADC latency cost for the In 2 audio stream when measured from your guitar (effects loops mean twice the analog/digital conversions).
 
 ## Boot
 
