@@ -35,15 +35,15 @@ NAM (Mike Oliphant) is the only NAM player on the device. Architecture decides C
 | A2 `.nam` | Lite 1×3, Full 1×8 — 23 dilations up to ~1000 |
 | RTNeural keras JSON | AIDA-X / GuitarML LSTM and GRU, seven sizes from 1×8 to 2×16 |
 
-Four controls: `Input` (pre-model gain, dB), `Output` (post-model volume, dB), `Quality` (picks the sub-model in A2 slimmable files, which pack several into one `.nam`), `Model` (the file itself). Mono in and out. Model loads run on the LV2 worker thread, off the audio thread, and A2 sub-models are prewarmed, so neither loading nor switching quality drops audio.
+Four controls: `Input` and `Output` gain in dB, `Quality` (picks the sub-model inside an A2 slimmable file), and `Model`. Mono in and out. Loading and quality switching both happen off the audio thread, so neither drops audio.
 
 | Input (dB) | Output (dB) | Quality | Model |
 |------------|-------------|---------|-------|
 | 0 | 0 | 0.5 (A2 lite) | (path to .nam) |
 
-Models carry their training sample rate. The plugin does not resample — at an integer multiple it scales dilation sizes to compensate, and at anything else the model runs at the wrong effective rate. pi-Stomp runs JACK at 48 kHz, which is where community models are trained, and the on-device capture workflow refuses to run at any other rate. See [Using NAM]({{ '/using/nam/' | url }}).
+Models carry their training rate and the plugin does not resample, so a mismatch runs the model at the wrong effective rate. pi-Stomp runs at 48 kHz, where community models are trained, and the on-device capture refuses any other rate. See [Using NAM]({{ '/using/nam/' | url }}).
 
-**What you give up:** knobs. A capture is one rig at one setting — you don't dial in more break-up, you load a different capture. And CPU is a budget you plan against, not an afterthought: roughly 10 lighter-architecture instances on v3, 4 on v2. A2 Lite is cheaper than A1 Standard by construction, 1 layer against 2 and 3 channels against 16.
+**What you give up:** knobs. A capture is one rig at one setting — you don't dial in more break-up, you load a different capture. And CPU is a budget you plan against: roughly 10 lighter-architecture instances on v3, 4 on v2. A2 Lite is cheaper than A1 Standard by construction, 1 layer against 2 and 3 channels against 16.
 
 New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) for how to browse and add them in MOD-UI.
 
@@ -53,7 +53,7 @@ New to loading plugins? See [Plugins & Effects]({{ '/using/plugins/' | url }}) f
 
 Where a capture is fixed, this one moves. Wind the Drive up and the amp gets meaner under your hands — the thing you give up the moment you commit to a capture.
 
-GxAmplifier-X (guitarix team) is a whole rig in one instance: preamp, tonestack, cabinet. The tube stage is not a waveshaper. Each tube type carries two precomputed lookup tables derived from SPICE simulation of its characteristic curves, indexed by grid-to-cathode voltage and linearly interpolated — which is why it responds to level the way it does rather than just clipping harder.
+GxAmplifier-X (guitarix team) is a whole rig in one instance: preamp, tonestack, cabinet. The tube stage is not a waveshaper — each tube type carries two lookup tables derived from SPICE simulation of its characteristic curves, indexed by grid-to-cathode voltage. That is why it answers to how hard you play rather than just clipping harder.
 
 | Stage | Choices |
 |-------|---------|
@@ -75,9 +75,9 @@ Some of the 18 tube models are combinations no production amp used — a 12ax7 f
 
 Reach for this the moment a head-only capture sounds thin and buzzy. It is missing its speaker, and this is the speaker.
 
-It is a partitioned-block convolver running 18 embedded cabinet IRs (68 to 1000 taps at 48 kHz). The three tone knobs — `Cabinet` level 0.5–5, `Bass` and `Treble` ±10 — do not EQ the output. They reshape the IR itself before it is loaded into the convolution kernel, on a worker thread, using a two-band shelving filter: bass corner ~300 Hz, treble ~2400 Hz, Butterworth Q = 1.414. Nothing filters the audio path, so the tone controls cost nothing at runtime.
+A partitioned-block convolver running 18 embedded IRs (68 to 1000 taps at 48 kHz): 4x12, 2x12, 1x12, 4x10, 2x10, 1x15, 1x8, HighGain, Twin, Bassman, Marshall, AC30, Princeton, A2, Mesa, Briliant, Vitalize, Charisma. The named ones are guitarix's own captures of those styles, not licensed IR packs.
 
-The 18 cabs: 4x12, 2x12, 1x12, 4x10, 2x10, 1x15, 1x8, HighGain, Twin, Bassman, Marshall, AC30, Princeton, A2, Mesa, Briliant, Vitalize, Charisma. Most are stylized, and the named ones are guitarix's own captures of those styles rather than licensed IR packs.
+The three tone knobs — `Cabinet` level 0.5–5, `Bass` and `Treble` ±10 — don't EQ the output. A worker thread reshapes the IR itself before loading it into the kernel, with a two-band shelf at ~300 Hz and ~2400 Hz, Butterworth Q = 1.414. Nothing filters the audio path, so the tone controls cost nothing at runtime.
 
 | Cab Model | Cabinet | Bass | Treble |
 |-----------|---------|------|--------|
@@ -91,9 +91,9 @@ Put it after a capture with no cab, after a preamp plugin, or anywhere you want 
 
 Open and a little generic — an amp-shaped sound rather than a particular amp. Reach for it when you want the tonestack more than the character.
 
-C\* AmpVTS (Tim Goetze, tonestack after David Yeh) calls itself "idealised guitar amplification" and means it. The tonestacks are real R/C network simulations — Bassman 5F6-A, Princeton AA1164, Mesa Dual Rectifier, Vox top boost, JCM-800 2203, Twin Reverb AA270, H&K Tube 20, Jazz Chorus, Pignose G40V — but the two gain stages either side of them are stylized: a 5th-order polynomial preamp shaper and an `atan()` power-amp shaper, at 2×, 4× or 8× oversampling.
+C\* AmpVTS (Tim Goetze, tonestack after David Yeh) calls itself "idealised guitar amplification" and means it. Its nine tonestacks are real R/C network simulations — Bassman 5F6-A, Princeton AA1164, Mesa Dual Rectifier, Vox top boost, JCM-800 2203, Twin Reverb AA270, H&K Tube 20, Jazz Chorus, Pignose G40V — but the gain stages either side of them are stylized: a 5th-order polynomial preamp shaper and an `atan()` power-amp shaper, at 2×, 4× or 8× oversampling.
 
-**What you give up:** a cabinet, so put one after it. Both shapers are symmetric, which means odd harmonics only — a real tube stage is asymmetric and gives you even harmonics too. That is the audible difference between this and the picks above, and it is why it reads as "amp-ish" rather than as an amp. The oversampling multiplies per-sample cost, though even 8× stays cheaper than any NAM architecture.
+**What you give up:** a cabinet, so put one after it. Both shapers are symmetric — odd harmonics only, where a real tube stage is asymmetric and gives you even harmonics too. That is the audible difference between this and the picks above, and why it reads as amp-ish rather than as an amp. Oversampling multiplies per-sample cost, though even 8× stays cheaper than any NAM architecture.
 
 ## Also considered
 
