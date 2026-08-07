@@ -69,8 +69,6 @@ This is a numeric meter, not a standards-compliant one — no VU ballistics, no 
 
 **Audio Gain (Mono / Stereo)** (Carla, falkTX) takes gain as a linear multiplication factor rather than dB — useful for precise ×0.5 or ×2 trims where a musical taper gets in the way.
 
-**Invada Input Module** is an input trim from a dead Launchpad Bazaar branch; source is gone. Skip it editorially.
-
 **Peak To CC** converts an audio peak to a MIDI CC — a control-rate tool, not a meter. Useful if you want to drive a MIDI parameter from audio level.
 
 ## Credits
@@ -87,4 +85,3 @@ This is a numeric meter, not a standards-compliant one — no VU ballistics, no 
 | Switchbox / ToggleSwitch / SwitchTrigger4 | MOD Devices | GPL | [github.com/mod-audio/mod-utilities](https://github.com/mod-audio/mod-utilities) |
 | Spectrum Analyzer | Robin Gareus | GPL-2.0+ | [github.com/x42/modspectre.lv2](https://github.com/x42/modspectre.lv2) |
 | Peak To CC | MOD Devices | GPL | [github.com/mod-audio/mod-utilities](https://github.com/mod-audio/mod-utilities) |
-| Invada Input Module | Fraser Stuart | GPL | [launchpad.net/invada-studio](https://launchpad.net/invada-studio) |

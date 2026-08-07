@@ -119,16 +119,6 @@ These are a different question ("which IR loader?") than the algorithmic-reverb 
 
 For shimmer / cloud / ambient reverbs (Shimmizita, TheCloud, Dragonfly Hall/Plate, Airwindows Galactic/PocketVerbs, gx_zita_rev1) see the [Shimmer and Cloud Reverb]({{ '/plugins/shimmer-cloud-reverb/' | url }}) editorial.
 
-### Skip editorially
-
-**MaFreeverb / MaGigaverb** — `distrho.sf.net` mini-ports, source retired (verified across `DISTRHO/DISTRHO-Ports` master/legacy/juce7 branches). Cannot verify algorithm from source, zero pedalboard usage. Footnote only.
-
-**Shiroverb** — Max/MSP gen~ export, opaque algorithm. Worth a listen but too idiosyncratic to rank against the algorithmic reverbs.
-
-**Freaktail / Prefreak** — niche Faust reverbs from the Freaked collection. Freaktail has distortion in the feedback path; Prefreak is multitap early reflections only. Character effects, not everyday reverbs.
-
-**Airwindows StarChild / MV** — special-effect reverbs (pitch-shifted tap delay; Midiverb-style 27-stage allpass chain with sin() feedback folding). Already listed in the shimmer-cloud editorial as colours, not everyday-reverb material.
-
 ## Credits
 
 | Plugin | Author | License | Homepage |
@@ -149,6 +139,3 @@ For shimmer / cloud / ambient reverbs (Shimmizita, TheCloud, Dragonfly Hall/Plat
 | TAL-Reverb-III | Patrick Kunz (DISTRHO port) | GPL-2.0+ | [github.com/DISTRHO/DISTRHO-Ports](https://github.com/DISTRHO/DISTRHO-Ports) |
 | Aether | Dougal Sanderson (CloudSeed LV2 port) | GPL-3.0 | [github.com/Dougal-s/Aether](https://github.com/Dougal-s/Aether) |
 | GVerb | Juhana Sadeharju (SWH LV2 port) | GPL-2.0 | [plugin.org.uk](http://plugin.org.uk/) |
-| Shiroverb | Nino de Wit | GPL | [github.com/ninodewit/SHIRO-Plugins](https://github.com/ninodewit/SHIRO-Plugins) |
-| Freaktail / Prefreak | pjotrompet (Freaked) | GPL | [github.com/pjotrompet/Freaked](https://github.com/pjotrompet/Freaked) |
-| Airwindows StarChild / MV | Chris Johnson (Airwindows), port by Hannes Braun | MIT | [hannesbraun.net](https://hannesbraun.net) |
