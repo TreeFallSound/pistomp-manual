@@ -837,6 +837,12 @@ pagefind-modal {
   scrollbar-color: var(--color-border) transparent;
 }
 
+/* Pagefind's own 8px reads as a caption attached to the first result. Same
+   specificity trick: .pf-summary is inside its reset's reach. */
+:is(*, #\#):is(*, #\#):is(*, #\#) pagefind-modal-body .pf-summary {
+  margin-bottom: 0.9rem;
+}
+
 /* Default is a solid yellow fill, which is loud on light and unreadable on
    dark. Underline the hit instead and let it inherit body colour. */
 pagefind-modal mark {
@@ -848,7 +854,24 @@ pagefind-modal mark {
 
 /* Pagefind resets every pf-* class with `all: revert` at a specificity author
    rules cannot outrank, so anything we style carries an ms- prefix instead.
-   That also means replacing the typography .pf-result-title used to supply. */
+   That also means replacing the typography .pf-result-title used to supply, and
+   the card .pf-result-card used to draw. Doing the card ourselves is deliberate:
+   Pagefind's .pf-result-link stretches an absolute ::after over the whole card,
+   which would swallow the clicks meant for the section rows inside it. Colour
+   has to be stated here too — .pf-result above is reset, so its reverted UA
+   colour is what any `inherit` would pick up. */
+.ms-card {
+  padding: 0.6rem 0.75rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--pf-border-radius, 6px);
+}
+
+.ms-card:has(a[data-pf-selected]) {
+  border-color: var(--color-sidebar-active);
+}
+
 .ms-result-title {
   display: flex;
   align-items: baseline;
@@ -866,34 +889,125 @@ pagefind-modal mark {
   color: var(--color-sidebar-active);
 }
 
-/* Sub-results are a row of chips rather than a stack of excerpts: enough to see
-   which sections matched without tripling the height of every result. */
-.ms-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0.5rem 0 0;
+.ms-result-link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.ms-result-link:hover {
+  text-decoration: underline;
+}
+
+/* Only shown when the match sits above the page's first heading and so belongs
+   to no section row. */
+.ms-result-excerpt {
+  margin: 0.3rem 0 0;
+  font-size: var(--pf-result-excerpt-font-size, 0.9rem);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* The page title is a heading over its matching sections, not a result competing
+   with them: each row below is one heading plus the excerpt from inside it, so
+   the row a reader clicks is the text they land on. */
+.ms-hits {
+  margin: 0.4rem 0 0;
   padding: 0;
   list-style: none;
 }
 
-.ms-chip {
+.ms-hit {
   margin: 0;
 }
 
-.ms-chip-link {
-  display: inline-block;
-  padding: 0.1rem 0.5rem;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
+.ms-hit-link {
+  display: block;
+  padding: 0.3rem 0.4rem 0.35rem 0.6rem;
+  color: var(--color-text);
   text-decoration: none;
-  background: var(--color-surface-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-left: 2px solid var(--color-border);
+  border-radius: 0 4px 4px 0;
 }
 
-.ms-chip-link:hover,
-.ms-chip-link:focus-visible {
+.ms-hit-link:hover,
+.ms-hit-link:focus-visible,
+.ms-hit-link[data-pf-selected] {
+  background: var(--color-surface-alt);
+  border-left-color: var(--color-sidebar-active);
+}
+
+.ms-hit-heading {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--color-text);
-  border-color: var(--color-sidebar-active);
+}
+
+/* Two lines is enough context to recognise the passage; beyond that a long
+   section pushes the next page's rows off the screen. */
+.ms-hit-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--pf-result-excerpt-font-size, 0.9rem);
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+/* Marks that highlight.js writes into the body after a search result lands.
+   Louder than the modal's underline — findable while skimming a long page —
+   with the match under the reader's cursor in the accent colour. */
+mark.pagefind-highlight {
+  color: inherit;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-sidebar-active) 26%, transparent);
+  scroll-margin-top: calc(var(--topbar-height) + 2rem);
+}
+
+mark.pagefind-highlight-current {
+  color: var(--color-surface);
+  background: var(--color-sidebar-active);
+}
+
+.match-nav {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.3rem 0.4rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.18);
+}
+
+.match-nav-count {
+  padding: 0 0.4rem;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.match-nav-btn {
+  width: 1.7rem;
+  height: 1.7rem;
+  font: inherit;
+  font-size: 0.8rem;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+}
+
+.match-nav-btn:hover,
+.match-nav-btn:focus-visible {
+  background: var(--color-surface-alt);
 }

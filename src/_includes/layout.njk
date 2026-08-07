@@ -113,7 +113,8 @@
   <pagefind-config
     bundle-path="{{ '/pagefind/' | url }}"
     base-url="{{ '/' | url }}"
-    excerpt-length="25"></pagefind-config>
+    highlight-param="highlight"
+    excerpt-length="22"></pagefind-config>
   <pagefind-modal id="search-modal" reset-on-close data-pagefind-ignore>
     <pagefind-modal-header>
       <pagefind-input placeholder="Search the manual" autofocus></pagefind-input>
@@ -123,30 +124,37 @@
       <pagefind-results max-sub-results="3">
         {#- Pagefind's own template syntax also uses {{ }}, so keep Nunjucks out.
             Classes we style carry an ms- prefix: Pagefind resets every pf-*
-            class with `all: revert` at a specificity author rules can't reach. -#}
+            class with `all: revert` at a specificity author rules can't reach.
+
+            One row per matching heading, each showing that section's own
+            excerpt and linking to its anchor, so the text a reader picks is the
+            text they land on. sub_results is empty when the only match sits
+            above the first heading, and only then is the page-wide excerpt
+            worth showing. -#}
         {% raw %}
         <script type="text/pagefind-template">
           <li class="pf-result">
-            <div class="pf-result-card">
-              <div class="pf-result-content">
-                <p class="ms-result-title">
-                  {{#if meta.section}}<span class="ms-result-section">{{ meta.section }}</span><span class="ms-result-sep" aria-hidden="true">»</span>{{/if}}
-                  <a class="pf-result-link" href="{{ meta.url | default(url) | safeUrl }}">{{ meta.title | default("Untitled") }}</a>
-                </p>
-                {{#if excerpt}}
-                <p class="pf-result-excerpt">{{+ excerpt +}}</p>
-                {{/if}}
-              </div>
+            <div class="ms-card">
+              <p class="ms-result-title">
+                {{#if meta.section}}<span class="ms-result-section">{{ meta.section }}</span><span class="ms-result-sep" aria-hidden="true">»</span>{{/if}}
+                <a class="ms-result-link" href="{{ url | safeUrl }}">{{ meta.title | default("Untitled") }}</a>
+              </p>
+              {{#if sub_results}}
+              <ul class="ms-hits">
+                {{#each sub_results as sub}}
+                <li class="ms-hit">
+                  <a class="ms-hit-link" href="{{ sub.url | safeUrl }}">
+                    <span class="ms-hit-heading">{{ sub.title | default("Section") }}</span>
+                    {{#if sub.excerpt}}<span class="ms-hit-excerpt">{{+ sub.excerpt +}}</span>{{/if}}
+                  </a>
+                </li>
+                {{/each}}
+              </ul>
+              {{/if}}
+              {{#if and(not(sub_results), excerpt)}}
+              <p class="ms-result-excerpt">{{+ excerpt +}}</p>
+              {{/if}}
             </div>
-            {{#if sub_results}}
-            <ul class="ms-chips">
-              {{#each sub_results as sub}}
-              <li class="ms-chip">
-                <a class="ms-chip-link" href="{{ sub.url | safeUrl }}">{{ sub.title | default("Section") }}</a>
-              </li>
-              {{/each}}
-            </ul>
-            {{/if}}
           </li>
         </script>
         {% endraw %}
@@ -157,6 +165,7 @@
     </pagefind-modal-footer>
   </pagefind-modal>
   <script src="{{ '/assets/js/search.js' | url }}?v={{ 'assets/js/search.js' | fileHash }}" defer></script>
+  <script src="{{ '/assets/js/highlight.js' | url }}?v={{ 'assets/js/highlight.js' | fileHash }}" defer></script>
   <script src="{{ '/assets/js/ui.js' | url }}?v={{ 'assets/js/ui.js' | fileHash }}"></script>
   <script src="{{ '/assets/js/suggest-edit.js' | url }}?v={{ 'assets/js/suggest-edit.js' | fileHash }}" defer></script>
 </body>
