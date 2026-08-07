@@ -826,9 +826,12 @@ pagefind-modal {
   --pf-summary-font-size: 0.8rem;
 }
 
-/* The dialog sits in the top layer, where a UA-painted scrollbar can end up on
-   the wrong scheme. Pin it to the palette instead of relying on inheritance. */
-pagefind-modal-body {
+/* The results pane is the one element in the modal that scrolls, and Pagefind
+   gives it a pf- class, so its `all: revert` reset (0,2,1) wipes any
+   scrollbar-color we set on the element itself. Setting it on the modal instead
+   lets it inherit past that reset: revert on an inherited property with no UA
+   declaration resolves to the parent's computed value. */
+pagefind-modal {
   scrollbar-color: var(--color-border) transparent;
 }
 
