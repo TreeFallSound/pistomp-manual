@@ -13,6 +13,9 @@ Everything that applies to the whole device rather than to one plugin lives here
 
 Open it from the **Audio & MIDI** icon in the LCD toolbar.
 
+<img src="{{ '/assets/images/lcd-audio-midi.png' | url }}" alt="Audio & MIDI dialog" class="figure-narrow">
+
+
 ## Input gain and output volume
 
 While in the menu, Tweak2/3 control your pi-Stomp's input gain and output volume, respectively.
