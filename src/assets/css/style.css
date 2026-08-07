@@ -827,11 +827,13 @@ pagefind-modal {
 }
 
 /* The results pane is the one element in the modal that scrolls, and Pagefind
-   gives it a pf- class, so its `all: revert` reset (0,2,1) wipes any
-   scrollbar-color we set on the element itself. Setting it on the modal instead
-   lets it inherit past that reset: revert on an inherited property with no UA
-   declaration resolves to the parent's computed value. */
-pagefind-modal {
+   gives it a pf- class, so its `all: revert` reset (specificity 0,2,1) drops
+   both the color-scheme it would otherwise inherit and any scrollbar-color we
+   set on it — the UA then paints a light track over the dark modal. Restate
+   both behind Pagefind's own :is(*, #\#) specificity trick, which is the only
+   way an author rule outranks that reset. */
+:is(*, #\#):is(*, #\#):is(*, #\#) pagefind-modal-body {
+  color-scheme: inherit;
   scrollbar-color: var(--color-border) transparent;
 }
 
