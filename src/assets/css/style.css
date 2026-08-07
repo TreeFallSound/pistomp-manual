@@ -406,6 +406,13 @@ body.nav-open {
   color: var(--color-heading);
 }
 
+/* The mobile topbar is sticky, so an #anchor jump would otherwise park the
+   heading underneath it. scroll-margin-top pads the browser's idea of where
+   the target starts; nothing about the layout moves. */
+.content :is(h1, h2, h3, h4, h5, h6, [id]) {
+  scroll-margin-top: calc(var(--topbar-height) + 0.75rem);
+}
+
 .content h2 {
   font-size: 1.3rem;
   margin-top: 2rem;
@@ -699,6 +706,11 @@ body.nav-open {
     display: none;
   }
 
+  /* No sticky topbar here, so anchors only need breathing room. */
+  .content :is(h1, h2, h3, h4, h5, h6, [id]) {
+    scroll-margin-top: 1rem;
+  }
+
   /* The sidebar is out of flow, so the shell reserves its width with padding
      and the content column centres itself in what is left over. */
   .layout {
@@ -747,6 +759,7 @@ body.nav-open {
     display: revert;
   }
 }
+
 /* --- Search ------------------------------------------------------------ */
 
 .search-open {
