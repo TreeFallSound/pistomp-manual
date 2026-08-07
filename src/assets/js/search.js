@@ -27,6 +27,7 @@
   });
 
   var loaded = null;
+  var ready = false;
 
   function load(tag, attrs) {
     return new Promise(function (resolve, reject) {
@@ -48,6 +49,9 @@
       .then(function () {
         return customElements.whenDefined("pagefind-modal");
       })
+      .then(function () {
+        ready = true;
+      })
       .catch(function (err) {
         loaded = null;
         throw err;
@@ -55,15 +59,60 @@
     return loaded;
   }
 
+  // The component focuses its input from a requestAnimationFrame callback, which
+  // on iOS is a separate task from the tap and so carries no user activation:
+  // the caret lands in the field but the on-screen keyboard never rises. Focus
+  // it ourselves, synchronously inside the gesture.
+  function focusInput() {
+    var host = modal.querySelector("pagefind-input");
+    var el = host && (host.inputEl || host.querySelector("input"));
+    if (el) el.focus();
+    return !!el;
+  }
+
+  // Cold first tap: the bundle is still in flight, so there is nothing to focus
+  // before the gesture ends. Focus a throwaway field to raise the keyboard now
+  // and hand focus over once the real input exists — iOS keeps the keyboard up
+  // across a focus move between text fields.
+  function decoy() {
+    var el = document.createElement("input");
+    el.type = "search";
+    el.setAttribute("aria-hidden", "true");
+    el.tabIndex = -1;
+    // font-size below 16px triggers Safari's zoom-on-focus; opacity rather than
+    // visibility/display because iOS refuses focus on non-rendered elements.
+    el.style.cssText =
+      "position:fixed;top:50%;left:0;width:1px;height:1px;opacity:0;border:0;padding:0;font-size:16px;pointer-events:none;";
+    document.body.appendChild(el);
+    el.focus();
+    return el;
+  }
+
   function open() {
-    boot().then(function () {
-      // open() is imperative on the component; there is no `open` attribute.
+    // open() is imperative on the component; there is no `open` attribute.
+    if (ready) {
       modal.open();
-    });
+      focusInput();
+      return;
+    }
+    var stand = decoy();
+    boot().then(
+      function () {
+        modal.open();
+        focusInput();
+        stand.remove();
+      },
+      function () {
+        stand.remove();
+      }
+    );
   }
 
   openBtn.addEventListener("click", open);
+  // pointerenter never fires on touch; pointerdown gives the fetch a head start
+  // between finger-down and click, which is often enough to take the warm path.
   openBtn.addEventListener("pointerenter", boot);
+  openBtn.addEventListener("pointerdown", boot);
 
   // A result pointing at the current page only changes the hash, which is not
   // a navigation, so the dialog would otherwise stay up over the anchor the
