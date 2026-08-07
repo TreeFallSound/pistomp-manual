@@ -791,44 +791,91 @@ body.nav-open {
   border-radius: 3px;
 }
 
-.search-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 400;
+/* Map Pagefind's component tokens onto the manual's palette so the modal
+   follows the theme toggle. */
+pagefind-modal {
+  --pf-font: var(--font-body);
+  --pf-background: var(--color-surface);
+  --pf-text: var(--color-text);
+  --pf-text-secondary: var(--color-text);
+  --pf-text-muted: var(--color-text-muted);
+  --pf-border: var(--color-border);
+  --pf-border-focus: var(--color-sidebar-active);
+  --pf-outline-focus: var(--color-sidebar-active);
+  --pf-hover: var(--color-surface-alt);
+  --pf-skeleton: var(--color-surface-alt);
+  --pf-border-radius: 6px;
+  --pf-modal-max-width: 44rem;
+  --pf-modal-top: 8vh;
+  --pf-results-gap: 1.5rem;
+  --pf-result-title-font-size: 1rem;
+  --pf-result-excerpt-font-size: 0.9rem;
+  --pf-summary-font-size: 0.8rem;
+}
+
+/* The dialog sits in the top layer, where a UA-painted scrollbar can end up on
+   the wrong scheme. Pin it to the palette instead of relying on inheritance. */
+pagefind-modal-body {
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* Default is a solid yellow fill, which is loud on light and unreadable on
+   dark. Underline the hit instead and let it inherit body colour. */
+pagefind-modal mark {
+  color: inherit;
+  font-weight: 600;
+  background: transparent;
+  box-shadow: inset 0 -0.4em 0 color-mix(in srgb, var(--color-sidebar-active) 28%, transparent);
+}
+
+/* Pagefind resets every pf-* class with `all: revert` at a specificity author
+   rules cannot outrank, so anything we style carries an ms- prefix instead.
+   That also means replacing the typography .pf-result-title used to supply. */
+.ms-result-title {
   display: flex;
-  justify-content: center;
-  padding: 8vh 1rem 1rem;
-  background: rgba(0, 0, 0, 0.55);
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: var(--pf-result-title-font-size, 1rem);
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-.search-modal[hidden] {
-  display: none;
+.ms-result-section,
+.ms-result-sep {
+  flex: none;
+  font-weight: 500;
+  color: var(--color-sidebar-active);
 }
 
-body.search-active {
-  overflow: hidden;
+/* Sub-results are a row of chips rather than a stack of excerpts: enough to see
+   which sections matched without tripling the height of every result. */
+.ms-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.search-panel {
-  width: 100%;
-  max-width: 620px;
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 1rem;
-  background: var(--color-surface);
+.ms-chip {
+  margin: 0;
+}
+
+.ms-chip-link {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
 }
 
-/* Pagefind ships its own tokens; map them onto the manual's palette so the
-   widget follows the theme toggle. */
-#search-ui {
-  --pagefind-ui-primary: var(--color-heading);
-  --pagefind-ui-text: var(--color-text);
-  --pagefind-ui-background: var(--color-surface);
-  --pagefind-ui-border: var(--color-border);
-  --pagefind-ui-tag: var(--color-surface-alt);
-  --pagefind-ui-font: var(--font-body);
-  --pagefind-ui-border-radius: 5px;
+.ms-chip-link:hover,
+.ms-chip-link:focus-visible {
+  color: var(--color-text);
+  border-color: var(--color-sidebar-active);
 }
