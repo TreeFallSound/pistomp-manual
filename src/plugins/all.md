@@ -20,7 +20,9 @@ Every LV2 plugin available on pi-Stomp: {{ plugins.length }} in total. Filter by
       <option value="">All categories</option>
     </select>
   </div>
-  <table id="plugin-table">
+  <!-- Kept out of site search: the table is 56% of the index by word count and
+       swamps the editorials. Use the filter above it to find a plugin by name. -->
+  <table id="plugin-table" data-pagefind-ignore>
     <thead>
       <tr>
         <th>Name</th>

@@ -77,6 +77,22 @@ module.exports = function (eleventyConfig) {
     };
   });
 
+  // Indexes _site after every build, including each --serve rebuild, so dev and
+  // production search behave identically. addDirectory() re-reads the whole
+  // output directory, so an incremental rebuild still yields a complete index.
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const pagefind = await import("pagefind");
+    const { index } = await pagefind.createIndex();
+    const { page_count } = await index.addDirectory({ path: dir.output });
+    // Fragment filenames are content-hashed, so editing a page leaves the old
+    // fragment behind. Harmless but it accumulates across a long --serve run.
+    const outputPath = path.join(dir.output, "pagefind");
+    fs.rmSync(outputPath, { recursive: true, force: true });
+    await index.writeFiles({ outputPath });
+    await pagefind.close();
+    console.log(`[pagefind] indexed ${page_count} pages`);
+  });
+
   eleventyConfig.addFilter("frontMatterLineCount", (inputPath) => {
     const raw = fs.readFileSync(inputPath, "utf8");
     const lines = raw.split("\n");

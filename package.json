@@ -14,7 +14,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-navigation": "^1.0.5"
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "pagefind": "^1.5.2"
   },
   "dependencies": {
     "markdown-it-anchor": "^9.2.1"

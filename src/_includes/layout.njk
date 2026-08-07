@@ -47,8 +47,8 @@
     </span>
   </button>
   {%- endmacro %}
-  <a class="skip-link" href="#content">Skip to content</a>
-  <header class="topbar">
+  <a class="skip-link" href="#content" data-pagefind-ignore>Skip to content</a>
+  <header class="topbar" data-pagefind-ignore>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">
       <span class="nav-toggle-bars" aria-hidden="true"></span>
     </button>
@@ -60,12 +60,17 @@
   </header>
   <div class="scrim" id="scrim" hidden></div>
   <div class="layout">
-    <nav class="sidebar" id="sidebar" aria-label="Manual navigation">
+    <nav class="sidebar" id="sidebar" aria-label="Manual navigation" data-pagefind-ignore>
       <div class="sidebar-header">
         <a href="{{ '/' | url }}" class="sidebar-logo"><img src="{{ '/assets/images/treefallsound-logo.png' | url }}" alt="Tree Fall Sound"></a>
         <a href="{{ '/' | url }}" class="sidebar-title">pi-Stomp Manual</a>
         {{ themeToggle(true) }}
       </div>
+      <button type="button" class="search-open" id="search-open" aria-label="Search the manual">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        <span>Search</span>
+        <kbd>/</kbd>
+      </button>
       {%- macro navList(entries, depth) %}
       <ul class="nav-{% if depth == 0 %}list{% else %}pages nav-depth-{{ depth }}{% endif %}">
         {%- for entry in entries %}
@@ -80,10 +85,12 @@
       {%- endmacro %}
       {{ navList(navTree, 0) }}
     </nav>
-    <main class="content{% if wide %} content-wide{% endif %}" id="content" data-source-path="{{ page.inputPath }}" data-line-offset="{{ page.inputPath | frontMatterLineCount }}" data-repo-root="{{ repoRoot }}">
+    {#- No data-pagefind-body means the page is skipped: redirect stubs and 404
+        have no content worth landing on. -#}
+    <main class="content{% if wide %} content-wide{% endif %}" id="content"{% if not redirect and page.url != '/404.html' %} data-pagefind-body{% endif %} data-pagefind-meta="section:{{ pager.section or 'Manual' }}" data-source-path="{{ page.inputPath }}" data-line-offset="{{ page.inputPath | frontMatterLineCount }}" data-repo-root="{{ repoRoot }}">
       {{ content | safe }}
       {%- if pager.prev or pager.next %}
-      <nav class="pager" aria-label="Manual pages">
+      <nav class="pager" aria-label="Manual pages" data-pagefind-ignore>
         {%- if pager.prev %}
         <a class="pager-link pager-prev" href="{{ pager.prev.url | url }}" rel="prev">
           <span class="pager-dir">← Previous</span>
@@ -100,6 +107,14 @@
       {%- endif %}
     </main>
   </div>
+  <div class="search-modal" id="search-modal" hidden data-pagefind-ignore>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the manual">
+      <div id="search-ui"></div>
+    </div>
+  </div>
+  {#- Pagefind result URLs come from _site paths, which carry no pathPrefix. -#}
+  <script>window.MANUAL_PATH_PREFIX = {{ ('/' | url) | dump | safe }};</script>
+  <script src="{{ '/assets/js/search.js' | url }}?v={{ 'assets/js/search.js' | fileHash }}" defer></script>
   <script src="{{ '/assets/js/ui.js' | url }}?v={{ 'assets/js/ui.js' | fileHash }}"></script>
   <script src="{{ '/assets/js/suggest-edit.js' | url }}?v={{ 'assets/js/suggest-edit.js' | fileHash }}" defer></script>
 </body>
