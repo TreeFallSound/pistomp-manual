@@ -13,7 +13,10 @@ MOD-UI is the drag-and-drop editor where you build pedalboards, save snapshots, 
 
 ## The canvas
 
+<figure class="figure-wide">
 <a href="http://pistomp.local"><img src="{{ '/assets/images/mod-ui.png' | url }}" alt="MOD-UI web interface"></a>
+<figcaption>The MOD-UI canvas. Click to open it on your own device at http://pistomp.local.</figcaption>
+</figure>
 
 The main area is the pedalboard canvas. Audio flows left to right: the leftmost plugin receives your dry signal first, the rightmost feeds the output. Plugins are rectangles with input ports on the left and output ports on the right. Coloured cables connect ports: purple for audio, cyan for MIDI.
 
@@ -150,7 +153,10 @@ The file can also be downloaded anytime by navigating to the file manager.
 
 ## The file manager
 
-<img src="{{ '/assets/images/mod-ui-file-manager.png' | url }}" alt="Clicking the parameter's modify button" class="figure-narrow">
+<figure class="figure-wide">
+<img src="{{ '/assets/images/mod-ui-file-manager.png' | url }}" alt="The MOD-UI file manager">
+<figcaption>The file manager, one folder per file type. Everything here lives under <code>/home/pistomp/data/user-files/</code>.</figcaption>
+</figure>
 
 Plugin parameters sometimes need a file — a NAM model, an impulse response, a sample. MOD-UI's file manager (top bar) uploads files into `/home/pistomp/data/user-files/` and makes them available to any plugin that takes that file type. Drag a file in; it's stored on the device and appears in any plugin's file picker.
 
@@ -173,7 +179,10 @@ Upload the file, add the matching plugin to your chain, then open its gear icon 
 
 The plugin browser has a Patchstorage tab near the bottom left, beside the file manager and the local catalogue. Patchstorage is a community plugin hosting site; anything you install from there lands in `/home/pistomp/data/.lv2/` and shows up in the local browser on next refresh. Factory plugins live in `/usr/lib/lv2/` and come from the OS image — they're separate from what you install yourself.
 
-<img src="{{ '/assets/images/mod-ui-patchstorage-browse.png' | url }}" alt="Patchstorage tab">
+<figure class="figure-wide">
+<img src="{{ '/assets/images/mod-ui-patchstorage-browse.png' | url }}" alt="Browsing plugins on the Patchstorage tab">
+<figcaption>Browsing Patchstorage from the plugin browser. Installs plugins to <code>/home/pistomp/data/.lv2/</code>.</figcaption>
+</figure>
 
 ## What you can't do from MOD-UI
 

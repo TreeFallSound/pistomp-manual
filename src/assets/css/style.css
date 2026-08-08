@@ -526,6 +526,30 @@ body.nav-open {
   width: 80%;
 }
 
+/* Figures that outgrow the prose column: never narrower than the text, and on
+   desktop up to 90% of the space left beside the sidebar. See the 64em block
+   for the overhang. */
+.content .figure-wide {
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.content .figure-wide img,
+.content img.figure-wide {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.content .figure-wide figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
 .content blockquote {
   border-left: 3px solid var(--color-sidebar-active);
   padding-left: 1rem;
@@ -743,6 +767,16 @@ body.nav-open {
 
   .content {
     padding: 2rem 3rem;
+  }
+
+  /* The prose column is centred in the space beside the sidebar, so a figure
+     centred on that column is also centred in that space. Widen it to 75% of
+     the space (never below the column width) and pull the negative half of the
+     difference off the left edge to keep it centred. */
+  .content .figure-wide {
+    --figure-wide-width: max(100%, calc((100vw - var(--sidebar-width)) * 0.75));
+    width: var(--figure-wide-width);
+    margin-left: calc((100% - var(--figure-wide-width)) / 2);
   }
 
   /* Enough room for the prose column, so tables can lay out normally again. */
