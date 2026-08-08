@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # pi-Stomp Manual
 
-The complete guide to the pi-Stomp ecosystem — from building your first kit to developing custom plugins and contributing to the open-source project.
+The complete guide to the pi-Stomp ecosystem: from building your first kit to building your own pedalboards, customizing your device, and contributing to the open-source project.
 
 <img src="{{ '/assets/images/pi-stomp-v3-hero.png' | url }}" alt="pi-Stomp v3">
 
