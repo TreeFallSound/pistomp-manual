@@ -15,25 +15,30 @@ pi-Stomp ships as a pre-built OS image. You point Raspberry Pi Imager at the pi-
 
 - A completed pi-Stomp (v2 or v3)
 - A computer with an SD card slot (or USB adapter)
-- [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases), **v2.0.11-rc1 or newer**
+- [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases), **v2.0.11 or newer**.   Here are some direct links to the latest:
 
-The customization wizard used below requires v2.0.11-rc1 or above. Get the release from the [GitHub releases page](https://github.com/raspberrypi/rpi-imager/releases). Check what you have under **Raspberry Pi Imager → About**. On anything older, follow [Configuring with pistomp.conf](#configuring-with-pistompconf): this reaches the same result by editing a file on the flashed boot partition before removing the MicroSD card from your computer.
+   [Mac](https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.11/rpi-imager-v2.0.11.dmg)
+
+   [Windows](https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.11/imager-v2.0.11.exe)
 
 ## Step 1 — Add the pi-Stomp repository
 
-1. Open Raspberry Pi Imager.
-2. Click **App Options** → **Content Repository** → **EDIT**.
+1. Install Raspberry Pi Imager
+2. Open Raspberry Pi Imager.
+3. Click **App Options** → **Content Repository** → **EDIT**.
 
 ![App Options menu open, Content Repository highlighted]({{ '/assets/images/rpi-imager-app-options.png' | url }})
 
-3. Click **Use custom URL** and enter:
+4. Click **Use custom URL** and enter (or copy/paste):
    ```
    https://treefallsound.github.io/pi-gen-pistomp/imager/pistomp.json
    ```
 
 ![Content Repository dialog with the pistomp.json URL entered]({{ '/assets/images/rpi-imager-custom-url.png' | url }})
 
-4. Click **APPLY & RESTART**. Imager restarts with the pi-Stomp catalog loaded.
+5. Click **APPLY & RESTART**. Imager restarts with the pi-Stomp catalog loaded.
+
+6. Now select the Device (typically Raspberry Pi 5 for pi-Stomp v3, Raspberry Pi 3 for pi-Stomp v2), then click **NEXT**
 
 ## Step 2 — Flash the card
 
@@ -52,9 +57,9 @@ The customization wizard used below requires v2.0.11-rc1 or above. Get the relea
 
 4. Click **Write**.
 
-> **Known bug in Imager v2.0.11-rc1** ([rpi-imager#1666](https://github.com/raspberrypi/rpi-imager/issues/1666)): the first write attempt can fail with an "unable to mount the drive" error. Just click **Write** again — the second attempt succeeds. Your settings from **EDIT SETTINGS** are kept.
-
 The wizard writes an `rpi-preseed.toml` to the card's boot partition. On first boot, the `rpi-preseed` service applies it before any audio service starts.
+
+When finished, eject the SD card.
 
 ## Step 3 — Boot
 
@@ -62,7 +67,7 @@ Insert the microSD into the pi-Stomp's mainboard (inside the enclosure) and conn
 
 When the home screen appears, the pi-Stomp is on your Wi-Fi network.
 
-## Step 4 — Open the editor
+## Step 4 — Open the Pedalboard editor (MOD-UI)
 
 Open a browser on any device on the same network and go to `http://pistomp.local/`. This is MOD-UI, where you build pedalboards.
 
@@ -80,7 +85,7 @@ The pi-Stomp boots with a pedalboard already loaded, so it's ready to make sound
 
 To help test upcoming releases, use `https://treefallsound.github.io/pi-gen-pistomp/imager/pistomp-testing.json` as the repository URL instead. These builds can have (literal) show-stopper bugs; avoid taking them on stage.
 
-## Configuring with pistomp.conf
+## Alternative Install method - Configuring with pistomp.conf
 
 This is the fallback path for Raspberry Pi Imager below v2.0.11-rc1, and the way to set options the wizard doesn't expose, like the JACK audio settings.
 
