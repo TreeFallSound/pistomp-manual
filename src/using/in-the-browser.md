@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: in-the-browser
   title: In the Browser
-  order: 4
+  order: 3
 ---
 
 # In the Browser

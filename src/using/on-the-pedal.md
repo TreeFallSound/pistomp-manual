@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: on-the-pedal
   title: On the Pedal
-  order: 3
+  order: 2
 ---
 
 # On the Pedal

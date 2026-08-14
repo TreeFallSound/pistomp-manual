@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: playing-live
   title: Playing Live
-  order: 6
+  order: 5
 ---
 
 # Playing Live

@@ -15,7 +15,7 @@ The Wi-Fi status icon lives in the LCD toolbar. Grey means not connected, silver
 
 ## Setting Wi-Fi at build time
 
-If you flashed your SD card with Raspberry Pi Imager v2.0.11 or newer, the customization wizard wrote your Wi-Fi details to the card before first boot. See [Software Installation]({{ '/building/software-install/' | url }}) for that flow. On older Imager versions, the same fields live in `pistomp.conf` on the card's boot partition.
+If you flashed your SD card with Raspberry Pi Imager v2.0.11-rc1 or newer, the customization wizard wrote your Wi-Fi details to the card before first boot. See [Software Installation]({{ '/building/software-install/' | url }}) for that flow. On older Imager versions, the same fields live in `pistomp.conf` on the card's boot partition.
 
 ## Connecting to a new router
 

@@ -34,8 +34,8 @@ The official manual for the pi-Stomp ecosystem — building, using, and developi
 - Plugin names in articles must match what appears in MOD-UI (the `doap:name` from the .ttl file), not the directory name.
 - Plugin editorial pages follow Wirecutter style: Our pick → Also great → Also considered, with screenshots and settings tables.
 - Avoid using real musician names or pedal names in plugin editorial pages — allude instead.
-- The build page links to wiki steps by anchor, doesn't reproduce them.
-- The software install page uses the `pistomp.conf` workflow (Imager below v2.0.11) and the Imager v2.0.11+ customization wizard (which writes `rpi-preseed.toml`, handled on first boot by the `rpi-preseed` package). The cutoff is specifically **v2.0.11** — earlier v2.0.x builds had a different customization engine that does not produce a `rpi-preseed.toml` this image recognises, and v1.9.x is a different format entirely. Both paths are valid; the page tells the user which path their Imager version supports.
+- The build page sends builders to the full wiki page (one document, read top to bottom) and reproduces the wiki's Disclaimers and Tips up front. Its step table is framed as an index for resuming, not the build path — it links wiki steps by anchor, never reproduces them.
+- The software install page's primary path is Imager's Content Repository: App Options → Content Repository → `https://treefallsound.github.io/pi-gen-pistomp/imager/pistomp-stable.json`, then pick "pi-Stomp OS" from Choose OS (no manual `.img.xz` download) and use the customization wizard (writes `rpi-preseed.toml`, handled on first boot by the `rpi-preseed` package). This requires Imager **v2.0.11-rc1+** (content repositories and the wizard both arrived there); raspberrypi.com may still serve 1.x, so link the GitHub releases. The fallback for older Imager is manual `.img.xz` download + `pistomp.conf` — pre-rc v2.0.x builds and v1.9.x have customization engines whose output this image silently ignores. `pistomp-testing.json` is the pre-release channel; as of 2026-08-14 `pistomp-stable.json` 404s until the first non-RC release publishes it.
 
 # Contents of the manual
 

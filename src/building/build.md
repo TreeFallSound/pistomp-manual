@@ -11,13 +11,25 @@ eleventyNavigation:
 
 The pi-Stomp v3 kit requires no soldering. Assembly takes about 90 minutes with just a small Phillips head screwdriver (and a little patience).
 
-Watch a builder walk through the full process:
+The complete instructions, with photos of every step are available here: **[Full Build Instructions for pi-Stomp v3](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_v3_build_instructions)**. This page is the companion: what to read before you start, a step index for finding your place again, and checks for when the last screw is in.
+
+You can also watch a builder walk through the full process:
 
 <iframe src="https://www.youtube.com/embed/37ok2Kd75kM?start=781" title="pi-Stomp v3 build video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;margin:1rem 0;"></iframe>
 
-## Overview
+## Before you begin
 
-The linked wiki pages have detailed instructions and photos for each step.
+**Disclaimers.** By building and using a pi-Stomp kit, you assume all responsibility. Tree Fall Sound LLC will provide support, but cannot be held responsible for damages or injury during assembly or usage, or if your build does not function as expected. The [official terms and conditions](https://www.treefallsound.com/opencart/index.php?route=information/information&information_id=5) have the full text.
+
+**Tips:**
+
+- A small Phillips screwdriver is the only tool you need. Fingers work instead of a wrench for the hex spacers, jacks, and encoder hardware; if you do use a wrench, only lightly tighten.
+- Work over a tray or shallow box — several small washers and nuts want to escape during assembly.
+- On the wiki, click any photo to enlarge it.
+
+## Step index
+
+Use this to jump back to a specific step on the wiki — for example, if you're resuming a half-finished build. If this is your first pass, ignore this table and follow the [full guide](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_v3_build_instructions) in order instead.
 
 | Step | What you do | Time |
 |------|-------------|------|

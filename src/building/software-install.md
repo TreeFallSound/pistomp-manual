@@ -9,41 +9,60 @@ eleventyNavigation:
 
 # Software Installation
 
-pi-Stomp ships as a pre-built OS image. You flash it to a microSD card, tell it your Wi-Fi details, and boot — there's nothing to compile and no packages to install by hand.
+pi-Stomp ships as a pre-built OS image. You point Raspberry Pi Imager at the pi-Stomp repository, pick the OS from the list, tell it your Wi-Fi details, and boot — there's nothing to download by hand, nothing to compile, and no packages to install.
 
 ## What you need
 
 - A completed pi-Stomp (v2 or v3)
 - A computer with an SD card slot (or USB adapter)
-- The [latest pi-Stomp OS image](https://github.com/TreeFallSound/pi-gen-pistomp/releases) — download the `.img.xz` file under "Assets"
-- [Raspberry Pi Imager](https://www.raspberrypi.com/software/), v2.0.11 or newer
+- [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases), **v2.0.11-rc1 or newer**
 
-Check your Imager version before you start (**Raspberry Pi Imager → About**). v2.0.11 is the cutoff for the built-in customization wizard used below. On anything older, follow [Configuring with pistomp.conf](#configuring-with-pistompconf) instead — it reaches the same result, just by editing a file.
+The customization wizard used below requires v2.0.11-rc1 or above. Get the release from the [GitHub releases page](https://github.com/raspberrypi/rpi-imager/releases). Check what you have under **Raspberry Pi Imager → About**. On anything older, follow [Configuring with pistomp.conf](#configuring-with-pistompconf): this reaches the same result by editing a file on the flashed boot partition before removing the MicroSD card from your computer.
 
-## Step 1 — Flash the card
+## Step 1 — Add the pi-Stomp repository
 
 1. Open Raspberry Pi Imager.
-2. **Choose OS** → **Use custom** → select the downloaded `.img.xz` file.
-3. **Choose Storage** → select your microSD card.
-4. Click **EDIT SETTINGS** and fill in:
+2. Click **App Options** → **Content Repository** → **EDIT**.
+
+![App Options menu open, Content Repository highlighted]({{ '/assets/images/rpi-imager-app-options.png' | url }})
+
+3. Click **Use custom URL** and enter:
+   ```
+   https://treefallsound.github.io/pi-gen-pistomp/imager/pistomp.json
+   ```
+
+![Content Repository dialog with the pistomp.json URL entered]({{ '/assets/images/rpi-imager-custom-url.png' | url }})
+
+4. Click **APPLY & RESTART**. Imager restarts with the pi-Stomp catalog loaded.
+
+## Step 2 — Flash the card
+
+![Choose OS list showing pi-Stomp OS with its icon]({{ '/assets/images/rpi-imager-choose-os.png' | url }})
+
+1. **Choose OS** → select **pi-Stomp OS** from the list. Imager downloads the image itself and verifies the checksum — no separate download step.
+2. **Choose Storage** → select your microSD card.
+3. Click **EDIT SETTINGS** and fill in:
    - **Wi-Fi** network name, password, and country. The network name is case-sensitive.
    - **Hostname** — leave it as `pistomp` unless you have a reason to change it.
    - **Username and password** — these are the SSH login. You won't need SSH to play, but it's how you reach the device's filesystem later for things like enabling the expression pedal input.
    - **Timezone**.
    - **SSH public key**, if you'd rather log in with a key than a password.
-5. Click **Write**.
 
-![Raspberry Pi Imager]({{ '/assets/images/rpi-imager.png' | url }})
+![Customization wizard with Wi-Fi and hostname fields]({{ '/assets/images/rpi-imager-customize-wifi.png' | url }})
+
+4. Click **Write**.
+
+> **Known bug in Imager v2.0.11-rc1** ([rpi-imager#1666](https://github.com/raspberrypi/rpi-imager/issues/1666)): the first write attempt can fail with an "unable to mount the drive" error. Just click **Write** again — the second attempt succeeds. Your settings from **EDIT SETTINGS** are kept.
 
 The wizard writes an `rpi-preseed.toml` to the card's boot partition. On first boot, the `rpi-preseed` service applies it before any audio service starts.
 
-## Step 2 — Boot
+## Step 3 — Boot
 
 Insert the microSD into the pi-Stomp's mainboard (inside the enclosure) and connect power. The boot splash appears on the LCD within a few seconds. First boot takes about a minute while the filesystem expands and services initialize, then the device reboots once on its own.
 
 When the home screen appears, the pi-Stomp is on your Wi-Fi network.
 
-## Step 3 — Open the editor
+## Step 4 — Open the editor
 
 Open a browser on any device on the same network and go to `http://pistomp.local/`. This is MOD-UI, where you build pedalboards.
 
@@ -57,11 +76,19 @@ That address works through mDNS, a protocol that lets devices announce their own
 
 The pi-Stomp boots with a pedalboard already loaded, so it's ready to make sound as soon as you plug in. [Quick Start]({{ '/using/quick-start/' | url }}) covers connecting your instrument and setting input gain.
 
+## Pre-release images
+
+To help test upcoming releases, use `https://treefallsound.github.io/pi-gen-pistomp/imager/pistomp-testing.json` as the repository URL instead. These builds can have (literal) show-stopper bugs; avoid taking them on stage.
+
 ## Configuring with pistomp.conf
 
-This is the fallback path for Raspberry Pi Imager below v2.0.11, and the way to set options the wizard doesn't expose. Flash the card as in Step 1 but skip **EDIT SETTINGS**, then edit the file described here before booting.
+This is the fallback path for Raspberry Pi Imager below v2.0.11-rc1, and the way to set options the wizard doesn't expose, like the JACK audio settings.
 
-The cutoff is specifically v2.0.11. Older builds do have customization screens, but they write a format this image doesn't read — the v1.9.x line used a different engine entirely, and pre-v2.0.11 v2 builds differ too. On those versions the wizard appears to work and its settings are silently ignored, so use `pistomp.conf`.
+Older Imager builds do have customization screens, but they write a format this image doesn't read — the v1.9.x line used a different engine entirely. On those versions the wizard appears to work and its settings are silently ignored, so skip it and use `pistomp.conf` instead.
+
+1. Download the latest `.img.xz` from [pi-gen-pistomp releases](https://github.com/TreeFallSound/pi-gen-pistomp/releases) (under "Assets").
+2. In Imager: **Choose OS** → **Use custom** → select the downloaded file.
+3. **Choose Storage** → select your microSD card → **Write**, skipping **EDIT SETTINGS**.
 
 After flashing, the card's boot partition mounts as a small FAT volume named `BOOTFS`:
 
@@ -82,7 +109,7 @@ Open `pistomp.conf` on that volume and edit:
 | `USER_PASSWORD` | A password for SSH access | `pistomp` |
 | `TIMEZONE` | Your timezone (e.g. `America/Toronto`, `Europe/London`) | `US/Central` |
 
-Save the file, eject the card, and continue from [Step 2](#step-2--boot).
+Save the file, eject the card, and continue from [Step 3](#step-3--boot).
 
 The file also carries the `JACK_*` audio settings. Leave those alone for now; [Performance]({{ '/maintenance/performance/' | url }}) explains when to change them.
 
@@ -90,8 +117,9 @@ If both `rpi-preseed.toml` and `pistomp.conf` are present, they don't conflict: 
 
 ## Troubleshooting
 
+- **pi-Stomp OS doesn't appear in the Choose OS list** — recheck the repository URL for typos, then **APPLY & RESTART** again; the list only reloads on restart.
 - **Nothing on the LCD after a minute** — check that the SD card is fully seated and the power supply is adequate (27W recommended).
-- **`pistomp.local` doesn't resolve** — confirm your computer is on the same network, then use the IP address from **System info** as described in Step 3. Some routers and most corporate or guest networks block mDNS.
+- **`pistomp.local` doesn't resolve** — confirm your computer is on the same network, then use the IP address from **System info** as described in Step 4. Some routers and most corporate or guest networks block mDNS.
 - **Wi-Fi not connecting** — recheck the network name and password; the name is case-sensitive. Check the country code too: a wrong one can disable the channels your network uses.
-- **The Imager wizard settings were ignored** — the wizard needs Imager v2.0.11 or newer. Either upgrade Imager or use [`pistomp.conf`](#configuring-with-pistompconf).
+- **The Imager wizard settings were ignored** — the wizard needs Imager v2.0.11-rc1 or newer. Either upgrade Imager or use [`pistomp.conf`](#configuring-with-pistompconf).
 - **The LCD said "Imager setup FAILED"** — the preseed file was present but didn't apply, which would otherwise leave the device with no Wi-Fi and no credentials. The pi-Stomp falls back to `pistomp.conf` and keeps booting. Configure it using the fallback path.

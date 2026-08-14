@@ -35,7 +35,7 @@ Turn up the output volume (Tweak 3). The headphone output follows the same audio
 
 ## Device is on the network but unreachable from a specific computer
 
-The pi-Stomp shows a healthy Wi-Fi link, but your device (often a Mac) cannot reach it. The Pi's signal is strong and the router reports the Pi as connected.
+The pi-Stomp shows a healthy Wi-Fi link, but your device (often a Mac) cannot reach it. The Pi's signal is strong and the router reports the Pi as connected. This is an access point bug: the router stops forwarding unicast frames from other clients to the Mac. Ethernet and the device hotspot are unaffected. See [pi-gen-pistomp#39](https://github.com/TreeFallSound/pi-gen-pistomp/issues/39).
 
 | Possible cause | Try |
 |----------------|-----|
@@ -62,6 +62,8 @@ If you see "The ECDSA host key for pistomp.local has changed":
 ```bash
 ssh-keygen -R pistomp.local
 ```
+
+If the connection times out instead, some service providers' access points — 5G gateways in particular — block SSH between hosts on the Wi-Fi network. Use ethernet or the device hotspot.
 
 ## LCD is white or stuck on the logo
 

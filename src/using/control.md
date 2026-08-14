@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: control
   title: Control
-  order: 5
+  order: 4
 ---
 
 # Control

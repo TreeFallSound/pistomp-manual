@@ -10,32 +10,20 @@ eleventyNavigation:
 
 # AI Declaration
 
-## 1. Scope
+## Policy
 
-This declaration covers the pi-Stomp manual. It does not cover the pi-Stomp source code, firmware, or hardware designs.
+We use large language models as tools to extend our creativity. We do not use them to replace it. You are accountable for your contributions to this manual and any other pi-Stomp properties (wikis, repositories, etc) no matter how the contribution was created.
 
-## 2. Policy
+## Use
 
-We use large language models as tools to extend our creativity. We do not use them to replace it. A person decides what goes in this manual, and a person is accountable for it.
+Claude Code was used to research, draft, and write parts of this manual. LLM assistance has also been used in extending the software that makes up the pi-Stomp ecosystem.
 
-## 3. Use
+## Errors
 
-Claude Code was used to research, draft, and write parts of this manual.
+There may be mistakes or paragraphs with poor and/or a distractingly "LLM" writing style which makes things harder to understand.
 
-## 4. Errors
+Please report both: in this manual, select any text on a page and click **Suggest edit**. This opens the source file on GitHub with your selection located, ready for you to propose a change. See [Editing this manual]({{ '/developers/contributing/#editing-this-manual' | url }}).
 
-There may be mistakes. There may be paragraphs that annoy you. Both are worth reporting.
+## Concerns
 
-Select any text on a page and click **Suggest edit**. This opens the source file on GitHub with your selection located, ready for you to propose a change. See [Editing this manual]({{ '/developers/contributing/#editing-this-manual' | url }}).
-
-## 5. Cost
-
-The same tools that let a two-person project ship a manual of this size are consuming electricity and water at a scale that harms people.
-
-Data centre siting is frequently decided without the consent of the communities that host it. Those communities absorb the load on the grid, the draw on the water table, the noise, and the heat. The power and water are not abstractions; they are the same power and water people need to live.
-
-We are not going to claim these two facts cancel out. They do not.
-
-## 6. Offsets
-
-We want suggestions for how this project should offset its use of LLMs. Open an issue on [GitHub](https://github.com/TreeFallSound) or write to us. Concrete proposals preferred over general ones.
+The same tools that let a small team ship a project of this size require a vast number of massive data centres to operate at scale, often built without the consent of the communities that host them. Those communities absorb their load on the grid, their draw on the water table, and the noise they generate. They are also contributing to climate change.

@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: using
   key: going-further
   title: Going Further
-  order: 7
+  order: 6
 ---
 
 # Going Further
