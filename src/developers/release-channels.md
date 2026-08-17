@@ -28,7 +28,13 @@ sudo ~/extras/set-release-channel.sh stable     # switch back to production
 ~/extras/set-release-channel.sh status          # show current channel
 ```
 
-If your device does not have the script, download it from [pi-gen-pistomp on GitHub](https://github.com/TreeFallSound/pi-gen-pistomp/blob/main/stage3/01-pistomp/files/extras/set-release-channel.sh).
+If your device does not have the script, download it:
+
+```bash
+curl -sL https://raw.githubusercontent.com/TreeFallSound/pi-gen-pistomp/main/stage3/01-pistomp/files/extras/set-release-channel.sh \
+  -o ~/extras/set-release-channel.sh
+chmod +x ~/extras/set-release-channel.sh
+```
 
 Switching to testing adds the `trixie-testing` apt source and runs `apt-get upgrade`. The stable source stays in place; with both present, apt sees both suites and picks the highest version of each package.
 
