@@ -23,7 +23,7 @@ A package version containing `~` (set with `bump-version.sh --pre`) publishes to
 Every device ships with `~/extras/set-release-channel.sh`, which handles adding and removing the apt source, upgrading, and downgrading:
 
 ```bash
-sudo ~/extras/set-release-channel.sh testing   # switch to pre-release
+sudo ~/extras/set-release-channel.sh testing    # switch to pre-release
 sudo ~/extras/set-release-channel.sh stable     # switch back to production
 ~/extras/set-release-channel.sh status          # show current channel
 ```
