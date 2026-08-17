@@ -49,7 +49,7 @@ pi-Stomp ships as a pre-built OS image. You point Raspberry Pi Imager at the pi-
 3. Click **EDIT SETTINGS** and fill in:
    - **Wi-Fi** network name, password, and country. The network name is case-sensitive.
    - **Hostname** — leave it as `pistomp` unless you have a reason to change it.
-   - **Username and password** — these are the SSH login. You won't need SSH to play, but it's how you reach the device's filesystem later for things like enabling the expression pedal input.
+   - **Username and password** — Username must be `pistomp`.  Password is your choice.  Remember it (or write it down) in case you ever need to ssh to the unit.
    - **Timezone**.
    - **SSH public key**, if you'd rather log in with a key than a password.
 
