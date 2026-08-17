@@ -90,9 +90,11 @@ Two apt suites are served from the `gh-pages` branch of `pi-gen-pistomp`:
 | Suite | Channel | Who gets it |
 |-------|---------|-------------|
 | `trixie` | Production | Every device, by default |
-| `trixie-testing` | Pre-release | Devices that opt in by adding `pistomp-testing.list` |
+| `trixie-testing` | Pre-release | Devices that opt in |
 
 A package version containing `~` (e.g. `3.2.1-0~pre4`, set with `./scripts/bump-version.sh --pre <pkg> "..."`) publishes to `trixie-testing` and the GitHub Release is flagged as prerelease. A plain version (no `~`) publishes to `trixie`. Production devices never see `~` versions; testing devices converge back to production automatically on the next plain-version bump because Debian's `~` sorts below the release it precedes.
+
+To switch a device between stable and testing, see [Release Channels]({{ '/developers/release-channels/' | url }}).
 
 Images are cut by pushing a `release/<version>` git tag. The tag suffix encodes the channel:
 
@@ -132,7 +134,7 @@ git commit -m "Bump <pkg>: pre-release"
 git push origin main
 ```
 
-The package routes to `trixie-testing`; only devices that have opted into the testing channel (via `pistomp-testing.list` on `/etc/apt/sources.list.d/`) see it. Promote to production with a plain bump — `~` sorts below the release it precedes, so test devices converge back automatically:
+The package routes to `trixie-testing`; only devices that have opted into the testing channel see it. Promote to production with a plain bump — `~` sorts below the release it precedes, so test devices converge back automatically:
 
 ```bash
 ./scripts/bump-version.sh <pkg> "Promote to production: <description>."

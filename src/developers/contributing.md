@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: developers
   key: contributing
   title: Contributing
-  order: 9
+  order: 10
 ---
 
 # Contributing
