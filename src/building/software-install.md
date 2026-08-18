@@ -49,14 +49,14 @@ pi-Stomp ships as a pre-built OS image. You point Raspberry Pi Imager at the pi-
 
 ![Choose OS list showing pi-Stomp OS with its icon]({{ '/assets/images/rpi-imager-choose-os.png' | url }})
 
-1. **Choose OS** → select **pi-Stomp OS** from the list. Imager downloads the image itself and verifies the checksum — no separate download step.
+1. Select **pi-Stomp OS** from the list. Imager downloads the image itself and verifies the checksum — no separate download step.
 2. Click **NEXT**
 
 ## Step 3 - Select Storage device
 
 ![Storage dialog with Generic STORAGE DEVICE Media selected]({{ '/assets/images/rpi-imager-storage.png' | url }})
 
-1. Select the divice representing your mounted SD card.  If no storage device shows, make sure the SD card is properly inserted.
+1. Select the device representing your mounted SD card.  If no storage device shows, make sure the SD card is properly inserted.
 2. Click **NEXT**
 
 ## Step 4 - Customisation
