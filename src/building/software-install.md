@@ -84,8 +84,6 @@ Do not skip customisation
 
 6. Password vs, Public key authentication is your choice.  The latter requires an SSH key.  Click **NEXT**
 
-   - **SSH public key**, if you'd rather log in with a key than a password.
-
 ## Step 5 - Write the image to the SD card
 
 ![Write image dialog]({{ '/assets/images/rpi-imager-write.png' | url }})
