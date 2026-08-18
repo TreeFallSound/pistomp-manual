@@ -38,36 +38,77 @@ pi-Stomp ships as a pre-built OS image. You point Raspberry Pi Imager at the pi-
 
 5. Click **APPLY & RESTART**. Imager restarts with the pi-Stomp catalog loaded.
 
-6. Now select the Device (typically Raspberry Pi 5 for pi-Stomp v3, Raspberry Pi 3 for pi-Stomp v2), then click **NEXT**
+## Step 2 - Select Device
 
-## Step 2 — Flash the card
+![Device dialog with Raspberry Pi 5 selected]({{ '/assets/images/rpi-imager-device.png' | url }})
+
+1. Select your Raspberry Pi device model - typically Raspberry Pi 5 for pi-Stomp v3, Raspberry Pi 3 for pi-Stomp v2
+2. Click **NEXT**
+
+## Step 2 — Choose OS
 
 ![Choose OS list showing pi-Stomp OS with its icon]({{ '/assets/images/rpi-imager-choose-os.png' | url }})
 
 1. **Choose OS** → select **pi-Stomp OS** from the list. Imager downloads the image itself and verifies the checksum — no separate download step.
-2. **Choose Storage** → select your microSD card.
-3. Click **EDIT SETTINGS** and fill in:
-   - **Wi-Fi** network name, password, and country. The network name is case-sensitive.
-   - **Hostname** — leave it as `pistomp` unless you have a reason to change it.
-   - **Username and password** — Username must be `pistomp`.  Password is your choice.  Remember it (or write it down) in case you ever need to ssh to the unit.
-   - **Timezone**.
+2. Click **NEXT**
+
+## Step 3 - Select Storage device
+
+![Storage dialog with Generic STORAGE DEVICE Media selected]({{ '/assets/images/rpi-imager-storage.png' | url }})
+
+1. Select the divice representing your mounted SD card.  If no storage device shows, make sure the SD card is properly inserted.
+2. Click **NEXT**
+
+## Step 4 - Customisation
+Do not skip customisation
+
+![Hostname dialog with pistomp entered]({{ '/assets/images/rpi-imager-hostname.png' | url }})
+
+1. Enter your hostname.  Leave it as `pistomp` unless you have a reason to change it.  Click **NEXT**
+
+![Localisation dialog with examples shown]({{ '/assets/images/rpi-imager-localisation.png' | url }})
+
+2. Enter your location.  City, Timezone, Keyboard layout.  This is for clock syncronization and entries aren't critical.  Click **NEXT**
+
+![Username dialog with examples shown]({{ '/assets/images/rpi-imager-username.png' | url }})
+
+3. Username must be `pistomp`.  Password is your choice.  Remember it (or write it down) in case you ever need to ssh to the unit.  Click **NEXT**
+
+![Wi-Fi dialog with examples shown]({{ '/assets/images/rpi-imager-wifi.png' | url }})
+
+4. Enter the SSID (Network Name) and Password for your router.  Network name is case-sensitive.  Click **NEXT**
+
+![SSH dialog with SSE enabled and password authentication]({{ '/assets/images/rpi-imager-wifi.png' | url }})
+
+5. Choose to Enable SSH unless you know you don't want to allow it.  It is very useful for troubleshooting and customisation.
+
+6. Password vs, Public key authentication is your choice.  The latter requires an SSH key.  Click **NEXT**
+
    - **SSH public key**, if you'd rather log in with a key than a password.
 
-![Customization wizard with Wi-Fi and hostname fields]({{ '/assets/images/rpi-imager-customize-wifi.png' | url }})
+## Step 5 - Write the image to the SD card
 
-4. Click **Write**.
+![Write image dialog]({{ '/assets/images/rpi-imager-write.png' | url }})
 
-The wizard writes an `rpi-preseed.toml` to the card's boot partition. On first boot, the `rpi-preseed` service applies it before any audio service starts.
+1. Confirm the Summary
+2. Click **WRITE**
 
-When finished, eject the SD card.
+![Write confirmation dialog]({{ '/assets/images/rpi-imager-write-confirm.png' | url }})
 
-## Step 3 — Boot
+3. Click **I UNDERSTAND, ERASE AND WRITE**
+4. Your computer opererating system may ask for access to the device (SD card).  If it requires a password, that would be the password you use for your computer, not the pi-Stomp.
+
+The imager writes an `rpi-preseed.toml` to the card's boot partition. On first boot, the `rpi-preseed` service applies it before any audio service starts.
+
+5. When Write and Verification are finished, eject the SD card.
+
+## Step 6 — Boot
 
 Insert the microSD into the pi-Stomp's mainboard (inside the enclosure) and connect power. The boot splash appears on the LCD within a few seconds. First boot takes about a minute while the filesystem expands and services initialize, then the device reboots once on its own.
 
 When the home screen appears, the pi-Stomp is on your Wi-Fi network.
 
-## Step 4 — Open the Pedalboard editor (MOD-UI)
+## Step 7 — Open the Pedalboard editor (MOD-UI)
 
 Open a browser on any device on the same network and go to `http://pistomp.local/`. This is MOD-UI, where you build pedalboards.
 
@@ -114,7 +155,7 @@ Open `pistomp.conf` on that volume and edit:
 | `USER_PASSWORD` | A password for SSH access | `pistomp` |
 | `TIMEZONE` | Your timezone (e.g. `America/Toronto`, `Europe/London`) | `US/Central` |
 
-Save the file, eject the card, and continue from [Step 3](#step-3--boot).
+Save the file, eject the card, and continue from [Step 6](#step-6--boot).
 
 The file also carries the `JACK_*` audio settings. Leave those alone for now; [Performance]({{ '/maintenance/performance/' | url }}) explains when to change them.
 
