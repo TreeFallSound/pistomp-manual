@@ -78,7 +78,7 @@ Do not skip customisation
 
 4. Enter the SSID (Network Name) and Password for your router.  Network name is case-sensitive.  Click **NEXT**
 
-![SSH dialog with SSE enabled and password authentication]({{ '/assets/images/rpi-imager-wifi.png' | url }})
+![SSH dialog with SSE enabled and password authentication]({{ '/assets/images/rpi-imager-ssh.png' | url }})
 
 5. Choose to Enable SSH unless you know you don't want to allow it.  It is very useful for troubleshooting and customisation.
 
