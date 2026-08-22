@@ -2,6 +2,8 @@
 
 The official manual for the pi-Stomp ecosystem — building, using, and developing for pi-Stomp v3 and v2. Built with Eleventy, deployed to GitHub Pages.
 
+All prose must follow ASD-STE100 Simplified Technical English.
+
 # Writing rules
 
 - Be direct, concise, no fluff.

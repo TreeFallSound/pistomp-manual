@@ -67,14 +67,25 @@ footswitches:
     tap_tempo: set_mod_tap_tempo
 ```
 
-| Field | What it does |
-|-------|-------------|
-| `id` | Physical position (0 = leftmost) |
-| `adc_input` | Analog input pin on the MCP3008 ADC |
-| `ledstrip_position` | v3 LED strip pixel index for this switch |
-| `midi_CC` | MIDI CC number sent on press |
-| `longpress` | Long-press action — see below |
-| `tap_tempo` | Action for tap tempo mode (`set_mod_tap_tempo`) |
+| Field | What it does | Per-pedalboard? |
+|-------|-------------|:-:|
+| `id` | Physical position (0 = leftmost) | — |
+| `adc_input` | Analog input pin on the MCP3008 ADC | — |
+| `gpio_input` | GPIO pin (v1/v2 hardware) | — |
+| `debounce_input` | Debounce pin (v1/v2 hardware) | — |
+| `ledstrip_position` | v3 LED strip pixel index for this switch | — |
+| `gpio_output` | GPIO pin for the switch LED (v1/v2 hardware) | — |
+| `midi_CC` | MIDI CC number sent on press | ✓ |
+| `midi_port` | Route MIDI to an external device by ALSA name | ✓ |
+| `midi_channel` | Override MIDI channel for this switch (required with `midi_port`) | ✓ |
+| `longpress` | Long-press action — see below | ✓ |
+| `preset` | Bind to a snapshot index or step up/down | ✓ |
+| `bypass` | Relay bypass control (`LEFT`, `RIGHT`, `LEFT_RIGHT`) | ✓ |
+| `disable` | Disable this footswitch entirely | ✓ |
+| `color` | LCD label color | ✓ |
+| `tap_tempo` | Action for tap tempo mode (`set_mod_tap_tempo`) | — |
+
+Fields marked ✓ are available in per-pedalboard `config.yml`. Fields marked — belong in `default_config.yml` only. See [Per-pedalboard overrides](#per-pedalboard-overrides) below for merge rules.
 
 ### Long-press actions
 
