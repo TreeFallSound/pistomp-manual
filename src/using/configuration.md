@@ -16,6 +16,8 @@ pi-Stomp uses YAML configuration files to control how footswitches, encoders, kn
 
 Per-pedalboard configs merge into the global config field-by-field. Unspecified fields keep their global defaults. This lets you have different footswitch assignments for different pedalboards without touching the global file.
 
+Merging between configs is keyed by `id`: a per-pedalboard entry for `id: 2` finds footswitch 2 wherever it appears, and an `id` that does not exist in `default_config.yml` is skipped with a warning. Anything a pedalboard does not mention returns to the global default when that pedalboard loads — nothing carries over from the pedalboard before it.
+
 ## Editing config files
 
 Config files live on the pi-Stomp. SSH in to edit them:
@@ -31,6 +33,29 @@ After editing, restart the pi-Stomp service:
 ps-restart
 ```
 
+## When a config file is wrong
+
+Both files are checked as they are read. An unknown key, a value of the wrong type, a MIDI CC above 127, a footswitch entry with no `id` — each of these is an error, and each names the exact place it went wrong:
+
+```
+Config file error in /home/pistomp/.pedalboards/MySound.pedalboard/config.yml:
+Object contains unknown field `colour` - at `$.hardware.footswitches[0]`
+```
+
+**A bad pedalboard `config.yml` is not fatal.** pi-Stomp logs the error, ignores that one file, and loads the pedalboard on the global defaults alone. The pedalboard still works; it just does not get its overrides. Look for it with:
+
+```bash
+journalctl -u mod-ala-pi-stomp | grep "config:"
+```
+
+**A bad `default_config.yml` stops startup.** There is no safe fallback for the file that describes your hardware, so you will need to read the traceback that is on the recovery screen (blue background) or via SSH:
+
+```bash
+journalctl -u mod-ala-pi-stomp -n 50
+```
+
+Fix the file, or copy a fresh one from `/home/pistomp/pi-stomp/setup/config_templates/`.
+
 ## Hardware version
 
 ```yaml
@@ -43,28 +68,29 @@ Set automatically by `firstboot.sh` based on Pi model. Don't change this unless 
 ## Footswitches
 
 ```yaml
-footswitches:
-  - id: 0
-    adc_input: 0
-    ledstrip_position: 0
-    midi_CC: 60
-    longpress: previous_snapshot
-  - id: 1
-    adc_input: 1
-    ledstrip_position: 1
-    midi_CC: 61
-    longpress: next_snapshot
-  - id: 2
-    adc_input: 2
-    ledstrip_position: 2
-    midi_CC: 62
-    longpress: toggle_tuner_enable
-  - id: 3
-    adc_input: 3
-    ledstrip_position: 3
-    midi_CC: 63
-    longpress: toggle_tap_tempo_enable
-    tap_tempo: set_mod_tap_tempo
+hardware:
+  footswitches:
+    - id: 0
+      adc_input: 0
+      ledstrip_position: 0
+      midi_CC: 60
+      longpress: previous_snapshot
+    - id: 1
+      adc_input: 1
+      ledstrip_position: 1
+      midi_CC: 61
+      longpress: next_snapshot
+    - id: 2
+      adc_input: 2
+      ledstrip_position: 2
+      midi_CC: 62
+      longpress: toggle_tuner_enable
+    - id: 3
+      adc_input: 3
+      ledstrip_position: 3
+      midi_CC: 63
+      longpress: toggle_tap_tempo_enable
+      tap_tempo: set_mod_tap_tempo
 ```
 
 | Field | What it does | Per-pedalboard? |
@@ -77,7 +103,7 @@ footswitches:
 | `gpio_output` | GPIO pin for the switch LED (v1/v2 hardware) | — |
 | `midi_CC` | MIDI CC number sent on press | ✓ |
 | `midi_port` | Route MIDI to an external device by ALSA name | ✓ |
-| `midi_channel` | Override MIDI channel for this switch (required with `midi_port`) | ✓ |
+| `midi_channel` | Override MIDI channel for this switch, 0–15 (required with `midi_port`) | ✓ |
 | `longpress` | Long-press action — see below | ✓ |
 | `preset` | Bind to a snapshot index or step up/down | ✓ |
 | `bypass` | Relay bypass control (`LEFT`, `RIGHT`, `LEFT_RIGHT`) | ✓ |
@@ -85,7 +111,9 @@ footswitches:
 | `color` | LCD label color | ✓ |
 | `tap_tempo` | Action for tap tempo mode (`set_mod_tap_tempo`) | — |
 
-Fields marked ✓ are available in per-pedalboard `config.yml`. Fields marked — belong in `default_config.yml` only. See [Per-pedalboard overrides](#per-pedalboard-overrides) below for merge rules.
+Fields marked ✓ do something when you put them in a per-pedalboard `config.yml`. Fields marked — describe how the switch is wired, so they are read once at startup; a pedalboard config may carry them, but changing one there has no effect. Keep them in `default_config.yml`. See [Per-pedalboard overrides](#per-pedalboard-overrides) below.
+
+Note the two different channel conventions. `hardware.midi.channel` sets the base channel and is numbered 1–16, the way a MIDI device's front panel numbers it. A per-control `midi_channel` is a raw channel number, 0–15.
 
 ### Long-press actions
 
@@ -102,7 +130,8 @@ Fields marked ✓ are available in per-pedalboard `config.yml`. Fields marked �
 | `toggle_bypass` | Global bypass on/off |
 | `toggle_tuner_enable` | Open or close the tuner |
 | `toggle_tap_tempo_enable` | Enter or leave tap tempo mode |
-| `set_mod_tap_tempo` | Set the host tempo directly |
+
+`set_mod_tap_tempo` is not in this list. It taps a tempo in, so it needs the timing of the press itself and is reachable only through the separate `tap_tempo:` key.
 
 Remember that a pedalboard change drops audio for a few seconds while a snapshot change does not, so `next_pedalboard` belongs between songs rather than inside one.
 
@@ -110,40 +139,44 @@ Remember that a pedalboard change drops audio for a few seconds while a snapshot
 
 ```yaml
 longpress: {midi_CC: 80}          # send a raw CC on the switch's channel
-longpress: {preset: next}         # next | previous | <index>
-longpress: {pedalboard: next}     # next | previous
+longpress: {preset: UP}           # UP | DOWN | <index>
+longpress: {pedalboard: UP}       # UP | DOWN
 ```
+
+Give exactly one key. `UP` and `DOWN` are upper case.
 
 **A list**, which is how you build chords:
 
 ```yaml
-footswitches:
-  - id: 0
-    midi_CC: 60
-    longpress: [previous_snapshot, toggle_tuner_enable]
-  - id: 1
-    midi_CC: 61
-    longpress: [next_snapshot, toggle_tuner_enable]
+hardware:
+  footswitches:
+    - id: 0
+      midi_CC: 60
+      longpress: [previous_snapshot, toggle_tuner_enable]
+    - id: 1
+      midi_CC: 61
+      longpress: [next_snapshot, toggle_tuner_enable]
 ```
 
 Each name in the list is a group the switch joins. A name held by exactly one switch fires on its own. A name held by two switches becomes a chord: it fires only when both are long-pressed within 0.4 seconds of each other, and the individual actions are suppressed.
 
 In the example above, long-pressing A alone gives you the previous snapshot, B alone gives you the next, and A and B together open the tuner. That frees footswitch C's long-press for something else. The chord window is also why a lone member waits 0.4 s before acting — it's giving you time to press the other switch.
 
-Only names with a matching handler callback participate, so a typo in a group name silently drops that switch out of the chord rather than erroring.
+Every name in the list must be one of the handler names in the table above. A misspelled name is rejected when the file is read, so a typo shows up as a config error rather than as a chord that quietly never fires.
 
 ## Encoders
 
 ```yaml
-encoders:
-  - id: 1
-    midi_CC: 70
-    longpress: previous_snapshot
-  - id: 2
-    midi_CC: 71
-    longpress: next_snapshot
-  - id: 3
-    type: VOLUME
+hardware:
+  encoders:
+    - id: 1
+      midi_CC: 70
+      longpress: previous_snapshot
+    - id: 2
+      midi_CC: 71
+      longpress: next_snapshot
+    - id: 3
+      type: VOLUME
 ```
 
 The navigation encoder (id 0) is wired in hardware, not defined here — don't add it to the config. Only the tweak and volume encoders are configurable.
@@ -151,27 +184,29 @@ The navigation encoder (id 0) is wired in hardware, not defined here — don't a
 | Field | What it does |
 |-------|-------------|
 | `id` | Physical position (1, 2, 3 — id 0 is the fixed navigation encoder) |
-| `type` | `KNOB` (default, sends MIDI CC) or `VOLUME` (controls output level) |
+| `type` | `KNOB` (default, sends MIDI CC) or `VOLUME` (controls output level). Upper case |
 | `midi_CC` | MIDI CC sent on rotation (cannot be used with `type: VOLUME`) |
 | `longpress` | Long-press action, e.g. `previous_snapshot` / `next_snapshot` |
 
 ## Analog controls (knobs and expression pedal)
 
 ```yaml
-analog_controllers:
-  - adc_input: 5
-    id: 0
-    type: EXPRESSION
-    midi_CC: 75
-    autosync: true
+hardware:
+  analog_controllers:
+    - id: 0
+      adc_input: 5
+      type: EXPRESSION
+      midi_CC: 75
+      autosync: true
 ```
 
 | Field | What it does |
 |-------|-------------|
+| `id` | Position on screen (0 = leftmost). Required |
 | `adc_input` | Analog input pin on the MCP3008 ADC |
-| `id` | Position on screen (0 = leftmost) |
 | `type` | `KNOB` or `EXPRESSION` — changes the LCD icon |
 | `midi_CC` | MIDI CC sent on movement |
+| `threshold` | Movement needed before a new value is sent, 0–127 (default 16) |
 | `autosync` | Send current position on pedalboard load (prevents value jumps) |
 
 ### Enabling the expression pedal
@@ -204,12 +239,24 @@ Importantly, `swap-pedalboards.sh` will _remove all of your current pedalboards_
 To give a specific pedalboard different footswitch or encoder assignments, create a `config.yml` inside that pedalboard's bundle directory. For example, to make footswitch A send CC 64 instead of 60 on the "MySound" pedalboard:
 
 ```yaml
-footswitches:
-  - id: 0
-    midi_CC: 64
+hardware:
+  footswitches:
+    - id: 0
+      midi_CC: 64
 ```
 
-Only the fields you specify are overridden. The rest keep their global defaults.
+Only the fields you specify are overridden. The rest keep their global defaults, and they go back to those defaults as soon as you load a different pedalboard.
+
+To remove something the global config sets, rather than change it, give the field an explicit `null`:
+
+```yaml
+hardware:
+  footswitches:
+    - id: 0
+      longpress: null      # this pedalboard wants no long-press on switch A
+```
+
+Leaving the field out is not the same thing: an absent field means "use the global default", while `null` means "nothing here".
 
 ## External MIDI routing
 
@@ -220,17 +267,18 @@ Two mechanisms:
 **On-load messages** — send fixed MIDI messages to external devices whenever a pedalboard loads (e.g. to recall a preset on an external pedal):
 
 ```yaml
-external_midi:
-  enabled: true
-  send_delay_ms: 10          # delay between consecutive messages
-  messages:
-    Source Audio C4 Synth:   # exact ALSA client name from `aconnect -l`
-      - [0xB0, 0x66, 0x00]   # CC 102 = 0
-    HX Stomp:
-      - [0xC0, 0x00]         # Program Change 0
+hardware:
+  external_midi:
+    enabled: true
+    send_delay_ms: 10          # delay between consecutive messages
+    messages:
+      Source Audio C4 Synth:   # exact ALSA client name from `aconnect -l`
+        - [0xB0, 0x66, 0x00]   # CC 102 = 0
+      HX Stomp:
+        - [0xC0, 0x00]         # Program Change 0
 ```
 
-Both can be overridden per-pedalboard in the pedalboard's `config.yml`.
+Both can be overridden per-pedalboard in the pedalboard's `config.yml`. A pedalboard's `messages` replace the global ones rather than adding to them, so messages meant for one pedalboard are never sent for another.
 
 ## Blend mode
 

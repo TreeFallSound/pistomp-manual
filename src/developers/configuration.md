@@ -16,6 +16,26 @@ pi-Stomp uses YAML configuration files to define hardware layout, MIDI bindings,
 
 At pedalboard load time, the per-pedalboard config merges into the global config field-by-field. Unspecified fields keep their defaults.
 
+Loading runs in three stages, in `pistomp/config/`:
+
+| Stage | Module | What it holds |
+|-------|--------|---------------|
+| Parse | `schema_v1.py` | The file format, one `Struct` per YAML shape. Also the merge |
+| Adapt | `adapt_v1.py` | Turns a merged document into the application model, applying built-in defaults |
+| Model | `model.py` | `PedalboardConfig` — what the rest of the app reads |
+
+Three states are distinguished per field: absent (use the layer below), explicit `null` (clear it), and a value. `msgspec`'s `UNSET` carries "absent" through parse and merge; it never crosses into `model.py`.
+
+`Hardware.reinit()` applies every behavioural field unconditionally on each pedalboard load, rather than only the fields a pedalboard mentions. A field that sticks from the previous pedalboard is therefore not representable. Structural fields (e.g. `adc_input`, `gpio_input`, `ledstrip_position`...) are read once at object creation and ignored by `reinit`.
+
+The JSON Schema is generated from the same `Struct`s via `msgspec.json.schema()`.
+
+### Validation and failure
+
+Both files are validated on read. Unknown keys, wrong types and out-of-range numbers are rejected, and errors name a path such as `$.hardware.footswitches[0].midi_CC`.
+
+A broken pedalboard `config.yml` is caught in `read_bundle_config()`, logged, and skipped — the pedalboard loads on the global defaults. A broken `default_config.yml` propagates out of `load_default_cfg()` and ends startup, since there is nothing safe to fall back to. Users can see the traceback in the recovery screen.
+
 ## Config templates
 
 The OS ships with templates for each hardware variant:
@@ -46,49 +66,51 @@ Determines which hardware and handler classes are instantiated. `firstboot.sh` g
 ## Footswitches
 
 ```yaml
-footswitches:
-  - id: 0
-    adc_input: 0
-    midi_CC: 60
-    midi_port: ~              # optional, external MIDI device name
-    midi_channel: ~           # optional, per-switch channel override
-    longpress: next_snapshot  # optional, handler callback name
-    tap_tempo: ~              # optional, for tap tempo footswitches
-    ledstrip_position: 0      # optional, v3 LED strip index
+hardware:
+  footswitches:
+    - id: 0
+      adc_input: 0
+      midi_CC: 60
+      midi_port: ~              # optional, external MIDI device name
+      midi_channel: ~           # optional, per-switch channel override
+      longpress: next_snapshot  # optional, handler callback name
+      tap_tempo: ~              # optional, for tap tempo footswitches
+      ledstrip_position: 0      # optional, v3 LED strip index
 ```
 
-Each footswitch has an `id` (physical position), `adc_input` (analog pin), and `midi_CC` (MIDI CC to send on press). The `longpress` field can reference handler callbacks like `next_snapshot`, `previous_snapshot`, `toggle_tuner_enable`, etc.
+Each footswitch has an `id` (physical position), `adc_input` (analog pin), and `midi_CC` (MIDI CC to send on press). `id` is required and is the merge key.
+
+`longpress` accepts a handler name, a list of handler names (chords), or a single-key mapping (`{midi_CC: n}`, `{preset: UP|DOWN|<index>}`, `{pedalboard: UP|DOWN}`). The accepted handler names are the `LongpressName` literal in `schema_v1.py`; a test asserts that set matches the handler's callback map, so adding a callback without adding the name fails the suite.
 
 ## Encoders
 
 ```yaml
-encoders:
-  - id: 0
-    type: navigation           # navigation, tweak, or volume
-  - id: 1
-    type: tweak
-    midi_CC: 70
-    midi_port: ~
-    midi_channel: ~
-  - id: 2
-    type: tweak
-    midi_CC: 71
-  - id: 3
-    type: volume
+hardware:
+  encoders:
+    - id: 1
+      midi_CC: 70
+      midi_port: ~
+      midi_channel: ~
+    - id: 2
+      midi_CC: 71
+    - id: 3
+      type: VOLUME
 ```
 
-The navigation encoder drives the LCD menu. Tweak encoders send MIDI CC on rotation. The volume encoder adjusts the audio card output level directly.
+`type` is `KNOB` (the default) or `VOLUME`. The navigation encoder is id 0; it drives the LCD menu, is wired in hardware, and is not configured here. Knob encoders send MIDI CC on rotation. The volume encoder adjusts the audio card output level directly and cannot also carry a `midi_CC`.
 
 ## Analog controls
 
 ```yaml
-analog_controllers:
-  - adc_input: 5
-    id: 0
-    type: EXPRESSION           # KNOB or EXPRESSION
-    midi_CC: 75
-    midi_port: ~
-    autosync: true             # send position on pedalboard load
+hardware:
+  analog_controllers:
+    - id: 0                      # required, and the merge key
+      adc_input: 5
+      type: EXPRESSION           # KNOB or EXPRESSION
+      midi_CC: 75
+      midi_port: ~
+      threshold: 16              # movement needed before a new value is sent
+      autosync: true             # send position on pedalboard load
 ```
 
 Analog controls read the 10-bit ADC (MCP3008) and convert to MIDI CC (0–127). `type: EXPRESSION` renders as an expression pedal graphic on the LCD. `autosync: true` sends the current position on pedalboard load so the value doesn't jump.
@@ -113,7 +135,9 @@ hardware:
         - [0xB0, 0x66, 0x00]  # hex MIDI bytes
 ```
 
-Individual controls can also specify `midi_port:` to route to a specific device.
+Individual controls can also specify `midi_port:` to route to a specific device. `midi_port` requires `midi_channel` alongside it — an external device rarely shares the hardware's default channel, and the parser rejects the pair when the channel is missing.
+
+`external_midi.messages` are replaced wholesale on each pedalboard load, not merged, so a pedalboard's messages never leak into the next one.
 
 ## Blend mode
 
