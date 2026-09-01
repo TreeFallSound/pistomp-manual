@@ -29,6 +29,8 @@ The backup includes everything under `/home/pistomp/data/`:
 
 The backup is written to `backups/pistomp_backup.zip` on the USB drive. Once it finishes, you can remove the drive.
 
+**Backup data** is greyed out until you connect a writable USB drive. If you select it with no such drive, pi-Stomp shows "No writable USB drive".
+
 The `.lv2/` directory holds **user-installed** plugins downloaded through MOD-UI (PatchStorage). It's excluded to keep the backup small; re-download those plugins from PatchStorage on the target system. Factory plugins live in `/usr/lib/lv2` and come from the OS image, not this directory.
 
 ## Restore from USB drive
@@ -38,6 +40,8 @@ The `.lv2/` directory holds **user-installed** plugins downloaded through MOD-UI
 3. Wait for the restore to complete (this can take a few minutes)
 
 The restore runs `unzip -o -u` on the backup file, overwriting and updating files in `/home/pistomp/data`. After the restore completes, the sound engine restarts automatically.
+
+**Restore Backup data** is greyed out until a connected drive holds `backups/pistomp_backup.zip`. If you select it with no such drive, pi-Stomp shows "No backup found on USB". A read-only drive is a correct source, because the restore only reads the archive.
 
 ## Backup via SCP
 
@@ -62,4 +66,4 @@ After the restore completes, restart the sound engine from the System Menu or re
 1. Back up the old pi-Stomp state to a USB drive
 2. Flash the latest OS image on the new pi-Stomp's SD card
 3. Boot the new pi-Stomp OS and insert the USB drive
-4. Choose "Restore" on the welcome screen
+4. Choose "Restore" on the welcome screen. The button becomes available about a second after you connect the drive

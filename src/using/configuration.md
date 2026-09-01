@@ -278,7 +278,7 @@ hardware:
         - [0xC0, 0x00]         # Program Change 0
 ```
 
-Both can be overridden per-pedalboard in the pedalboard's `config.yml`. A pedalboard's `messages` replace the global ones rather than adding to them, so messages meant for one pedalboard are never sent for another.
+A pedalboard's `config.yml` can change both. pi-Stomp merges `messages` by device name: if a pedalboard names a device that the global config also names, the pedalboard entry replaces the global entry. The other global devices stay active. To send no external MIDI at all for one pedalboard, write `external_midi: null` in its `config.yml`.
 
 ## Blend mode
 

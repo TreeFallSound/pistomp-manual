@@ -42,6 +42,8 @@ The iQAudioCodec's DAC has a built-in 5 band graphic equalizer you can use to af
 
 Gain runs from −10.5 dB to +12 dB in 1.5 dB steps. Note that the frequencies are not user-editable and move with the sample rate; the table above is for 48 kHz. At 88.2 and 96 kHz, the EQ is unavailable due to hardware limitations.
 
+Sound cards without the iQAudioCodec have no DAC EQ. On those cards, and at the sample rates that the codec does not support, the Equalizer row stays on the screen with an **[N/A]** badge. The bands are greyed out, and the NAV encoder goes past them. All the other controls in the menu operate as usual.
+
 For surgical work, or anything needing a specific Q, reach for a plugin — see the [EQ editorial]({{ '/plugins/eq/' | url }}). Use this EQ for the broad "this room is boomy" correction you make once you hear the space.
 
 ## Clock source

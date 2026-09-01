@@ -68,6 +68,20 @@ uv run pytest --snapshot-update  # accept changed LCD snapshots
 
 The `snapshot` fixture compares the rendered LCD image to a baseline PNG. If your change intentionally alters the UI, run with `--snapshot-update` to update the baselines.
 
+## Capturing the LCD
+
+`ps-record-lcd` captures the live LCD of a running pi-Stomp. Use it for issue reports, and for the LCD images in this manual. It is on the PATH of the device, and is a symlink to `util/record_lcd.py` in the pi-Stomp source.
+
+Run it on the device, with all services running:
+
+```bash
+ps-record-lcd --still
+```
+
+That writes one PNG to `~/pistomp_capture_YYYYMMDD_HHMMSS.png`. To set the path yourself, add `-o FILE`.
+
+Without `--still`, the command records video to an `.mp4` file with the same name format. Press Ctrl+C to stop the recording. Add `--lossless` for a lossless recording, which uses much more disk space.
+
 ## Code style
 
 - Python 3.11+ (`requires-python`, and Pyright's `pythonVersion`, are both 3.11)

@@ -137,7 +137,7 @@ hardware:
 
 Individual controls can also specify `midi_port:` to route to a specific device. `midi_port` requires `midi_channel` alongside it — an external device rarely shares the hardware's default channel, and the parser rejects the pair when the channel is missing.
 
-`external_midi.messages` are replaced wholesale on each pedalboard load, not merged, so a pedalboard's messages never leak into the next one.
+`_merged_external_midi` in `pistomp/config/schema_v1.py` overlays `external_midi.messages` by device name, thus a global entry for a device that the pedalboard does not provide an entry for stays active. A pedalboard section of `external_midi: null` clears the full section.
 
 ## Blend mode
 
