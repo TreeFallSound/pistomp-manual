@@ -17,26 +17,32 @@ pi-Stomp ships as a pre-built OS image. You point Raspberry Pi Imager at the pi-
 - A computer with an SD card slot (or USB adapter)
 - [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases), **v2.0.11 or newer**.   Here are some direct links to the latest:
 
-   [Mac](https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.11/rpi-imager-v2.0.11.dmg)
+   [Mac](https://downloads.raspberrypi.com/imager/imager_latest.dmg)
 
-   [Windows](https://github.com/raspberrypi/rpi-imager/releases/download/v2.0.11/imager-v2.0.11.exe)
+   [Windows](https://downloads.raspberrypi.com/imager/imager_latest.exe)
+
+   [Linux (x86_64)](https://downloads.raspberrypi.com/imager/imager_latest_amd64.AppImage)
 
 ## Step 1 — Add the pi-Stomp repository
 
 1. Install Raspberry Pi Imager
 2. Open Raspberry Pi Imager.
-3. Click **App Options** → **Content Repository** → **EDIT**.
+3. Click **App Options**
 
-![App Options menu open, Content Repository highlighted]({{ '/assets/images/rpi-imager-app-options.png' | url }})
+![Start dialog, showing APP OPTIONS]({{ '/assets/images/rpi-imager-start.png' | url }})
 
-4. Click **Use custom URL** and enter (or copy/paste):
+4. Click **Content Repository** → **EDIT**.
+
+![App Options menu open]({{ '/assets/images/rpi-imager-app-options.png' | url }})
+
+5. Click **Use custom URL** and enter (or copy/paste):
    ```
    https://treefallsound.github.io/pi-gen-pistomp/imager/pistomp.json
    ```
 
 ![Content Repository dialog with the pistomp.json URL entered]({{ '/assets/images/rpi-imager-custom-url.png' | url }})
 
-5. Click **APPLY & RESTART**. Imager restarts with the pi-Stomp catalog loaded.
+6. Click **APPLY & RESTART**. Imager restarts with the pi-Stomp catalog loaded.
 
 ## Step 2 - Select Device
 
@@ -82,7 +88,7 @@ Do not skip customisation
 
 5. Choose to Enable SSH unless you know you don't want to allow it.  It is very useful for troubleshooting and customisation.
 
-6. Password vs, Public key authentication is your choice.  The latter requires an SSH key.  Click **NEXT**
+6. Password versus Public key authentication is your choice.  The latter requires an SSH key.  Click **NEXT**
 
 ## Step 5 - Write the image to the SD card
 
@@ -95,8 +101,6 @@ Do not skip customisation
 
 3. Click **I UNDERSTAND, ERASE AND WRITE**
 4. Your computer opererating system may ask for access to the device (SD card).  If it requires a password, that would be the password you use for your computer, not the pi-Stomp.
-
-The imager writes an `rpi-preseed.toml` to the card's boot partition. On first boot, the `rpi-preseed` service applies it before any audio service starts.
 
 5. When Write and Verification are finished, eject the SD card.
 
