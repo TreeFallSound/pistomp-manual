@@ -13,9 +13,9 @@ The pi-Stomp v3 kit requires no soldering. Assembly takes about 90 minutes with 
 
 The complete instructions, with photos of every step are available here: **[Full Build Instructions for pi-Stomp v3](https://www.treefallsound.com/wiki/doku.php?id=pi-stomp_v3_build_instructions)**. This page is the companion: what to read before you start, a step index for finding your place again, and checks for when the last screw is in.
 
-You can also watch a builder walk through the full process:
+Here's a stop-action animation of a full build:
 
-<iframe src="https://www.youtube.com/embed/37ok2Kd75kM?start=781" title="pi-Stomp v3 build video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;margin:1rem 0;"></iframe>
+<iframe src="https://www.youtube.com/embed/g2PtJvom5Ok" title="pi-Stomp build stop-action animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;margin:1rem 0;"></iframe>
 
 ## Before you begin
 
