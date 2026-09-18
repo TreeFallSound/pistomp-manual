@@ -44,8 +44,8 @@ The WebSocket bridge connects pi-Stomp to MOD-UI for real-time state synchroniza
 | `disconnect {from} {to}` | `DisconnectMessage` | Port disconnected |
 | `add_hw_port /graph/{name} {type} {isOutput} {title} {index}` | `AddHwPortMessage` | Hardware port appeared |
 | `remove_hw_port /graph/{name}` | `RemoveHwPortMessage` | Hardware port went away |
-| `loading_start {isDefault}` | `LoadingStartMessage` | Pedalboard load began |
-| `loading_end {snapshotId}` | `LoadingEndMessage` | Stash snapshot index |
+| `loading_start {isDefault}` | `LoadingStartMessage` | Pedalboard load began; opens the outbound-suppression window |
+| `loading_end {snapshotId}` | `LoadingEndMessage` | Stash snapshot index; closes the outbound-suppression window |
 | `pedal_snapshot {id} {name}` | `PedalSnapshotMessage` | In-board snapshot change |
 | `transport {rolling} {beatsPerBar} {bpm} {syncMode}` | `TransportMessage` | Tempo and sync-mode state |
 | `truebypass {left} {right}` | `TrueBypassMessage` | Hardware true-bypass relay state |
@@ -74,7 +74,22 @@ Because the echo is absolute (not a delta), a wrong optimistic prediction is ove
 
 1. WS `send_parameter` → mod-ui calls `host.bypass()`
 2. `msg_callback_broadcast` skips the origin socket (us)
-3. No echo arrives — pi-Stomp updates local state and LCD immediately
+3. No echo arrives, so nothing would ever correct a local write MOD-UI did not
+   receive. The path therefore *commits* (`Parameter.commit`): paint immediately,
+   publish, and revert if the send never left — during a load, or under backpressure
+
+## Outbound suppression during a load
+
+`loading_start` .. `loading_end` brackets MOD-UI replaying a whole graph at pi-Stomp —
+a board load, and the connect dump on every WebSocket connect. While the window is
+open, inbound graph messages are replay rather than news, and outbound parameter sends
+are refused. `set_current_pedalboard` also closes it, as the point pi-Stomp has caught
+up with the board MOD-UI loaded; that covers the one case MOD-UI abandons its own
+window, an aborted load returning before `loading_end`.
+
+Nothing else may open it. A window nothing closes silently refuses every parameter
+send for the rest of the session, and because a refused send reverts the value, the
+LCD shows parameter dialogs that open but will not move.
 
 ## Ping/pong
 

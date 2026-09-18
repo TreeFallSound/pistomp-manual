@@ -81,5 +81,5 @@ Only the per-pedalboard layer is a runtime merge. This lets you have different f
 - **Polling over events** — predictable timing, no surprise latency
 - **Explicit version routing** — factory pattern, not capability detection
 - **Overlay, don't replace** — per-pedalboard config merges field-by-field
-- **Single writer, mostly** — MOD-UI owns the truth; pi-Stomp paints optimistically and reconciles. The exception is footswitch bypass, which pi-Stomp applies locally; see [WebSocket Bridge]({{ '/developers/websocket-bridge/' | url }})
+- **Single writer, mostly** — MOD-UI owns the truth; pi-Stomp paints optimistically and reconciles, and reverts anything it could not send. The exception is footswitch bypass, which pi-Stomp applies locally; see [WebSocket Bridge]({{ '/developers/websocket-bridge/' | url }})
 - **Trust MOD for audio** — pi-Stomp is a controller, not an audio processor
