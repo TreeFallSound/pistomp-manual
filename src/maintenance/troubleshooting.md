@@ -16,7 +16,7 @@ eleventyNavigation:
 | Incorrect routing | Check cabling: instrument → In1, Out1 → amp. In MOD-UI, connect a virtual cable straight from Hardware Capture 1 to Hardware Playback 1 |
 | Volume is down | Turn the Volume knob (Tweak 3) up. Check Input Gain in the Audio & MIDI panel |
 | Processing is bypassed | The power icon in the toolbar should be green. Click it to toggle |
-| Audio card configuration | SSH in and run: `alsactl -f ~/pi-stomp/setup/audio/iqaudiocodec.state restore` |
+| Audio card configuration | **Recovery** → **Factory Reset** → **Audio** allows you to change cards / reset alsa state to factory settings. Or SSH: `sudo /usr/lib/pistomp/alsa/seed.sh <overlay>` followed by `sudo alsactl restore` |
 | Services in bad state | System Menu → **Restart sound engine**, or SSH: `sudo systemctl restart jack` |
 | Hardware | Add a TinyGain plugin to the pedalboard. If the meter shows -inf with signal, the problem is likely the audio card or input wiring |
 
@@ -29,11 +29,19 @@ eleventyNavigation:
 | Low power supply voltage | Run `dmesg \| grep -i voltage`. Use the 27W factory adapter |
 | Unnecessary processes | Shut down any extra software you've installed |
 
+## Wrong audio card or corrupt state
+
+If the system configuration doesn't match the installed hardware on your unit (e.g. for some v2 units) or if the card's mixer state is otherwise unsuitable for MOD/pi-Stomp, JACK may not start up successfully, or the audio inputs/outputs may not function.
+
+Go to the Recovery main menu (either from the crash screen or through **Recovery and Updates** in the System menu), then choose **Audio Card**. Pick the card you have installed (IQaudIO CODEC, HiFiBerry, or AudioInjector), then reboot. Recovery flips the `dtoverlay=` in `config.txt` and seeds the matching mixer state for you.
+
+> Alternatively, SSH in and run `~/pi-stomp/util/change-audio-card.sh`, then pick the fitted card and power-cycle the unit.
+
 ## No audio from headphone jack
 
 Turn up the output volume (Tweak 3). The headphone output follows the same audio as the main outputs. Low-impedance earbuds (< 50 ohms) may sound quiet — use higher-impedance headphones.
 
-## Device is on the network but unreachable from a specific computer
+## Device is on the network but unrreachable from a specific computer
 
 The pi-Stomp shows a healthy Wi-Fi link, but your device (often a Mac) cannot reach it. The Pi's signal is strong and the router reports the Pi as connected. This is an access point bug: the router stops forwarding unicast frames from other clients to the Mac. Ethernet and the device hotspot are unaffected. See [pi-gen-pistomp#39](https://github.com/TreeFallSound/pi-gen-pistomp/issues/39).
 

@@ -111,15 +111,17 @@ Insert the microSD into the pi-Stomp's mainboard (inside the enclosure) and conn
 When the home screen appears, the pi-Stomp is on your Wi-Fi network.
 
 ### Special instructions for pi-Stomp v2 (core) hardware
-If your v2 hardware has an AudioInjector audio card (blue pcb not black or green), then booting will result in a blue screen, likely showing, "Cannot initialize driver".  You'll need to manually change the audio card by running a script.
-```bash
-ssh pistomp@pistomp.local
 
-~/pi-stomp/util/change-audio-card.sh
+If your v2 hardware has an AudioInjector audio card (blue PCB, not black or green), enable the AudioInjector overlay in `config.txt` **before first boot**. While the freshly-written SD card is still connected your computer, open `config.txt` on the boot partition, and change the `dtoverlay=` lines so only AudioInjector is uncommented:
+
 ```
-Choose #1 (audioinjector)
+#dtoverlay=iqaudio-codec
+dtoverlay=audioinjector-wm8731-audio
+```
 
-Once complete, power cycle, and when it comes back up, it should good to go with your audio card.
+Eject and boot.
+
+> **If you didn't set it in `config.txt`**, the first boot lands on the crash screen with "Cannot initialize driver". Click **RECOVERY** → **Audio Card**, pick **AudioInjector**, and reboot. If recovery isn't reachable, SSH in and run `~/pi-stomp/util/change-audio-card.sh`, choose #1 (audioinjector), then power-cycle the unit.
 
 ## Step 7 — Open the Pedalboard editor (MOD-UI)
 
