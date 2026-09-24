@@ -64,11 +64,9 @@ The crash screen shows:
 
 - **Navigation encoder** — move between the header, service rows, log textarea, and action buttons
 - **Tweak 1** — when the log textarea is selected, scrolls the log text horizontally (long log lines that don't fit the screen)
-- **Click on the log textarea** — opens the fullscreen log viewer
+- **Click on the log textarea** — opens the fullscreen log viewer (see below)
 - **Click RESUME** — releases the LCD and restarts the main app
 - **Click RECOVERY** — opens the recovery menu
-
-### Fullscreen log viewer
 
 The log viewer shows the complete journalctl output for the crashed service. Use the Navigation encoder to scroll through lines vertically. Use Tweak 1 to scroll long lines horizontally. Long-press or click the back icon to return to the crash screen.
 
@@ -78,6 +76,12 @@ The log viewer shows the complete journalctl output for the crashed service. Use
 
 - **Restart Jack** — restarts the JACK audio server. Use this if audio stops working but the LCD is still responsive.
 - **Restart MOD** — restarts mod-host. Use this if plugins stop loading.
+
+## Audio card
+
+The **Audio Card** entry on the main menu switches which audio HAT recovery expects on the next boot. Use it when the LCD is on the crash screen with "Cannot initialize driver" (the wrong `dtoverlay=` is enabled in `config.txt`), or when you've physically swapped cards between IQaudIO CODEC, HiFiBerry, and AudioInjector.
+
+Pick your fitted card and reboot. Recovery enables the matching `dtoverlay=` in `config.txt` and seeds the known-good ALSA mixer state, so JACK starts on the right card at the next boot.
 
 ## Rolling back to a known-good state
 
