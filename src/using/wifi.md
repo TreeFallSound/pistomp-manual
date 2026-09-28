@@ -53,3 +53,7 @@ See [Troubleshooting]({{ '/maintenance/troubleshooting/#device-is-on-the-network
 ## Wi-Fi drops
 
 If the connection is unstable, check the power supply first. The Wi-Fi radio draws bursts of current during transmit, and a marginal PSU can cause firmware load failures or drops. `dmesg | grep -i brcm` shows firmware errors. The 27W factory adapter is recommended.
+
+## Routers that offer WPA2 and WPA3 together
+
+Some routers advertise both at once ("transition mode"). The Pi's Wi-Fi chip can fail the WPA3 handshake on these, and the screen then reports an invalid password even when it is correct — so pi-Stomp joins them as WPA2 instead. If you saved such a network on an earlier version, forget it and join it again to pick up the change.
